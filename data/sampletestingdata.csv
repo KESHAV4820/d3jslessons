@@ -1,0 +1,261 @@
+exam_name,exam_year,exam_tier,zone_name,zone_score,state_name,state_score,city_name,city_score
+CGL,2016,1,"North Western
+         Region
+ Chandigarh",81491,Jammu & Kashmir,16714,Anantnag,779
+,,,,,,,Baramullah,645
+,,,,,,,Bhaderwah,
+,,,,,,,Jammu,11364
+,,,,,,,Rajouri,136
+,,,,,,,Srinagar(J&K),3790
+,,,,,,,Samba,
+,,,,,Ladakh,425,Leh,425
+,,,,,"Himachal
+ Pradesh",4877,Dharamshala,
+,,,,,,,Hamirpur,1708
+,,,,,,,Shimla,3169
+,,,,,Punjab,25413,Bhathinda ,3961
+,,,,,,,Jalandhar ,8064
+,,,,,,,Patiala,7170
+,,,,,,,Amritsar,6218
+,,,,,,,Ludhiana,
+,,,,,,,Mohali,
+,,,,,Chandigarh,34062,Chandigarh,34062
+,,,,,Haryana,,Ambala,
+,,,,,,,Bhiwani,
+,,,,,,,Hisar,
+,,,,,,,Karnal,
+,,,,,,,Yamunanagar,
+,,,,,,,Kurukshetra,
+,,,"Northern 
+Region 
+Delhi",390968,Uttarakhand,28194,Almora,344
+,,,,,,,Dehradun,15963
+,,,,,,,Haldwani,3834
+,,,,,,,"Srinagar
+(uttarakhand)",229
+,,,,,,,Haridwar,7824
+,,,,,,,Roorkee,
+,,,,,Delhi,230940,Delhi,230940
+,,,,,Rajasthan,131834,Ajmer ,6325
+,,,,,,,Alwar,10974
+,,,,,,,Bharatpur,
+,,,,,,,Bikaner,5755
+,,,,,,,jaipur,80257
+,,,,,,,Jodhpur,7610
+,,,,,,,kota,9545
+,,,,,,,Sriganganagar ,6632
+,,,,,,,Udaipur,4736
+,,,,,,,Dausa,
+,,,,,,,Sikar,
+,,,Central Region,377086,Utar pradesh,252410,Agra,25557
+,,,,,,,Aligarh,
+,,,,,,,Prayagraj,50146
+,,,,,,,Balia,
+,,,,,,,Bareilly,13950
+,,,,,,,"Ayodhya
+(Faizabad)",
+,,,,,,,Gorakhpur,15406
+,,,,,,,Jhansi,
+,,,,,,,Kanpur,40046
+,,,,,,,Lucknow,55818
+,,,,,,,Meerut,25318
+,,,,,,,Mirzapur,
+,,,,,,,"Varanasi
+(Banaras)",26169
+,,,,,,,Mathura,
+,,,,,,,Moradabad,
+,,,,,,,Muzafarnagar,
+,,,,,,,"Gautam 
+Budhnagar
+(Noida)",
+,,,,,,,Greater Noida,
+,,,,,Bihar,124676,Bhagalpur,15313
+,,,,,,,Darbahanga,
+,,,,,,,Gaya,
+,,,,,,,Katihar,
+,,,,,,,Muzaffarpur,20893
+,,,,,,,Patna,88470
+,,,,,,,Ara(Arrah),
+,,,,,,,"Aurangabad
+(Bihar)",
+,,,,,,,Purnia,
+,,,,161794,Sikkim,454,Gangtok,454
+,,,,,Jharkhand,43535,Bokarp,
+,,,,,,,Chaibasa,
+,,,,,,,Dumka,
+,,,,,,,Hazaribag,
+,,,,,,,Ranchi,43535
+,,,,,,,Dhanbad,
+,,,,,,,Jamshedpur,
+,,,,,West Bengal,78342,Bankura,
+,,,,,,,Barasat,6989
+,,,,,,,Berhampore,1860
+,,,,,,,"Bardhman
+(Burdwan)",
+,,,,,,,Chinsurah,7970
+,,,,,,,Cooch Behar ,
+,,,,,,,Darjeeling,
+,,,,,,,Jalpaiguri,1417
+,,,,,,,Jhargram,
+,,,,,,,Kolkata,511247
+,,,,,,,Krishnanagar,
+,,,,,,,Malda,2005
+,,,,,,,Midnapur,3433
+,,,,,,,Purulia,
+,,,,,,,siliguri,5281
+,,,,,,,Suri,
+,,,,,,,Asansol,
+,,,,,,,Hooghly,
+,,,,,,,Kalyani,
+,,,,,Odisha,39007,Balasore,
+,,,,,,,"Berhampore
+(Odisha)",
+,,,,,,,Bhawanipatna,
+,,,,,,,Bhubaneshwar,25894
+,,,,,,,Cutack,5515
+,,,,,,,Kendujhar,549
+,,,,,,,Koraput,
+,,,,,,,Phulbani,
+,,,,,,,Sambalpur,5189
+,,,,,,,Rourkela,
+,,,,,,,Dhenkenal,
+,,,,,A & N Islands,456,Car Nicobar,
+,,,,,,,Port Blair,456
+,,,"North Eastern
+ Region
+ Guwahati",25679,"Anunachal
+ Pradesh",794,Itanagar,794
+,,,,,Assam,12481,Barpeta,
+,,,,,,,Dibrugarh ,1691
+,,,,,,,Diphu,
+,,,,,,,Goalpara,
+,,,,,,,"Guwahati
+(Dispur)",8858
+,,,,,,,Halflong,
+,,,,,,,Jorhat,940
+,,,,,,,Kokrajhar,549
+,,,,,,,Lakhimpur,
+,,,,,,,Sivasagar,
+,,,,,,,Silchar,992
+,,,,,,,Tezpur,
+,,,,,Nagaland,2062,Dimapur,
+,,,,,,,Kohima,2062
+,,,,,Meghalaya,2456,Shilong,2456
+,,,,,,,Tura,
+,,,,,Manipur,5719,Imphal,4634
+,,,,,,,Churachandpur,1085
+,,,,,,,Ukhrul,
+,,,,,Tripura,1616,Agartala,1616
+,,,,,Mizoram,551,Aizwal,551
+,,,"Madhya
+ Pradesh Rigion
+ Raipur",77331,Madhya pradesh,61957,Bhopal,21474
+,,,,,,,Chataarpur,
+,,,,,,,Chindwara,1061
+,,,,,,,Guna,448
+,,,,,,,Gwalior,8151
+,,,,,,,Indore,15931
+,,,,,,,Jabalpur,9372
+,,,,,,,Jhabua,
+,,,,,,,Khandwa,680
+,,,,,,,Mandsaur,
+,,,,,,,Ratlam,1434
+,,,,,,,Rewa,
+,,,,,,,Shahdol,
+,,,,,,,Satna,2129
+,,,,,,,Sagar,1237
+,,,,,,,Ujjain,
+,,,,,Chhattisgarh,15374,Ambikapur,476
+,,,,,,,Bilaspur,3745
+,,,,,,,Jagdalpur,257
+,,,,,,,Raipur,5962
+,,,,,,,Durg-Bhilai,4934
+,,,,,,,Bhilainagar,
+,,,"Western Region
+ Mumbai",127647,Gujrat,30086,Ahmedabad,16988
+,,,,,,,vadodara(Bhopal,3999
+,,,,,,,Bhuj,
+,,,,,,,"Panchmahal
+(godhra)",
+,,,,,,,Rajkot,3447
+,,,,,,,Surat,4527
+,,,,,,,Valsad,
+,,,,,,,Bhavnagar,836
+,,,,,,,Kuchchh(kutch),289
+,,,,,,,Anand,
+,,,,,,,Gandhinagar,
+,,,,,,,Mehsana,
+,,,,,Maharastra,96772,Amravati,5709
+,,,,,,,Aurangabad,9422
+,,,,,,,Kolhapur,4910
+,,,,,,,Mumbai,17427
+,,,,,,,Nagpur,18111
+,,,,,,,Nanded,1314
+,,,,,,,Nashik,3882
+,,,,,,,Pune,24746
+,,,,,,,Ratnagiri,
+,,,,,,,Thane,5700
+,,,,,,,Bhandara,1445
+,,,,,,,chandrapur,1330
+,,,,,,,Akola,1008
+,,,,,,,Jalgaon,1768
+,,,,,,,Ahmednagar,
+,,,,,,,Alibag(Alibaug),
+,,,,,,,Navi Mumbai,
+,,,,,Goa,789,Panaja(Panjim),789
+,,,"Southern
+ Region
+ Chennai",120587,Andhra Pradesh,61201,Guntur,15105
+,,,,,,,Kurnool,8121
+,,,,,,,Rajahmundry,10027
+,,,,,,,Srikakulam,
+,,,,,,,Tirupati,9227
+,,,,,,,Vishakhapatnam,18721
+,,,,,,,Kakinada,
+,,,,,,,Nellore,
+,,,,,,,Chirala,
+,,,,,,,Vizianagaram,
+,,,,,Telangana,0,Hyderabad,
+,,,,,,,Nizamabad,
+,,,,,,,Warangal,
+,,,,,,,Karimnagar,
+,,,,,Tamil Nadu,54481,Chennai(Madras),25621
+,,,,,,,Coimbatore,6965
+,,,,,,,Kanchipuram,
+,,,,,,,Madurai,8207
+,,,,,,,Salem,
+,,,,,,,Tiruchirapalli,6577
+,,,,,,,Tirunelveli,7111
+,,,,,,,Vellore,
+,,,,,Puducherry,4905,Puducherry,4905
+,,,"Karnataka-
+Kerla Region
+ Bangalore",60192,Karnataka,25238,"Bengaluru
+(Bengalore)",15827
+,,,,,,,Belgavi(Belgaum),
+,,,,,,,Bijapur,
+,,,,,,,Dharwar,3631
+,,,,,,,"Kalaburagi
+(Gulbarga)",1573
+,,,,,,,Hassan,
+,,,,,,,Kolar,
+,,,,,,,"Mangaluru
+(Manglore)",1465
+,,,,,,,Mysuru(Mysore),2742
+,,,,,,,Shivamogga(Shimoga),
+,,,,,,,Hubballi(Hubli),
+,,,,,,,Udupi,
+,,,,,Kerala,34954,Alappuzha,
+,,,,,,,Kannur(Cannanor),
+,,,,,,,Kalpeta,
+,,,,,,,Kochi(cochin),7094
+,,,,,,,Kottayam,
+,,,,,,,Kozhikode(Calicut),
+,,,,,,,Malappuram,
+,,,,,,,Palakkad,
+,,,,,,,Pathanmthitta,
+,,,,,,,Kollam,
+,,,,,,,Thiruvananthpuram,12924
+,,,,,,,Thrissur(Trichur),5203
+,,,,,,,Ernakulam,
+,,,,,Lakshadweep,,Kavaratti,
