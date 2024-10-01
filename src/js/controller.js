@@ -25,7 +25,17 @@ if(module.hot){
 import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel handle asset
 
 
-console.log(csvDataPath);// Code Testing.
+// console.log(csvDataPath);// Code Testing.
 
-    csv(csvDataPath).then(data =>{console.log(data);
-    });
+const parseRow = (d)=>{
+d.exam_year=+d.exam_year;
+d.exam_tier=+d.exam_tier;
+d.zone_score=+d.zone_score;
+d.state_score=+d.state_score;
+d.city_score=+d.city_score;
+    return d;
+};
+
+csv(csvDataPath, parseRow).then(data =>{console.log(data);});// Code Testing
+
+
