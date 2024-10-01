@@ -3,7 +3,10 @@
 //Note: to use live server extension for development, you need to change the folder name in the setting of workspace which starts like this: " Live Server › Settings: Multi Root Workspace Name This the entry point of server when you're in multiroot workspace ". there you need to change the name of the file from 'allexamstable project' to 'd3js charting' folder name. 
 
 
-import {csv, csvParse} from 'd3';
+import {csv, 
+        select,
+        svg,
+} from 'd3';
 
 
 
@@ -26,6 +29,7 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 
 
 // console.log(csvDataPath);// Code Testing.
+// csv(csvDataPath, parseRow).then(data =>{console.log(data);});// Code Testing
 
 const parseRow = (d)=>{
 d.exam_year=+d.exam_year;
@@ -36,6 +40,13 @@ d.city_score=+d.city_score;
     return d;
 };
 
-csv(csvDataPath, parseRow).then(data =>{console.log(data);});// Code Testing
+const width=window.innerWidth;
+const height=window.innerHeight;
+const svg1= select('body').append('svg').attr('width',width).attr('height',height);
+
+const main = async () =>{
+    const dataExtracted =await csv(csvDataPath, parseRow); 
+};
+main();
 
 
