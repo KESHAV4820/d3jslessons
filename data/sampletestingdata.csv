@@ -1,250 +1,250 @@
 exam_name,exam_year,exam_tier,zone_name,zone_score,state_name,state_score,city_name,city_score
 CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Anantnag,779
-,,1,NWR,81491,Jammu & Kashmir,16714,Baramullah,645
-,,1,NWR,81491,Jammu & Kashmir,16714,Bhaderwah,
-,,1,NWR,81491,Jammu & Kashmir,16714,Jammu,11364
-,,1,NWR,81491,Jammu & Kashmir,16714,Rajouri,136
-,,1,NWR,81491,Jammu & Kashmir,16714,Srinagar(J&K),3790
-,,1,NWR,81491,Jammu & Kashmir,16714,Samba,0
-,,1,NWR,81491,Ladakh,425,Leh,425
-,,1,NWR,81491,"Himachal
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Baramullah,645
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Bhaderwah,
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Jammu,11364
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Rajouri,136
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Srinagar(J&K),3790
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Samba,0
+CGL,2016,1,NWR,81491,Ladakh,425,Leh,425
+CGL,2016,1,NWR,81491,"Himachal
  Pradesh",4877,Dharamshala,0
-,,1,NWR,81491,"Himachal
+CGL,2016,1,NWR,81491,"Himachal
  Pradesh",4877,Hamirpur,1708
-,,1,NWR,81491,"Himachal
+CGL,2016,1,NWR,81491,"Himachal
  Pradesh",4877,Shimla,3169
-,,1,NWR,81491,Punjab,25413,Bhathinda ,3961
-,,1,NWR,81491,Punjab,25413,Jalandhar ,8064
-,,1,NWR,81491,Punjab,25413,Patiala,7170
-,,1,NWR,81491,Punjab,25413,Amritsar,6218
-,,1,NWR,81491,Punjab,25413,Ludhiana,0
-,,1,NWR,81491,Punjab,25413,Mohali,0
-,,1,NWR,81491,Chandigarh,34062,Chandigarh,34062
-,,1,NWR,81491,Haryana,0,Ambala,0
-,,1,NWR,81491,Haryana,0,Bhiwani,0
-,,1,NWR,81491,Haryana,0,Hisar,0
-,,1,NWR,81491,Haryana,0,Karnal,0
-,,1,NWR,81491,Haryana,0,Yamunanagar,0
-,,1,NWR,81491,Haryana,0,Kurukshetra,0
-,,1,NR,390968,Uttarakhand,28194,Almora,344
-,,1,NR,390968,Uttarakhand,28194,Dehradun,15963
-,,1,NR,390968,Uttarakhand,28194,Haldwani,3834
-,,1,NR,390968,Uttarakhand,28194,"Srinagar
+CGL,2016,1,NWR,81491,Punjab,25413,Bhathinda ,3961
+CGL,2016,1,NWR,81491,Punjab,25413,Jalandhar ,8064
+CGL,2016,1,NWR,81491,Punjab,25413,Patiala,7170
+CGL,2016,1,NWR,81491,Punjab,25413,Amritsar,6218
+CGL,2016,1,NWR,81491,Punjab,25413,Ludhiana,0
+CGL,2016,1,NWR,81491,Punjab,25413,Mohali,0
+CGL,2016,1,NWR,81491,Chandigarh,34062,Chandigarh,34062
+CGL,2016,1,NWR,81491,Haryana,0,Ambala,0
+CGL,2016,1,NWR,81491,Haryana,0,Bhiwani,0
+CGL,2016,1,NWR,81491,Haryana,0,Hisar,0
+CGL,2016,1,NWR,81491,Haryana,0,Karnal,0
+CGL,2016,1,NWR,81491,Haryana,0,Yamunanagar,0
+CGL,2016,1,NWR,81491,Haryana,0,Kurukshetra,0
+CGL,2016,1,NR,390968,Uttarakhand,28194,Almora,344
+CGL,2016,1,NR,390968,Uttarakhand,28194,Dehradun,15963
+CGL,2016,1,NR,390968,Uttarakhand,28194,Haldwani,3834
+CGL,2016,1,NR,390968,Uttarakhand,28194,"Srinagar
 (uttarakhand)",229
-,,1,NR,390968,Uttarakhand,28194,Haridwar,7824
-,,1,NR,390968,Uttarakhand,28194,Roorkee,
-,,1,NR,390968,Delhi,230940,Delhi,230940
-,,1,NR,390968,Rajasthan,131834,Ajmer ,6325
-,,1,NR,390968,Rajasthan,131834,Alwar,10974
-,,1,NR,390968,Rajasthan,131834,Bharatpur,
-,,1,NR,390968,Rajasthan,131834,Bikaner,5755
-,,1,NR,390968,Rajasthan,131834,jaipur,80257
-,,1,NR,390968,Rajasthan,131834,Jodhpur,7610
-,,1,NR,390968,Rajasthan,131834,kota,9545
-,,1,NR,390968,Rajasthan,131834,Sriganganagar ,6632
-,,1,NR,390968,Rajasthan,131834,Udaipur,4736
-,,1,NR,390968,Rajasthan,131834,Dausa,0
-,,1,NR,390968,Rajasthan,131834,Sikar,0
-,,1,CR,377086,Utar pradesh,252410,Agra,25557
-,,1,CR,377086,Utar pradesh,252410,Aligarh,0
-,,1,CR,377086,Utar pradesh,252410,Prayagraj,50146
-,,1,CR,377086,Utar pradesh,252410,Balia,0
-,,1,CR,377086,Utar pradesh,252410,Bareilly,13950
-,,1,CR,377086,Utar pradesh,252410,"Ayodhya
+CGL,2016,1,NR,390968,Uttarakhand,28194,Haridwar,7824
+CGL,2016,1,NR,390968,Uttarakhand,28194,Roorkee,
+CGL,2016,1,NR,390968,Delhi,230940,Delhi,230940
+CGL,2016,1,NR,390968,Rajasthan,131834,Ajmer ,6325
+CGL,2016,1,NR,390968,Rajasthan,131834,Alwar,10974
+CGL,2016,1,NR,390968,Rajasthan,131834,Bharatpur,
+CGL,2016,1,NR,390968,Rajasthan,131834,Bikaner,5755
+CGL,2016,1,NR,390968,Rajasthan,131834,jaipur,80257
+CGL,2016,1,NR,390968,Rajasthan,131834,Jodhpur,7610
+CGL,2016,1,NR,390968,Rajasthan,131834,kota,9545
+CGL,2016,1,NR,390968,Rajasthan,131834,Sriganganagar ,6632
+CGL,2016,1,NR,390968,Rajasthan,131834,Udaipur,4736
+CGL,2016,1,NR,390968,Rajasthan,131834,Dausa,0
+CGL,2016,1,NR,390968,Rajasthan,131834,Sikar,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,Agra,25557
+CGL,2016,1,CR,377086,Utar pradesh,252410,Aligarh,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,Prayagraj,50146
+CGL,2016,1,CR,377086,Utar pradesh,252410,Balia,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,Bareilly,13950
+CGL,2016,1,CR,377086,Utar pradesh,252410,"Ayodhya
 (Faizabad)",0
-,,1,CR,377086,Utar pradesh,252410,Gorakhpur,15406
-,,1,CR,377086,Utar pradesh,252410,Jhansi,0
-,,1,CR,377086,Utar pradesh,252410,Kanpur,40046
-,,1,CR,377086,Utar pradesh,252410,Lucknow,55818
-,,1,CR,377086,Utar pradesh,252410,Meerut,25318
-,,1,CR,377086,Utar pradesh,252410,Mirzapur,0
-,,1,CR,377086,Utar pradesh,252410,"Varanasi
+CGL,2016,1,CR,377086,Utar pradesh,252410,Gorakhpur,15406
+CGL,2016,1,CR,377086,Utar pradesh,252410,Jhansi,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,Kanpur,40046
+CGL,2016,1,CR,377086,Utar pradesh,252410,Lucknow,55818
+CGL,2016,1,CR,377086,Utar pradesh,252410,Meerut,25318
+CGL,2016,1,CR,377086,Utar pradesh,252410,Mirzapur,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,"Varanasi
 (Banaras)",26169
-,,1,CR,377086,Utar pradesh,252410,Mathura,0
-,,1,CR,377086,Utar pradesh,252410,Moradabad,0
-,,1,CR,377086,Utar pradesh,252410,Muzafarnagar,0
-,,1,CR,377086,Utar pradesh,252410,"Gautam 
+CGL,2016,1,CR,377086,Utar pradesh,252410,Mathura,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,Moradabad,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,Muzafarnagar,0
+CGL,2016,1,CR,377086,Utar pradesh,252410,"Gautam 
 Budhnagar
 (Noida)",0
-,,1,CR,377086,Utar pradesh,252410,Greater Noida,
-,,1,CR,377086,Bihar,124676,Bhagalpur,15313
-,,1,CR,377086,Bihar,124676,Darbahanga,0
-,,1,CR,377086,Bihar,124676,Gaya,0
-,,1,CR,377086,Bihar,124676,Katihar,0
-,,1,CR,377086,Bihar,124676,Muzaffarpur,20893
-,,1,CR,377086,Bihar,124676,Patna,88470
-,,1,CR,377086,Bihar,124676,Ara(Arrah),0
-,,1,CR,377086,Bihar,124676,"Aurangabad
+CGL,2016,1,CR,377086,Utar pradesh,252410,Greater Noida,
+CGL,2016,1,CR,377086,Bihar,124676,Bhagalpur,15313
+CGL,2016,1,CR,377086,Bihar,124676,Darbahanga,0
+CGL,2016,1,CR,377086,Bihar,124676,Gaya,0
+CGL,2016,1,CR,377086,Bihar,124676,Katihar,0
+CGL,2016,1,CR,377086,Bihar,124676,Muzaffarpur,20893
+CGL,2016,1,CR,377086,Bihar,124676,Patna,88470
+CGL,2016,1,CR,377086,Bihar,124676,Ara(Arrah),0
+CGL,2016,1,CR,377086,Bihar,124676,"Aurangabad
 (Bihar)",0
-,,1,CR,377086,Bihar,124676,Purnia,0
-,,1,ER,161794,Sikkim,454,Gangtok,454
-,,1,ER,161794,Jharkhand,43535,Bokarp,0
-,,1,ER,161794,Jharkhand,43535,Chaibasa,0
-,,1,ER,161794,Jharkhand,43535,Dumka,0
-,,1,ER,161794,Jharkhand,43535,Hazaribag,0
-,,1,ER,161794,Jharkhand,43535,Ranchi,43535
-,,1,ER,161794,Jharkhand,43535,Dhanbad,0
-,,1,ER,161794,Jharkhand,43535,Jamshedpur,0
-,,1,ER,161794,West Bengal,78342,Bankura,0
-,,1,ER,161794,West Bengal,78342,Barasat,6989
-,,1,ER,161794,West Bengal,78342,Berhampore,1860
-,,1,ER,161794,West Bengal,78342,"Bardhman
+CGL,2016,1,CR,377086,Bihar,124676,Purnia,0
+CGL,2016,1,ER,161794,Sikkim,454,Gangtok,454
+CGL,2016,1,ER,161794,Jharkhand,43535,Bokarp,0
+CGL,2016,1,ER,161794,Jharkhand,43535,Chaibasa,0
+CGL,2016,1,ER,161794,Jharkhand,43535,Dumka,0
+CGL,2016,1,ER,161794,Jharkhand,43535,Hazaribag,0
+CGL,2016,1,ER,161794,Jharkhand,43535,Ranchi,43535
+CGL,2016,1,ER,161794,Jharkhand,43535,Dhanbad,0
+CGL,2016,1,ER,161794,Jharkhand,43535,Jamshedpur,0
+CGL,2016,1,ER,161794,West Bengal,78342,Bankura,0
+CGL,2016,1,ER,161794,West Bengal,78342,Barasat,6989
+CGL,2016,1,ER,161794,West Bengal,78342,Berhampore,1860
+CGL,2016,1,ER,161794,West Bengal,78342,"Bardhman
 (Burdwan)",0
-,,1,ER,161794,West Bengal,78342,Chinsurah,7970
-,,1,ER,161794,West Bengal,78342,Cooch Behar ,0
-,,1,ER,161794,West Bengal,78342,Darjeeling,0
-,,1,ER,161794,West Bengal,78342,Jalpaiguri,1417
-,,1,ER,161794,West Bengal,78342,Jhargram,0
-,,1,ER,161794,West Bengal,78342,Kolkata,511247
-,,1,ER,161794,West Bengal,78342,Krishnanagar,0
-,,1,ER,161794,West Bengal,78342,Malda,2005
-,,1,ER,161794,West Bengal,78342,Midnapur,3433
-,,1,ER,161794,West Bengal,78342,Purulia,0
-,,1,ER,161794,West Bengal,78342,siliguri,5281
-,,1,ER,161794,West Bengal,78342,Suri,0
-,,1,ER,161794,West Bengal,78342,Asansol,0
-,,1,ER,161794,West Bengal,78342,Hooghly,0
-,,1,ER,161794,West Bengal,78342,Kalyani,0
-,,1,ER,161794,Odisha,39007,Balasore,0
-,,1,ER,161794,Odisha,39007,"Berhampore
+CGL,2016,1,ER,161794,West Bengal,78342,Chinsurah,7970
+CGL,2016,1,ER,161794,West Bengal,78342,Cooch Behar ,0
+CGL,2016,1,ER,161794,West Bengal,78342,Darjeeling,0
+CGL,2016,1,ER,161794,West Bengal,78342,Jalpaiguri,1417
+CGL,2016,1,ER,161794,West Bengal,78342,Jhargram,0
+CGL,2016,1,ER,161794,West Bengal,78342,Kolkata,511247
+CGL,2016,1,ER,161794,West Bengal,78342,Krishnanagar,0
+CGL,2016,1,ER,161794,West Bengal,78342,Malda,2005
+CGL,2016,1,ER,161794,West Bengal,78342,Midnapur,3433
+CGL,2016,1,ER,161794,West Bengal,78342,Purulia,0
+CGL,2016,1,ER,161794,West Bengal,78342,siliguri,5281
+CGL,2016,1,ER,161794,West Bengal,78342,Suri,0
+CGL,2016,1,ER,161794,West Bengal,78342,Asansol,0
+CGL,2016,1,ER,161794,West Bengal,78342,Hooghly,0
+CGL,2016,1,ER,161794,West Bengal,78342,Kalyani,0
+CGL,2016,1,ER,161794,Odisha,39007,Balasore,0
+CGL,2016,1,ER,161794,Odisha,39007,"Berhampore
 (Odisha)",0
-,,1,ER,161794,Odisha,39007,Bhawanipatna,0
-,,1,ER,161794,Odisha,39007,Bhubaneshwar,25894
-,,1,ER,161794,Odisha,39007,Cutack,5515
-,,1,ER,161794,Odisha,39007,Kendujhar,549
-,,1,ER,161794,Odisha,39007,Koraput,0
-,,1,ER,161794,Odisha,39007,Phulbani,0
-,,1,ER,161794,Odisha,39007,Sambalpur,5189
-,,1,ER,161794,Odisha,39007,Rourkela,0
-,,1,ER,161794,Odisha,39007,Dhenkenal,0
-,,1,ER,161794,A & N Islands,456,Car Nicobar,0
-,,1,ER,161794,A & N Islands,456,Port Blair,456
-,,1,NER,25679,"Anunachal
+CGL,2016,1,ER,161794,Odisha,39007,Bhawanipatna,0
+CGL,2016,1,ER,161794,Odisha,39007,Bhubaneshwar,25894
+CGL,2016,1,ER,161794,Odisha,39007,Cutack,5515
+CGL,2016,1,ER,161794,Odisha,39007,Kendujhar,549
+CGL,2016,1,ER,161794,Odisha,39007,Koraput,0
+CGL,2016,1,ER,161794,Odisha,39007,Phulbani,0
+CGL,2016,1,ER,161794,Odisha,39007,Sambalpur,5189
+CGL,2016,1,ER,161794,Odisha,39007,Rourkela,0
+CGL,2016,1,ER,161794,Odisha,39007,Dhenkenal,0
+CGL,2016,1,ER,161794,A & N Islands,456,Car Nicobar,0
+CGL,2016,1,ER,161794,A & N Islands,456,Port Blair,456
+CGL,2016,1,NER,25679,"Anunachal
  Pradesh",794,Itanagar,794
-,,1,NER,25679,Assam,12481,Barpeta,
-,,1,NER,25679,Assam,12481,Dibrugarh ,1691
-,,1,NER,25679,Assam,12481,Diphu,0
-,,1,NER,25679,Assam,12481,Goalpara,0
-,,1,NER,25679,Assam,12481,"Guwahati
+CGL,2016,1,NER,25679,Assam,12481,Barpeta,
+CGL,2016,1,NER,25679,Assam,12481,Dibrugarh ,1691
+CGL,2016,1,NER,25679,Assam,12481,Diphu,0
+CGL,2016,1,NER,25679,Assam,12481,Goalpara,0
+CGL,2016,1,NER,25679,Assam,12481,"Guwahati
 (Dispur)",8858
-,,1,NER,25679,Assam,12481,Halflong,
-,,1,NER,25679,Assam,12481,Jorhat,940
-,,1,NER,25679,Assam,12481,Kokrajhar,549
-,,1,NER,25679,Assam,12481,Lakhimpur,0
-,,1,NER,25679,Assam,12481,Sivasagar,0
-,,1,NER,25679,Assam,12481,Silchar,992
-,,1,NER,25679,Assam,12481,Tezpur,0
-,,1,NER,25679,Nagaland,2062,Dimapur,0
-,,1,NER,25679,Nagaland,2062,Kohima,2062
-,,1,NER,25679,Meghalaya,2456,Shilong,2456
-,,1,NER,25679,Meghalaya,2456,Tura,0
-,,1,NER,25679,Manipur,5719,Imphal,4634
-,,1,NER,25679,Manipur,5719,Churachandpur,1085
-,,1,NER,25679,Manipur,5719,Ukhrul,0
-,,1,NER,25679,Tripura,1616,Agartala,1616
-,,1,NER,25679,Mizoram,551,Aizwal,551
-,,1,MPR,77331,Madhya pradesh,61957,Bhopal,21474
-,,1,MPR,77331,Madhya pradesh,61957,Chataarpur,0
-,,1,MPR,77331,Madhya pradesh,61957,Chindwara,1061
-,,1,MPR,77331,Madhya pradesh,61957,Guna,448
-,,1,MPR,77331,Madhya pradesh,61957,Gwalior,8151
-,,1,MPR,77331,Madhya pradesh,61957,Indore,15931
-,,1,MPR,77331,Madhya pradesh,61957,Jabalpur,9372
-,,1,MPR,77331,Madhya pradesh,61957,Jhabua,0
-,,1,MPR,77331,Madhya pradesh,61957,Khandwa,680
-,,1,MPR,77331,Madhya pradesh,61957,Mandsaur,0
-,,1,MPR,77331,Madhya pradesh,61957,Ratlam,1434
-,,1,MPR,77331,Madhya pradesh,61957,Rewa,0
-,,1,MPR,77331,Madhya pradesh,61957,Shahdol,0
-,,1,MPR,77331,Madhya pradesh,61957,Satna,2129
-,,1,MPR,77331,Madhya pradesh,61957,Sagar,1237
-,,1,MPR,77331,Madhya pradesh,61957,Ujjain,0
-,,1,MPR,77331,Chhattisgarh,15374,Ambikapur,476
-,,1,MPR,77331,Chhattisgarh,15374,Bilaspur,3745
-,,1,MPR,77331,Chhattisgarh,15374,Jagdalpur,257
-,,1,MPR,77331,Chhattisgarh,15374,Raipur,5962
-,,1,MPR,77331,Chhattisgarh,15374,Durg-Bhilai,4934
-,,1,MPR,77331,Chhattisgarh,15374,Bhilainagar,0
-,,1,WR,127647,Gujrat,30086,Ahmedabad,16988
-,,1,WR,127647,Gujrat,30086,vadodara(Bhopal,3999
-,,1,WR,127647,Gujrat,30086,Bhuj,0
-,,1,WR,127647,Gujrat,30086,"Panchmahal
+CGL,2016,1,NER,25679,Assam,12481,Halflong,
+CGL,2016,1,NER,25679,Assam,12481,Jorhat,940
+CGL,2016,1,NER,25679,Assam,12481,Kokrajhar,549
+CGL,2016,1,NER,25679,Assam,12481,Lakhimpur,0
+CGL,2016,1,NER,25679,Assam,12481,Sivasagar,0
+CGL,2016,1,NER,25679,Assam,12481,Silchar,992
+CGL,2016,1,NER,25679,Assam,12481,Tezpur,0
+CGL,2016,1,NER,25679,Nagaland,2062,Dimapur,0
+CGL,2016,1,NER,25679,Nagaland,2062,Kohima,2062
+CGL,2016,1,NER,25679,Meghalaya,2456,Shilong,2456
+CGL,2016,1,NER,25679,Meghalaya,2456,Tura,0
+CGL,2016,1,NER,25679,Manipur,5719,Imphal,4634
+CGL,2016,1,NER,25679,Manipur,5719,Churachandpur,1085
+CGL,2016,1,NER,25679,Manipur,5719,Ukhrul,0
+CGL,2016,1,NER,25679,Tripura,1616,Agartala,1616
+CGL,2016,1,NER,25679,Mizoram,551,Aizwal,551
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Bhopal,21474
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Chataarpur,0
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Chindwara,1061
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Guna,448
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Gwalior,8151
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Indore,15931
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Jabalpur,9372
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Jhabua,0
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Khandwa,680
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Mandsaur,0
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Ratlam,1434
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Rewa,0
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Shahdol,0
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Satna,2129
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Sagar,1237
+CGL,2016,1,MPR,77331,Madhya pradesh,61957,Ujjain,0
+CGL,2016,1,MPR,77331,Chhattisgarh,15374,Ambikapur,476
+CGL,2016,1,MPR,77331,Chhattisgarh,15374,Bilaspur,3745
+CGL,2016,1,MPR,77331,Chhattisgarh,15374,Jagdalpur,257
+CGL,2016,1,MPR,77331,Chhattisgarh,15374,Raipur,5962
+CGL,2016,1,MPR,77331,Chhattisgarh,15374,Durg-Bhilai,4934
+CGL,2016,1,MPR,77331,Chhattisgarh,15374,Bhilainagar,0
+CGL,2016,1,WR,127647,Gujrat,30086,Ahmedabad,16988
+CGL,2016,1,WR,127647,Gujrat,30086,vadodara(Bhopal,3999
+CGL,2016,1,WR,127647,Gujrat,30086,Bhuj,0
+CGL,2016,1,WR,127647,Gujrat,30086,"Panchmahal
 (godhra)",0
-,,1,WR,127647,Gujrat,30086,Rajkot,3447
-,,1,WR,127647,Gujrat,30086,Surat,4527
-,,1,WR,127647,Gujrat,30086,Valsad,0
-,,1,WR,127647,Gujrat,30086,Bhavnagar,836
-,,1,WR,127647,Gujrat,30086,Kuchchh(kutch),289
-,,1,WR,127647,Gujrat,30086,Anand,0
-,,1,WR,127647,Gujrat,30086,Gandhinagar,0
-,,1,WR,127647,Gujrat,30086,Mehsana,0
-,,1,WR,127647,Maharastra,96772,Amravati,5709
-,,1,WR,127647,Maharastra,96772,Aurangabad,9422
-,,1,WR,127647,Maharastra,96772,Kolhapur,4910
-,,1,WR,127647,Maharastra,96772,Mumbai,17427
-,,1,WR,127647,Maharastra,96772,Nagpur,18111
-,,1,WR,127647,Maharastra,96772,Nanded,1314
-,,1,WR,127647,Maharastra,96772,Nashik,3882
-,,1,WR,127647,Maharastra,96772,Pune,24746
-,,1,WR,127647,Maharastra,96772,Ratnagiri,0
-,,1,WR,127647,Maharastra,96772,Thane,5700
-,,1,WR,127647,Maharastra,96772,Bhandara,1445
-,,1,WR,127647,Maharastra,96772,chandrapur,1330
-,,1,WR,127647,Maharastra,96772,Akola,1008
-,,1,WR,127647,Maharastra,96772,Jalgaon,1768
-,,1,WR,127647,Maharastra,96772,Ahmednagar,0
-,,1,WR,127647,Maharastra,96772,Alibag(Alibaug),0
-,,1,WR,127647,Maharastra,96772,Navi Mumbai,0
-,,1,WR,127647,Goa,789,Panaja(Panjim),789
-,,1,SR,120587,Andhra Pradesh,61201,Guntur,15105
-,,1,SR,120587,Andhra Pradesh,61201,Kurnool,8121
-,,1,SR,120587,Andhra Pradesh,61201,Rajahmundry,10027
-,,1,SR,120587,Andhra Pradesh,61201,Srikakulam,0
-,,1,SR,120587,Andhra Pradesh,61201,Tirupati,9227
-,,1,SR,120587,Andhra Pradesh,61201,Vishakhapatnam,18721
-,,1,SR,120587,Andhra Pradesh,61201,Kakinada,0
-,,1,SR,120587,Andhra Pradesh,61201,Nellore,0
-,,1,SR,120587,Andhra Pradesh,61201,Chirala,0
-,,1,SR,120587,Andhra Pradesh,61201,Vizianagaram,0
-,,1,SR,120587,Telangana,0,Hyderabad,0
-,,1,SR,120587,Telangana,0,Nizamabad,0
-,,1,SR,120587,Telangana,0,Warangal,0
-,,1,SR,120587,Telangana,0,Karimnagar,0
-,,1,SR,120587,Tamil Nadu,54481,Chennai(Madras),25621
-,,1,SR,120587,Tamil Nadu,54481,Coimbatore,6965
-,,1,SR,120587,Tamil Nadu,54481,Kanchipuram,0
-,,1,SR,120587,Tamil Nadu,54481,Madurai,8207
-,,1,SR,120587,Tamil Nadu,54481,Salem,0
-,,1,SR,120587,Tamil Nadu,54481,Tiruchirapalli,6577
-,,1,SR,120587,Tamil Nadu,54481,Tirunelveli,7111
-,,1,SR,120587,Tamil Nadu,54481,Vellore,0
-,,1,SR,120587,Puducherry,4905,Puducherry,4905
-,,1,KKR,60192,Karnataka,25238,"Bengaluru
+CGL,2016,1,WR,127647,Gujrat,30086,Rajkot,3447
+CGL,2016,1,WR,127647,Gujrat,30086,Surat,4527
+CGL,2016,1,WR,127647,Gujrat,30086,Valsad,0
+CGL,2016,1,WR,127647,Gujrat,30086,Bhavnagar,836
+CGL,2016,1,WR,127647,Gujrat,30086,Kuchchh(kutch),289
+CGL,2016,1,WR,127647,Gujrat,30086,Anand,0
+CGL,2016,1,WR,127647,Gujrat,30086,Gandhinagar,0
+CGL,2016,1,WR,127647,Gujrat,30086,Mehsana,0
+CGL,2016,1,WR,127647,Maharastra,96772,Amravati,5709
+CGL,2016,1,WR,127647,Maharastra,96772,Aurangabad,9422
+CGL,2016,1,WR,127647,Maharastra,96772,Kolhapur,4910
+CGL,2016,1,WR,127647,Maharastra,96772,Mumbai,17427
+CGL,2016,1,WR,127647,Maharastra,96772,Nagpur,18111
+CGL,2016,1,WR,127647,Maharastra,96772,Nanded,1314
+CGL,2016,1,WR,127647,Maharastra,96772,Nashik,3882
+CGL,2016,1,WR,127647,Maharastra,96772,Pune,24746
+CGL,2016,1,WR,127647,Maharastra,96772,Ratnagiri,0
+CGL,2016,1,WR,127647,Maharastra,96772,Thane,5700
+CGL,2016,1,WR,127647,Maharastra,96772,Bhandara,1445
+CGL,2016,1,WR,127647,Maharastra,96772,chandrapur,1330
+CGL,2016,1,WR,127647,Maharastra,96772,Akola,1008
+CGL,2016,1,WR,127647,Maharastra,96772,Jalgaon,1768
+CGL,2016,1,WR,127647,Maharastra,96772,Ahmednagar,0
+CGL,2016,1,WR,127647,Maharastra,96772,Alibag(Alibaug),0
+CGL,2016,1,WR,127647,Maharastra,96772,Navi Mumbai,0
+CGL,2016,1,WR,127647,Goa,789,Panaja(Panjim),789
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Guntur,15105
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Kurnool,8121
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Rajahmundry,10027
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Srikakulam,0
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Tirupati,9227
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Vishakhapatnam,18721
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Kakinada,0
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Nellore,0
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Chirala,0
+CGL,2016,1,SR,120587,Andhra Pradesh,61201,Vizianagaram,0
+CGL,2016,1,SR,120587,Telangana,0,Hyderabad,0
+CGL,2016,1,SR,120587,Telangana,0,Nizamabad,0
+CGL,2016,1,SR,120587,Telangana,0,Warangal,0
+CGL,2016,1,SR,120587,Telangana,0,Karimnagar,0
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Chennai(Madras),25621
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Coimbatore,6965
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Kanchipuram,0
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Madurai,8207
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Salem,0
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Tiruchirapalli,6577
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Tirunelveli,7111
+CGL,2016,1,SR,120587,Tamil Nadu,54481,Vellore,0
+CGL,2016,1,SR,120587,Puducherry,4905,Puducherry,4905
+CGL,2016,1,KKR,60192,Karnataka,25238,"Bengaluru
 (Bengalore)",15827
-,,1,KKR,60192,Karnataka,25238,Belgavi(Belgaum),0
-,,1,KKR,60192,Karnataka,25238,Bijapur,0
-,,1,KKR,60192,Karnataka,25238,Dharwar,3631
-,,1,KKR,60192,Karnataka,25238,"Kalaburagi
+CGL,2016,1,KKR,60192,Karnataka,25238,Belgavi(Belgaum),0
+CGL,2016,1,KKR,60192,Karnataka,25238,Bijapur,0
+CGL,2016,1,KKR,60192,Karnataka,25238,Dharwar,3631
+CGL,2016,1,KKR,60192,Karnataka,25238,"Kalaburagi
 (Gulbarga)",1573
-,,1,KKR,60192,Karnataka,25238,Hassan,0
-,,1,KKR,60192,Karnataka,25238,Kolar,0
-,,1,KKR,60192,Karnataka,25238,"Mangaluru
+CGL,2016,1,KKR,60192,Karnataka,25238,Hassan,0
+CGL,2016,1,KKR,60192,Karnataka,25238,Kolar,0
+CGL,2016,1,KKR,60192,Karnataka,25238,"Mangaluru
 (Manglore)",1465
-,,1,KKR,60192,Karnataka,25238,Mysuru(Mysore),2742
-,,1,KKR,60192,Karnataka,25238,Shivamogga(Shimoga),0
-,,1,KKR,60192,Karnataka,25238,Hubballi(Hubli),0
-,,1,KKR,60192,Karnataka,25238,Udupi,0
-,,1,KKR,60192,Kerala,34954,Alappuzha,0
-,,1,KKR,60192,Kerala,34954,Kannur(Cannanor),0
-,,1,KKR,60192,Kerala,34954,Kalpeta,0
-,,1,KKR,60192,Kerala,34954,Kochi(cochin),7094
-,,1,KKR,60192,Kerala,34954,Kottayam,0
-,,1,KKR,60192,Kerala,34954,Kozhikode(Calicut),0
-,,1,KKR,60192,Kerala,34954,Malappuram,0
-,,1,KKR,60192,Kerala,34954,Palakkad,0
-,,1,KKR,60192,Kerala,34954,Pathanmthitta,0
-,,1,KKR,60192,Kerala,34954,Kollam,0
-,,1,KKR,60192,Kerala,34954,Thiruvananthpuram,12924
-,,1,KKR,60192,Kerala,34954,Thrissur(Trichur),5203
-,,1,KKR,60192,Kerala,34954,Ernakulam,0
-,,1,KKR,60192,Lakshadweep,0,Kavaratti,0
+CGL,2016,1,KKR,60192,Karnataka,25238,Mysuru(Mysore),2742
+CGL,2016,1,KKR,60192,Karnataka,25238,Shivamogga(Shimoga),0
+CGL,2016,1,KKR,60192,Karnataka,25238,Hubballi(Hubli),0
+CGL,2016,1,KKR,60192,Karnataka,25238,Udupi,0
+CGL,2016,1,KKR,60192,Kerala,34954,Alappuzha,0
+CGL,2016,1,KKR,60192,Kerala,34954,Kannur(Cannanor),0
+CGL,2016,1,KKR,60192,Kerala,34954,Kalpeta,0
+CGL,2016,1,KKR,60192,Kerala,34954,Kochi(cochin),7094
+CGL,2016,1,KKR,60192,Kerala,34954,Kottayam,0
+CGL,2016,1,KKR,60192,Kerala,34954,Kozhikode(Calicut),0
+CGL,2016,1,KKR,60192,Kerala,34954,Malappuram,0
+CGL,2016,1,KKR,60192,Kerala,34954,Palakkad,0
+CGL,2016,1,KKR,60192,Kerala,34954,Pathanmthitta,0
+CGL,2016,1,KKR,60192,Kerala,34954,Kollam,0
+CGL,2016,1,KKR,60192,Kerala,34954,Thiruvananthpuram,12924
+CGL,2016,1,KKR,60192,Kerala,34954,Thrissur(Trichur),5203
+CGL,2016,1,KKR,60192,Kerala,34954,Ernakulam,0
+CGL,2016,1,KKR,60192,Lakshadweep,0,Kavaratti,0
