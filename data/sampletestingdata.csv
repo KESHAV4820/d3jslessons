@@ -2,260 +2,262 @@ exam_name,exam_year,exam_tier,zone_name,zone_score,state_name,state_score,city_n
 CGL,2016,1,"North Western
          Region
  Chandigarh",81491,Jammu & Kashmir,16714,Anantnag,779
-,,,,,,,Baramullah,645
-,,,,,,,Bhaderwah,
-,,,,,,,Jammu,11364
-,,,,,,,Rajouri,136
-,,,,,,,Srinagar(J&K),3790
-,,,,,,,Samba,
-,,,,,Ladakh,425,Leh,425
-,,,,,"Himachal
- Pradesh",4877,Dharamshala,
-,,,,,,,Hamirpur,1708
-,,,,,,,Shimla,3169
-,,,,,Punjab,25413,Bhathinda ,3961
-,,,,,,,Jalandhar ,8064
-,,,,,,,Patiala,7170
-,,,,,,,Amritsar,6218
-,,,,,,,Ludhiana,
-,,,,,,,Mohali,
-,,,,,Chandigarh,34062,Chandigarh,34062
-,,,,,Haryana,,Ambala,
-,,,,,,,Bhiwani,
-,,,,,,,Hisar,
-,,,,,,,Karnal,
-,,,,,,,Yamunanagar,
-,,,,,,,Kurukshetra,
-,,,"Northern 
+,,1,,,Jammu & Kashmir,16714,Baramullah,645
+,,1,,,Jammu & Kashmir,16714,Bhaderwah,
+,,1,,,Jammu & Kashmir,16714,Jammu,11364
+,,1,,,Jammu & Kashmir,16714,Rajouri,136
+,,1,,,Jammu & Kashmir,16714,Srinagar(J&K),3790
+,,1,,,Jammu & Kashmir,16714,Samba,0
+,,1,,,Ladakh,425,Leh,425
+,,1,,,"Himachal
+ Pradesh",4877,Dharamshala,0
+,,1,,,"Himachal
+ Pradesh",4877,Hamirpur,1708
+,,1,,,"Himachal
+ Pradesh",4877,Shimla,3169
+,,1,,,Punjab,25413,Bhathinda ,3961
+,,1,,,Punjab,25413,Jalandhar ,8064
+,,1,,,Punjab,25413,Patiala,7170
+,,1,,,Punjab,25413,Amritsar,6218
+,,1,,,Punjab,25413,Ludhiana,0
+,,1,,,Punjab,25413,Mohali,0
+,,1,,,Chandigarh,34062,Chandigarh,34062
+,,1,,,Haryana,0,Ambala,0
+,,1,,,Haryana,0,Bhiwani,0
+,,1,,,Haryana,0,Hisar,0
+,,1,,,Haryana,0,Karnal,0
+,,1,,,Haryana,0,Yamunanagar,0
+,,1,,,Haryana,0,Kurukshetra,0
+,,1,"Northern 
 Region 
 Delhi",390968,Uttarakhand,28194,Almora,344
-,,,,,,,Dehradun,15963
-,,,,,,,Haldwani,3834
-,,,,,,,"Srinagar
+,,1,,,Uttarakhand,28194,Dehradun,15963
+,,1,,,Uttarakhand,28194,Haldwani,3834
+,,1,,,Uttarakhand,28194,"Srinagar
 (uttarakhand)",229
-,,,,,,,Haridwar,7824
-,,,,,,,Roorkee,
-,,,,,Delhi,230940,Delhi,230940
-,,,,,Rajasthan,131834,Ajmer ,6325
-,,,,,,,Alwar,10974
-,,,,,,,Bharatpur,
-,,,,,,,Bikaner,5755
-,,,,,,,jaipur,80257
-,,,,,,,Jodhpur,7610
-,,,,,,,kota,9545
-,,,,,,,Sriganganagar ,6632
-,,,,,,,Udaipur,4736
-,,,,,,,Dausa,
-,,,,,,,Sikar,
-,,,Central Region,377086,Utar pradesh,252410,Agra,25557
-,,,,,,,Aligarh,
-,,,,,,,Prayagraj,50146
-,,,,,,,Balia,
-,,,,,,,Bareilly,13950
-,,,,,,,"Ayodhya
-(Faizabad)",
-,,,,,,,Gorakhpur,15406
-,,,,,,,Jhansi,
-,,,,,,,Kanpur,40046
-,,,,,,,Lucknow,55818
-,,,,,,,Meerut,25318
-,,,,,,,Mirzapur,
-,,,,,,,"Varanasi
+,,1,,,Uttarakhand,28194,Haridwar,7824
+,,1,,,Uttarakhand,28194,Roorkee,
+,,1,,,Delhi,230940,Delhi,230940
+,,1,,,Rajasthan,131834,Ajmer ,6325
+,,1,,,Rajasthan,131834,Alwar,10974
+,,1,,,Rajasthan,131834,Bharatpur,
+,,1,,,Rajasthan,131834,Bikaner,5755
+,,1,,,Rajasthan,131834,jaipur,80257
+,,1,,,Rajasthan,131834,Jodhpur,7610
+,,1,,,Rajasthan,131834,kota,9545
+,,1,,,Rajasthan,131834,Sriganganagar ,6632
+,,1,,,Rajasthan,131834,Udaipur,4736
+,,1,,,Rajasthan,131834,Dausa,0
+,,1,,,Rajasthan,131834,Sikar,0
+,,1,Central Region,377086,Utar pradesh,252410,Agra,25557
+,,1,,,Utar pradesh,252410,Aligarh,0
+,,1,,,Utar pradesh,252410,Prayagraj,50146
+,,1,,,Utar pradesh,252410,Balia,0
+,,1,,,Utar pradesh,252410,Bareilly,13950
+,,1,,,Utar pradesh,252410,"Ayodhya
+(Faizabad)",0
+,,1,,,Utar pradesh,252410,Gorakhpur,15406
+,,1,,,Utar pradesh,252410,Jhansi,0
+,,1,,,Utar pradesh,252410,Kanpur,40046
+,,1,,,Utar pradesh,252410,Lucknow,55818
+,,1,,,Utar pradesh,252410,Meerut,25318
+,,1,,,Utar pradesh,252410,Mirzapur,0
+,,1,,,Utar pradesh,252410,"Varanasi
 (Banaras)",26169
-,,,,,,,Mathura,
-,,,,,,,Moradabad,
-,,,,,,,Muzafarnagar,
-,,,,,,,"Gautam 
+,,1,,,Utar pradesh,252410,Mathura,0
+,,1,,,Utar pradesh,252410,Moradabad,0
+,,1,,,Utar pradesh,252410,Muzafarnagar,0
+,,1,,,Utar pradesh,252410,"Gautam 
 Budhnagar
-(Noida)",
-,,,,,,,Greater Noida,
-,,,,,Bihar,124676,Bhagalpur,15313
-,,,,,,,Darbahanga,
-,,,,,,,Gaya,
-,,,,,,,Katihar,
-,,,,,,,Muzaffarpur,20893
-,,,,,,,Patna,88470
-,,,,,,,Ara(Arrah),
-,,,,,,,"Aurangabad
-(Bihar)",
-,,,,,,,Purnia,
-,,,,161794,Sikkim,454,Gangtok,454
-,,,,,Jharkhand,43535,Bokarp,
-,,,,,,,Chaibasa,
-,,,,,,,Dumka,
-,,,,,,,Hazaribag,
-,,,,,,,Ranchi,43535
-,,,,,,,Dhanbad,
-,,,,,,,Jamshedpur,
-,,,,,West Bengal,78342,Bankura,
-,,,,,,,Barasat,6989
-,,,,,,,Berhampore,1860
-,,,,,,,"Bardhman
-(Burdwan)",
-,,,,,,,Chinsurah,7970
-,,,,,,,Cooch Behar ,
-,,,,,,,Darjeeling,
-,,,,,,,Jalpaiguri,1417
-,,,,,,,Jhargram,
-,,,,,,,Kolkata,511247
-,,,,,,,Krishnanagar,
-,,,,,,,Malda,2005
-,,,,,,,Midnapur,3433
-,,,,,,,Purulia,
-,,,,,,,siliguri,5281
-,,,,,,,Suri,
-,,,,,,,Asansol,
-,,,,,,,Hooghly,
-,,,,,,,Kalyani,
-,,,,,Odisha,39007,Balasore,
-,,,,,,,"Berhampore
-(Odisha)",
-,,,,,,,Bhawanipatna,
-,,,,,,,Bhubaneshwar,25894
-,,,,,,,Cutack,5515
-,,,,,,,Kendujhar,549
-,,,,,,,Koraput,
-,,,,,,,Phulbani,
-,,,,,,,Sambalpur,5189
-,,,,,,,Rourkela,
-,,,,,,,Dhenkenal,
-,,,,,A & N Islands,456,Car Nicobar,
-,,,,,,,Port Blair,456
-,,,"North Eastern
+(Noida)",0
+,,1,,,Utar pradesh,252410,Greater Noida,
+,,1,,,Bihar,124676,Bhagalpur,15313
+,,1,,,Bihar,124676,Darbahanga,0
+,,1,,,Bihar,124676,Gaya,0
+,,1,,,Bihar,124676,Katihar,0
+,,1,,,Bihar,124676,Muzaffarpur,20893
+,,1,,,Bihar,124676,Patna,88470
+,,1,,,Bihar,124676,Ara(Arrah),0
+,,1,,,Bihar,124676,"Aurangabad
+(Bihar)",0
+,,1,,,Bihar,124676,Purnia,0
+,,1,,161794,Sikkim,454,Gangtok,454
+,,1,,,Jharkhand,43535,Bokarp,0
+,,1,,,Jharkhand,43535,Chaibasa,0
+,,1,,,Jharkhand,43535,Dumka,0
+,,1,,,Jharkhand,43535,Hazaribag,0
+,,1,,,Jharkhand,43535,Ranchi,43535
+,,1,,,Jharkhand,43535,Dhanbad,0
+,,1,,,Jharkhand,43535,Jamshedpur,0
+,,1,,,West Bengal,78342,Bankura,0
+,,1,,,West Bengal,78342,Barasat,6989
+,,1,,,West Bengal,78342,Berhampore,1860
+,,1,,,West Bengal,78342,"Bardhman
+(Burdwan)",0
+,,1,,,West Bengal,78342,Chinsurah,7970
+,,1,,,West Bengal,78342,Cooch Behar ,0
+,,1,,,West Bengal,78342,Darjeeling,0
+,,1,,,West Bengal,78342,Jalpaiguri,1417
+,,1,,,West Bengal,78342,Jhargram,0
+,,1,,,West Bengal,78342,Kolkata,511247
+,,1,,,West Bengal,78342,Krishnanagar,0
+,,1,,,West Bengal,78342,Malda,2005
+,,1,,,West Bengal,78342,Midnapur,3433
+,,1,,,West Bengal,78342,Purulia,0
+,,1,,,West Bengal,78342,siliguri,5281
+,,1,,,West Bengal,78342,Suri,0
+,,1,,,West Bengal,78342,Asansol,0
+,,1,,,West Bengal,78342,Hooghly,0
+,,1,,,West Bengal,78342,Kalyani,0
+,,1,,,Odisha,39007,Balasore,0
+,,1,,,Odisha,39007,"Berhampore
+(Odisha)",0
+,,1,,,Odisha,39007,Bhawanipatna,0
+,,1,,,Odisha,39007,Bhubaneshwar,25894
+,,1,,,Odisha,39007,Cutack,5515
+,,1,,,Odisha,39007,Kendujhar,549
+,,1,,,Odisha,39007,Koraput,0
+,,1,,,Odisha,39007,Phulbani,0
+,,1,,,Odisha,39007,Sambalpur,5189
+,,1,,,Odisha,39007,Rourkela,0
+,,1,,,Odisha,39007,Dhenkenal,0
+,,1,,,A & N Islands,456,Car Nicobar,0
+,,1,,,A & N Islands,456,Port Blair,456
+,,1,"North Eastern
  Region
  Guwahati",25679,"Anunachal
  Pradesh",794,Itanagar,794
-,,,,,Assam,12481,Barpeta,
-,,,,,,,Dibrugarh ,1691
-,,,,,,,Diphu,
-,,,,,,,Goalpara,
-,,,,,,,"Guwahati
+,,1,,,Assam,12481,Barpeta,
+,,1,,,Assam,12481,Dibrugarh ,1691
+,,1,,,Assam,12481,Diphu,0
+,,1,,,Assam,12481,Goalpara,0
+,,1,,,Assam,12481,"Guwahati
 (Dispur)",8858
-,,,,,,,Halflong,
-,,,,,,,Jorhat,940
-,,,,,,,Kokrajhar,549
-,,,,,,,Lakhimpur,
-,,,,,,,Sivasagar,
-,,,,,,,Silchar,992
-,,,,,,,Tezpur,
-,,,,,Nagaland,2062,Dimapur,
-,,,,,,,Kohima,2062
-,,,,,Meghalaya,2456,Shilong,2456
-,,,,,,,Tura,
-,,,,,Manipur,5719,Imphal,4634
-,,,,,,,Churachandpur,1085
-,,,,,,,Ukhrul,
-,,,,,Tripura,1616,Agartala,1616
-,,,,,Mizoram,551,Aizwal,551
-,,,"Madhya
+,,1,,,Assam,12481,Halflong,
+,,1,,,Assam,12481,Jorhat,940
+,,1,,,Assam,12481,Kokrajhar,549
+,,1,,,Assam,12481,Lakhimpur,0
+,,1,,,Assam,12481,Sivasagar,0
+,,1,,,Assam,12481,Silchar,992
+,,1,,,Assam,12481,Tezpur,0
+,,1,,,Nagaland,2062,Dimapur,0
+,,1,,,Nagaland,2062,Kohima,2062
+,,1,,,Meghalaya,2456,Shilong,2456
+,,1,,,Meghalaya,2456,Tura,0
+,,1,,,Manipur,5719,Imphal,4634
+,,1,,,Manipur,5719,Churachandpur,1085
+,,1,,,Manipur,5719,Ukhrul,0
+,,1,,,Tripura,1616,Agartala,1616
+,,1,,,Mizoram,551,Aizwal,551
+,,1,"Madhya
  Pradesh Rigion
  Raipur",77331,Madhya pradesh,61957,Bhopal,21474
-,,,,,,,Chataarpur,
-,,,,,,,Chindwara,1061
-,,,,,,,Guna,448
-,,,,,,,Gwalior,8151
-,,,,,,,Indore,15931
-,,,,,,,Jabalpur,9372
-,,,,,,,Jhabua,
-,,,,,,,Khandwa,680
-,,,,,,,Mandsaur,
-,,,,,,,Ratlam,1434
-,,,,,,,Rewa,
-,,,,,,,Shahdol,
-,,,,,,,Satna,2129
-,,,,,,,Sagar,1237
-,,,,,,,Ujjain,
-,,,,,Chhattisgarh,15374,Ambikapur,476
-,,,,,,,Bilaspur,3745
-,,,,,,,Jagdalpur,257
-,,,,,,,Raipur,5962
-,,,,,,,Durg-Bhilai,4934
-,,,,,,,Bhilainagar,
-,,,"Western Region
+,,1,,,Madhya pradesh,61957,Chataarpur,0
+,,1,,,Madhya pradesh,61957,Chindwara,1061
+,,1,,,Madhya pradesh,61957,Guna,448
+,,1,,,Madhya pradesh,61957,Gwalior,8151
+,,1,,,Madhya pradesh,61957,Indore,15931
+,,1,,,Madhya pradesh,61957,Jabalpur,9372
+,,1,,,Madhya pradesh,61957,Jhabua,0
+,,1,,,Madhya pradesh,61957,Khandwa,680
+,,1,,,Madhya pradesh,61957,Mandsaur,0
+,,1,,,Madhya pradesh,61957,Ratlam,1434
+,,1,,,Madhya pradesh,61957,Rewa,0
+,,1,,,Madhya pradesh,61957,Shahdol,0
+,,1,,,Madhya pradesh,61957,Satna,2129
+,,1,,,Madhya pradesh,61957,Sagar,1237
+,,1,,,Madhya pradesh,61957,Ujjain,0
+,,1,,,Chhattisgarh,15374,Ambikapur,476
+,,1,,,Chhattisgarh,15374,Bilaspur,3745
+,,1,,,Chhattisgarh,15374,Jagdalpur,257
+,,1,,,Chhattisgarh,15374,Raipur,5962
+,,1,,,Chhattisgarh,15374,Durg-Bhilai,4934
+,,1,,,Chhattisgarh,15374,Bhilainagar,0
+,,1,"Western Region
  Mumbai",127647,Gujrat,30086,Ahmedabad,16988
-,,,,,,,vadodara(Bhopal,3999
-,,,,,,,Bhuj,
-,,,,,,,"Panchmahal
-(godhra)",
-,,,,,,,Rajkot,3447
-,,,,,,,Surat,4527
-,,,,,,,Valsad,
-,,,,,,,Bhavnagar,836
-,,,,,,,Kuchchh(kutch),289
-,,,,,,,Anand,
-,,,,,,,Gandhinagar,
-,,,,,,,Mehsana,
-,,,,,Maharastra,96772,Amravati,5709
-,,,,,,,Aurangabad,9422
-,,,,,,,Kolhapur,4910
-,,,,,,,Mumbai,17427
-,,,,,,,Nagpur,18111
-,,,,,,,Nanded,1314
-,,,,,,,Nashik,3882
-,,,,,,,Pune,24746
-,,,,,,,Ratnagiri,
-,,,,,,,Thane,5700
-,,,,,,,Bhandara,1445
-,,,,,,,chandrapur,1330
-,,,,,,,Akola,1008
-,,,,,,,Jalgaon,1768
-,,,,,,,Ahmednagar,
-,,,,,,,Alibag(Alibaug),
-,,,,,,,Navi Mumbai,
-,,,,,Goa,789,Panaja(Panjim),789
-,,,"Southern
+,,1,,,Gujrat,30086,vadodara(Bhopal,3999
+,,1,,,Gujrat,30086,Bhuj,0
+,,1,,,Gujrat,30086,"Panchmahal
+(godhra)",0
+,,1,,,Gujrat,30086,Rajkot,3447
+,,1,,,Gujrat,30086,Surat,4527
+,,1,,,Gujrat,30086,Valsad,0
+,,1,,,Gujrat,30086,Bhavnagar,836
+,,1,,,Gujrat,30086,Kuchchh(kutch),289
+,,1,,,Gujrat,30086,Anand,0
+,,1,,,Gujrat,30086,Gandhinagar,0
+,,1,,,Gujrat,30086,Mehsana,0
+,,1,,,Maharastra,96772,Amravati,5709
+,,1,,,Maharastra,96772,Aurangabad,9422
+,,1,,,Maharastra,96772,Kolhapur,4910
+,,1,,,Maharastra,96772,Mumbai,17427
+,,1,,,Maharastra,96772,Nagpur,18111
+,,1,,,Maharastra,96772,Nanded,1314
+,,1,,,Maharastra,96772,Nashik,3882
+,,1,,,Maharastra,96772,Pune,24746
+,,1,,,Maharastra,96772,Ratnagiri,0
+,,1,,,Maharastra,96772,Thane,5700
+,,1,,,Maharastra,96772,Bhandara,1445
+,,1,,,Maharastra,96772,chandrapur,1330
+,,1,,,Maharastra,96772,Akola,1008
+,,1,,,Maharastra,96772,Jalgaon,1768
+,,1,,,Maharastra,96772,Ahmednagar,0
+,,1,,,Maharastra,96772,Alibag(Alibaug),0
+,,1,,,Maharastra,96772,Navi Mumbai,0
+,,1,,,Goa,789,Panaja(Panjim),789
+,,1,"Southern
  Region
  Chennai",120587,Andhra Pradesh,61201,Guntur,15105
-,,,,,,,Kurnool,8121
-,,,,,,,Rajahmundry,10027
-,,,,,,,Srikakulam,
-,,,,,,,Tirupati,9227
-,,,,,,,Vishakhapatnam,18721
-,,,,,,,Kakinada,
-,,,,,,,Nellore,
-,,,,,,,Chirala,
-,,,,,,,Vizianagaram,
-,,,,,Telangana,0,Hyderabad,
-,,,,,,,Nizamabad,
-,,,,,,,Warangal,
-,,,,,,,Karimnagar,
-,,,,,Tamil Nadu,54481,Chennai(Madras),25621
-,,,,,,,Coimbatore,6965
-,,,,,,,Kanchipuram,
-,,,,,,,Madurai,8207
-,,,,,,,Salem,
-,,,,,,,Tiruchirapalli,6577
-,,,,,,,Tirunelveli,7111
-,,,,,,,Vellore,
-,,,,,Puducherry,4905,Puducherry,4905
-,,,"Karnataka-
+,,1,,,Andhra Pradesh,61201,Kurnool,8121
+,,1,,,Andhra Pradesh,61201,Rajahmundry,10027
+,,1,,,Andhra Pradesh,61201,Srikakulam,0
+,,1,,,Andhra Pradesh,61201,Tirupati,9227
+,,1,,,Andhra Pradesh,61201,Vishakhapatnam,18721
+,,1,,,Andhra Pradesh,61201,Kakinada,0
+,,1,,,Andhra Pradesh,61201,Nellore,0
+,,1,,,Andhra Pradesh,61201,Chirala,0
+,,1,,,Andhra Pradesh,61201,Vizianagaram,0
+,,1,,,Telangana,0,Hyderabad,0
+,,1,,,Telangana,0,Nizamabad,0
+,,1,,,Telangana,0,Warangal,0
+,,1,,,Telangana,0,Karimnagar,0
+,,1,,,Tamil Nadu,54481,Chennai(Madras),25621
+,,1,,,Tamil Nadu,54481,Coimbatore,6965
+,,1,,,Tamil Nadu,54481,Kanchipuram,0
+,,1,,,Tamil Nadu,54481,Madurai,8207
+,,1,,,Tamil Nadu,54481,Salem,0
+,,1,,,Tamil Nadu,54481,Tiruchirapalli,6577
+,,1,,,Tamil Nadu,54481,Tirunelveli,7111
+,,1,,,Tamil Nadu,54481,Vellore,0
+,,1,,,Puducherry,4905,Puducherry,4905
+,,1,"Karnataka-
 Kerla Region
  Bangalore",60192,Karnataka,25238,"Bengaluru
 (Bengalore)",15827
-,,,,,,,Belgavi(Belgaum),
-,,,,,,,Bijapur,
-,,,,,,,Dharwar,3631
-,,,,,,,"Kalaburagi
+,,1,,,Karnataka,25238,Belgavi(Belgaum),0
+,,1,,,Karnataka,25238,Bijapur,0
+,,1,,,Karnataka,25238,Dharwar,3631
+,,1,,,Karnataka,25238,"Kalaburagi
 (Gulbarga)",1573
-,,,,,,,Hassan,
-,,,,,,,Kolar,
-,,,,,,,"Mangaluru
+,,1,,,Karnataka,25238,Hassan,0
+,,1,,,Karnataka,25238,Kolar,0
+,,1,,,Karnataka,25238,"Mangaluru
 (Manglore)",1465
-,,,,,,,Mysuru(Mysore),2742
-,,,,,,,Shivamogga(Shimoga),
-,,,,,,,Hubballi(Hubli),
-,,,,,,,Udupi,
-,,,,,Kerala,34954,Alappuzha,
-,,,,,,,Kannur(Cannanor),
-,,,,,,,Kalpeta,
-,,,,,,,Kochi(cochin),7094
-,,,,,,,Kottayam,
-,,,,,,,Kozhikode(Calicut),
-,,,,,,,Malappuram,
-,,,,,,,Palakkad,
-,,,,,,,Pathanmthitta,
-,,,,,,,Kollam,
-,,,,,,,Thiruvananthpuram,12924
-,,,,,,,Thrissur(Trichur),5203
-,,,,,,,Ernakulam,
-,,,,,Lakshadweep,,Kavaratti,
+,,1,,,Karnataka,25238,Mysuru(Mysore),2742
+,,1,,,Karnataka,25238,Shivamogga(Shimoga),0
+,,1,,,Karnataka,25238,Hubballi(Hubli),0
+,,1,,,Karnataka,25238,Udupi,0
+,,1,,,Kerala,34954,Alappuzha,0
+,,1,,,Kerala,34954,Kannur(Cannanor),0
+,,1,,,Kerala,34954,Kalpeta,0
+,,1,,,Kerala,34954,Kochi(cochin),7094
+,,1,,,Kerala,34954,Kottayam,0
+,,1,,,Kerala,34954,Kozhikode(Calicut),0
+,,1,,,Kerala,34954,Malappuram,0
+,,1,,,Kerala,34954,Palakkad,0
+,,1,,,Kerala,34954,Pathanmthitta,0
+,,1,,,Kerala,34954,Kollam,0
+,,1,,,Kerala,34954,Thiruvananthpuram,12924
+,,1,,,Kerala,34954,Thrissur(Trichur),5203
+,,1,,,Kerala,34954,Ernakulam,0
+,,1,,,Lakshadweep,0,Kavaratti,0
