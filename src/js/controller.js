@@ -79,7 +79,7 @@ const radius=5;
 
 // here we are declaring the area where chart shall be made
 const width=window.innerWidth;
-const height=window.innerHeight;
+const height=window.innerHeight-80;
 const svg1= select('body').append('svg').attr('width',width).attr('height',height);
 
 // generic code
