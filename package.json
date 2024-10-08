@@ -4,7 +4,7 @@
   "description": "to understand visual representation of data",
   "default": "index.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start:dev": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Keshav Rising",

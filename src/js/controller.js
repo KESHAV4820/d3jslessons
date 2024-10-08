@@ -11,6 +11,7 @@ import {csv,
         scalePoint,
         scaleOrdinal,
         scalePow,
+        scaleSqrt,
         scaleBand,
         scaleTime,
         extent,
@@ -18,6 +19,7 @@ import {csv,
         axisLeft,
         min,
         max,
+        format
 } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
 
 
@@ -55,6 +57,8 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 
 // console.log(csvDataPath);// Code Testing.
 
+const commaFormat = format(',');// this adds comma separator
+
 const parseRow = (d)=>{
     d.exam_year=+d.exam_year;
     d.exam_tier=+d.exam_tier;
@@ -69,17 +73,28 @@ const parseRow = (d)=>{
 // csv(csvDataPath, parseRow).then(data =>{console.log(data);});// Code Testing
 
 //VIEConcept Now i will define "Accessor functions". They are used to set value in "Idempotent style" of programming. In this, we program in a manner that user need not remember the "order and number of parameter" to be given to the function. You can pass the parameters in much more fluid manner, not totally fluid, but fluid to a great extent. They are very useful in largescale programming.
-const xCoordinate = (d) => d.zone_score;
+const xCoordinate = (d) => d.zone_score;//use zone_name going forward. 
 const yCoordinate = (d) => d.zone_score;
+const rValue = (d) => d.zone_score/1000;
+// console.log(rValue);// Code Testing
+
+
 
 //Margin Convention:  Here we are alloting margin around the charing area which will come after this. 
-const margin = {top:30, right:30, bottom:30, left:100,};
+const margin = {
+    top:30, 
+    right:30, 
+    bottom:30, 
+    left:100,
+};
+const maxRadius=15;
+const minRadius=3;
 
-const radius=5;
+// const radius=5;legacy code becouse i have implemented variable radious below. 
 
 // here we are declaring the area where chart shall be made
 const width=window.innerWidth;
-const height=window.innerHeight-80;
+const height=window.innerHeight-50;//800;
 const svg1= select('body').append('svg').attr('width',width).attr('height',height);
 
 // generic code
@@ -97,18 +112,20 @@ const main = async () =>{
     const yCoordinateOfCenter=scaleLinear().domain(extent(dataExtracted,yCoordinate)).range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max(dataExtracted,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
+    const rOfPlotCircle=scaleSqrt().domain([0,max(dataExtracted,rValue)]).range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
     const marks= dataExtracted.map(d =>({
         x: xCoordinateOfCenter(xCoordinate(d)),
         y: yCoordinateOfCenter(yCoordinate(d)),
-        title: `(${xCoordinate(d)},${yCoordinate(d)})`,// this will let us know the value on the point.
+        title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
+        r: rOfPlotCircle(rValue(d)),
     }));
     console.log(marks);//Code Testing
     
 
     // svg1.selectAll('circle').data(dataExtracted).join('circle').attr('cx');
-    svg1.selectAll('circle').data(marks).join('circle').attr('cx', d=> d.x).attr('cy', d=> d.y).attr('r',radius).append('title').text(d=>d.title);
+    svg1.selectAll('circle').data(marks).join('circle').attr('cx', d=> d.x).attr('cy', d=> d.y).attr('r',(d) => d.r).append('title').text(d=>d.title);
 
     // putting y and x axis in the chart. 
     svg1.append('g').attr('transform',`translate(${margin.left},0)`).call(axisLeft(yCoordinateOfCenter));
