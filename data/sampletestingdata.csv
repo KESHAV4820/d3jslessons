@@ -1,7 +1,7 @@
 exam_name,exam_year,exam_tier,zone_name,zone_score,state_name,state_score,city_name,city_score
 CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Anantnag,779
 CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Baramullah,645
-CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Bhaderwah,
+CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Bhaderwah,0
 CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Jammu,11364
 CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Rajouri,136
 CGL,2016,1,NWR,81491,Jammu & Kashmir,16714,Srinagar(J&K),3790
@@ -32,11 +32,11 @@ CGL,2016,1,NR,390968,Uttarakhand,28194,Haldwani,3834
 CGL,2016,1,NR,390968,Uttarakhand,28194,"Srinagar
 (uttarakhand)",229
 CGL,2016,1,NR,390968,Uttarakhand,28194,Haridwar,7824
-CGL,2016,1,NR,390968,Uttarakhand,28194,Roorkee,
+CGL,2016,1,NR,390968,Uttarakhand,28194,Roorkee,0
 CGL,2016,1,NR,390968,Delhi,230940,Delhi,230940
 CGL,2016,1,NR,390968,Rajasthan,131834,Ajmer ,6325
 CGL,2016,1,NR,390968,Rajasthan,131834,Alwar,10974
-CGL,2016,1,NR,390968,Rajasthan,131834,Bharatpur,
+CGL,2016,1,NR,390968,Rajasthan,131834,Bharatpur,0
 CGL,2016,1,NR,390968,Rajasthan,131834,Bikaner,5755
 CGL,2016,1,NR,390968,Rajasthan,131834,jaipur,80257
 CGL,2016,1,NR,390968,Rajasthan,131834,Jodhpur,7610
@@ -121,13 +121,13 @@ CGL,2016,1,ER,161794,A & N Islands,456,Car Nicobar,0
 CGL,2016,1,ER,161794,A & N Islands,456,Port Blair,456
 CGL,2016,1,NER,25679,"Anunachal
  Pradesh",794,Itanagar,794
-CGL,2016,1,NER,25679,Assam,12481,Barpeta,
+CGL,2016,1,NER,25679,Assam,12481,Barpeta,0
 CGL,2016,1,NER,25679,Assam,12481,Dibrugarh ,1691
 CGL,2016,1,NER,25679,Assam,12481,Diphu,0
 CGL,2016,1,NER,25679,Assam,12481,Goalpara,0
 CGL,2016,1,NER,25679,Assam,12481,"Guwahati
 (Dispur)",8858
-CGL,2016,1,NER,25679,Assam,12481,Halflong,
+CGL,2016,1,NER,25679,Assam,12481,Halflong,0
 CGL,2016,1,NER,25679,Assam,12481,Jorhat,940
 CGL,2016,1,NER,25679,Assam,12481,Kokrajhar,549
 CGL,2016,1,NER,25679,Assam,12481,Lakhimpur,0
@@ -166,7 +166,7 @@ CGL,2016,1,MPR,77331,Chhattisgarh,15374,Raipur,5962
 CGL,2016,1,MPR,77331,Chhattisgarh,15374,Durg-Bhilai,4934
 CGL,2016,1,MPR,77331,Chhattisgarh,15374,Bhilainagar,0
 CGL,2016,1,WR,127647,Gujrat,30086,Ahmedabad,16988
-CGL,2016,1,WR,127647,Gujrat,30086,vadodara(Bhopal,3999
+CGL,2016,1,WR,127647,Gujrat,30086,vadodara(Baroda)l,3999
 CGL,2016,1,WR,127647,Gujrat,30086,Bhuj,0
 CGL,2016,1,WR,127647,Gujrat,30086,"Panchmahal
 (godhra)",0
@@ -195,7 +195,7 @@ CGL,2016,1,WR,127647,Maharastra,96772,Jalgaon,1768
 CGL,2016,1,WR,127647,Maharastra,96772,Ahmednagar,0
 CGL,2016,1,WR,127647,Maharastra,96772,Alibag(Alibaug),0
 CGL,2016,1,WR,127647,Maharastra,96772,Navi Mumbai,0
-CGL,2016,1,WR,127647,Goa,789,Panaja(Panjim),789
+CGL,2016,1,WR,127647,Goa,789,Panaji(Panjim),789
 CGL,2016,1,SR,120587,Andhra Pradesh,61201,Guntur,15105
 CGL,2016,1,SR,120587,Andhra Pradesh,61201,Kurnool,8121
 CGL,2016,1,SR,120587,Andhra Pradesh,61201,Rajahmundry,10027
@@ -249,251 +249,500 @@ CGL,2016,1,KKR,60192,Kerala,34954,Thrissur(Trichur),5203
 CGL,2016,1,KKR,60192,Kerala,34954,Ernakulam,0
 CGL,2016,1,KKR,60192,Lakshadweep,0,Kavaratti,0
 CGL,2016,9,NWR,612,Jammu & Kashmir,18,Anantnag,1
-CGL,2016,,NWR,,Jammu & Kashmir,,Baramullah,
-CGL,2016,,NWR,,Jammu & Kashmir,,Bhaderwah,
-CGL,2016,,NWR,,Jammu & Kashmir,,Jammu,14
-CGL,2016,,NWR,,Jammu & Kashmir,,Rajouri,
-CGL,2016,,NWR,,Jammu & Kashmir,,Srinagar(J&K),3
-CGL,2016,,NWR,,Jammu & Kashmir,,Samba,
-CGL,2016,,NWR,,Ladakh,,Leh,
-CGL,2016,,NWR,,"Himachal
- Pradesh",14,Dharamshala,
-CGL,2016,,NWR,,"Himachal
- Pradesh",,Hamirpur,6
-CGL,2016,,NWR,,"Himachal
- Pradesh",,Shimla,8
-CGL,2016,,NWR,612,Punjab,121,Bhathinda ,41
-CGL,2016,,NWR,,Punjab,,Jalandhar ,24
-CGL,2016,,NWR,,Punjab,,Patiala,41
-CGL,2016,,NWR,,Punjab,,Amritsar,15
-CGL,2016,,NWR,,Punjab,,Ludhiana,
-CGL,2016,,NWR,,Punjab,,Mohali,
-CGL,2016,,NWR,,Chandigarh,459,Chandigarh,459
-CGL,2016,,NWR,,Haryana,,Ambala,
-CGL,2016,,NWR,,Haryana,,Bhiwani,
-CGL,2016,,NWR,,Haryana,,Hisar,
-CGL,2016,,NWR,,Haryana,,Karnal,
-CGL,2016,,NWR,,Haryana,,Yamunanagar,
-CGL,2016,,NWR,,Haryana,,Kurukshetra,
-CGL,2016,,NR,5999,Uttarakhand,143,Almora,3
-CGL,2016,,NR,,Uttarakhand,,Dehradun,72
-CGL,2016,,NR,,Uttarakhand,,Haldwani,31
-CGL,2016,,NR,,Uttarakhand,,"Srinagar
+CGL,2016,9,NWR,612,Jammu & Kashmir,,Baramullah,0
+CGL,2016,9,NWR,612,Jammu & Kashmir,,Bhaderwah,0
+CGL,2016,9,NWR,612,Jammu & Kashmir,,Jammu,14
+CGL,2016,9,NWR,612,Jammu & Kashmir,,Rajouri,0
+CGL,2016,9,NWR,612,Jammu & Kashmir,,Srinagar(J&K),3
+CGL,2016,9,NWR,612,Jammu & Kashmir,,Samba,0
+CGL,2016,9,NWR,612,Ladakh,,Leh,0
+CGL,2016,9,NWR,612,"Himachal
+ Pradesh",14,Dharamshala,0
+CGL,2016,9,NWR,612,"Himachal
+ Pradesh",14,Hamirpur,6
+CGL,2016,9,NWR,612,"Himachal
+ Pradesh",14,Shimla,8
+CGL,2016,9,NWR,612,Punjab,121,Bhathinda ,41
+CGL,2016,9,NWR,612,Punjab,121,Jalandhar ,24
+CGL,2016,9,NWR,612,Punjab,121,Patiala,41
+CGL,2016,9,NWR,612,Punjab,121,Amritsar,15
+CGL,2016,9,NWR,612,Punjab,121,Ludhiana,0
+CGL,2016,9,NWR,612,Punjab,121,Mohali,0
+CGL,2016,9,NWR,612,Chandigarh,459,Chandigarh,459
+CGL,2016,9,NWR,612,Haryana,459,Ambala,0
+CGL,2016,9,NWR,612,Haryana,459,Bhiwani,0
+CGL,2016,9,NWR,612,Haryana,459,Hisar,0
+CGL,2016,9,NWR,612,Haryana,459,Karnal,0
+CGL,2016,9,NWR,612,Haryana,459,Yamunanagar,0
+CGL,2016,9,NWR,612,Haryana,459,Kurukshetra,0
+CGL,2016,9,NR,5999,Uttarakhand,143,Almora,3
+CGL,2016,9,NR,5999,Uttarakhand,143,Dehradun,72
+CGL,2016,9,NR,5999,Uttarakhand,143,Haldwani,31
+CGL,2016,9,NR,5999,Uttarakhand,143,"Srinagar
 (uttarakhand)",1
-CGL,2016,,NR,,Uttarakhand,,Haridwar,36
-CGL,2016,,NR,,Uttarakhand,,Roorkee,
-CGL,2016,,NR,,Delhi,3943,Delhi,3943
-CGL,2016,,NR,,Rajasthan,1913,Ajmer ,43
-CGL,2016,,NR,,Rajasthan,,Alwar,153
-CGL,2016,,NR,,Rajasthan,,Bharatpur,
-CGL,2016,,NR,,Rajasthan,,Bikaner,118
-CGL,2016,,NR,,Rajasthan,,jaipur,1404
-CGL,2016,,NR,,Rajasthan,,Jodhpur,85
-CGL,2016,,NR,,Rajasthan,,kota,
-CGL,2016,,NR,,Rajasthan,,Sriganganagar ,43
-CGL,2016,,NR,,Rajasthan,,Udaipur,17
-CGL,2016,,NR,,Rajasthan,,Dausa,
-CGL,2016,,NR,,Rajasthan,,Sikar,2
-CGL,2016,,CR,1575,Utar pradesh,1112,Agra,95
-CGL,2016,,CR,,Utar pradesh,,Aligarh,
-CGL,2016,,CR,,Utar pradesh,,Prayagraj,231
-CGL,2016,,CR,,Utar pradesh,,Balia,
-CGL,2016,,CR,,Utar pradesh,,Bareilly,40
-CGL,2016,,CR,,Utar pradesh,,"Ayodhya
-(Faizabad)",
-CGL,2016,,CR,,Utar pradesh,,Gorakhpur,20
-CGL,2016,,CR,,Utar pradesh,,Jhansi,
-CGL,2016,,CR,,Utar pradesh,,Kanpur,249
-CGL,2016,,CR,,Utar pradesh,,Lucknow,317
-CGL,2016,,CR,,Utar pradesh,,Meerut,62
-CGL,2016,,CR,,Utar pradesh,,Mirzapur,
-CGL,2016,,CR,,Utar pradesh,,"Varanasi
+CGL,2016,9,NR,5999,Uttarakhand,143,Haridwar,36
+CGL,2016,9,NR,5999,Uttarakhand,143,Roorkee,0
+CGL,2016,9,NR,5999,Delhi,3943,Delhi,3943
+CGL,2016,9,NR,5999,Rajasthan,1913,Ajmer ,43
+CGL,2016,9,NR,5999,Rajasthan,1913,Alwar,153
+CGL,2016,9,NR,5999,Rajasthan,1913,Bharatpur,0
+CGL,2016,9,NR,5999,Rajasthan,1913,Bikaner,118
+CGL,2016,9,NR,5999,Rajasthan,1913,jaipur,1404
+CGL,2016,9,NR,5999,Rajasthan,1913,Jodhpur,85
+CGL,2016,9,NR,5999,Rajasthan,1913,kota,0
+CGL,2016,9,NR,5999,Rajasthan,1913,Sriganganagar ,43
+CGL,2016,9,NR,5999,Rajasthan,1913,Udaipur,17
+CGL,2016,9,NR,5999,Rajasthan,1913,Dausa,0
+CGL,2016,9,NR,5999,Rajasthan,1913,Sikar,2
+CGL,2016,9,CR,1575,Utar pradesh,1112,Agra,95
+CGL,2016,9,CR,1575,Utar pradesh,1112,Aligarh,0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Prayagraj,231
+CGL,2016,9,CR,1575,Utar pradesh,1112,Balia,0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Bareilly,40
+CGL,2016,9,CR,1575,Utar pradesh,1112,"Ayodhya
+(Faizabad)",0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Gorakhpur,20
+CGL,2016,9,CR,1575,Utar pradesh,1112,Jhansi,0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Kanpur,249
+CGL,2016,9,CR,1575,Utar pradesh,1112,Lucknow,317
+CGL,2016,9,CR,1575,Utar pradesh,1112,Meerut,62
+CGL,2016,9,CR,1575,Utar pradesh,1112,Mirzapur,
+CGL,2016,9,CR,1575,Utar pradesh,1112,"Varanasi
 (Banaras)",98
-CGL,2016,,CR,,Utar pradesh,,Mathura,
-CGL,2016,,CR,,Utar pradesh,,Moradabad,
-CGL,2016,,CR,,Utar pradesh,,Muzafarnagar,
-CGL,2016,,CR,,Utar pradesh,,"Gautam 
+CGL,2016,9,CR,1575,Utar pradesh,1112,Mathura,0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Moradabad,0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Muzafarnagar,0
+CGL,2016,9,CR,1575,Utar pradesh,1112,"Gautam 
 Budhnagar
-(Noida)",
-CGL,2016,,CR,,Utar pradesh,,Greater Noida,
-CGL,2016,,CR,,Bihar,463,Bhagalpur,65
-CGL,2016,,CR,,Bihar,,Darbahanga,
-CGL,2016,,CR,,Bihar,,Gaya,
-CGL,2016,,CR,,Bihar,,Katihar,
-CGL,2016,,CR,,Bihar,,Muzaffarpur,66
-CGL,2016,,CR,,Bihar,,Patna,332
-CGL,2016,,CR,,Bihar,,Ara(Arrah),
-CGL,2016,,CR,,Bihar,,"Aurangabad
+(Noida)",0
+CGL,2016,9,CR,1575,Utar pradesh,1112,Greater Noida,0
+CGL,2016,9,CR,1575,Bihar,463,Bhagalpur,65
+CGL,2016,9,CR,1575,Bihar,463,Darbahanga,0
+CGL,2016,9,CR,1575,Bihar,463,Gaya,0
+CGL,2016,9,CR,1575,Bihar,463,Katihar,0
+CGL,2016,9,CR,1575,Bihar,463,Muzaffarpur,66
+CGL,2016,9,CR,1575,Bihar,463,Patna,332
+CGL,2016,9,CR,1575,Bihar,463,Ara(Arrah),0
+CGL,2016,9,CR,1575,Bihar,463,"Aurangabad
 (Bihar)",3
-CGL,2016,,CR,,Bihar,,Purnia,
-CGL,2016,,ER,728,Sikkim,1,Gangtok,1
-CGL,2016,,ER,,Jharkhand,149,Bokarp,
-CGL,2016,,ER,,Jharkhand,,Chaibasa,
-CGL,2016,,ER,,Jharkhand,,Dumka,
-CGL,2016,,ER,,Jharkhand,,Hazaribag,
-CGL,2016,,ER,,Jharkhand,,Ranchi,149
-CGL,2016,,ER,,Jharkhand,,Dhanbad,
-CGL,2016,,ER,,Jharkhand,,Jamshedpur,
-CGL,2016,,ER,,West Bengal,504,Bankura,
-CGL,2016,,ER,,West Bengal,,Barasat,33
-CGL,2016,,ER,,West Bengal,,Berhampore,4
-CGL,2016,,ER,,West Bengal,,"Bardhman
-(Burdwan)",
-CGL,2016,,ER,,West Bengal,,Chinsurah,49
-CGL,2016,,ER,,West Bengal,,Cooch Behar ,
-CGL,2016,,ER,,West Bengal,,Darjeeling,
-CGL,2016,,ER,,West Bengal,,Jalpaiguri,3
-CGL,2016,,ER,,West Bengal,,Jhargram,
-CGL,2016,,ER,,West Bengal,,Kolkata,379
-CGL,2016,,ER,,West Bengal,,Krishnanagar,
-CGL,2016,,ER,,West Bengal,,Malda,5
-CGL,2016,,ER,,West Bengal,,Midnapur,16
-CGL,2016,,ER,,West Bengal,,Purulia,
-CGL,2016,,ER,,West Bengal,,siliguri,15
-CGL,2016,,ER,,West Bengal,,Suri,
-CGL,2016,,ER,,West Bengal,,Asansol,
-CGL,2016,,ER,,West Bengal,,Hooghly,
-CGL,2016,,ER,,West Bengal,,Kalyani,
-CGL,2016,,ER,,Odisha,74,Balasore,
-CGL,2016,,ER,,Odisha,,"Berhampore
+CGL,2016,9,CR,1575,Bihar,463,Purnia,0
+CGL,2016,9,ER,728,Sikkim,1,Gangtok,1
+CGL,2016,9,ER,728,Jharkhand,149,Bokarp,0
+CGL,2016,9,ER,728,Jharkhand,149,Chaibasa,0
+CGL,2016,9,ER,728,Jharkhand,149,Dumka,0
+CGL,2016,9,ER,728,Jharkhand,149,Hazaribag,0
+CGL,2016,9,ER,728,Jharkhand,149,Ranchi,149
+CGL,2016,9,ER,728,Jharkhand,149,Dhanbad,0
+CGL,2016,9,ER,728,Jharkhand,149,Jamshedpur,0
+CGL,2016,9,ER,728,West Bengal,504,Bankura,0
+CGL,2016,9,ER,728,West Bengal,504,Barasat,33
+CGL,2016,9,ER,728,West Bengal,504,Berhampore,4
+CGL,2016,9,ER,728,West Bengal,504,"Bardhman
+(Burdwan)",0
+CGL,2016,9,ER,728,West Bengal,504,Chinsurah,49
+CGL,2016,9,ER,728,West Bengal,504,Cooch Behar ,0
+CGL,2016,9,ER,728,West Bengal,504,Darjeeling,0
+CGL,2016,9,ER,728,West Bengal,504,Jalpaiguri,3
+CGL,2016,9,ER,728,West Bengal,504,Jhargram,0
+CGL,2016,9,ER,728,West Bengal,504,Kolkata,379
+CGL,2016,9,ER,728,West Bengal,504,Krishnanagar,0
+CGL,2016,9,ER,728,West Bengal,504,Malda,5
+CGL,2016,9,ER,728,West Bengal,504,Midnapur,16
+CGL,2016,9,ER,728,West Bengal,504,Purulia,0
+CGL,2016,9,ER,728,West Bengal,504,siliguri,15
+CGL,2016,9,ER,728,West Bengal,504,Suri,0
+CGL,2016,9,ER,728,West Bengal,504,Asansol,0
+CGL,2016,9,ER,728,West Bengal,504,Hooghly,0
+CGL,2016,9,ER,728,West Bengal,504,Kalyani,0
+CGL,2016,9,ER,728,Odisha,74,Balasore,0
+CGL,2016,9,ER,728,Odisha,74,"Berhampore
 (Odisha)",4
-CGL,2016,,ER,,Odisha,,Bhawanipatna,
-CGL,2016,,ER,,Odisha,,Bhubaneshwar,59
-CGL,2016,,ER,,Odisha,,Cuttack,8
-CGL,2016,,ER,,Odisha,,Kendujhar,
-CGL,2016,,ER,,Odisha,,Koraput,
-CGL,2016,,ER,,Odisha,,Phulbani,
-CGL,2016,,ER,,Odisha,,Sambalpur,7
-CGL,2016,,ER,,Odisha,,Rourkela,
-CGL,2016,,ER,,Odisha,,Dhenkenal,
-CGL,2016,,ER,,A & N Islands,,Car Nicobar,
-CGL,2016,,ER,,A & N Islands,,Port Blair,
-CGL,2016,,NER,52,"Arunachal
+CGL,2016,9,ER,728,Odisha,74,Bhawanipatna,0
+CGL,2016,9,ER,728,Odisha,74,Bhubaneshwar,59
+CGL,2016,9,ER,728,Odisha,74,Cuttack,8
+CGL,2016,9,ER,728,Odisha,74,Kendujhar,0
+CGL,2016,9,ER,728,Odisha,74,Koraput,0
+CGL,2016,9,ER,728,Odisha,74,Phulbani,0
+CGL,2016,9,ER,728,Odisha,74,Sambalpur,7
+CGL,2016,9,ER,728,Odisha,74,Rourkela,0
+CGL,2016,9,ER,728,Odisha,74,Dhenkenal,0
+CGL,2016,9,ER,728,A & N Islands,74,Car Nicobar,0
+CGL,2016,9,ER,728,A & N Islands,74,Port Blair,0
+CGL,2016,9,NER,52,"Arunachal
  Pradesh",1,Itanagar,1
-CGL,2016,,NER,,Assam,31,Barpeta,
-CGL,2016,,NER,,Assam,,Dibrugarh ,4
-CGL,2016,,NER,,Assam,,Diphu,
-CGL,2016,,NER,,Assam,,Goalpara,
-CGL,2016,,NER,,Assam,,"Guwahati
+CGL,2016,9,NER,52,Assam,31,Barpeta,0
+CGL,2016,9,NER,52,Assam,31,Dibrugarh ,4
+CGL,2016,9,NER,52,Assam,31,Diphu,0
+CGL,2016,9,NER,52,Assam,31,Goalpara,0
+CGL,2016,9,NER,52,Assam,31,"Guwahati
 (Dispur)",24
-CGL,2016,,NER,,Assam,,Halflong,
-CGL,2016,,NER,,Assam,,Jorhat,1
-CGL,2016,,NER,,Assam,,Kokrajhar,
-CGL,2016,,NER,,Assam,,Lakhimpur,
-CGL,2016,,NER,,Assam,,Sivasagar,
-CGL,2016,,NER,,Assam,,Silchar,
-CGL,2016,,NER,,Assam,,Tezpur,
-CGL,2016,,NER,,Nagaland,3,Dimapur,
-CGL,2016,,NER,,Nagaland,,Kohima,3
-CGL,2016,,NER,,Meghalaya,4,Shilong,4
-CGL,2016,,NER,,Meghalaya,,Tura,
-CGL,2016,,NER,,Manipur,6,Imphal,
-CGL,2016,,NER,,Manipur,,Churachandpur,
-CGL,2016,,NER,,Manipur,,Ukhrul,
-CGL,2016,,NER,,Tripura,4,Agartala,
-CGL,2016,,NER,,Mizoram,3,Aizwal,
-CGL,2016,,MPR,201,Madhya pradesh,164,Bhopal,
-CGL,2016,,MPR,,Madhya pradesh,,Chataarpur,
-CGL,2016,,MPR,,Madhya pradesh,,Chindwara,
-CGL,2016,,MPR,,Madhya pradesh,,Guna,
-CGL,2016,,MPR,,Madhya pradesh,,Gwalior,
-CGL,2016,,MPR,,Madhya pradesh,,Indore,
-CGL,2016,,MPR,,Madhya pradesh,,Jabalpur,
-CGL,2016,,MPR,,Madhya pradesh,,Jhabua,
-CGL,2016,,MPR,,Madhya pradesh,,Khandwa,
-CGL,2016,,MPR,,Madhya pradesh,,Mandsaur,
-CGL,2016,,MPR,,Madhya pradesh,,Ratlam,
-CGL,2016,,MPR,,Madhya pradesh,,Rewa,
-CGL,2016,,MPR,,Madhya pradesh,,Shahdol,
-CGL,2016,,MPR,,Madhya pradesh,,Satna,
-CGL,2016,,MPR,,Madhya pradesh,,Sagar,
-CGL,2016,,MPR,,Madhya pradesh,,Ujjain,
-CGL,2016,,MPR,,Chhattisgarh,37,Ambikapur,
-CGL,2016,,MPR,,Chhattisgarh,,Bilaspur,
-CGL,2016,,MPR,,Chhattisgarh,,Jagdalpur,
-CGL,2016,,MPR,,Chhattisgarh,,Raipur,
-CGL,2016,,MPR,,Chhattisgarh,,Durg-Bhilai,
-CGL,2016,,MPR,,Chhattisgarh,,Bhilainagar,
-CGL,2016,,WR,450,Gujrat,148,Ahmedabad,
-CGL,2016,,WR,,Gujrat,,vadodara(Bhopal,
-CGL,2016,,WR,,Gujrat,,Bhuj,
-CGL,2016,,WR,,Gujrat,,"Panchmahal
-(godhra)",
-CGL,2016,,WR,,Gujrat,,Rajkot,
-CGL,2016,,WR,,Gujrat,,Surat,
-CGL,2016,,WR,,Gujrat,,Valsad,
-CGL,2016,,WR,,Gujrat,,Bhavnagar,
-CGL,2016,,WR,,Gujrat,,Kuchchh(kutch),
-CGL,2016,,WR,,Gujrat,,Anand,
-CGL,2016,,WR,,Gujrat,,Gandhinagar,
-CGL,2016,,WR,,Gujrat,,Mehsana,
-CGL,2016,,WR,,Maharastra,291,Amravati,
-CGL,2016,,WR,,Maharastra,,Aurangabad,
-CGL,2016,,WR,,Maharastra,,Kolhapur,
-CGL,2016,,WR,,Maharastra,,Mumbai,
-CGL,2016,,WR,,Maharastra,,Nagpur,
-CGL,2016,,WR,,Maharastra,,Nanded,
-CGL,2016,,WR,,Maharastra,,Nashik,
-CGL,2016,,WR,,Maharastra,,Pune,
-CGL,2016,,WR,,Maharastra,,Ratnagiri,
-CGL,2016,,WR,,Maharastra,,Thane,
-CGL,2016,,WR,,Maharastra,,Bhandara,
-CGL,2016,,WR,,Maharastra,,chandrapur,
-CGL,2016,,WR,,Maharastra,,Akola,
-CGL,2016,,WR,,Maharastra,,Jalgaon,
-CGL,2016,,WR,,Maharastra,,Ahmednagar,
-CGL,2016,,WR,,Maharastra,,Alibag(Alibaug),
-CGL,2016,,WR,,Maharastra,,Navi Mumbai,
-CGL,2016,,WR,,Goa,11,Panaja(Panjim),
-CGL,2016,,SR,353,Andhra Pradesh,242,Guntur,
-CGL,2016,,SR,,Andhra Pradesh,,Kurnool,
-CGL,2016,,SR,,Andhra Pradesh,,Rajahmundry,
-CGL,2016,,SR,,Andhra Pradesh,,Srikakulam,
-CGL,2016,,SR,,Andhra Pradesh,,Tirupati,
-CGL,2016,,SR,,Andhra Pradesh,,Vishakhapatnam,
-CGL,2016,,SR,,Andhra Pradesh,,Kakinada,
-CGL,2016,,SR,,Andhra Pradesh,,Nellore,
-CGL,2016,,SR,,Andhra Pradesh,,Chirala,
-CGL,2016,,SR,,Andhra Pradesh,,Vizianagaram,
-CGL,2016,,SR,,Telangana,,Hyderabad,
-CGL,2016,,SR,,Telangana,,Nizamabad,
-CGL,2016,,SR,,Telangana,,Warangal,
-CGL,2016,,SR,,Telangana,,Karimnagar,
-CGL,2016,,SR,,Tamil Nadu,111,Chennai(Madras),
-CGL,2016,,SR,,Tamil Nadu,,Coimbatore,
-CGL,2016,,SR,,Tamil Nadu,,Kanchipuram,
-CGL,2016,,SR,,Tamil Nadu,,Madurai,
-CGL,2016,,SR,,Tamil Nadu,,Salem,
-CGL,2016,,SR,,Tamil Nadu,,Tiruchirapalli,
-CGL,2016,,SR,,Tamil Nadu,,Tirunelveli,
-CGL,2016,,SR,,Tamil Nadu,,Vellore,
-CGL,2016,,SR,,Puducherry,,Puducherry,
-CGL,2016,,KKR,248,Karnataka,139,"Bengaluru
-(Bengalore)",
-CGL,2016,,KKR,,Karnataka,,Belgavi(Belgaum),
-CGL,2016,,KKR,,Karnataka,,Bijapur,
-CGL,2016,,KKR,,Karnataka,,Dharwar,
-CGL,2016,,KKR,,Karnataka,,"Kalaburagi
-(Gulbarga)",
-CGL,2016,,KKR,,Karnataka,,Hassan,
-CGL,2016,,KKR,,Karnataka,,Kolar,
-CGL,2016,,KKR,,Karnataka,,"Mangaluru
-(Manglore)",
-CGL,2016,,KKR,,Karnataka,,Mysuru(Mysore),
-CGL,2016,,KKR,,Karnataka,,Shivamogga(Shimoga),
-CGL,2016,,KKR,,Karnataka,,Hubballi(Hubli),
-CGL,2016,,KKR,,Karnataka,,Udupi,
-CGL,2016,,KKR,,Kerala,109,Alappuzha,
-CGL,2016,,KKR,,Kerala,,Kannur(Cannanor),
-CGL,2016,,KKR,,Kerala,,Kalpeta,
-CGL,2016,,KKR,,Kerala,,Kochi(cochin),
-CGL,2016,,KKR,,Kerala,,Kottayam,
-CGL,2016,,KKR,,Kerala,,Kozhikode(Calicut),
-CGL,2016,,KKR,,Kerala,,Malappuram,
-CGL,2016,,KKR,,Kerala,,Palakkad,
-CGL,2016,,KKR,,Kerala,,Pathanmthitta,
-CGL,2016,,KKR,,Kerala,,Kollam,
-CGL,2016,,KKR,,Kerala,,Thiruvananthpuram,
-CGL,2016,,KKR,,Kerala,,Thrissur(Trichur),
-CGL,2016,,KKR,,Kerala,,Ernakulam,
-CGL,2016,,KKR,,Lakshadweep,0,Kavaratti,0
+CGL,2016,9,NER,52,Assam,31,Halflong,0
+CGL,2016,9,NER,52,Assam,31,Jorhat,1
+CGL,2016,9,NER,52,Assam,31,Kokrajhar,0
+CGL,2016,9,NER,52,Assam,31,Lakhimpur,0
+CGL,2016,9,NER,52,Assam,31,Sivasagar,0
+CGL,2016,9,NER,52,Assam,31,Silchar,0
+CGL,2016,9,NER,52,Assam,31,Tezpur,0
+CGL,2016,9,NER,52,Nagaland,3,Dimapur,0
+CGL,2016,9,NER,52,Nagaland,3,Kohima,3
+CGL,2016,9,NER,52,Meghalaya,4,Shilong,4
+CGL,2016,9,NER,52,Meghalaya,4,Tura,0
+CGL,2016,9,NER,52,Manipur,6,Imphal,5
+CGL,2016,9,NER,52,Manipur,6,Churachandpur,1
+CGL,2016,9,NER,52,Manipur,6,Ukhrul,0
+CGL,2016,9,NER,52,Tripura,4,Agartala,4
+CGL,2016,9,NER,52,Mizoram,3,Aizwal,3
+CGL,2016,9,MPR,201,Madhya pradesh,164,Bhopal,49
+CGL,2016,9,MPR,201,Madhya pradesh,164,Chataarpur,0
+CGL,2016,9,MPR,201,Madhya pradesh,164,Chindwara,2
+CGL,2016,9,MPR,201,Madhya pradesh,164,Guna,2
+CGL,2016,9,MPR,201,Madhya pradesh,164,Gwalior,50
+CGL,2016,9,MPR,201,Madhya pradesh,164,Indore,35
+CGL,2016,9,MPR,201,Madhya pradesh,164,Jabalpur,12
+CGL,2016,9,MPR,201,Madhya pradesh,164,Jhabua,
+CGL,2016,9,MPR,201,Madhya pradesh,164,Khandwa,1
+CGL,2016,9,MPR,201,Madhya pradesh,164,Mandsaur,
+CGL,2016,9,MPR,201,Madhya pradesh,164,Ratlam,3
+CGL,2016,9,MPR,201,Madhya pradesh,164,Rewa,
+CGL,2016,9,MPR,201,Madhya pradesh,164,Shahdol,
+CGL,2016,9,MPR,201,Madhya pradesh,164,Satna,8
+CGL,2016,9,MPR,201,Madhya pradesh,164,Sagar,2
+CGL,2016,9,MPR,201,Madhya pradesh,164,Ujjain,0
+CGL,2016,9,MPR,201,Chhattisgarh,37,Ambikapur,0
+CGL,2016,9,MPR,201,Chhattisgarh,37,Bilaspur,0
+CGL,2016,9,MPR,201,Chhattisgarh,37,Jagdalpur,0
+CGL,2016,9,MPR,201,Chhattisgarh,37,Raipur,23
+CGL,2016,9,MPR,201,Chhattisgarh,37,Durg-Bhilai,8
+CGL,2016,9,MPR,201,Chhattisgarh,37,Bhilainagar,0
+CGL,2016,9,WR,450,Gujrat,148,Ahmedabad,89
+CGL,2016,9,WR,450,Gujrat,148,vadodara(Barodra),18
+CGL,2016,9,WR,450,Gujrat,148,Bhuj,0
+CGL,2016,9,WR,450,Gujrat,148,"Panchmahal
+(godhra)",0
+CGL,2016,9,WR,450,Gujrat,148,Rajkot,14
+CGL,2016,9,WR,450,Gujrat,148,Surat,22
+CGL,2016,9,WR,450,Gujrat,148,Valsad,0
+CGL,2016,9,WR,450,Gujrat,148,Bhavnagar,2
+CGL,2016,9,WR,450,Gujrat,148,Kuchchh(kutch),3
+CGL,2016,9,WR,450,Gujrat,148,Anand,0
+CGL,2016,9,WR,450,Gujrat,148,Gandhinagar,0
+CGL,2016,9,WR,450,Gujrat,148,Mehsana,0
+CGL,2016,9,WR,450,Maharastra,291,Amravati,3
+CGL,2016,9,WR,450,Maharastra,291,Aurangabad,3
+CGL,2016,9,WR,450,Maharastra,291,Kolhapur,3
+CGL,2016,9,WR,450,Maharastra,291,Mumbai,141
+CGL,2016,9,WR,450,Maharastra,291,Nagpur,27
+CGL,2016,9,WR,450,Maharastra,291,Nanded,2
+CGL,2016,9,WR,450,Maharastra,291,Nashik,4
+CGL,2016,9,WR,450,Maharastra,291,Pune,88
+CGL,2016,9,WR,450,Maharastra,291,Ratnagiri,0
+CGL,2016,9,WR,450,Maharastra,291,Thane,18
+CGL,2016,9,WR,450,Maharastra,291,Bhandara,0
+CGL,2016,9,WR,450,Maharastra,291,chandrapur,0
+CGL,2016,9,WR,450,Maharastra,291,Akola,0
+CGL,2016,9,WR,450,Maharastra,291,Jalgaon,2
+CGL,2016,9,WR,450,Maharastra,291,Ahmednagar,0
+CGL,2016,9,WR,450,Maharastra,291,Alibag(Alibaug),0
+CGL,2016,9,WR,450,Maharastra,291,Navi Mumbai,0
+CGL,2016,9,WR,450,Goa,11,Panaji(Panjim),11
+CGL,2016,9,SR,353,Andhra Pradesh,242,Guntur,56
+CGL,2016,9,SR,353,Andhra Pradesh,242,Kurnool,17
+CGL,2016,9,SR,353,Andhra Pradesh,242,Rajahmundry,18
+CGL,2016,9,SR,353,Andhra Pradesh,242,Srikakulam,0
+CGL,2016,9,SR,353,Andhra Pradesh,242,Tirupati,35
+CGL,2016,9,SR,353,Andhra Pradesh,242,Vishakhapatnam,116
+CGL,2016,9,SR,353,Andhra Pradesh,242,Kakinada,0
+CGL,2016,9,SR,353,Andhra Pradesh,242,Nellore,0
+CGL,2016,9,SR,353,Andhra Pradesh,242,Chirala,0
+CGL,2016,9,SR,353,Andhra Pradesh,242,Vizianagaram,0
+CGL,2016,9,SR,353,Telangana,242,Hyderabad,0
+CGL,2016,9,SR,353,Telangana,242,Nizamabad,0
+CGL,2016,9,SR,353,Telangana,242,Warangal,0
+CGL,2016,9,SR,353,Telangana,242,Karimnagar,0
+CGL,2016,9,SR,353,Tamil Nadu,111,Chennai(Madras),90
+CGL,2016,9,SR,353,Tamil Nadu,111,Coimbatore,8
+CGL,2016,9,SR,353,Tamil Nadu,111,Kanchipuram,0
+CGL,2016,9,SR,353,Tamil Nadu,111,Madurai,4
+CGL,2016,9,SR,353,Tamil Nadu,111,Salem,0
+CGL,2016,9,SR,353,Tamil Nadu,111,Tiruchirapalli,7
+CGL,2016,9,SR,353,Tamil Nadu,111,Tirunelveli,2
+CGL,2016,9,SR,353,Tamil Nadu,111,Vellore,0
+CGL,2016,9,SR,353,Puducherry,111,Puducherry,0
+CGL,2016,9,KKR,248,Karnataka,139,"Bengaluru
+(Bengalore)",111
+CGL,2016,9,KKR,248,Karnataka,139,Belgavi(Belgaum),0
+CGL,2016,9,KKR,248,Karnataka,139,Bijapur,0
+CGL,2016,9,KKR,248,Karnataka,139,Dharwar,6
+CGL,2016,9,KKR,248,Karnataka,139,"Kalaburagi
+(Gulbarga)",4
+CGL,2016,9,KKR,248,Karnataka,139,Hassan,0
+CGL,2016,9,KKR,248,Karnataka,139,Kolar,0
+CGL,2016,9,KKR,248,Karnataka,139,"Mangaluru
+(Manglore)",9
+CGL,2016,9,KKR,248,Karnataka,139,Mysuru(Mysore),9
+CGL,2016,9,KKR,248,Karnataka,139,Shivamogga(Shimoga),0
+CGL,2016,9,KKR,248,Karnataka,139,Hubballi(Hubli),0
+CGL,2016,9,KKR,248,Karnataka,139,Udupi,0
+CGL,2016,9,KKR,248,Kerala,109,Alappuzha,0
+CGL,2016,9,KKR,248,Kerala,109,Kannur(Cannanor),0
+CGL,2016,9,KKR,248,Kerala,109,Kalpeta,0
+CGL,2016,9,KKR,248,Kerala,109,Kochi(cochin),38
+CGL,2016,9,KKR,248,Kerala,109,Kottayam,0
+CGL,2016,9,KKR,248,Kerala,109,Kozhikode(Calicut),21
+CGL,2016,9,KKR,248,Kerala,109,Malappuram,0
+CGL,2016,9,KKR,248,Kerala,109,Palakkad,0
+CGL,2016,9,KKR,248,Kerala,109,Pathanmthitta,0
+CGL,2016,9,KKR,248,Kerala,109,Kollam,0
+CGL,2016,9,KKR,248,Kerala,109,Thiruvananthpuram,35
+CGL,2016,9,KKR,248,Kerala,109,Thrissur(Trichur),15
+CGL,2016,9,KKR,248,Kerala,109,Ernakulam,0
+CGL,2016,9,KKR,248,Lakshadweep,0,Kavaratti,0
+CGL,2017,1,NWR,0,Jammu & Kashmir,0,Anantnag,0
+CGL,2017,1,NWR,,Jammu & Kashmir,0,Baramullah,0
+CGL,2017,1,NWR,,Jammu & Kashmir,0,Bhaderwah,0
+CGL,2017,1,NWR,,Jammu & Kashmir,0,Jammu,0
+CGL,2017,1,NWR,,Jammu & Kashmir,0,Rajouri,0
+CGL,2017,1,NWR,,Jammu & Kashmir,0,Srinagar(J&K),0
+CGL,2017,1,NWR,,Jammu & Kashmir,0,Samba,0
+CGL,2017,1,NWR,,Ladakh,0,Leh,0
+CGL,2017,1,NWR,,"Himachal
+ Pradesh",0,Dharamshala,0
+CGL,2017,1,NWR,,"Himachal
+ Pradesh",0,Hamirpur,0
+CGL,2017,1,NWR,,"Himachal
+ Pradesh",0,Shimla,0
+CGL,2017,1,NWR,,Punjab,0,Bhathinda ,0
+CGL,2017,1,NWR,,Punjab,0,Jalandhar ,0
+CGL,2017,1,NWR,,Punjab,0,Patiala,0
+CGL,2017,1,NWR,,Punjab,0,Amritsar,0
+CGL,2017,1,NWR,,Punjab,0,Ludhiana,0
+CGL,2017,1,NWR,,Punjab,0,Mohali,0
+CGL,2017,1,NWR,,Chandigarh,0,Chandigarh,0
+CGL,2017,1,NWR,,Haryana,0,Ambala,0
+CGL,2017,1,NWR,,Haryana,0,Bhiwani,0
+CGL,2017,1,NWR,,Haryana,0,Hisar,0
+CGL,2017,1,NWR,,Haryana,0,Karnal,0
+CGL,2017,1,NWR,,Haryana,0,Yamunanagar,0
+CGL,2017,1,NWR,,Haryana,0,Kurukshetra,0
+CGL,2017,1,NR,,Uttarakhand,0,Almora,0
+CGL,2017,1,NR,,Uttarakhand,0,Dehradun,0
+CGL,2017,1,NR,,Uttarakhand,0,Haldwani,0
+CGL,2017,1,NR,,Uttarakhand,0,"Srinagar
+(uttarakhand)",0
+CGL,2017,1,NR,,Uttarakhand,0,Haridwar,0
+CGL,2017,1,NR,,Uttarakhand,0,Roorkee,0
+CGL,2017,1,NR,,Delhi,0,Delhi,0
+CGL,2017,1,NR,,Rajasthan,0,Ajmer ,0
+CGL,2017,1,NR,,Rajasthan,0,Alwar,0
+CGL,2017,1,NR,,Rajasthan,0,Bharatpur,0
+CGL,2017,1,NR,,Rajasthan,0,Bikaner,0
+CGL,2017,1,NR,,Rajasthan,0,jaipur,0
+CGL,2017,1,NR,,Rajasthan,0,Jodhpur,0
+CGL,2017,1,NR,,Rajasthan,0,kota,0
+CGL,2017,1,NR,,Rajasthan,0,Sriganganagar ,0
+CGL,2017,1,NR,,Rajasthan,0,Udaipur,0
+CGL,2017,1,NR,,Rajasthan,0,Dausa,0
+CGL,2017,1,NR,,Rajasthan,0,Sikar,0
+CGL,2017,1,CR,,Utar pradesh,0,Agra,0
+CGL,2017,1,CR,,Utar pradesh,0,Aligarh,0
+CGL,2017,1,CR,,Utar pradesh,0,Prayagraj,0
+CGL,2017,1,CR,,Utar pradesh,0,Balia,0
+CGL,2017,1,CR,,Utar pradesh,0,Bareilly,0
+CGL,2017,1,CR,,Utar pradesh,0,"Ayodhya
+(Faizabad)",0
+CGL,2017,1,CR,,Utar pradesh,0,Gorakhpur,0
+CGL,2017,1,CR,,Utar pradesh,0,Jhansi,0
+CGL,2017,1,CR,,Utar pradesh,0,Kanpur,0
+CGL,2017,1,CR,,Utar pradesh,0,Lucknow,0
+CGL,2017,1,CR,,Utar pradesh,0,Meerut,0
+CGL,2017,1,CR,,Utar pradesh,0,Mirzapur,0
+CGL,2017,1,CR,,Utar pradesh,0,"Varanasi
+(Banaras)",0
+CGL,2017,1,CR,,Utar pradesh,0,Mathura,0
+CGL,2017,1,CR,,Utar pradesh,0,Moradabad,0
+CGL,2017,1,CR,,Utar pradesh,0,Muzafarnagar,0
+CGL,2017,1,CR,,Utar pradesh,0,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2017,1,CR,,Utar pradesh,0,Greater Noida,0
+CGL,2017,1,CR,,Bihar,0,Bhagalpur,0
+CGL,2017,1,CR,,Bihar,0,Darbahanga,0
+CGL,2017,1,CR,,Bihar,0,Gaya,0
+CGL,2017,1,CR,,Bihar,0,Katihar,0
+CGL,2017,1,CR,,Bihar,0,Muzaffarpur,0
+CGL,2017,1,CR,,Bihar,0,Patna,0
+CGL,2017,1,CR,,Bihar,0,Ara(Arrah),0
+CGL,2017,1,CR,,Bihar,0,"Aurangabad
+(Bihar)",0
+CGL,2017,1,CR,,Bihar,0,Purnia,0
+CGL,2017,1,ER,,Sikkim,0,Gangtok,0
+CGL,2017,1,ER,,Jharkhand,0,Bokarp,0
+CGL,2017,1,ER,,Jharkhand,0,Chaibasa,0
+CGL,2017,1,ER,,Jharkhand,0,Dumka,0
+CGL,2017,1,ER,,Jharkhand,0,Hazaribag,0
+CGL,2017,1,ER,,Jharkhand,0,Ranchi,0
+CGL,2017,1,ER,,Jharkhand,0,Dhanbad,0
+CGL,2017,1,ER,,Jharkhand,0,Jamshedpur,0
+CGL,2017,1,ER,,West Bengal,0,Bankura,0
+CGL,2017,1,ER,,West Bengal,0,Barasat,0
+CGL,2017,1,ER,,West Bengal,0,Berhampore,0
+CGL,2017,1,ER,,West Bengal,0,"Bardhman
+(Burdwan)",0
+CGL,2017,1,ER,,West Bengal,0,Chinsurah,0
+CGL,2017,1,ER,,West Bengal,0,Cooch Behar ,0
+CGL,2017,1,ER,,West Bengal,0,Darjeeling,0
+CGL,2017,1,ER,,West Bengal,0,Jalpaiguri,0
+CGL,2017,1,ER,,West Bengal,0,Jhargram,0
+CGL,2017,1,ER,,West Bengal,0,Kolkata,0
+CGL,2017,1,ER,,West Bengal,0,Krishnanagar,0
+CGL,2017,1,ER,,West Bengal,0,Malda,0
+CGL,2017,1,ER,,West Bengal,0,Midnapur,0
+CGL,2017,1,ER,,West Bengal,0,Purulia,0
+CGL,2017,1,ER,,West Bengal,0,siliguri,0
+CGL,2017,1,ER,,West Bengal,0,Suri,0
+CGL,2017,1,ER,,West Bengal,0,Asansol,0
+CGL,2017,1,ER,,West Bengal,0,Hooghly,0
+CGL,2017,1,ER,,West Bengal,0,Kalyani,0
+CGL,2017,1,ER,,Odisha,0,Balasore,0
+CGL,2017,1,ER,,Odisha,0,"Berhampore
+(Odisha)",0
+CGL,2017,1,ER,,Odisha,0,Bhawanipatna,0
+CGL,2017,1,ER,,Odisha,0,Bhubaneshwar,0
+CGL,2017,1,ER,,Odisha,0,Cutack,0
+CGL,2017,1,ER,,Odisha,0,Kendujhar,0
+CGL,2017,1,ER,,Odisha,0,Koraput,0
+CGL,2017,1,ER,,Odisha,0,Phulbani,0
+CGL,2017,1,ER,,Odisha,0,Sambalpur,0
+CGL,2017,1,ER,,Odisha,0,Rourkela,0
+CGL,2017,1,ER,,Odisha,0,Dhenkenal,0
+CGL,2017,1,ER,,A & N Islands,0,Car Nicobar,0
+CGL,2017,1,ER,,A & N Islands,0,Port Blair,0
+CGL,2017,1,NER,,"Anunachal
+ Pradesh",0,Itanagar,0
+CGL,2017,1,NER,,Assam,0,Barpeta,0
+CGL,2017,1,NER,,Assam,0,Dibrugarh ,0
+CGL,2017,1,NER,,Assam,0,Diphu,0
+CGL,2017,1,NER,,Assam,0,Goalpara,0
+CGL,2017,1,NER,,Assam,0,"Guwahati
+(Dispur)",0
+CGL,2017,1,NER,,Assam,0,Halflong,0
+CGL,2017,1,NER,,Assam,0,Jorhat,0
+CGL,2017,1,NER,,Assam,0,Kokrajhar,0
+CGL,2017,1,NER,,Assam,0,Lakhimpur,0
+CGL,2017,1,NER,,Assam,0,Sivasagar,0
+CGL,2017,1,NER,,Assam,0,Silchar,0
+CGL,2017,1,NER,,Assam,0,Tezpur,0
+CGL,2017,1,NER,,Nagaland,0,Dimapur,0
+CGL,2017,1,NER,,Nagaland,0,Kohima,0
+CGL,2017,1,NER,,Meghalaya,0,Shilong,0
+CGL,2017,1,NER,,Meghalaya,0,Tura,0
+CGL,2017,1,NER,,Manipur,0,Imphal,0
+CGL,2017,1,NER,,Manipur,0,Churachandpur,0
+CGL,2017,1,NER,,Manipur,0,Ukhrul,0
+CGL,2017,1,NER,,Tripura,0,Agartala,0
+CGL,2017,1,NER,,Mizoram,0,Aizwal,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Bhopal,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Chataarpur,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Chindwara,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Guna,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Gwalior,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Indore,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Jabalpur,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Jhabua,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Khandwa,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Mandsaur,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Ratlam,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Rewa,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Shahdol,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Satna,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Sagar,0
+CGL,2017,1,MPR,,Madhya pradesh,0,Ujjain,0
+CGL,2017,1,MPR,,Chhattisgarh,0,Ambikapur,0
+CGL,2017,1,MPR,,Chhattisgarh,0,Bilaspur,0
+CGL,2017,1,MPR,,Chhattisgarh,0,Jagdalpur,0
+CGL,2017,1,MPR,,Chhattisgarh,0,Raipur,0
+CGL,2017,1,MPR,,Chhattisgarh,0,Durg-Bhilai,0
+CGL,2017,1,MPR,,Chhattisgarh,0,Bhilainagar,0
+CGL,2017,1,WR,,Gujrat,0,Ahmedabad,0
+CGL,2017,1,WR,,Gujrat,0,vadodara(Baroda)l,0
+CGL,2017,1,WR,,Gujrat,0,Bhuj,0
+CGL,2017,1,WR,,Gujrat,0,"Panchmahal
+(godhra)",0
+CGL,2017,1,WR,,Gujrat,0,Rajkot,0
+CGL,2017,1,WR,,Gujrat,0,Surat,0
+CGL,2017,1,WR,,Gujrat,0,Valsad,0
+CGL,2017,1,WR,,Gujrat,0,Bhavnagar,0
+CGL,2017,1,WR,,Gujrat,0,Kuchchh(kutch),0
+CGL,2017,1,WR,,Gujrat,0,Anand,0
+CGL,2017,1,WR,,Gujrat,0,Gandhinagar,0
+CGL,2017,1,WR,,Gujrat,0,Mehsana,0
+CGL,2017,1,WR,,Maharastra,0,Amravati,0
+CGL,2017,1,WR,,Maharastra,0,Aurangabad,0
+CGL,2017,1,WR,,Maharastra,0,Kolhapur,0
+CGL,2017,1,WR,,Maharastra,0,Mumbai,0
+CGL,2017,1,WR,,Maharastra,0,Nagpur,0
+CGL,2017,1,WR,,Maharastra,0,Nanded,0
+CGL,2017,1,WR,,Maharastra,0,Nashik,0
+CGL,2017,1,WR,,Maharastra,0,Pune,0
+CGL,2017,1,WR,,Maharastra,0,Ratnagiri,0
+CGL,2017,1,WR,,Maharastra,0,Thane,0
+CGL,2017,1,WR,,Maharastra,0,Bhandara,0
+CGL,2017,1,WR,,Maharastra,0,chandrapur,0
+CGL,2017,1,WR,,Maharastra,0,Akola,0
+CGL,2017,1,WR,,Maharastra,0,Jalgaon,0
+CGL,2017,1,WR,,Maharastra,0,Ahmednagar,0
+CGL,2017,1,WR,,Maharastra,0,Alibag(Alibaug),0
+CGL,2017,1,WR,,Maharastra,0,Navi Mumbai,0
+CGL,2017,1,WR,,Goa,0,Panaji(Panjim),0
+CGL,2017,1,SR,,Andhra Pradesh,0,Guntur,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Kurnool,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Rajahmundry,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Srikakulam,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Tirupati,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Vishakhapatnam,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Kakinada,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Nellore,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Chirala,0
+CGL,2017,1,SR,,Andhra Pradesh,0,Vizianagaram,0
+CGL,2017,1,SR,,Telangana,0,Hyderabad,0
+CGL,2017,1,SR,,Telangana,0,Nizamabad,0
+CGL,2017,1,SR,,Telangana,0,Warangal,0
+CGL,2017,1,SR,,Telangana,0,Karimnagar,0
+CGL,2017,1,SR,,Tamil Nadu,0,Chennai(Madras),0
+CGL,2017,1,SR,,Tamil Nadu,0,Coimbatore,0
+CGL,2017,1,SR,,Tamil Nadu,0,Kanchipuram,0
+CGL,2017,1,SR,,Tamil Nadu,0,Madurai,0
+CGL,2017,1,SR,,Tamil Nadu,0,Salem,0
+CGL,2017,1,SR,,Tamil Nadu,0,Tiruchirapalli,0
+CGL,2017,1,SR,,Tamil Nadu,0,Tirunelveli,0
+CGL,2017,1,SR,,Tamil Nadu,0,Vellore,0
+CGL,2017,1,SR,,Puducherry,0,Puducherry,0
+CGL,2017,1,KKR,,Karnataka,0,"Bengaluru
+(Bengalore)",0
+CGL,2017,1,KKR,,Karnataka,0,Belgavi(Belgaum),0
+CGL,2017,1,KKR,,Karnataka,0,Bijapur,0
+CGL,2017,1,KKR,,Karnataka,0,Dharwar,0
+CGL,2017,1,KKR,,Karnataka,0,"Kalaburagi
+(Gulbarga)",0
+CGL,2017,1,KKR,,Karnataka,0,Hassan,0
+CGL,2017,1,KKR,,Karnataka,0,Kolar,0
+CGL,2017,1,KKR,,Karnataka,0,"Mangaluru
+(Manglore)",0
+CGL,2017,1,KKR,,Karnataka,0,Mysuru(Mysore),0
+CGL,2017,1,KKR,,Karnataka,0,Shivamogga(Shimoga),0
+CGL,2017,1,KKR,,Karnataka,0,Hubballi(Hubli),0
+CGL,2017,1,KKR,,Karnataka,0,Udupi,0
+CGL,2017,1,KKR,,Kerala,0,Alappuzha,0
+CGL,2017,1,KKR,,Kerala,0,Kannur(Cannanor),0
+CGL,2017,1,KKR,,Kerala,0,Kalpeta,0
+CGL,2017,1,KKR,,Kerala,0,Kochi(cochin),0
+CGL,2017,1,KKR,,Kerala,0,Kottayam,0
+CGL,2017,1,KKR,,Kerala,0,Kozhikode(Calicut),0
+CGL,2017,1,KKR,,Kerala,0,Malappuram,0
+CGL,2017,1,KKR,,Kerala,0,Palakkad,0
+CGL,2017,1,KKR,,Kerala,0,Pathanmthitta,0
+CGL,2017,1,KKR,,Kerala,0,Kollam,0
+CGL,2017,1,KKR,,Kerala,0,Thiruvananthpuram,0
+CGL,2017,1,KKR,,Kerala,0,Thrissur(Trichur),0
+CGL,2017,1,KKR,,Kerala,0,Ernakulam,0
+CGL,2017,1,KKR,,Lakshadweep,0,Kavaratti,0
