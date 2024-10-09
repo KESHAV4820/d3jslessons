@@ -5,23 +5,9 @@
 
 import {csv, 
         select,
-        selectAll,
-        svg,
-        scaleLinear,
-        scalePoint,
-        scaleOrdinal,
-        scalePow,
-        scaleSqrt,
-        scaleBand,
-        scaleTime,
-        extent,
-        axisBottom,
-        axisLeft,
-        min,
-        max,
         format
 } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
-
+import {scatterPlot} from './scatterplot';
 
 /*SuperNote:-
     0️⃣D3.js is highly dependent on method chaining.
@@ -33,25 +19,29 @@ import {csv,
     6️⃣ how .call statement works. abc.call(xyz) simply means that xyz(abc); where xyz() is a function and abc is the parameter being passed into xyz();
     7️⃣Super svg.append(g):- this as soon as envoked;  makes a brand new d3 selection of a brandnew DOM element which is a group element. there group element in d3.js is represented using the letter 'g'. 
     8️⃣SuperConcept"implicit return":- this kind of return is found in arrow function with single line of code in their body. There are arrow functions with multiple lines  of body put inside the curly brance. But these don't have implicit return into them.you will have to write the return statment explicitly. But if you want to use the implicit return feature and multiple lines as well, then you better wrap you body of function within () braces. which may look like: const fun1= (abc)=>({and here your multipline code.}); 
-    9️⃣
-    🔟
+    9️⃣SuperNoteMarvel
+    Note that we are using this expression from d3.js axis documentation.Super There they had used underscore _ as the name of the variable in getter, setter function. Hence, i am using it as well. Not get bothered. It's just being used as variable name.LearnByHeartTake A Good LookRemember It "height = +_, my" this expression has a great Concept hidden in it. There is implicit return involved in it. That is inside a ternarry operation, like (condition)?(expression1, expression2):(); when "condition" is checked, if the condition is found true, then (expression1,expression2) section is executed. now SuperNoteVIE "expression1" is calculated and "expression2" is always returned IMPLICITLY. That's how this construct works in JS , this property is to facilitate method chaining.LearnByHeartJust Beautiful
+    🔟SuperNoteConcept 
+    we can't use arrow function in getter , setter funtion becouse "argument" parameter object isn't defined.(Remember It "arguments" is as special keyword in JS .) like if you say let f= ()=> console.log(arguments); the output will give error that arguments isn't defined. but if you use old school function syntax like let f = function() {console.log(arguments)}, this will not throw error. it will only say that arugments is undefined. if you pass f(1,2,3), then the output will be Arguments(3)[1,2,3]. 
+    How ever, there is a work around this limitation. 
+    
 */
 
 if(module.hot){
     module.hot.accept();
 };
 
+/*Note
+const csvDataPath='./../../data/sampletestingdata.csv';// SuperVIE this way of passing the address is important as it is less error prone and helps bundler to find the file. Absolute address are not allowed for security reason. 
 
-// const csvDataPath='./../../data/sampletestingdata.csv';// SuperVIE this way of passing the address is important as it is less error prone and helps bundler to find the file. Absolute address are not allowed for security reason. 
-
-// const csvDataPath = [
-//     '.',  // This refers to the current directory
-//     '..', // This refers to the parent directory
-//     '..', // This goes up one more level
-//     'data', // Then it goes into the 'data' folder
-//     'sampletestingdata.csv' // Finally, the CSV file
-// ].join('/');// Remember ItJust Beautiful this is how we make a address more clean for maintainance.
-
+const csvDataPath = [
+    '.',  // This refers to the current directory
+    '..', // This refers to the parent directory
+    '..', // This goes up one more level
+    'data', // Then it goes into the 'data' folder
+    'sampletestingdata.csv' // Finally, the CSV file
+].join('/');// Remember ItJust Beautiful this is how we make a address more clean for maintainance.
+*/
 import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel handle asset
 
 
@@ -73,6 +63,7 @@ const parseRow = (d)=>{
 // csv(csvDataPath, parseRow).then(data =>{console.log(data);});// Code Testing
 
 //VIEConcept Now i will define "Accessor functions". They are used to set value in "Idempotent style" of programming. In this, we program in a manner that user need not remember the "order and number of parameter" to be given to the function. You can pass the parameters in much more fluid manner, not totally fluid, but fluid to a great extent. They are very useful in largescale programming.
+/*code migrated to scatterplot getter setter accessor function
 const xCoordinate = (d) => d.zone_score;//use zone_name going forward. 
 const yCoordinate = (d) => d.zone_score;
 const rValue = (d) => d.zone_score/1000;
@@ -89,6 +80,7 @@ const margin = {
 };
 const maxRadius=15;
 const minRadius=3;
+*/
 
 // const radius=5;legacy code becouse i have implemented variable radious below. 
 
@@ -102,6 +94,7 @@ const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
 
+    /*code migrated to scatterplot.js file
     // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scaleLinear().domain(extent(dataExtracted,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
     
@@ -128,14 +121,28 @@ const main = async () =>{
     svg1.selectAll('circle').data(marks).join('circle').attr('cx', d=> d.x).attr('cy', d=> d.y).attr('r',(d) => d.r).append('title').text(d=>d.title);
 
     // putting y and x axis in the chart. 
-    svg1.append('g').attr('transform',`translate(${margin.left},0)`).call(axisLeft(yCoordinateOfCenter));
-    /*QuickNote
-    this same code can also be written as the following:-
-    axisLeft(yCoordinateOfCenter)(svg1.append('g').attr('transform',`translate(${margin.left},0)`));
-    The above example shows that there are many functions that gives access to another function in D3.js. So mind the structure like fun()(). it is correct. 
-    */ 
+    //svg1.append('g').attr('transform',`translate(${margin.left},0)`).call(axisLeft(yCoordinateOfCenter));
+    
+    //Notethis same code can also be written as the following:-
+    //axisLeft(yCoordinateOfCenter)(svg1.append('g').attr('transform',`translate(${margin.left},0)`));
+    //The above example shows that there are many functions that gives access to another function in D3.js. So mind the structure like fun()(). it is correct. 
 
     svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
+    */
+
+    svg1.call(scatterPlot()
+    .width(width)
+    .height(height)
+    .data(dataExtracted)
+    .xCoordinate((d) => d.zone_score )
+    .yCoordinate((d) => d.zone_score)
+    .margin({
+        top:30, 
+        right:30, 
+        bottom:30, 
+        left:100,})
+    .maxRadius(15)
+    .minRadius(3));//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
 };
 main();
 
