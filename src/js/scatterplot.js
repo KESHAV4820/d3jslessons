@@ -31,16 +31,16 @@ export const scatterPlot = () => {
     const my = (svg1) => {
 
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
-    const xCoordinateOfCenter=scaleLinear().domain(extent,dataReceived,xCoordinate).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
+    const xCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
     
     //legacy code const yCoordinateOfCenter=scaleLinear().domain([
     //     d3.min,dataReceived, yCoordinate), 
     //     d3.max,dataReceived,yCoordinate)]);
     //code upgrade👇
-    const yCoordinateOfCenter=scaleLinear().domain(extent,dataReceived,yCoordinate).range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
+    const yCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,yCoordinate)).range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
-    const rOfPlotCircle=scaleSqrt().domain([0,max,dataReceived,rValue]).range([minRadius,maxRadius]);
+    const rOfPlotCircle=scaleSqrt().domain([0,max(dataReceived,rValue)]).range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
     // console.log('Creating marks. rValue type:', typeof rValue);//Code Testing
