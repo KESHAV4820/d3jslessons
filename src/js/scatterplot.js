@@ -19,11 +19,8 @@ import {selectAll,
 
 const commaFormat = format(',');// this adds comma separator
 
-export const scatterPlot = (dataExtracted) => {
+export const scatterPlot = () => {
     let width,height,dataReceived,xCoordinate,yCoordinate,margin,minRadius,maxRadius;
-
-    dataReceived=dataExtracted;
-    // console.log('dataReceived:',dataReceived);//Code Testing
     
     // console.log('rValue:', rValue);// Code Testing
 
@@ -54,7 +51,8 @@ export const scatterPlot = (dataExtracted) => {
         x: xCoordinateOfCenter(xCoordinate(d)),
         y: yCoordinateOfCenter(yCoordinate(d)),
         title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
-        r: rOfPlotCircle(rValue(d)),};
+        r: rOfPlotCircle(rValue(d)),
+        };
     });
     console.log(marks);//Code Testing
     
@@ -73,6 +71,8 @@ export const scatterPlot = (dataExtracted) => {
     svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
 
     };
+
+
     // Now defining getter and setter functions for above my();
     my.height=function(_){
         return arguments.length?(height = +_, my):height;
@@ -88,8 +88,8 @@ export const scatterPlot = (dataExtracted) => {
         return arguments.length?((width = +_), my):width;
     };
 
-    my.data=function(_){
-        return arguments.length?((data = _), my):data;
+    my.dataReceived=function(_){
+        return arguments.length?((dataReceived = _), my):dataReceived;
     };
 
     my.xCoordinate=function(_){

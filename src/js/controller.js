@@ -92,7 +92,7 @@ const svg1= select('body').append('svg').attr('width',width).attr('height',heigh
 // generic code
 const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
-    // console.log(dataExtracted);//Code Testing
+    console.log(dataExtracted);//Code Testing
 
     /*code migrated to scatterplot.js file
     // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
@@ -131,10 +131,10 @@ const main = async () =>{
     */
 
     console.log('Setting up scatterPlot');//Code Testing
-    svg1.call(scatterPlot(dataExtracted)
+    svg1.call(scatterPlot()
     .width(width)
     .height(height)
-    .data(dataExtracted)
+    .dataReceived(dataExtracted)
     .xCoordinate((d) => d.zone_score )
     .yCoordinate((d) => d.zone_score)
     .margin({
