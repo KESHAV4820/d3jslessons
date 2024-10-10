@@ -5,8 +5,8 @@
 
 import {csv, 
         select,
-        format
-} from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
+        // format
+    } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
 import {scatterPlot} from './scatterplot';
 
 /*SuperNote:-
@@ -47,7 +47,7 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 
 // console.log(csvDataPath);// Code Testing.
 
-const commaFormat = format(',');// this adds comma separator
+// const commaFormat = format(',');// this adds comma separator code migrated to scatterplot.js
 
 const parseRow = (d)=>{
     d.exam_year=+d.exam_year;
@@ -130,7 +130,8 @@ const main = async () =>{
     svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
     */
 
-    svg1.call(scatterPlot()
+    console.log('Setting up scatterPlot');//Code Testing
+    svg1.call(scatterPlot(dataExtracted)
     .width(width)
     .height(height)
     .data(dataExtracted)
@@ -143,6 +144,8 @@ const main = async () =>{
         left:100,})
     .maxRadius(15)
     .minRadius(3));//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
+    console.log('scatterplot setup complete');//Code Testing
+    
 };
 main();
 
