@@ -24,6 +24,15 @@ import {scatterPlot} from './scatterplot';
     🔟SuperNoteConcept 
     we can't use arrow function in getter , setter funtion becouse "argument" parameter object isn't defined.(Remember It "arguments" is as special keyword in JS .) like if you say let f= ()=> console.log(arguments); the output will give error that arguments isn't defined. but if you use old school function syntax like let f = function() {console.log(arguments)}, this will not throw error. it will only say that arugments is undefined. if you pass f(1,2,3), then the output will be Arguments(3)[1,2,3]. 
     How ever, there is a work around this limitation. 
+    1️⃣1️⃣after modularation of code, we have turned the rValue() function not into getter or setter function, but into a full fledged rValueCalculated() function and hence, it return radius values not the "my" in scatterplot.js . Becouse there is no point in making it into a getter or setter function if the radius is variable and has to be calculated internally from the data accessed. If the radius were to be constant, then using getter, setter makes a sense. 
+    1️⃣2️⃣ controller.js is basically the area where you have all the section of code that you will need to change or configure for different types of data. Within main(), we are calling scatterplot() and adding all configuration to it. 
+    1️⃣3️⃣in Scatterplot.js we have all the data that need very few and far in between changes, basically, they are static code for data visualisation. hence it has been put to another module for better code visibility in controller.js
+    1️⃣4️⃣
+    1️⃣5️⃣
+    1️⃣6️⃣
+    1️⃣7️⃣
+    1️⃣8️⃣
+    1️⃣9️⃣
     
 */
 
@@ -92,7 +101,7 @@ const svg1= select('body').append('svg').attr('width',width).attr('height',heigh
 // generic code
 const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
-    console.log(dataExtracted);//Code Testing
+    // console.log(dataExtracted);//Code Testing
 
     /*code migrated to scatterplot.js file
     // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
@@ -130,11 +139,11 @@ const main = async () =>{
     svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
     */
 
-    console.log('Setting up scatterPlot');//Code Testing
+    // console.log('Setting up scatterPlot');//Code Testing
     svg1.call(scatterPlot()
     .width(width)
     .height(height)
-    .dataReceived(dataExtracted)
+    .dataReceived(dataExtracted)//Alternative Code: .dataReceived( await csv(csvDataPath,parseRow))
     .xCoordinate((d) => d.zone_score )
     .yCoordinate((d) => d.zone_score)
     .margin({
@@ -142,8 +151,8 @@ const main = async () =>{
         right:30, 
         bottom:30, 
         left:100,})
-    .maxRadius(15)
-    .minRadius(3));//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
+    .maxRadius(16)
+    .minRadius(2));//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     console.log('scatterplot setup complete');//Code Testing
     
 };

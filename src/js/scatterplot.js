@@ -20,14 +20,19 @@ import {selectAll,
 const commaFormat = format(',');// this adds comma separator
 
 export const scatterPlot = () => {
-    let width,height,dataReceived,xCoordinate,yCoordinate,margin,minRadius,maxRadius;
+    let width,height;
+    let dataReceived;
+    let xCoordinate,yCoordinate;
+    let margin;
+    let minRadius,maxRadius;// we are using let not const becouse these variables are susceptible to changes for proper functioning of the application.  
     
-    // console.log('rValue:', rValue);// Code Testing
+    // console.log('rValueCalculated:', rValueCalculated);// Code Testing
 
-    const rValue= (d) => {
+    const rValueCalculated= (d) => {
         return d.zone_score/1000;
     };
 
+    //my() function is he place where it sets up all the selections like svg1 and does all the transformation needed using getter, setter functions, local declared variables. 
     const my = (svg1) => {
 
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
@@ -40,18 +45,18 @@ export const scatterPlot = () => {
     const yCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,yCoordinate)).range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
-    const rOfPlotCircle=scaleSqrt().domain([0,max(dataReceived,rValue)]).range([minRadius,maxRadius]);
+    const rOfPlotCircle=scaleSqrt().domain([0,max(dataReceived,rValueCalculated)]).range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
-    // console.log('Creating marks. rValue type:', typeof rValue);//Code Testing
+    // console.log('Creating marks. rValueCalculated type:', typeof rValueCalculated);//Code Testing
     const marks=dataReceived.map(d =>{
         console.log('Processing data point:', d);//Code Testing
-        console.log('rValue(d):', rValue(d));//Code Testing
+        console.log('rValueCalculated(d):', rValueCalculated(d));//Code Testing
         return {
         x: xCoordinateOfCenter(xCoordinate(d)),
         y: yCoordinateOfCenter(yCoordinate(d)),
         title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
-        r: rOfPlotCircle(rValue(d)),
+        r: rOfPlotCircle(rValueCalculated(d)),
         };
     });
     console.log(marks);//Code Testing
@@ -78,11 +83,13 @@ export const scatterPlot = () => {
         return arguments.length?(height = +_, my):height;
     }; 
     /*SuperNoteMarvel
-    Note that we are using this expression from d3.js axis documentation.Super There they had used underscore _ as the name of the variable in getter, setter function. Hence, i am using it as well. Not get bothered. It's just being used as variable name.LearnByHeartTake A Good LookRemember It "height = +_, my" this expression has a great Concept hidden in it. There is implicit return involved in it. That is inside a ternarry operation, like (condition)?(expression1, expression2):(); when "condition" is checked, if the condition is found true, then (expression1,expression2) section is executed. now SuperNoteVIE "expression1" is calculated and "expression2" is always returned IMPLICITLY. That's how this construct works in JS , this property is to facilitate method chaining.LearnByHeartJust Beautiful
+    Note that we are using this expression from d3.js axis documentation.Super There they had used underscore _ as the name of the variable in getter, setter function. Hence, i am using it as well. Not get bothered. It's just being used as variable name.LearnByHeartTake A Good LookRemember It ➡️"height = +_, my" this expression has a great Concept hidden in it. There is implicit return involved in it. That is inside a ternarry operation, like (condition)?(expression1, expression2):(); when "condition" is checked, if the condition is found true, then (expression1,expression2) section is executed. now SuperNoteVIE "expression1" is calculated and "expression2" is always returned IMPLICITLY. That's how this construct works in JS , this property is to facilitate method chaining.LearnByHeartJust Beautiful
     */ 
     /*SuperNoteConcept 
-    we can't use arrow function in getter , setter funtion becouse "argument" parameter object isn't defined.(Remember It "arguments" is as special keyword in JS .) like if you say let f= ()=> console.log(arguments); the output will give error that arguments isn't defined. but if you use old school function syntax like let f = function() {console.log(arguments)}, this will not throw error. it will only say that arugments is undefined. if you pass f(1,2,3), then the output will be Arguments(3)[1,2,3]. 
-    How ever, there is a work around this limitation. 
+    ⭐ we can't use arrow function in getter , setter funtion becouse "argument" parameter object isn't defined.(Remember It "arguments" is as special keyword in JS .) like if you say let f= ()=> console.log(arguments); the output will give error that arguments isn't defined. but if you use old school function syntax like let f = function() {console.log(arguments)}, this will not throw error. it will only say that arugments is undefined. if you pass f(1,2,3), then the output will be Arguments(3)[1,2,3]. How ever, there is a work around this limitation.
+    ⭐ Just BeautifulTake A Good Look did you notice the sytex of getter setter function. you may feel that it's like function and your  brain get tricked into thinking that it's function declaration syntex. But, it's not. 
+    RHS➡️VIENote look like old school function declaration and it is. Correct. 
+    LHS➡️Super here is the change. Normally there is syntex like const fun1 where fun1 is the name of the function. but in getter setter function, it's like my.data where 'my' is the name of the function whose getter or setter function it is being declared which deals with assigning or showing the value of the variable named 'data'. 
     */
     my.width=function(_){
         return arguments.length?((width = +_), my):width;
