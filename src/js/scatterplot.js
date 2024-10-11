@@ -38,7 +38,7 @@ export const scatterPlot = () => {
         title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
         r: rOfPlotCircle(rValue(d)),
     }));
-    console.log(marks);//Code Testing
+    // console.log(marks);//Code Testing
     
 
     // svg1.selectAll('circle').data(dataExtracted).join('circle').attr('cx');
