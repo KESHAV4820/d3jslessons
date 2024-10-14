@@ -14,7 +14,9 @@ import {selectAll,
     axisLeft,
     min,
     max,
-    format
+    format,
+    symbols,
+    symbol
 } from 'd3';
 
 const commaFormat = format(',');// this adds comma separator
@@ -24,7 +26,10 @@ export const scatterPlot = () => {
     let dataReceived;
     let xCoordinate,yCoordinate;
     let margin;
-    let minRadius,maxRadius;// we are using let not const becouse these variables are susceptible to changes for proper functioning of the application.  
+    let minRadius,maxRadius;
+    let yAxisLabel="candidates count";
+    let xAxisLabel="Zones";
+    let symbolValue, size;// we are using let not const becouse these variables are susceptible to changes for proper functioning of the application.  
     
     // console.log('rValueCalculated:', rValueCalculated);// Code Testing
 
@@ -66,16 +71,31 @@ export const scatterPlot = () => {
     svg1.selectAll('circle').data(marks).join('circle').attr('cx', d=> d.x).attr('cy', d=> d.y).attr('r',(d) => d.r).append('title').text(d=>d.title);
 
     // putting y and x axis in the chart. 
-    svg1.append('g').attr('transform',`translate(${margin.left},0)`).call(axisLeft(yCoordinateOfCenter));
+    const yAxisG=svg1.append('g').attr('transform',`translate(${margin.left},0)`).call(axisLeft(yCoordinateOfCenter));
     /*QuickNote
     this same code can also be written as the following:-
     axisLeft(yCoordinateOfCenter)(svg1.append('g').attr('transform',`translate(${margin.left},0)`));
     The above example shows that there are many functions that gives access to another function in D3.js. So mind the structure like fun()(). it is correct. 
     */ 
+     yAxisG.append('text')
+    .attr('class', 'axis-label')
+    .attr('y', -80)
+    .attr('x', -height/2)
+    .attr('fill', 'black')
+    .attr('transform', `rotate(-90)`)
+    .attr('text-anchor','middle')
+    .text(yAxisLabel);// this code puts the name on the axis and formates the look of the names.
 
-    svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
+    const xAxisG=svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
 
-    };
+    xAxisG.append('text')
+    .attr('class', 'axis-label')
+    .attr('y', 50)
+    .attr('x', '80%')
+    .attr('fill', 'black')
+    .text(xAxisLabel);
+
+};
 
 
     // Now defining getter and setter functions for above my();
