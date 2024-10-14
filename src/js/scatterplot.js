@@ -91,8 +91,9 @@ export const scatterPlot = () => {
     xAxisG.append('text')
     .attr('class', 'axis-label')
     .attr('y', 50)
-    .attr('x', '80%')
+    .attr('x', 580)
     .attr('fill', 'black')
+    .attr('text-anchor','middle')
     .text(xAxisLabel);
 
 };
