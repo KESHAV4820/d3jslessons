@@ -111,6 +111,7 @@ export const scatterPlot = () => {
     RHS➡️VIENote look like old school function declaration and it is. Correct. 
     LHS➡️Super here is the change. Normally there is syntex like const fun1 where fun1 is the name of the function. but in getter setter function, it's like my.data where 'my' is the name of the function whose getter or setter function it is being declared which deals with assigning or showing the value of the variable named 'data'. 
     */
+    
     my.width=function(_){
         return arguments.length?((width = +_), my):width;
     };
