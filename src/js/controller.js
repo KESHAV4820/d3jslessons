@@ -95,14 +95,29 @@ const minRadius=3;
 
 // here we are declaring the area where chart shall be made
 const width=window.innerWidth;
-const height=window.innerHeight-100;//800;
+const height=window.innerHeight-55;//800;
 const svg1= select('body').append('svg').attr('width',width).attr('height',height);
 
 // generic code
 const main = async () =>{
-    const dataExtracted =await csv(csvDataPath, parseRow); 
+    // const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
 
+    const plot = scatterPlot()
+    .width(width)
+    .height(height)
+    // .dataReceived(dataExtracted)//Alternative Code: 
+    .dataReceived( await csv(csvDataPath,parseRow))
+    .xCoordinate((d) => d.zone_score )
+    .yCoordinate((d) => d.zone_score)
+    .margin({
+        top:30, 
+        right:33, 
+        bottom:55, 
+        left:120,})
+    .maxRadius(16)
+    .minRadius(2);
+   svg1.call(plot);
     /*code migrated to scatterplot.js file
     // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scaleLinear().domain(extent(dataExtracted,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
@@ -140,21 +155,41 @@ const main = async () =>{
     */
 
     // console.log('Setting up scatterPlot');//Code Testing
+    /* code migrated☝🏼 to variable 'plot' for refactoring
     svg1.call(scatterPlot()
     .width(width)
     .height(height)
-    .dataReceived(dataExtracted)//Alternative Code: .dataReceived( await csv(csvDataPath,parseRow))
+    // .dataReceived(dataExtracted)//Alternative Code: 
+    .dataReceived( await csv(csvDataPath,parseRow))
     .xCoordinate((d) => d.zone_score )
     .yCoordinate((d) => d.zone_score)
     .margin({
         top:30, 
-        right:30, 
-        bottom:30, 
-        left:100,})
+        right:33, 
+        bottom:55, 
+        left:120,})
     .maxRadius(16)
-    .minRadius(2));//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
-    console.log('scatterplot setup complete');//Code Testing
-    
+    .minRadius(2)
+);//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
+    // console.log('scatterplot setup complete');//Code Testing
+*/
+    const columns=[
+        'exam_name',
+        'exam_year',
+        'exam_tier',
+        'zone_name',
+        'zone_score',
+        'state_name',
+        'state_score',
+        'city_name',
+        'city_score'
+    ];
+    let i =0;//counter variable for offset
+    setInterval(() => {
+        plot.xCoordinate((d) => d[columns[i%columns.length]] )//columns[i%columns.length] expression is to set the offset for selection in loop. 
+        svg1.call(plot);
+        i++;
+    }, 20000);
 };
 main();
 

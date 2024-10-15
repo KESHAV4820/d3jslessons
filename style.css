@@ -6,3 +6,7 @@ body{
 .tick text {
     font-size: 24px;
 }
+
+.axis-label{
+font-size: 35px;
+}

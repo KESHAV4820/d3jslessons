@@ -16,7 +16,8 @@ import {selectAll,
     max,
     format,
     symbols,
-    symbol
+    symbol,
+    timeFormat
 } from 'd3';
 
 const commaFormat = format(',');// this adds comma separator
@@ -68,29 +69,48 @@ export const scatterPlot = () => {
     
 
     // svg1.selectAll('circle').data,dataReceived).join('circle').attr('cx');
-    svg1.selectAll('circle').data(marks).join('circle').attr('cx', d=> d.x).attr('cy', d=> d.y).attr('r',(d) => d.r).append('title').text(d=>d.title);
+    svg1.selectAll('circle')
+        .data(marks)
+        .join('circle')
+        .attr('cx', d=> d.x)
+        .attr('cy', d=> d.y)
+        .attr('r',(d) => d.r)
+        .append('title')
+        .text(d=>d.title);
 
     // putting y and x axis in the chart. 
-    const yAxisG=svg1.append('g').attr('transform',`translate(${margin.left},0)`).call(axisLeft(yCoordinateOfCenter));
+    const yAxisG=svg1.selectAll('g.y-axis')
+                     .data([null])
+                     .join('g')
+                     .attr('class','y-axis')
+                     .attr('transform',`translate(${margin.left},0)`)
+                     .call(axisLeft(yCoordinateOfCenter));
     /*QuickNote
     this same code can also be written as the following:-
     axisLeft(yCoordinateOfCenter)(svg1.append('g').attr('transform',`translate(${margin.left},0)`));
     The above example shows that there are many functions that gives access to another function in D3.js. So mind the structure like fun()(). it is correct. 
     */ 
-     yAxisG.append('text')
-    .attr('class', 'axis-label')
-    .attr('y', -80)
-    .attr('x', -height/2)
-    .attr('fill', 'black')
-    .attr('transform', `rotate(-90)`)
-    .attr('text-anchor','middle')
-    .text(yAxisLabel);// this code puts the name on the axis and formates the look of the names.
+          yAxisG.append('text')
+                .attr('class', 'axis-label')
+                .attr('y', -97)
+                .attr('x', -height/2)
+                .attr('fill', 'black')
+                .attr('transform', `rotate(-90)`)
+                .attr('text-anchor','middle')
+                .text(yAxisLabel);// this code puts the name on the axis and formates the look of the names.
 
-    const xAxisG=svg1.append('g').attr('transform',`translate(0,${height-margin.bottom})`).call(axisBottom(xCoordinateOfCenter));
+    const xAxisG=svg1.selectAll('g.x-axis')
+    .data([null])
+    .join('g')
+    .attr('class','x-axis')
+    .attr('transform',
+          `translate(0,${height-margin.bottom})`
+        )
+    .call(axisBottom(xCoordinateOfCenter));// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
 
     xAxisG.append('text')
     .attr('class', 'axis-label')
-    .attr('y', 50)
+    .attr('y', 55)
     .attr('x', 580)
     .attr('fill', 'black')
     .attr('text-anchor','middle')
