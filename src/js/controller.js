@@ -189,7 +189,7 @@ const main = async () =>{
         plot.xCoordinate((d) => d[columns[i%columns.length]] )//columns[i%columns.length] expression is to set the offset for selection in loop. 
         svg1.call(plot);
         i++;
-    }, 20000);
+    }, 4000);
 };
 main();
 

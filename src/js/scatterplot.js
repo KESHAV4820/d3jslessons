@@ -17,7 +17,9 @@ import {selectAll,
     format,
     symbols,
     symbol,
-    timeFormat
+    timeFormat,
+    transition,
+    easeLinear
 } from 'd3';
 
 const commaFormat = format(',');// this adds comma separator
@@ -56,8 +58,8 @@ export const scatterPlot = () => {
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
     // console.log('Creating marks. rValueCalculated type:', typeof rValueCalculated);//Code Testing
     const marks=dataReceived.map(d =>{
-        console.log('Processing data point:', d);//Code Testing
-        console.log('rValueCalculated(d):', rValueCalculated(d));//Code Testing
+        // console.log('Processing data point:', d);//Code Testing
+        // console.log('rValueCalculated(d):', rValueCalculated(d));//Code Testing
         return {
         x: xCoordinateOfCenter(xCoordinate(d)),
         y: yCoordinateOfCenter(yCoordinate(d)),
@@ -69,14 +71,52 @@ export const scatterPlot = () => {
     
 
     // svg1.selectAll('circle').data,dataReceived).join('circle').attr('cx');
-    svg1.selectAll('circle')
-        .data(marks)
+/*code upgrade 👇🏼
+    .data(marks)
         .join('circle')
+        // .transition()// SuperNoteEariler version of D3.js used to return selection object. On which you can used append() funtion. But now, it's no more the case. Becouse it returns it's own transition related object which doesn't have access to .append(). Hence we need to break the implementation like below.
         .attr('cx', d=> d.x)
         .attr('cy', d=> d.y)
         .attr('r',(d) => d.r)
         .append('title')
         .text(d=>d.title);
+    */
+
+        const t=transition().duration(2000)
+                            .ease(easeLinear);
+/*VIEConcept: transition model
+        enter => enter.append("text")
+            .attr("fill", "green")
+            .attr("x", (d, i) => i * 16)
+            .attr("y", -30)
+            .text(d => d)
+          .call(enter => enter.transition(t)
+            .attr("y", 0)),//when data is added
+        update => update
+            .attr("fill", "black")
+            .attr("y", 0)
+          .call(update => update.transition(t)
+            .attr("x", (d, i) => i * 16)),// when data point simply changes position
+        exit => exit
+            .attr("fill", "brown")
+          .call(exit => exit.transition(t)
+            .attr("y", 30)
+            .remove()// when data point has to be removed.
+*/
+    
+        const circlePlotted=svg1.selectAll('circle')
+        .data(marks)
+        .join('circle')
+        .attr('r',0);
+
+        circlePlotted.transition(t)
+                     .attr('cx', d=> d.x)
+                     .attr('cy', d=> d.y)
+                     .attr('r',(d) => d.r);
+
+        circlePlotted.append('title')
+                     .text(d=>d.title);
+
 
     // putting y and x axis in the chart. 
     const yAxisG=svg1.selectAll('g.y-axis')
