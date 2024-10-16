@@ -106,7 +106,16 @@ export const scatterPlot = () => {
     
         const circlePlotted=svg1.selectAll('circle')
         .data(marks)
-        .join('circle')
+        .join(enter =>enter.append('circle')
+                           .attr('cx', d=> d.x)
+                           .attr('cy', d=> d.y)
+                           .attr('r',0)
+                           .attr('r',(d) => d.r)
+                           .transition(t), 
+        update=> update.attr('cx', d=> d.x)
+                       .attr('cy', d=> d.y)
+                       .attr('r',(d) => d.r), 
+        exit => exit.remove())
         .attr('r',0);
 
         circlePlotted.transition(t)
