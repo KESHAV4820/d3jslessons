@@ -7,6 +7,10 @@ body{
     font-size: 24px;
 }
 
-.axis-label{
+.y-axis-label{
 font-size: 35px;
+}
+
+.x-axis-label{
+    font-size: 35px;
 }

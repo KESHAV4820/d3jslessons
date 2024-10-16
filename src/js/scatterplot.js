@@ -80,9 +80,9 @@ export const scatterPlot = () => {
 
     // putting y and x axis in the chart. 
     const yAxisG=svg1.selectAll('g.y-axis')
-                     .data([null])
+                     .data([null])// this data([null]) is just to signify that we want one 1️⃣ thing, not null, not 2, but one thing. 
                      .join('g')
-                     .attr('class','y-axis')
+                     .attr('class','y-axis')//Note this class id is actually used to differentiate between element named y-axis and other classes. If this class specialization was missing, then after setting up the y axis using 'g' insider tag, and doing all the formating on it as instructed,it will move on to making another element lets say x axis. there it will use 'g' tag as well. Now since there isn't specialised class name or no name at all, it will overwrite the same old g element and make x axis on it. Now y axis  is lost. ⭐. that's why. 
                      .attr('transform',`translate(${margin.left},0)`)
                      .call(axisLeft(yCoordinateOfCenter));
     /*QuickNote
@@ -90,7 +90,8 @@ export const scatterPlot = () => {
     axisLeft(yCoordinateOfCenter)(svg1.append('g').attr('transform',`translate(${margin.left},0)`));
     The above example shows that there are many functions that gives access to another function in D3.js. So mind the structure like fun()(). it is correct. 
     */ 
-          yAxisG.append('text')
+          /*code upgrade 👇🏼👇🏼 to add the lable name such that it doesn't get over written every time the new rendering has to happen in said time interval. 
+            yAxisG.append('text')
                 .attr('class', 'axis-label')
                 .attr('y', -97)
                 .attr('x', -height/2)
@@ -98,23 +99,45 @@ export const scatterPlot = () => {
                 .attr('transform', `rotate(-90)`)
                 .attr('text-anchor','middle')
                 .text(yAxisLabel);// this code puts the name on the axis and formates the look of the names.
+                */
+            yAxisG.selectAll('.y-axis-label')
+                  .data([null])
+                  .join('g')
+                  .append('text')//SuperVIENote this position on .append('text') is very important. we are appending the text on the single group element created using y-axis-label
+                  .attr('class','y-axis-label')
+                  .attr('transform',`rotate(-90)`)
+                  .attr('y', -97).attr('x', -height/2)
+                  .attr('fill', 'black')
+                  .attr('text-anchor','middle')
+                  .text(yAxisLabel);
 
     const xAxisG=svg1.selectAll('g.x-axis')
-    .data([null])
-    .join('g')
-    .attr('class','x-axis')
-    .attr('transform',
-          `translate(0,${height-margin.bottom})`
-        )
-    .call(axisBottom(xCoordinateOfCenter));// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
+                     .data([null])
+                     .join('g')
+                     .attr('class','x-axis')
+                     .attr('transform',
+            `translate(0,${height-margin.bottom})`
+                    ).call(axisBottom(xCoordinateOfCenter));// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
 
-    xAxisG.append('text')
-    .attr('class', 'axis-label')
-    .attr('y', 55)
-    .attr('x', 580)
-    .attr('fill', 'black')
-    .attr('text-anchor','middle')
-    .text(xAxisLabel);
+    /*code upgrade👇🏼
+    // xAxisG.append('text')
+    // .attr('class', 'axis-label')
+    // .attr('y', 55)
+    // .attr('x', 580)
+    // .attr('fill', 'black')
+    // .attr('text-anchor','middle')
+    // .text(xAxisLabel);
+    */
+            xAxisG.selectAll('.x-axis-label')
+                  .data([null])
+                  .join('g')
+                  .append('text')
+                  .attr('class','x-axis-label')
+                  .attr('y', 55)
+                  .attr('x', 580)
+                  .attr('fill', 'black')
+                  .attr('text-anchor','middle')
+                  .text(xAxisLabel);
 
 };
 
