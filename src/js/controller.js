@@ -27,8 +27,8 @@ import {scatterPlot} from './scatterplot';
     1️⃣1️⃣after modularation of code, we have turned the rValue() function not into getter or setter function, but into a full fledged rValueCalculated() function and hence, it return radius values not the "my" in scatterplot.js . Becouse there is no point in making it into a getter or setter function if the radius is variable and has to be calculated internally from the data accessed. If the radius were to be constant, then using getter, setter makes a sense. 
     1️⃣2️⃣ controller.js is basically the area where you have all the section of code that you will need to change or configure for different types of data. Within main(), we are calling scatterplot() and adding all configuration to it. 
     1️⃣3️⃣in Scatterplot.js we have all the data that need very few and far in between changes, basically, they are static code for data visualisation. hence it has been put to another module for better code visibility in controller.js
-    1️⃣4️⃣
-    1️⃣5️⃣
+    1️⃣4️⃣setInterval() is best to use when you are going to use it for duration of longer time scale and not for any animation related rendering.
+    1️⃣5️⃣requestAnimationFrames() is best used for small scale time duration and specially for Animation related implementation. It has better settings for the synchronization and controls in between with your display and rendering w.r.t set Interval.
     1️⃣6️⃣
     1️⃣7️⃣
     1️⃣8️⃣
@@ -186,7 +186,8 @@ const main = async () =>{
     ];
     let i =0;//counter variable for offset
     setInterval(() => {
-        plot.xCoordinate((d) => d[columns[i%columns.length]] )//columns[i%columns.length] expression is to set the offset for selection in loop. 
+        plot.xCoordinate((d) => d[columns[i%columns.length]] ),//columns[i%columns.length] expression is to set the offset for selection in loop. 
+        // plot.yCoordinate((d) => d[columns[i%columns.length]] ),// Usless Coding could be used in future.
         svg1.call(plot);
         i++;
     }, 4000);

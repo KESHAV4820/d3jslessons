@@ -45,6 +45,8 @@ export const scatterPlot = () => {
 
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
+    console.log(dataReceived);
+    
     
     //legacy code const yCoordinateOfCenter=scaleLinear().domain([
     //     d3.min,dataReceived, yCoordinate), 
@@ -82,8 +84,13 @@ export const scatterPlot = () => {
         .text(d=>d.title);
     */
 
-        const t=transition().duration(2000)
-                            .ease(easeLinear);
+        const positionCircles = (circleCoordinates) => {	
+        circleCoordinates.attr('cx',(d) => d.x)
+                         .attr('cy', (d) => d.y);
+    	}
+
+        const t=transition().duration(1000);
+                            // .ease(easeLinear);
 /*VIEConcept: transition model
         enter => enter.append("text")
             .attr("fill", "green")
@@ -107,24 +114,28 @@ export const scatterPlot = () => {
         const circlePlotted=svg1.selectAll('circle')
         .data(marks)
         .join(enter =>enter.append('circle')
-                           .attr('cx', d=> d.x)
-                           .attr('cy', d=> d.y)
+                        //    .attr('cx', d=> d.x)
+                        //    .attr('cy', d=> d.y)
+                           .call(positionCircles)
                            .attr('r',0)
+                           .call(enter => enter.transition(t))//Concept Note this pattern of using .call(). Explained👇🏼 at ⭐1️⃣.
                            .attr('r',(d) => d.r)
-                           .transition(t), 
-        update=> update.attr('cx', d=> d.x)
-                       .attr('cy', d=> d.y)
-                       .attr('r',(d) => d.r), 
+                           .append('title')
+                           .text(d => d.title),
+/*⭐1️⃣ VIE see transition() returns a transition object which
+ is not selection object which in our case is svg1. but if you want to chain some method or attribute like ⚡append() or ⚡selectAll() or ⚡data() next to it, what will you do? Concept .call() always return the selection object. so you need to use .call() on the object/parameters after which you want to be sure to use the method chaining. Hence to append() which we can't do on default transition() object returned, we called .call() on it and now we get selection object on which append() will work.😎 Remember that transition and selection object has only few methods in common like .attr(), .style(), .text(), .html(), .on(), .call().
+ */ 
+        
+        update=> update.call((update) => update.transition(t).delay((d,i) => i*10)
+                     .call(positionCircles)
+                    //  .attr('cx', d=> d.x)
+                    //  .attr('cy', d=> d.y)
+                     .attr('r',(d) => d.r),
+                    ).append('title')
+                     .text(d => d.title),
+
         exit => exit.remove())
         .attr('r',0);
-
-        circlePlotted.transition(t)
-                     .attr('cx', d=> d.x)
-                     .attr('cy', d=> d.y)
-                     .attr('r',(d) => d.r);
-
-        circlePlotted.append('title')
-                     .text(d=>d.title);
 
 
     // putting y and x axis in the chart. 
@@ -132,8 +143,10 @@ export const scatterPlot = () => {
                      .data([null])// this data([null]) is just to signify that we want one 1️⃣ thing, not null, not 2, but one thing. 
                      .join('g')
                      .attr('class','y-axis')//Note this class id is actually used to differentiate between element named y-axis and other classes. If this class specialization was missing, then after setting up the y axis using 'g' insider tag, and doing all the formating on it as instructed,it will move on to making another element lets say x axis. there it will use 'g' tag as well. Now since there isn't specialised class name or no name at all, it will overwrite the same old g element and make x axis on it. Now y axis  is lost. ⭐. that's why. 
-                     .attr('transform',`translate(${margin.left},0)`)
-                     .call(axisLeft(yCoordinateOfCenter));
+                     .attr('transform',`translate(${margin.left},0)`);
+                     
+            yAxisG.transition(t)
+                  .call(axisLeft(yCoordinateOfCenter));
     /*QuickNote
     this same code can also be written as the following:-
     axisLeft(yCoordinateOfCenter)(svg1.append('g').attr('transform',`translate(${margin.left},0)`));
@@ -158,7 +171,11 @@ export const scatterPlot = () => {
                   .attr('y', -97).attr('x', -height/2)
                   .attr('fill', 'black')
                   .attr('text-anchor','middle')
-                  .text(yAxisLabel);
+                  .text(yAxisLabel);//Issue Found that transition(t) not working on this. 
+            yAxisG.select('.y-axis-label')
+                  .transition(t)
+                  .attr('y', -97)
+                  .attr('x', -height/2);
 
     const xAxisG=svg1.selectAll('g.x-axis')
                      .data([null])
@@ -166,7 +183,9 @@ export const scatterPlot = () => {
                      .attr('class','x-axis')
                      .attr('transform',
             `translate(0,${height-margin.bottom})`
-                    ).call(axisBottom(xCoordinateOfCenter));// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
+                    );
+            xAxisG.transition(t)
+                  .call(axisBottom(xCoordinateOfCenter));// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
 
     /*code upgrade👇🏼
     // xAxisG.append('text')
@@ -187,6 +206,11 @@ export const scatterPlot = () => {
                   .attr('fill', 'black')
                   .attr('text-anchor','middle')
                   .text(xAxisLabel);
+
+            xAxisG.select('.x-axis-label')
+                  .transition(t)
+                  .attr('y',55)
+                  .attr('x',580);
 
 };
 
