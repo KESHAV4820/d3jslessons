@@ -59,6 +59,7 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 // const commaFormat = format(',');// this adds comma separator code migrated to scatterplot.js
 
 const parseRow = (d)=>{
+    d.exam_name=d.exam_name;
     d.exam_year=+d.exam_year;
     d.exam_tier=+d.exam_tier;
     d.zone_score=+d.zone_score;
@@ -100,14 +101,20 @@ const svg1= select('body').append('svg').attr('width',width).attr('height',heigh
 
 // generic code
 const main = async () =>{
-    // const dataExtracted =await csv(csvDataPath, parseRow); 
+    const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
+    const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
+        (column) => typeof dataExtracted[0][column] === 'number'
+        );//SuperConceptObject.keys(dataExtracted[0]) gives an array of things in first row. 
+console.log(columnsForXaxis);
 
+   
+/*code migrated to setInterval()
     const plot = scatterPlot()
     .width(width)
     .height(height)
-    // .dataReceived(dataExtracted)//Alternative Code: 
-    .dataReceived( await csv(csvDataPath,parseRow))
+    .dataReceived(dataExtracted) 
+    // .dataReceived( await csv(csvDataPath,parseRow))//Alternative Code
     .xCoordinate((d) => d.zone_score )
     .yCoordinate((d) => d.zone_score)
     .margin({
@@ -118,6 +125,7 @@ const main = async () =>{
     .maxRadius(16)
     .minRadius(2);
    svg1.call(plot);
+   */
     /*code migrated to scatterplot.js file
     // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scaleLinear().domain(extent(dataExtracted,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
@@ -184,12 +192,34 @@ const main = async () =>{
         'city_name',
         'city_score'
     ];
-    let i =0;//counter variable for offset
+    let i =0;//counter variable to set offset for x axis
+    let j=0;// counter variable to set offset for y axis
     setInterval(() => {
-        plot.xCoordinate((d) => d[columns[i%columns.length]] ),//columns[i%columns.length] expression is to set the offset for selection in loop. 
+        
+            const plot = scatterPlot()
+                .width(width)
+                .height(height)
+                .dataReceived(dataExtracted) 
+                // .dataReceived( await csv(csvDataPath,parseRow))//Alternative Code
+                .xCoordinate((d) => d[columnsForXaxis[i]])
+                .xAxisLabel(columnsForXaxis[i])
+                .yCoordinate((d) => d[dataExtracted[0][j]])
+                .yAxisLabel(dataExtracted[0][j])
+                .margin({
+                    top:30, 
+                    right:33, 
+                    bottom:55, 
+                    left:120,})
+                .maxRadius(16)
+                .minRadius(2);
+            svg1.call(plot);
+
+        // plot.xCoordinate((d) => d[columns[i%columns.length]] ),//columns[i%columns.length] expression is to set the offset for selection in loop. 
         // plot.yCoordinate((d) => d[columns[i%columns.length]] ),// Usless Coding could be used in future.
         svg1.call(plot);
-        i++;
+        // i++;
+        i=(i+1)%columnsForXaxis.length;
+        j=(j+1)%dataExtracted[0].length;
     }, 4000);
 };
 main();

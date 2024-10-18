@@ -30,8 +30,8 @@ export const scatterPlot = () => {
     let xCoordinate,yCoordinate;
     let margin;
     let minRadius,maxRadius;
-    let yAxisLabel="candidates count";
-    let xAxisLabel="Zones";
+    let yAxisLabel="candidates count →";
+    let xAxisLabel="Zones →";
     let symbolValue, size;// we are using let not const becouse these variables are susceptible to changes for proper functioning of the application.  
     
     // console.log('rValueCalculated:', rValueCalculated);// Code Testing
@@ -196,9 +196,31 @@ export const scatterPlot = () => {
     // .attr('text-anchor','middle')
     // .text(xAxisLabel);
     */
-            xAxisG.selectAll('.x-axis-label')
-                  .data([null])
-                  .join('g')
+        xAxisG.selectAll('.x-axis-label')
+            .data([null])
+            // .join('g')
+           .join((enter) => 
+             enter.append('text')
+                  .text(xAxisLabel)
+                  .attr('class','x-axis-label')
+                  .attr('y', 55)
+                  .attr('x', 580)
+                  .attr('fill', 'black')
+                  .attr('text-anchor','middle')
+                  .call(((enter) => 
+                    enter.transition(t)
+                         .attr('y',55)
+                         .attr('x',580))),
+
+                (update) => 
+             update.call((update) => 
+                    update.attr('y',height * 55)
+                          .transition(t)
+                          .text(xAxisLabel)
+                          .attr('y', 55)
+            ),
+            (exist) => exist.append());
+            /*code migrated☝🏼   to enter(), update(), exist()   
                   .append('text')
                   .attr('class','x-axis-label')
                   .attr('y', 55)
@@ -211,6 +233,7 @@ export const scatterPlot = () => {
                   .transition(t)
                   .attr('y',55)
                   .attr('x',580);
+                  */
 
 };
 
@@ -244,6 +267,14 @@ export const scatterPlot = () => {
     my.yCoordinate=function(_){
         return arguments.length?((yCoordinate = _), my):yCoordinate;
     };
+
+    my.xAxisLabel=function(_){
+        return arguments.length?((xAxisLabel = _),my):xAxisLabel;
+    }
+
+    my.yAxisLabel=function(_){
+        return arguments.length?((yAxisLabel = _),my):yAxisLabel;
+    }
 
     my.margin=function(_){
         return arguments.length?((margin = _), my):margin;
