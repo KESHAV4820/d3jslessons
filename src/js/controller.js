@@ -247,14 +247,16 @@ const main = async () =>{
                               .textForMenuLabel('Candidate Counts')
                               .optionsWithinMenu(columnsForY)
                               .on('change',function(d){
-                                console.log('y menu changed');
-                                console.log(d);
+                                console.log('y menu changed: '+d);//Code Testing
                               })
                         );
     menuContainerX.call(
                         menu().id('x-menu')
                               .textForMenuLabel('Group Wise')
                               .optionsWithinMenu(columnsForX)
+                              .on('change',function(d){
+                                // console.log('x menu changed: '+d);//Code Testing
+                              })
                         );
     //   menuExamName.call(
     //                     menu().id('menu-examname')
