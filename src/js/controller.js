@@ -8,6 +8,7 @@ import {csv,
         // format
     } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
 import {scatterPlot} from './scatterplot';
+import {menu} from './menu';
 
 /*SuperNote:-
     0️⃣D3.js is highly dependent on method chaining.
@@ -99,14 +100,42 @@ const width=window.innerWidth;
 const height=window.innerHeight-55;//800;
 const svg1= select('body').append('svg').attr('width',width).attr('height',height);
 
+const menuContainerY= select('body')
+                    .append('div')
+                    .attr('class','menu-container-y');
+
+const menuContainerX= select('body')
+                    .append('div')
+                    .attr('class','menu-container-x');
+
+// const menuExamName= select('body')
+//                     .append('div')
+//                     .attr('class','menu-container-examname');
+
+// const menuExamTier= select('body')
+//                     .append('div')
+//                     .attr('class','menu-container-examtier');
+
+// const menuExamYear= select('body')
+//                     .append('div')
+//                     .attr('class','menu-container-examyear');
+
+// const menuChartType= select('body')
+//                     .append('div')
+//                     .attr('class','menu-container-charttype');
+
 // generic code
 const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
     const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
-        (column) => typeof dataExtracted[0][column] === 'number'
+        (column) => typeof dataExtracted[0][column] === 'string'
         );//SuperConceptObject.keys(dataExtracted[0]) gives an array of things in first row. 
-console.log(columnsForXaxis);
+        // const columnsForYaxis=Object.keys(dataExtracted[0]).filter(
+        //     (column) => typeof dataExtracted[0][column] === 'number'
+        //     );
+        console.log(columnsForXaxis);// Code Testing
+
 
    
 /*code migrated to setInterval()
@@ -163,7 +192,7 @@ console.log(columnsForXaxis);
     */
 
     // console.log('Setting up scatterPlot');//Code Testing
-    /* code migrated☝🏼 to variable 'plot' for refactoring
+    // code migrated☝🏼 to variable 'plot' for refactoring
     svg1.call(scatterPlot()
     .width(width)
     .height(height)
@@ -180,18 +209,75 @@ console.log(columnsForXaxis);
     .minRadius(2)
 );//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
-*/
-    const columns=[
-        'exam_name',
-        'exam_year',
-        'exam_tier',
-        'zone_name',
-        'zone_score',
-        'state_name',
-        'state_score',
-        'city_name',
-        'city_score'
+//
+    const columnsForX=[
+        // { value:'exam_name',text:'Exam Name'},
+        // { value:'exam_year',text:'Exam Year'},
+        // { value:'exam_tier',text:'Exam Tier'},
+        { value:'zone_name',text:'Zone Name'},
+        // 'zone_score',
+        { value:'state_name',text:'State Name'},
+        // 'state_score',
+        { value:'city_name',text:'City Name'},
+        // 'city_score'
     ];
+    const columnsForY=[
+        // 'exam_name',
+        // 'exam_year',
+        // 'exam_tier',
+        // 'zone_name',
+        { value:'zone_score',text:'Zone Score'},
+        // 'state_name',
+        { value:'state_score',text:'State Score'},
+        // 'city_name',
+        { value:'city_score',text:'City Score'},
+    ];
+    // const columnsForExamName=[
+    //     { value:'exam_name',text:'Exam Name'},
+    // ];
+    // const columnsForExamTier=[
+    //     { value:'exam_tier',text:'Exam Tier'},
+    // ];
+    // const columnsForExamYear=[
+    //     { value:'exam_year',text:'Exam Year'},
+    // ];
+
+    menuContainerY.call(
+                        menu().id('y-menu')
+                              .textForMenuLabel('Candidate Counts')
+                              .optionsWithinMenu(columnsForY)
+                              .on('change',function(d){
+                                console.log('y menu changed');
+                                console.log(d);
+                              })
+                        );
+    menuContainerX.call(
+                        menu().id('x-menu')
+                              .textForMenuLabel('Group Wise')
+                              .optionsWithinMenu(columnsForX)
+                        );
+    //   menuExamName.call(
+    //                     menu().id('menu-examname')
+    //                           .textForMenuLabel('Exam Name')
+    //                           .optionsWithinMenu()
+    //                     );
+    //   menuExamTier.call(
+    //                     menu().id('menu-examtier')
+    //                           .textForMenuLabel('Exam Tier')
+    //                           .optionsWithinMenu()
+    //                     );
+    //   menuExamYear.call(
+    //                     menu().id('menu-examyear')
+    //                           .textForMenuLabel('Exam Year')
+    //                           .optionsWithinMenu()
+    //                     );
+    //   menuChartType.call(
+    //                     menu().id('menu-charttype')
+    //                           .textForMenuLabel('Exam Type')
+    //                           .optionsWithinMenu()
+    //                     );
+
+    /*NoteVIETake A Good LookThis section was just for learning that how graphs actually form and automatically take the data. 
     let i =0;//counter variable to set offset for x axis
     let j=0;// counter variable to set offset for y axis
     setInterval(() => {
@@ -221,6 +307,7 @@ console.log(columnsForXaxis);
         i=(i+1)%columnsForXaxis.length;
         j=(j+1)%dataExtracted[0].length;
     }, 4000);
+    */
 };
 main();
 

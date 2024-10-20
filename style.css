@@ -14,3 +14,25 @@ font-size: 35px;
 .x-axis-label{
     font-size: 35px;
 }
+
+.menu-container-y{
+    position: fixed;
+    top: 20;
+    left: 20;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-container-x{
+    position: fixed;
+    top: 725;
+    left: 1430;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .menu-container-examname{}
+
+.menu-container-examyear{}
+
+.menu-container-charttype{} */
