@@ -197,7 +197,7 @@ const main = async () =>{
 
     // console.log('Setting up scatterPlot');//Code Testing
 // code migrated☝🏼 to variable 'plot' for refactoring
-    const plot=svg1.call(scatterPlot()
+    const plot=scatterPlot()
     .width(width)
     .height(height)
     // .dataReceived(dataExtracted)//Alternative Code: 
@@ -210,8 +210,9 @@ const main = async () =>{
         bottom:55, 
         left:120,})
     .maxRadius(16)
-    .minRadius(2)
-);//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
+    .minRadius(2);
+svg1.call(plot);
+//Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
 //
     const columnsForX=[
