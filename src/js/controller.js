@@ -10,7 +10,7 @@ import {csv,
 import {scatterPlot} from './scatterplot';
 import {menu} from './menu';
 
-/*SuperNote:-
+{/*SuperNote:-
     0️⃣D3.js is highly dependent on method chaining.
     1️⃣ScaleLinear: it sets the linear function between Domain and Range. Domain: is the sample space from where the input to a function is possible. Range: is the sample space, only within which, the output to the function is possible.  
     2️⃣ ScalePoint: is used to plot the values which are strings.
@@ -30,19 +30,23 @@ import {menu} from './menu';
     1️⃣3️⃣in Scatterplot.js we have all the data that need very few and far in between changes, basically, they are static code for data visualisation. hence it has been put to another module for better code visibility in controller.js
     1️⃣4️⃣setInterval() is best to use when you are going to use it for duration of longer time scale and not for any animation related rendering.
     1️⃣5️⃣requestAnimationFrames() is best used for small scale time duration and specially for Animation related implementation. It has better settings for the synchronization and controls in between with your display and rendering w.r.t set Interval.
-    1️⃣6️⃣
+    1️⃣6️⃣Take A Good LookVIELearnByHeart .on() setter getter function in menu.js has very important and intricate logic for implementing event listeners to it. 
+        🅰️ First we import "dispatch" from d3. this gives us construct that help us in emitting the events in d3.js And then, we instatiate it once like👉🏼 const listeners = dispatch('change'); for say 'change' event.
+        but why! are we using dispatch library at all. Becouse using this, we can declare our own set of 'events' right within the menu options.
+        🅱️  now this 'change' event is added to the select element say svg1 in our case which is the standered element that emits the events in DOM. And when we get that event, we are extracting the value that was clicked on which resides in the target method.
+        👉🏼 .on('change', (event)=>{listeners.call('change',null,event.target.value)})
+        and now this data is funneled using our d3 dispatch library to the controller.js call back function used inside the.on() method has been used. Note: this process of funneling this data is done  by listeners.call(). Think of it like a pipe line
     1️⃣7️⃣
     1️⃣8️⃣
     1️⃣9️⃣
     
-*/
+*/}
 
 if(module.hot){
     module.hot.accept();
 };
 
-/*Note
-const csvDataPath='./../../data/sampletestingdata.csv';// SuperVIE this way of passing the address is important as it is less error prone and helps bundler to find the file. Absolute address are not allowed for security reason. 
+{/*Note const csvDataPath='./../../data/sampletestingdata.csv';// SuperVIE this way of passing the address is important as it is less error prone and helps bundler to find the file. Absolute address are not allowed for security reason. 
 
 const csvDataPath = [
     '.',  // This refers to the current directory
@@ -51,7 +55,7 @@ const csvDataPath = [
     'data', // Then it goes into the 'data' folder
     'sampletestingdata.csv' // Finally, the CSV file
 ].join('/');// Remember ItJust Beautiful this is how we make a address more clean for maintainance.
-*/
+*/}
 import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel handle asset
 
 
@@ -192,8 +196,8 @@ const main = async () =>{
     */
 
     // console.log('Setting up scatterPlot');//Code Testing
-    // code migrated☝🏼 to variable 'plot' for refactoring
-    svg1.call(scatterPlot()
+// code migrated☝🏼 to variable 'plot' for refactoring
+    const plot=svg1.call(scatterPlot()
     .width(width)
     .height(height)
     // .dataReceived(dataExtracted)//Alternative Code: 
@@ -246,37 +250,50 @@ const main = async () =>{
                         menu().id('y-menu')
                               .textForMenuLabel('Candidate Counts')
                               .optionsWithinMenu(columnsForY)
-                              .on('change',function(d){
-                                console.log('y menu changed: '+d);//Code Testing
-                              })
+                              .on('change',(column) => {
+                                    svg1.call(plot.yCoordinate((d) => d[column]));
+                              		})
                         );
     menuContainerX.call(
                         menu().id('x-menu')
                               .textForMenuLabel('Group Wise')
                               .optionsWithinMenu(columnsForX)
-                              .on('change',function(d){
-                                // console.log('x menu changed: '+d);//Code Testing
+                              .on('change',(column) =>{
+                                    svg1.call(plot.xCoordinate((d) => d[column]));
+                                // console.log('x menu changed: '+column);//Code Testing
                               })
                         );
     //   menuExamName.call(
     //                     menu().id('menu-examname')
     //                           .textForMenuLabel('Exam Name')
-    //                           .optionsWithinMenu()
+    //                           .optionsWithinMenu()//👈🏼
+    //                           .on('change', function(d){
+    //                              console.log('Exam Name Menu Changed: '+d);//Code Testing
+    //                             })
     //                     );
     //   menuExamTier.call(
     //                     menu().id('menu-examtier')
     //                           .textForMenuLabel('Exam Tier')
     //                           .optionsWithinMenu()
+    //                           .on('change', (d) => {	
+    //                             console.log('Exam Tier Menu Changed: '+d);// Code Testing
+    //                          	})
     //                     );
     //   menuExamYear.call(
     //                     menu().id('menu-examyear')
     //                           .textForMenuLabel('Exam Year')
     //                           .optionsWithinMenu()
+    //                           .on('change', (d) => {	
+    //                             console.log('Exam Year Menu Changed: '+d);// Code Testing
+    //                           	})
     //                     );
     //   menuChartType.call(
     //                     menu().id('menu-charttype')
     //                           .textForMenuLabel('Exam Type')
     //                           .optionsWithinMenu()
+    //                           .on('change', (d) => {	
+    //                             console.log('Menu Chart Type Changed: '+d);//Code Testing
+    //                           	})
     //                     );
 
     /*NoteVIETake A Good LookThis section was just for learning that how graphs actually form and automatically take the data. 

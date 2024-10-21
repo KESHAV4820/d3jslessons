@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    margin-top: 35px;
     margin-left: 15px;
     overflow: hidden;
 }
@@ -17,7 +18,7 @@ font-size: 35px;
 
 .menu-container-y{
     position: fixed;
-    top: 20;
+    top: 45;
     left: 20;
     display: flex;
     justify-content: space-around;
@@ -25,8 +26,8 @@ font-size: 35px;
 
 .menu-container-x{
     position: fixed;
-    top: 725;
-    left: 1430;
+    top: 700;
+    left: 1190;
     display: flex;
     justify-content: space-around;
 }
