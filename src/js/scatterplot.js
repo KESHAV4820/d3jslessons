@@ -205,10 +205,9 @@ export const scatterPlot = () => {
                      .data([null])
                      .join('g')
                      .attr('class','x-axis')
-                     .attr('transform',
-            `translate(0,${height-margin.bottom})`
-                    );
-            xAxisG.transition(t)
+                     .attr('transform',`translate(0,${height-margin.bottom})`);
+
+          xAxisG.transition(t)
                   .call(axisBottom(xCoordinateOfCenter))
                   .selectAll("g.tick text")
                   .attr("text-anchor","end")
@@ -224,30 +223,27 @@ export const scatterPlot = () => {
     // .attr('text-anchor','middle')
     // .text(xAxisLabel);
     */
-        xAxisG.selectAll('.x-axis-label')
-            .data([null])
+          xAxisG.selectAll('.x-axis-label')
+                .data([null])
             // .join('g')
-           .join((enter) => 
-             enter.append('text')
-                  .text(xAxisLabel)
-                  .attr('class','x-axis-label')
-                  .attr('y', 55)
-                  .attr('x', 580)
-                  .attr('fill', 'black')
-                  .attr('text-anchor','middle')
-                  .call(((enter) => 
-                    enter.transition(t)
-                         .attr('y',55)
-                         .attr('x',580))),
+                .join((enter) => enter.append('text')
+                                      .text(xAxisLabel)
+                                      .attr('class','x-axis-label')
+                                      .attr('y', 55)
+                                      .attr('x', 580)
+                                      .attr('fill', 'black')
+                                      .attr('text-anchor','middle')
+                                      .call(((enter) => enter.transition(t)
+                                      .attr('y',55)
+                                      .attr('x',580))),
 
-                (update) => 
-             update.call((update) => 
-                    update.attr('y',height * 55)
-                          .transition(t)
-                          .text(xAxisLabel)
-                          .attr('y', 115)),
+                      (update) => update.call((update) => 
+                                            update.attr('y',height * 55)
+                                                  .transition(t)
+                                                  .text(xAxisLabel)
+                                                  .attr('y', 115)),
 
-                (exist) => exist.append());
+                      (exist) => exist.append());
             /*code migrated☝🏼   to enter(), update(), exist()   
                   .append('text')
                   .attr('class','x-axis-label')
