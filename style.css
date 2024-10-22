@@ -26,12 +26,19 @@ font-size: 35px;
 
 .menu-container-x{
     position: fixed;
-    top: 700;
-    left: 1190;
+    top: 1075;
+    left: 1450;
     display: flex;
     justify-content: space-around;
 }
 
+.container-dataselectionmenu{
+    position: fixed;
+    top: 5;
+    left: 5;
+    display: flex;
+    justify-content: space-around;
+}
 /* .menu-container-examname{}
 
 .menu-container-examyear{}

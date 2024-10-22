@@ -30,8 +30,8 @@ export const scatterPlot = () => {
     let xCoordinate,yCoordinate;
     let margin;
     let minRadius,maxRadius;
-    let yAxisLabel="candidates count →";
-    let xAxisLabel="Zones →";
+    let yAxisLabel="CANDIDATE COUNT →";
+    let xAxisLabel="PLACES →";
     let symbolValue, size;// we are using let not const becouse these variables are susceptible to changes for proper functioning of the application.  
     
     // console.log('rValueCalculated:', rValueCalculated);// Code Testing
@@ -44,7 +44,7 @@ export const scatterPlot = () => {
     const my = (svg1) => {
 
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
-    const xCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
+    const xCoordinateOfCenter=scalePoint().domain(dataReceived.map(xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
     console.log(dataReceived);
     
     
@@ -164,11 +164,12 @@ export const scatterPlot = () => {
                 */
             yAxisG.selectAll('.y-axis-label')
                   .data([null])
+            /*code upgradecode migrated      
                   .join('g')
                   .append('text')//SuperVIENote this position on .append('text') is very important. we are appending the text on the single group element created using y-axis-label
                   .attr('class','y-axis-label')
                   .attr('transform',`rotate(-90)`)
-                  .attr('y', -97).attr('x', -height/2)
+                  .attr('y', -120).attr('x', -height/2)
                   .attr('fill', 'black')
                   .attr('text-anchor','middle')
                   .text(yAxisLabel);//Issue Found that transition(t) not working on this. 
@@ -176,6 +177,29 @@ export const scatterPlot = () => {
                   .transition(t)
                   .attr('y', -97)
                   .attr('x', -height/2);
+            */
+            .join((enter) => 
+                enter.append('text')
+                        .attr('class','y-axis-label')
+                        .attr('transform',`rotate(-90)`)
+                        .attr('y', -120).attr('x', height/2)
+                        .attr('fill', 'black')
+                        .attr('text-anchor','middle')
+                        .text(yAxisLabel)
+                        .call(((enter) => 
+                        enter.transition(t)
+                                .attr('y',-97)
+                                .attr('x',-height/2))),
+   
+                  (update) => 
+                update.call((update) => 
+                       update.attr('y',height * 55)
+                             .transition(t)
+                             .text(yAxisLabel)
+                             .attr('y', -97)
+                             .attr('x',-height/2)),
+
+                  (exist) => exist.append());
 
     const xAxisG=svg1.selectAll('g.x-axis')
                      .data([null])
@@ -185,7 +209,10 @@ export const scatterPlot = () => {
             `translate(0,${height-margin.bottom})`
                     );
             xAxisG.transition(t)
-                  .call(axisBottom(xCoordinateOfCenter));// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
+                  .call(axisBottom(xCoordinateOfCenter))
+                  .selectAll("text")
+                  .attr("text-anchor","end")
+                  .attr("transform","rotate(-45)");// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
 
     /*code upgrade👇🏼
     // xAxisG.append('text')
@@ -269,11 +296,11 @@ export const scatterPlot = () => {
     };
 
     my.xAxisLabel=function(_){
-        return arguments.length?((xAxisLabel = _),my):xAxisLabel;
+        return arguments.length?((xAxisLabel = `${_} →`),my):xAxisLabel;
     }
 
     my.yAxisLabel=function(_){
-        return arguments.length?((yAxisLabel = _),my):yAxisLabel;
+        return arguments.length?((yAxisLabel = `${_} Count →`),my):yAxisLabel;
     }
 
     my.margin=function(_){

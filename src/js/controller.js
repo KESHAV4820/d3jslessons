@@ -202,13 +202,13 @@ const main = async () =>{
     .height(height)
     // .dataReceived(dataExtracted)//Alternative Code: 
     .dataReceived( await csv(csvDataPath,parseRow))
-    .xCoordinate((d) => d.zone_score )
+    .xCoordinate((d) => d.zone_name )
     .yCoordinate((d) => d.zone_score)
     .margin({
         top:30, 
         right:33, 
         bottom:55, 
-        left:120,})
+        left:125,})
     .maxRadius(16)
     .minRadius(2);
 svg1.call(plot);
@@ -252,7 +252,7 @@ svg1.call(plot);
                               .textForMenuLabel('Candidate Counts')
                               .optionsWithinMenu(columnsForY)
                               .on('change',(column) => {
-                                    svg1.call(plot.yCoordinate((d) => d[column]));
+                                    svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
                               		})
                         );
     menuContainerX.call(
@@ -260,7 +260,7 @@ svg1.call(plot);
                               .textForMenuLabel('Group Wise')
                               .optionsWithinMenu(columnsForX)
                               .on('change',(column) =>{
-                                    svg1.call(plot.xCoordinate((d) => d[column]));
+                                    svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
                                 // console.log('x menu changed: '+column);//Code Testing
                               })
                         );
