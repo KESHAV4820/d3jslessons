@@ -178,28 +178,28 @@ export const scatterPlot = () => {
                   .attr('y', -97)
                   .attr('x', -height/2);
             */
-            .join((enter) => 
-                enter.append('text')
-                        .attr('class','y-axis-label')
-                        .attr('transform',`rotate(-90)`)
-                        .attr('y', -120).attr('x', height/2)
-                        .attr('fill', 'black')
-                        .attr('text-anchor','middle')
-                        .text(yAxisLabel)
-                        .call(((enter) => 
-                        enter.transition(t)
-                                .attr('y',-97)
-                                .attr('x',-height/2))),
-   
-                  (update) => 
-                update.call((update) => 
-                       update.attr('y',height * 55)
-                             .transition(t)
-                             .text(yAxisLabel)
-                             .attr('y', -97)
-                             .attr('x',-height/2)),
+                  .join((enter) => 
+                    enter.append('text')
+                            .attr('class','y-axis-label')
+                            .attr('transform',`rotate(-90)`)
+                            .attr('y', -120).attr('x', height/2)
+                            .attr('fill', 'black')
+                            .attr('text-anchor','middle')
+                            .text(yAxisLabel)
+                            .call(((enter) => 
+                            enter.transition(t)
+                                    .attr('y',-97)
+                                    .attr('x',-height/2))),
+    
+                    (update) => 
+                    update.call((update) => 
+                        update.attr('y',height * 55)
+                                .transition(t)
+                                .text(yAxisLabel)
+                                .attr('y', -97)
+                                .attr('x',-height/2)),
 
-                  (exist) => exist.append());
+                    (exist) => exist.append());
 
     const xAxisG=svg1.selectAll('g.x-axis')
                      .data([null])
