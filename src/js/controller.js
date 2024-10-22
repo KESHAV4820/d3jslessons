@@ -207,7 +207,7 @@ const main = async () =>{
     .margin({
         top:30, 
         right:33, 
-        bottom:55, 
+        bottom:130, 
         left:125,})
     .maxRadius(16)
     .minRadius(2);

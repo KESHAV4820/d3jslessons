@@ -210,9 +210,10 @@ export const scatterPlot = () => {
                     );
             xAxisG.transition(t)
                   .call(axisBottom(xCoordinateOfCenter))
-                  .selectAll("text")
+                  .selectAll("g.tick text")
                   .attr("text-anchor","end")
-                  .attr("transform","rotate(-45)");// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
+                  .attr("transform","rotate(-45)")
+                  .style("font-size", "15px");// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
 
     /*code upgrade👇🏼
     // xAxisG.append('text')
@@ -244,9 +245,9 @@ export const scatterPlot = () => {
                     update.attr('y',height * 55)
                           .transition(t)
                           .text(xAxisLabel)
-                          .attr('y', 55)
-            ),
-            (exist) => exist.append());
+                          .attr('y', 115)),
+
+                (exist) => exist.append());
             /*code migrated☝🏼   to enter(), update(), exist()   
                   .append('text')
                   .attr('class','x-axis-label')
