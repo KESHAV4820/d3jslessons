@@ -39,8 +39,26 @@ font-size: 35px;
     display: flex;
     justify-content: space-around;
 }
-/* .menu-container-examname{}
+/* .menu-container-examname{
+    position: fixed;
+    top: 45;
+    left: 100;
+    display: flex;
+    justify-content: space-around;
+}
 
-.menu-container-examyear{}
+.menu-container-examyear{
+    position: fixed;
+    top: 45;
+    left: 200;
+    display: flex;
+    justify-content: space-around;
+}
 
-.menu-container-charttype{} */
+.menu-container-charttype{
+    position: fixed;
+    top: 45;
+    left: 300;
+    display: flex;
+    justify-content: space-around;
+} */
