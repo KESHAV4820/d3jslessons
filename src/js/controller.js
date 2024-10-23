@@ -237,15 +237,15 @@ svg1.call(plot);
         // 'city_name',
         { value:'city_score',text:'City Score'},
     ];
-    // const columnsForExamName=[
-    //     { value:'exam_name',text:'Exam Name'},
-    // ];
-    // const columnsForExamTier=[
-    //     { value:'exam_tier',text:'Exam Tier'},
-    // ];
-    // const columnsForExamYear=[
-    //     { value:'exam_year',text:'Exam Year'},
-    // ];
+    const columnsForExamName=[
+        { value:'exam_name',text:'Exam Name'},
+    ];
+    const columnsForExamTier=[
+        { value:'exam_tier',text:'Exam Tier'},
+    ];
+    const columnsForExamYear=[
+        { value:'exam_year',text:'Exam Year'},
+    ];
 
     menuContainerY.call(
                         menu().id('y-menu')
@@ -290,7 +290,7 @@ svg1.call(plot);
     //                     );
     //   menuChartType.call(
     //                     menu().id('menu-charttype')
-    //                           .textForMenuLabel('Exam Type')
+    //                           .textForMenuLabel('Chart Type')
     //                           .optionsWithinMenu()
     //                           .on('change', (d) => {	
     //                             console.log('Menu Chart Type Changed: '+d);//Code Testing

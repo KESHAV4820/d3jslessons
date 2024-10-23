@@ -19,7 +19,8 @@ import {selectAll,
     symbol,
     timeFormat,
     transition,
-    easeLinear
+    easeLinear,
+    select
 } from 'd3';
 
 const commaFormat = format(',');// this adds comma separator
@@ -42,6 +43,9 @@ export const scatterPlot = () => {
 
     //my() function is he place where it sets up all the selections like svg1 and does all the transformation needed using getter, setter functions, local declared variables. 
     const my = (svg1) => {
+
+        // we are creating a div that will contain all the svg chart body, named "chart-container"
+        //code in progress let chartContainer= select('body').select()
 
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scalePoint().domain(dataReceived.map(xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
@@ -223,27 +227,28 @@ export const scatterPlot = () => {
     // .attr('text-anchor','middle')
     // .text(xAxisLabel);
     */
-          xAxisG.selectAll('.x-axis-label')
-                .data([null])
-            // .join('g')
-                .join((enter) => enter.append('text')
-                                      .text(xAxisLabel)
-                                      .attr('class','x-axis-label')
-                                      .attr('y', 55)
-                                      .attr('x', 580)
-                                      .attr('fill', 'black')
-                                      .attr('text-anchor','middle')
-                                      .call(((enter) => enter.transition(t)
-                                      .attr('y',55)
-                                      .attr('x',580))),
+        xAxisG.selectAll('.x-axis-label')
+            .data([null])
+        // .join('g')
+            .join((enter) => enter.append('text')
+                                    .text(xAxisLabel)
+                                    .attr('class','x-axis-label')
+                                    .attr('y', 55)
+                                    .attr('x', 580)
+                                    .attr('fill', 'black')
+                                    .attr('text-anchor','middle')
+                                    .call(((enter) => enter.transition(t)
+                                    .attr('y',55)
+                                    .attr('x',580))),
 
-                      (update) => update.call((update) => 
-                                            update.attr('y',height * 55)
-                                                  .transition(t)
-                                                  .text(xAxisLabel)
-                                                  .attr('y', 115)),
+                    (update) => update.call((update) => 
+                                        update.attr('y',height * 55)
+                                                .transition(t)
+                                                .text(xAxisLabel)
+                                                .attr('y', 115)),
 
-                      (exist) => exist.append());
+                    (exist) => exist.append()
+                );
             /*code migrated☝🏼   to enter(), update(), exist()   
                   .append('text')
                   .attr('class','x-axis-label')
@@ -314,3 +319,400 @@ export const scatterPlot = () => {
 
     return my;
 };
+
+
+
+
+
+/* This code is to be use for code upgrade and adding scroll
+'use strict'
+
+import {
+    selectAll,
+    select,
+    scaleLinear,
+    scalePoint,
+    scaleOrdinal,
+    scalePow,
+    scaleSqrt,
+    scaleBand,
+    scaleTime,
+    extent,
+    axisBottom,
+    axisLeft,
+    min,
+    max,
+    format,
+    symbols,
+    symbol,
+    timeFormat,
+    transition,
+    easeLinear
+} from 'd3';
+
+const commaFormat = format(',');
+
+export const scatterPlot = () => {
+    let width, height;
+    let dataReceived;
+    let xCoordinate, yCoordinate;
+    let margin;
+    let minRadius, maxRadius;
+    let yAxisLabel = "candidates count →";
+    let xAxisLabel = "Zones →";
+    let symbolValue, size;
+    
+    const rValueCalculated = (d) => {
+        return d.zone_score/1000;
+    };
+
+    const my = (selection) => {
+        // Create container div for scrollability if it doesn't exist
+        let container = select('body').select('.chart-container');
+        if (container.empty()) {
+            container = select('body')
+                .append('div')
+                .attr('class', 'chart-container')
+                .style('width', '100%')
+                .style('position', 'relative');
+        }
+
+        // Calculate effective width based on data size
+        const effectiveWidth = dataReceived.length > 50 ? 
+            Math.max(width * 2, dataReceived.length * 30) : // 30px per item minimum
+            width;
+
+        // Update SVG width to accommodate all data points
+        selection.attr('width', effectiveWidth);
+        
+        const xCoordinateOfCenter = scaleLinear()
+            .domain(extent(dataReceived, xCoordinate))
+            .range([margin.left, effectiveWidth - margin.right]);
+
+        const yCoordinateOfCenter = scaleLinear()
+            .domain(extent(dataReceived, yCoordinate))
+            .range([height - margin.bottom, margin.top]);
+
+        const rOfPlotCircle = scaleSqrt()
+            .domain([0, max(dataReceived, rValueCalculated)])
+            .range([minRadius, maxRadius]);
+
+        const marks = dataReceived.map(d => ({
+            x: xCoordinateOfCenter(xCoordinate(d)),
+            y: yCoordinateOfCenter(yCoordinate(d)),
+            title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,
+            r: rOfPlotCircle(rValueCalculated(d))
+        }));
+
+        const positionCircles = (circleCoordinates) => {
+            circleCoordinates
+                .attr('cx', (d) => d.x)
+                .attr('cy', (d) => d.y);
+        }
+
+        const t = transition().duration(1000);
+
+        const circlePlotted = selection.selectAll('circle')
+            .data(marks)
+            .join(
+                enter => enter.append('circle')
+                    .call(positionCircles)
+                    .attr('r', 0)
+                    .call(enter => enter.transition(t))
+                    .attr('r', (d) => d.r)
+                    .append('title')
+                    .text(d => d.title),
+                update => update
+                    .call(update => update.transition(t)
+                        .delay((d, i) => i * 10)
+                        .call(positionCircles)
+                        .attr('r', (d) => d.r))
+                    .select('title')
+                    .text(d => d.title),
+                exit => exit.remove()
+            );
+
+        // Y Axis
+        const yAxisG = selection.selectAll('g.y-axis')
+            .data([null])
+            .join('g')
+            .attr('class', 'y-axis')
+            .attr('transform', `translate(${margin.left},0)`);
+
+        yAxisG.transition(t)
+            .call(axisLeft(yCoordinateOfCenter));
+
+        yAxisG.selectAll('.y-axis-label')
+            .data([null])
+            .join('text')
+            .attr('class', 'y-axis-label')
+            .attr('transform', 'rotate(-90)')
+            .attr('y', -97)
+            .attr('x', -height/2)
+            .attr('fill', 'black')
+            .attr('text-anchor', 'middle')
+            .text(yAxisLabel);
+
+        // X Axis
+        const xAxisG = selection.selectAll('g.x-axis')
+            .data([null])
+            .join('g')
+            .attr('class', 'x-axis')
+            .attr('transform', `translate(0,${height - margin.bottom})`);
+
+        xAxisG.transition(t)
+            .call(axisBottom(xCoordinateOfCenter))
+            .selectAll("g.tick text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-45)")
+            .style("font-size", "15px");
+
+        xAxisG.selectAll('.x-axis-label')
+            .data([null])
+            .join('text')
+            .attr('class', 'x-axis-label')
+            .attr('y', 55)
+            .attr('x', effectiveWidth / 2)
+            .attr('fill', 'black')
+            .attr('text-anchor', 'middle')
+            .text(xAxisLabel);
+    };
+
+    // Getter/setter methods
+    my.width = function(_) {
+        return arguments.length ? (width = +_, my) : width;
+    };
+
+    my.height = function(_) {
+        return arguments.length ? (height = +_, my) : height;
+    };
+
+    my.dataReceived = function(_) {
+        return arguments.length ? (dataReceived = _, my) : dataReceived;
+    };
+
+    my.xCoordinate = function(_) {
+        return arguments.length ? (xCoordinate = _, my) : xCoordinate;
+    };
+
+    my.yCoordinate = function(_) {
+        return arguments.length ? (yCoordinate = _, my) : yCoordinate;
+    };
+
+    my.margin = function(_) {
+        return arguments.length ? (margin = _, my) : margin;
+    };
+
+    my.minRadius = function(_) {
+        return arguments.length ? (minRadius = +_, my) : minRadius;
+    };
+
+    my.maxRadius = function(_) {
+        return arguments.length ? (maxRadius = +_, my) : maxRadius;
+    };
+
+    my.xAxisLabel = function(_) {
+        return arguments.length ? (xAxisLabel = _, my) : xAxisLabel;
+    };
+
+    my.yAxisLabel = function(_) {
+        return arguments.length ? (yAxisLabel = _, my) : yAxisLabel;
+    };
+
+    return my;
+};
+*/
+
+/* This code is more advanced version code of above code☝🏼 with fading features in it
+'use strict';
+
+import {
+    selectAll,
+    select,
+    scaleLinear,
+    scalePoint,
+    scaleSqrt,
+    extent,
+    axisBottom,
+    axisLeft,
+    max,
+    format,
+    transition
+} from 'd3';
+
+const commaFormat = format(',');
+
+export const scatterPlot = () => {
+    let width, height;
+    let dataReceived;
+    let xCoordinate, yCoordinate;
+    let margin;
+    let minRadius, maxRadius;
+    let yAxisLabel = "CANDIDATE COUNT →";
+    let xAxisLabel = "PLACES →";
+    
+    const rValueCalculated = (d) => {
+        return d.zone_score/1000;
+    };
+
+    const my = (selection) => {
+        // Create container div for scrollability if it doesn't exist
+        let container = select('body').select('.chart-container');
+        if (container.empty()) {
+            container = select('body')
+                .append('div')
+                .attr('class', 'chart-container')
+                .style('width', '100%')
+                .style('position', 'relative')
+                .style('overflow-x', 'auto'); // Enable horizontal scrolling
+        }
+
+        // Calculate effective width based on data size
+        const effectiveWidth = dataReceived.length > 50 ? 
+            Math.max(width * 2, dataReceived.length * 30) : // 30px per item minimum
+            width;
+
+        // Update SVG width to accommodate all data points
+        selection.attr('width', effectiveWidth);
+
+        const xCoordinateOfCenter = scaleLinear()
+            .domain(extent(dataReceived, xCoordinate))
+            .range([margin.left, effectiveWidth - margin.right]);
+
+        const yCoordinateOfCenter = scaleLinear()
+            .domain(extent(dataReceived, yCoordinate))
+            .range([height - margin.bottom, margin.top]);
+
+        const rOfPlotCircle = scaleSqrt()
+            .domain([0, max(dataReceived, rValueCalculated)])
+            .range([minRadius, maxRadius]);
+
+        const marks = dataReceived.map(d => ({
+            x: xCoordinateOfCenter(xCoordinate(d)),
+            y: yCoordinateOfCenter(yCoordinate(d)),
+            title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,
+            r: rOfPlotCircle(rValueCalculated(d))
+        }));
+
+        const positionCircles = (circleCoordinates) => {
+            circleCoordinates
+                .attr('cx', (d) => d.x)
+                .attr('cy', (d) => d.y);
+        }
+
+        const t = transition().duration(1000);
+
+        // Plot circles
+        selection.selectAll('circle')
+            .data(marks)
+            .join(
+                enter => enter.append('circle')
+                    .call(positionCircles)
+                    .attr('r', 0)
+                    .call(enter => enter.transition(t))
+                    .attr('r', (d) => d.r)
+                    .append('title')
+                    .text(d => d.title),
+                update => update
+                    .call(update => update.transition(t)
+                        .delay((d, i) => i * 10)
+                        .call(positionCircles)
+                        .attr('r', (d) => d.r))
+                    .select('title')
+                    .text(d => d.title),
+                exit => exit.remove()
+            );
+
+        // Y Axis
+        const yAxisG = selection.selectAll('g.y-axis')
+            .data([null])
+            .join('g')
+            .attr('class', 'y-axis')
+            .attr('transform', `translate(${margin.left},0)`);
+
+        yAxisG.transition(t)
+            .call(axisLeft(yCoordinateOfCenter));
+
+        // Y-axis label
+        yAxisG.selectAll('.y-axis-label')
+            .data([null])
+            .join('text')
+            .attr('class', 'y-axis-label')
+            .attr('transform', 'rotate(-90)')
+            .attr('y', -97)
+            .attr('x', -height/2)
+            .attr('fill', 'black')
+            .attr('text-anchor', 'middle')
+            .text(yAxisLabel);
+
+        // X Axis
+        const xAxisG = selection.selectAll('g.x-axis')
+            .data([null])
+            .join('g')
+            .attr('class', 'x-axis')
+            .attr('transform', `translate(0,${height - margin.bottom})`);
+
+        xAxisG.transition(t)
+            .call(axisBottom(xCoordinateOfCenter))
+            .selectAll("g.tick text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-45)")
+            .style("font-size", "15px");
+
+        // X-axis label
+        xAxisG.selectAll('.x-axis-label')
+            .data([null])
+            .join('text')
+            .attr('class', 'x-axis-label')
+            .attr('y', 55)
+            .attr('x', effectiveWidth / 2)
+            .attr('fill', 'black')
+            .attr('text-anchor', 'middle')
+            .text(xAxisLabel);
+    };
+
+    // Getter/setter methods
+    my.width = function(_) {
+        return arguments.length ? (width = +_, my) : width;
+    };
+
+    my.height = function(_) {
+        return arguments.length ? (height = +_, my) : height;
+    };
+
+    my.dataReceived = function(_) {
+        return arguments.length ? (dataReceived = _, my) : dataReceived;
+    };
+
+    my.xCoordinate = function(_) {
+        return arguments.length ? (xCoordinate = _, my) : xCoordinate;
+    };
+
+    my.yCoordinate = function(_) {
+        return arguments.length ? (yCoordinate = _, my) : yCoordinate;
+    };
+
+    my.margin = function(_) {
+        return arguments.length ? (margin = _, my) : margin;
+    };
+
+    my.minRadius = function(_) {
+        return arguments.length ? (minRadius = +_, my) : minRadius;
+    };
+
+    my.maxRadius = function(_) {
+        return arguments.length ? (maxRadius = +_, my) : maxRadius;
+    };
+
+    my.xAxisLabel = function(_) {
+        return arguments.length ? (xAxisLabel = `${_} →`, my) : xAxisLabel;
+    };
+
+    my.yAxisLabel = function(_) {
+        return arguments.length ? (yAxisLabel = `${_} Count →`, my) : yAxisLabel;
+    };
+
+    return my;
+};
+*/
+
