@@ -5,6 +5,7 @@
 
 import {csv, 
         select,
+        text,
         // format
     } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
 import {scatterPlot} from './scatterplot';
@@ -112,17 +113,17 @@ const menuContainerX= select('body')
                     .append('div')
                     .attr('class','menu-container-x');
 
-// const menuExamName= select('body')
-//                     .append('div')
-//                     .attr('class','menu-container-examname');
+const menuExamName= select('body')
+                    .append('div')
+                    .attr('class','menu-container-examname');
 
-// const menuExamTier= select('body')
-//                     .append('div')
-//                     .attr('class','menu-container-examtier');
+const menuExamTier= select('body')
+                    .append('div')
+                    .attr('class','menu-container-examtier');
 
-// const menuExamYear= select('body')
-//                     .append('div')
-//                     .attr('class','menu-container-examyear');
+const menuExamYear= select('body')
+                    .append('div')
+                    .attr('class','menu-container-examyear');
 
 // const menuChartType= select('body')
 //                     .append('div')
@@ -132,15 +133,51 @@ const menuContainerX= select('body')
 const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
+    
     const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
         (column) => typeof dataExtracted[0][column] === 'string'
-        );//SuperConceptObject.keys(dataExtracted[0]) gives an array of things in first row. 
-        // const columnsForYaxis=Object.keys(dataExtracted[0]).filter(
+    );//SuperConceptObject.keys(dataExtracted[0]) gives an array of things in first row. 
+    // const columnsForYaxis=Object.keys(dataExtracted[0]).filter(
         //     (column) => typeof dataExtracted[0][column] === 'number'
         //     );
         console.log(columnsForXaxis);// Code Testing
+        
+    // now we shall extract unique values from exam_name, exam_tier and exam_year for their menu
+        const uniqueExamNames = Array.from(new Set(dataExtracted.map((d) => d.exam_name)));
+        const uniqueExamTiers=Array.from(new Set(dataExtracted.map((d) => d.exam_tier)));
+        const uniqueExamYears=Array.from(new Set(dataExtracted.map((d) => d.exam_year)));
+        console.log("uniqueExamName :"+uniqueExamNames);//Code Testing
+        console.log("uniqueExamTier :"+uniqueExamTiers);//Code Testing
+        console.log("type of uniqueExamTier :"+typeof(uniqueExamTiers));//Code Testing
+        console.log("uniqueExamName :"+uniqueExamTiers);//Code Testing
 
+    //Now turning these unique values into options formate for their menus
+        const columnsForExamName = uniqueExamNames.map((examname) => ({value: examname, text:examname}));
+        const columnsForExamTier=uniqueExamTiers.map((examtier) => ({value: examtier, text: examtier}));
+        const columnsForExamYear=uniqueExamYears.map((examyear) => ({value: examyear, text:examyear}));
+        console.log("columnsForExamName :"+uniqueExamNames);//Code Testing
+        console.log("columnsForExamTier :"+uniqueExamTiers);//Code Testing
+        console.log("type ofcolumnsForExamTier :"+typeof(columnsForExamTier));//Code Testing
+        console.log("columnsForExamName :"+uniqueExamTiers);//Code Testing
+        
+    // we are putting some default values for the system to function properly right from start
+        let selectedExamName = columnsForExamName[0].value;
+        let selectedExamTier = columnsForExamTier[0].value;
+        let selectedExamYear = columnsForExamYear[0].value;
+        console.log("selectedExamName :"+selectedExamName);//Code Testing
+        console.log("selectedExamTier :"+selectedExamTier);//Code Testing
+        console.log("type of selectedExamTier :"+typeof(selectedExamTier));//Code Testing
+        console.log("selectedExamName :"+selectedExamTier);//Code Testing
+        
 
+    // now a function to filter the data according to selected options in the the Exam Name, Exam Tier, Exam Year menus
+        const filteredData= () => {	
+            return dataExtracted.filter((d) => 
+            d.exam_name=== selectedExamName &&
+            d.exam_tier=== +selectedExamTier &&
+            d.exam_year=== +selectedExamYear
+                                       );
+        	};
    
 /*code migrated to setInterval()
     const plot = scatterPlot()
@@ -200,8 +237,9 @@ const main = async () =>{
     const plot=scatterPlot()
     .width(width)
     .height(height)
-    // .dataReceived(dataExtracted)//Alternative Code: 
-    .dataReceived( await csv(csvDataPath,parseRow))
+    // .dataReceived(dataExtracted)//Alternative Code17/10/2024 code upgrade👇🏼
+    // .dataReceived( await csv(csvDataPath,parseRow))Alternative Code24/10/2024code upgrade👇🏼
+    .dataReceived(filteredData())// 
     .xCoordinate((d) => d.zone_name )
     .yCoordinate((d) => d.zone_score)
     .margin({
@@ -215,6 +253,47 @@ svg1.call(plot);
 //Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
 //
+
+
+    menuExamName.call(
+                        menu().id('menu-examname')
+                              .textForMenuLabel('Exam Name')
+                              .optionsWithinMenu(columnsForExamName)//👈🏼
+                              .on('change', function(column){
+                                selectedExamName=column;
+                                svg1.call(plot.dataReceived(filteredData()));
+                                console.log('Exam Name Menu Changed: '+column);//Code Testing
+                            })
+                    );
+    menuExamTier.call(
+                    menu().id('menu-examtier')
+                            .textForMenuLabel('Exam Tier')
+                            .optionsWithinMenu(columnsForExamTier)
+                            .on('change', (column) => {
+                            selectedExamTier = column;
+                            svg1.call(plot.dataReceived(filteredData()));	
+                            console.log('Exam Tier Menu Changed: '+column);// Code Testing
+                            })
+                    );
+    menuExamYear.call(
+                    menu().id('menu-examyear')
+                            .textForMenuLabel('Exam Year')
+                            .optionsWithinMenu(columnsForExamYear)
+                            .on('change', (column) => {
+                                selectedExamYear=column;
+                                svg1.call(plot.dataReceived(filteredData()));
+                            console.log('Exam Year Menu Changed: '+column);// Code Testing
+                            })
+                    );
+    //   menuChartType.call(
+    //                     menu().id('menu-charttype')
+    //                           .textForMenuLabel('Chart Type')
+    //                           .optionsWithinMenu()
+    //                           .on('change', (d) => {	
+    //                             console.log('Menu Chart Type Changed: '+d);//Code Testing
+    //                           	})
+    //                     );
+
     const columnsForX=[
         // { value:'exam_name',text:'Exam Name'},
         // { value:'exam_year',text:'Exam Year'},
@@ -237,65 +316,26 @@ svg1.call(plot);
         // 'city_name',
         { value:'city_score',text:'City Score'},
     ];
-    const columnsForExamName=[
-        { value:'exam_name',text:'Exam Name'},
-    ];
-    const columnsForExamTier=[
-        { value:'exam_tier',text:'Exam Tier'},
-    ];
-    const columnsForExamYear=[
-        { value:'exam_year',text:'Exam Year'},
-    ];
-
+    
     menuContainerY.call(
-                        menu().id('y-menu')
-                              .textForMenuLabel('Candidate Counts')
-                              .optionsWithinMenu(columnsForY)
-                              .on('change',(column) => {
-                                    svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
-                              		})
-                        );
-    menuContainerX.call(
-                        menu().id('x-menu')
-                              .textForMenuLabel('Group Wise')
-                              .optionsWithinMenu(columnsForX)
-                              .on('change',(column) =>{
-                                    svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
-                                // console.log('x menu changed: '+column);//Code Testing
-                              })
-                        );
-    //   menuExamName.call(
-    //                     menu().id('menu-examname')
-    //                           .textForMenuLabel('Exam Name')
-    //                           .optionsWithinMenu()//👈🏼
-    //                           .on('change', function(d){
-    //                              console.log('Exam Name Menu Changed: '+d);//Code Testing
-    //                             })
-    //                     );
-    //   menuExamTier.call(
-    //                     menu().id('menu-examtier')
-    //                           .textForMenuLabel('Exam Tier')
-    //                           .optionsWithinMenu()
-    //                           .on('change', (d) => {	
-    //                             console.log('Exam Tier Menu Changed: '+d);// Code Testing
-    //                          	})
-    //                     );
-    //   menuExamYear.call(
-    //                     menu().id('menu-examyear')
-    //                           .textForMenuLabel('Exam Year')
-    //                           .optionsWithinMenu()
-    //                           .on('change', (d) => {	
-    //                             console.log('Exam Year Menu Changed: '+d);// Code Testing
-    //                           	})
-    //                     );
-    //   menuChartType.call(
-    //                     menu().id('menu-charttype')
-    //                           .textForMenuLabel('Chart Type')
-    //                           .optionsWithinMenu()
-    //                           .on('change', (d) => {	
-    //                             console.log('Menu Chart Type Changed: '+d);//Code Testing
-    //                           	})
-    //                     );
+        menu().id('y-menu')
+              .textForMenuLabel('Candidate Counts')
+              .optionsWithinMenu(columnsForY)
+              .on('change',(column) => {
+                    svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
+                    console.log(column);//Code Testing
+                    
+                      })
+        );
+menuContainerX.call(
+        menu().id('x-menu')
+              .textForMenuLabel('Group Wise')
+              .optionsWithinMenu(columnsForX)
+              .on('change',(column) =>{
+                    svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
+                console.log('x menu changed: '+column);//Code Testing
+              })
+        );
 
     /*NoteVIETake A Good LookThis section was just for learning that how graphs actually form and automatically take the data. 
     let i =0;//counter variable to set offset for x axis

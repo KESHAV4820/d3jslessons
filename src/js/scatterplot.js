@@ -48,7 +48,7 @@ export const scatterPlot = () => {
         //code in progress let chartContainer= select('body').select()
 
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
-    const xCoordinateOfCenter=scalePoint().domain(dataReceived.map(xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
+    const xCoordinateOfCenter=scalePoint().domain(dataReceived.map(xCoordinate)).range([margin.left,width-margin.right]);
     console.log(dataReceived);
     
     
