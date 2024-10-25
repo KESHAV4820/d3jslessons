@@ -149,7 +149,7 @@ body {
 .menu-container-examname{
     position: fixed;
     top: 15;
-    left: 450;
+    left: 650;
     display: flex;
     justify-content: space-around;
 }
@@ -157,7 +157,7 @@ body {
 .menu-container-examyear{
     position: fixed;
     top: 15;
-    left: 700;
+    left: 900;
     display: flex;
     justify-content: space-around;
 }
@@ -165,15 +165,15 @@ body {
 .menu-container-examtier{
     position: fixed;
     top: 15;
-    left: 1000;
+    left: 1150;
     display: flex;
     justify-content: space-around;
 }
-/* 
+
 .menu-container-charttype{
     position: fixed;
-    top: 45;
-    left: 400;
+    top: 15;
+    left: 350;
     display: flex;
     justify-content: space-around;
-} */
+}

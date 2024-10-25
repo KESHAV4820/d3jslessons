@@ -125,11 +125,18 @@ const menuExamYear= select('body')
                     .append('div')
                     .attr('class','menu-container-examyear');
 
-// const menuChartType= select('body')
-//                     .append('div')
-//                     .attr('class','menu-container-charttype');
+const menuChartType= select('body')
+                    .append('div')
+                    .attr('class','menu-container-charttype');
 
-// generic code
+const chartTypes = [
+    {value:'scatterPlot', text:'Scatter Plot'},
+    {value:'barChartPlot', text:'BarChart Plot'},
+    {value:'pieChartPlot', text:'PieChart Plot'}
+];
+
+let currentChartType = 'scatterPlot';// default value
+
 const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
@@ -140,34 +147,34 @@ const main = async () =>{
     // const columnsForYaxis=Object.keys(dataExtracted[0]).filter(
         //     (column) => typeof dataExtracted[0][column] === 'number'
         //     );
-        console.log(columnsForXaxis);// Code Testing
+        // console.log(columnsForXaxis);// Code Testing
         
     // now we shall extract unique values from exam_name, exam_tier and exam_year for their menu
         const uniqueExamNames = Array.from(new Set(dataExtracted.map((d) => d.exam_name)));
         const uniqueExamTiers=Array.from(new Set(dataExtracted.map((d) => d.exam_tier)));
         const uniqueExamYears=Array.from(new Set(dataExtracted.map((d) => d.exam_year)));
-        console.log("uniqueExamName :"+uniqueExamNames);//Code Testing
-        console.log("uniqueExamTier :"+uniqueExamTiers);//Code Testing
-        console.log("type of uniqueExamTier :"+typeof(uniqueExamTiers));//Code Testing
-        console.log("uniqueExamName :"+uniqueExamTiers);//Code Testing
+        // console.log("uniqueExamName :"+uniqueExamNames);//Code Testing
+        // console.log("uniqueExamTier :"+uniqueExamTiers);//Code Testing
+        // console.log("type of uniqueExamTier :"+typeof(uniqueExamTiers));//Code Testing
+        // console.log("uniqueExamName :"+uniqueExamTiers);//Code Testing
 
     //Now turning these unique values into options formate for their menus
         const columnsForExamName = uniqueExamNames.map((examname) => ({value: examname, text:examname}));
         const columnsForExamTier=uniqueExamTiers.map((examtier) => ({value: examtier, text: examtier}));
         const columnsForExamYear=uniqueExamYears.map((examyear) => ({value: examyear, text:examyear}));
-        console.log("columnsForExamName :"+uniqueExamNames);//Code Testing
-        console.log("columnsForExamTier :"+uniqueExamTiers);//Code Testing
-        console.log("type ofcolumnsForExamTier :"+typeof(columnsForExamTier));//Code Testing
-        console.log("columnsForExamName :"+uniqueExamTiers);//Code Testing
+        // console.log("columnsForExamName :"+uniqueExamNames);//Code Testing
+        // console.log("columnsForExamTier :"+uniqueExamTiers);//Code Testing
+        // console.log("type ofcolumnsForExamTier :"+typeof(columnsForExamTier));//Code Testing
+        // console.log("columnsForExamName :"+uniqueExamTiers);//Code Testing
         
     // we are putting some default values for the system to function properly right from start
         let selectedExamName = columnsForExamName[0].value;
         let selectedExamTier = columnsForExamTier[0].value;
         let selectedExamYear = columnsForExamYear[0].value;
-        console.log("selectedExamName :"+selectedExamName);//Code Testing
-        console.log("selectedExamTier :"+selectedExamTier);//Code Testing
-        console.log("type of selectedExamTier :"+typeof(selectedExamTier));//Code Testing
-        console.log("selectedExamName :"+selectedExamTier);//Code Testing
+        // console.log("selectedExamName :"+selectedExamName);//Code Testing
+        // console.log("selectedExamTier :"+selectedExamTier);//Code Testing
+        // console.log("type of selectedExamTier :"+typeof(selectedExamTier));//Code Testing
+        // console.log("selectedExamName :"+selectedExamTier);//Code Testing
         
 
     // now a function to filter the data according to selected options in the the Exam Name, Exam Tier, Exam Year menus
@@ -233,7 +240,8 @@ const main = async () =>{
     */
 
     // console.log('Setting up scatterPlot');//Code Testing
-// code migrated☝🏼 to variable 'plot' for refactoring
+
+//code migratedcode upgrade👇🏼 to implement multiple type of charts rendering.
     const plot=scatterPlot()
     .width(width)
     .height(height)
@@ -253,8 +261,52 @@ svg1.call(plot);
 //Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
 //
+// Function to render the selected Chart type
+const renderChart = (data) => {	
+    svg1.selectAll("*").remove();//It clears all the content of previous chart type
+    let chart;
+    // for scatter plot:-
+    if (currentChartType === 'scatterPlot') {
+        chart = scatterPlot()
+                    .width(width)
+                    .height(height)
+                    .dataReceived(data)
+                    .xCoordinate((d) => d.zone_name)
+                    .yCoordinate((d) => d.zone_score)
+                    .margin({
+                        top: 30, 
+                        right: 33, 
+                        bottom: 130, 
+                        left: 125})
+                    .maxRadius(16)
+                    .minRadius(2);
+        }
+        // Placeholder for other chart types, e.g., barChartPlot, pieChartPlot
+        // for barchart:-
+        // if (currentChartType === 'barChartPlot') {
+        //     chart = barChartPlot()
+        //         .width(width)
+        //         .height(height)
+        //         .dataReceived(data)
+        //         .xCoordinate(d => d.zone_name)
+        //         .yCoordinate(d => d.zone_score)
+        //         .margin({ top: 30, right: 33, bottom: 130, left: 125 });
+        // }
+        // for Piechart:-
+        // if (currentChartType === 'pieChartPlot') {
+        //     chart = pieChartPlot()
+        //         .width(width)
+        //         .height(height)
+        //         .dataReceived(data)
+        //         .xCoordinate(d => d.zone_name)
+        //         .yCoordinate(d => d.zone_score)
+        //         .margin({ top: 30, right: 33, bottom: 130, left: 125 });
+        // }
+	}
 
+renderChart(filteredData());// to render something by default
 
+// we are adding id, options, eventlistener getter setter on each dropdonw menu element.
     menuExamName.call(
                         menu().id('menu-examname')
                               .textForMenuLabel('Exam Name')
@@ -264,7 +316,7 @@ svg1.call(plot);
                                 svg1.call(plot.dataReceived(filteredData()));
                                 console.log('Exam Name Menu Changed: '+column);//Code Testing
                             })
-                    );
+                    );    
     menuExamTier.call(
                     menu().id('menu-examtier')
                             .textForMenuLabel('Exam Tier')
@@ -285,14 +337,16 @@ svg1.call(plot);
                             console.log('Exam Year Menu Changed: '+column);// Code Testing
                             })
                     );
-    //   menuChartType.call(
-    //                     menu().id('menu-charttype')
-    //                           .textForMenuLabel('Chart Type')
-    //                           .optionsWithinMenu()
-    //                           .on('change', (d) => {	
-    //                             console.log('Menu Chart Type Changed: '+d);//Code Testing
-    //                           	})
-    //                     );
+      menuChartType.call(
+                        menu().id('menu-charttype')
+                              .textForMenuLabel('Chart Type')
+                              .optionsWithinMenu(chartTypes)
+                              .on('change', (chartType) => {	
+                                currentChartType=chartType;
+                                renderChart(filteredData());
+                                // console.log('Menu Chart Type Changed: '+chartType);//Code Testing
+                              	})
+                        );
 
     const columnsForX=[
         // { value:'exam_name',text:'Exam Name'},
@@ -323,7 +377,7 @@ svg1.call(plot);
               .optionsWithinMenu(columnsForY)
               .on('change',(column) => {
                     svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
-                    console.log(column);//Code Testing
+                    // console.log(column);//Code Testing
                     
                       })
         );
@@ -333,7 +387,7 @@ menuContainerX.call(
               .optionsWithinMenu(columnsForX)
               .on('change',(column) =>{
                     svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
-                console.log('x menu changed: '+column);//Code Testing
+                // console.log('x menu changed: '+column);//Code Testing
               })
         );
 
