@@ -302,6 +302,7 @@ const renderChart = (data) => {
         //         .yCoordinate(d => d.zone_score)
         //         .margin({ top: 30, right: 33, bottom: 130, left: 125 });
         // }
+        svg1.call(chart);
 	}
 
 renderChart(filteredData());// to render something by default
