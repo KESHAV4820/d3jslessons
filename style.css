@@ -1,4 +1,5 @@
-/* body{
+/* code upgrade first time 
+body{
     margin: 0;
     margin-top: 35px;
     margin-left: 15px;
@@ -40,28 +41,28 @@ font-size: 35px;
     justify-content: space-around;
 } */
 
-/* Base body styling */
+/* code upgrade second time
 body {
     margin: 0;
     margin-top: 35px;
     margin-left: 15px;
-    /* Remove overflow: hidden to allow chart scrolling */
+    
 }
 
-/* Chart container styling */
+
 .chart-container {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin: 20px 0;
-    /* Height calculation to work with fixed positioned menus */
+   
     height: calc(100vh - 150px);
     position: relative;
-    /* Ensure container scrolls horizontally but not vertically */
+    
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-/* Scrollbar styling */
+
 .chart-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -79,7 +80,7 @@ body {
     background: #555;
 }
 
-/* Axis and text styling */
+
 .tick text {
     font-size: 24px;
 }
@@ -92,20 +93,19 @@ body {
     font-size: 35px;
 }
 
-/* Menu container positioning */
 .menu-container-y {
     position: fixed;
     top: 45px;
     left: 20px;
     display: flex;
     justify-content: space-around;
-    z-index: 1000; /* Ensure menus stay above chart */
+    z-index: 1000; 
 }
 
 .menu-container-x {
     position: fixed;
-    bottom: 20px; /* Changed from top: 1075 to be more responsive */
-    right: 20px; /* Changed from left: 1450 to be more responsive */
+    bottom: 20px; 
+    right: 20px; 
     display: flex;
     justify-content: space-around;
     z-index: 1000;
@@ -120,7 +120,7 @@ body {
     z-index: 1000;
 }
 
-/* Optional: Add fade indicators for scroll hints */
+
 .chart-container::after {
     content: '';
     position: absolute;
@@ -176,4 +176,144 @@ body {
     left: 350;
     display: flex;
     justify-content: space-around;
+} */
+
+/* Basic body styling */
+body {
+    margin: 0;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+/* Chart wrapper styling */
+.chart-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 55px);
+    /* Ensuring smooth scrolling */
+    scroll-behavior: smooth;
+    /* -webkit-overflow-scrolling: touch; */
+}
+
+/* SVG styling */
+svg {
+    display: block;
+    min-width: max-content; /* Ensures SVG maintains minimum width needed */
+}
+
+/* Menu container shared styling */
+.menu-container-x,
+.menu-container-y,
+.menu-container-examname,
+.menu-container-examtier,
+.menu-container-examyear,
+.menu-container-charttype {
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Position menus */
+.menu-container-y {
+    top: 45px;
+    left: 20px;
+}
+
+.menu-container-x {
+    top: 1050px;
+    right: 20px;
+}
+
+.menu-container-examname {
+    top: 15px;
+    right: 1650px;
+}
+
+.menu-container-examtier {
+    top: 15px;
+    right: 1250px;
+}
+
+.menu-container-examyear {
+    top: 15px;
+    right: 850px;
+}
+
+.menu-container-charttype {
+    top: 15px;
+    right: 400px;
+}
+
+/* Ensure menus don't interfere with scrolling */
+select {
+    max-width: 120px;
+}
+
+/* Updated axis text styling with preserved sizes from old stylesheet */
+.tick text {
+    font-size: 24px;
+}
+
+.y-axis-label {
+    font-size: 35px;
+}
+
+.x-axis-label {
+    font-size: 35px;
+}
+
+/* Axis text general styling */
+.axis text {
+    font-size: 12px;
+}
+
+/* Scrollbar styling */
+.chart-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.chart-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Fade indicators for scroll hints */
+.chart-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.chart-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to left, transparent, white);
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 1;
 }

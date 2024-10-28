@@ -5,6 +5,7 @@
 
 import {csv, 
         select,
+        style,
         text,
         // format
     } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
@@ -103,7 +104,18 @@ const minRadius=3;
 // here we are declaring the area where chart shall be made
 const width=window.innerWidth;
 const height=window.innerHeight-55;//800;
-const svg1= select('body').append('svg').attr('width',width).attr('height',height);
+
+//create wrapper div for chart container
+const chartWrapper = select('body').append('div')
+                                    .attr('class','chart-wrapper')
+                                    .style('position','relative')
+                                    .style('width','100%')
+                                    .style('height',`${height}px`);
+
+// const svg1= select('body').append('svg').attr('width',width).attr('height',height);//code upgrade👇🏼
+const svg1 = chartWrapper.append('svg')
+                         .attr('width',width)
+                         .attr('height',height);
 
 const menuContainerY= select('body')
                     .append('div')
@@ -183,7 +195,7 @@ const main = async () =>{
             d.exam_name=== selectedExamName &&
             d.exam_tier=== +selectedExamTier &&
             d.exam_year=== +selectedExamYear
-                                       );
+                );
         	};
    
 /*code migrated to setInterval()
@@ -257,7 +269,7 @@ const main = async () =>{
         left:125,})
     .maxRadius(16)
     .minRadius(2);
-svg1.call(plot);
+// svg1.call(plot);
 //Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
 //
@@ -302,7 +314,15 @@ const renderChart = (data) => {
         //         .yCoordinate(d => d.zone_score)
         //         .margin({ top: 30, right: 33, bottom: 130, left: 125 });
         // }
-	}
+
+        svg1.call(chart);
+
+    //updating the visible points with after every rendering
+    const container = select('.chart-wrapper');
+    if(container.node()){
+        container.dispatch('scroll');
+    };
+  };
 
 renderChart(filteredData());// to render something by default
 
@@ -313,7 +333,8 @@ renderChart(filteredData());// to render something by default
                               .optionsWithinMenu(columnsForExamName)//👈🏼
                               .on('change', function(column){
                                 selectedExamName=column;
-                                svg1.call(plot.dataReceived(filteredData()));
+                                // svg1.call(plot.dataReceived(filteredData()));//code upgrade👇🏼
+                                renderChart(filteredData());
                                 console.log('Exam Name Menu Changed: '+column);//Code Testing
                             })
                     );    
@@ -323,8 +344,9 @@ renderChart(filteredData());// to render something by default
                             .optionsWithinMenu(columnsForExamTier)
                             .on('change', (column) => {
                             selectedExamTier = column;
-                            svg1.call(plot.dataReceived(filteredData()));	
-                            console.log('Exam Tier Menu Changed: '+column);// Code Testing
+                            // svg1.call(plot.dataReceived(filteredData()));
+                            renderChart(filteredData());
+                            // console.log('Exam Tier Menu Changed: '+column);// Code Testing
                             })
                     );
     menuExamYear.call(
@@ -333,8 +355,9 @@ renderChart(filteredData());// to render something by default
                             .optionsWithinMenu(columnsForExamYear)
                             .on('change', (column) => {
                                 selectedExamYear=column;
-                                svg1.call(plot.dataReceived(filteredData()));
-                            console.log('Exam Year Menu Changed: '+column);// Code Testing
+                                // svg1.call(plot.dataReceived(filteredData()));
+                                renderChart(filteredData());
+                            // console.log('Exam Year Menu Changed: '+column);// Code Testing
                             })
                     );
       menuChartType.call(
@@ -377,9 +400,12 @@ renderChart(filteredData());// to render something by default
               .optionsWithinMenu(columnsForY)
               .on('change',(column) => {
                     svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
-                    // console.log(column);//Code Testing
-                    
-                      })
+                    const container=select('.chart-wrapper');
+                    if (container.node()) {
+                        container.dispatch('scroll');
+                    }
+                    // console.log(column);//Code Testing    
+                })
         );
 menuContainerX.call(
         menu().id('x-menu')
@@ -387,6 +413,11 @@ menuContainerX.call(
               .optionsWithinMenu(columnsForX)
               .on('change',(column) =>{
                     svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
+                    const container=select('.chart-wrapper');
+                    if (container.node()) {
+                        container.dispatch('scroll');
+                    }
+
                 // console.log('x menu changed: '+column);//Code Testing
               })
         );
@@ -422,6 +453,23 @@ menuContainerX.call(
         j=(j+1)%dataExtracted[0].length;
     }, 4000);
     */
+
+// Add window resize handler
+window.addEventListener('resize', () => {	
+     const newWidth = window.innerWidth;
+     const newHeight=window.innerHeight-55;
+
+     chartWrapper.style('width', '100%')
+                 .style('height',`${newHeight}px`);
+                 
+             svg1.attr('width', newWidth)
+                 .attr('height', newHeight);
+                 
+             plot.width(newWidth)
+                 .height(newHeight);
+
+        renderChart(filteredData());
+	});
 };
 main();
 
