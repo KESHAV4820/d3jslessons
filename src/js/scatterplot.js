@@ -20,7 +20,8 @@ import {selectAll,
     timeFormat,
     transition,
     easeLinear,
-    select
+    select,
+    style
 } from 'd3';
 
 const commaFormat = format(',');// this adds comma separator
@@ -44,11 +45,14 @@ export const scatterPlot = () => {
     //my() function is he place where it sets up all the selections like svg1 and does all the transformation needed using getter, setter functions, local declared variables. 
     const my = (svg1) => {
 
-    const effectiveWidth=width;
+    // const effectiveWidth=width;
+    // calculating point padding based on number of points to render
+    const pointPadding = dataReceived.length>150 ? 0.2: 0.5;
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scalePoint()
                                 .domain(dataReceived.map(xCoordinate))
-                                .range([margin.left,effectiveWidth-margin.right]);
+                                .range([margin.left,width-margin.right])
+                                .padding(pointPadding);
     console.log(dataReceived);// Code Testing
     
     
@@ -56,10 +60,14 @@ export const scatterPlot = () => {
     //     d3.min,dataReceived, yCoordinate), 
     //     d3.max,dataReceived,yCoordinate)]);
     //code upgrade👇
-    const yCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,yCoordinate)).range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
+    const yCoordinateOfCenter=scaleLinear()
+                                .domain(extent(dataReceived,yCoordinate))
+                                .range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
-    const rOfPlotCircle=scaleSqrt().domain([0,max(dataReceived,(d) => d.zone_score/1000)]).range([minRadius,maxRadius]);
+    const rOfPlotCircle=scaleSqrt()
+                                .domain([0,max(dataReceived,(d) => d.zone_score/1000)])
+                                .range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
     // console.log('Creating marks. rValueCalculated type:', typeof rValueCalculated);//Code Testing
@@ -71,6 +79,7 @@ export const scatterPlot = () => {
         y: yCoordinateOfCenter(yCoordinate(d)),
         title: `(${commaFormat(xCoordinate(d))},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
         r: rOfPlotCircle(rValueCalculated(d)),
+        data: d
         };
     });
     console.log(marks);//Code Testing
@@ -139,7 +148,7 @@ export const scatterPlot = () => {
                      .text(d => d.title),
 
         exit => exit.remove())
-        .attr('r',0);
+                    .attr('r',0);
 
 
     // putting y and x axis in the chart. 
@@ -197,13 +206,13 @@ export const scatterPlot = () => {
     
                     (update) => 
                     update.call((update) => 
-                        update.attr('y',height * 55)
+                          update.attr('y',height * 55)
                                 .transition(t)
                                 .text(yAxisLabel)
                                 .attr('y', -97)
                                 .attr('x',-height/2)),
 
-                    (exist) => exist.append());
+                    (exist) => exist.remove());
 
     const xAxisG=svg1.selectAll('g.x-axis')
                      .data([null])
@@ -213,12 +222,16 @@ export const scatterPlot = () => {
 
           xAxisG.transition(t)
                   .call(axisBottom(xCoordinateOfCenter))
-                  .selectAll("g.tick text")
-                  .attr("text-anchor","end")
-                  .attr("transform","rotate(-45)")
-                  .style("font-size", "15px");// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
-          xAxisG.select('.domain')
-                  .attr("d",`M${margin.left},0H${effectiveWidth-margin.right}`);
+                  .call((g) => g.selectAll('.tick text')
+                                .attr('text-anchor','end')
+                                .attr('transform','rotate(-45)')
+                                .style('front-size','15px'));
+                //   .selectAll("g.tick text")
+                //   .attr("text-anchor","end")
+                //   .attr("transform","rotate(-45)")
+                //   .style("font-size", "15px");// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
+        //   xAxisG.select('.domain')
+        //           .attr("d",`M${margin.left},0H${effectiveWidth-margin.right}`);
 
     /*code upgrade👇🏼
     // xAxisG.append('text')
@@ -233,15 +246,15 @@ export const scatterPlot = () => {
             .data([null])
         // .join('g')
             .join((enter) => enter.append('text')
-                                    .text(xAxisLabel)
                                     .attr('class','x-axis-label')
-                                    .attr('y', 55)
-                                    .attr('x', 580)
+                                    .attr('y', 115)
+                                    .attr('x', width/2)
                                     .attr('fill', 'black')
                                     .attr('text-anchor','middle')
+                                    .text(xAxisLabel)
                                     .call(((enter) => enter.transition(t)
                                     .attr('y',55)
-                                    .attr('x',580))),
+                                    .attr('x',width/2))),
 
                     (update) => update.call((update) => 
                                         update.attr('y',height * 55)

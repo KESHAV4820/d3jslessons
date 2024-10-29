@@ -152,6 +152,11 @@ let currentChartType = 'scatterPlot';// default value
 const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
+
+    // Function to calculate effective width based on data points
+    const calculateEffectiveWidth = (data) => {
+        return data.length > 150 ? Math.max(width * 2, data.length * 30) : width;
+    };
     
     const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
         (column) => typeof dataExtracted[0][column] === 'string'
@@ -277,10 +282,15 @@ const main = async () =>{
 const renderChart = (data) => {	
     svg1.selectAll("*").remove();//It clears all the content of previous chart type
     let chart;
+
     //calculate effective width based on data size to make scrolling logic work.
-    const effectiveWidth= data.length >150 ? Math.max(width*2, data.length*30):width;
-    //set updated width to svg for overflow on x-axis
+    const effectiveWidth= calculateEffectiveWidth(data);
+
+    //set updated width to svg and container for overflow on x-axis
     svg1.attr('width',effectiveWidth);//Super this will set the effective width to the svg container itself and hence the<svg> element to display the graph. here we aren't setting it for the X-axis scale, which itself is a part of the <svg>, not yet.This will actually trigger the horizonal scroll on whole svg element itself. 
+        chartWrapper.style('width', `${effectiveWidth}px`)
+                    .style('overflow-x', 'auto')
+                    .style('display', 'block');
 
     // for scatter plot:-
     if (currentChartType === 'scatterPlot') {
@@ -321,12 +331,13 @@ const renderChart = (data) => {
         // }
 
         svg1.call(chart);
+        //Forceing the reflow of svg once again
+        svg1.node().getBoundingClientRect();
 
-    //updating the visible points with after every rendering
-    const container = select('.chart-wrapper');
-    if(container.node()){
-        container.dispatch('scroll');
-    }; 
+    // const container = select('.chart-wrapper');
+    // if(container.node()){
+    //     container.dispatch('scroll');
+    // }; 
   };
 
 renderChart(filteredData());// to render something by default
@@ -404,24 +415,49 @@ renderChart(filteredData());// to render something by default
               .textForMenuLabel('Candidate Counts')
               .optionsWithinMenu(columnsForY)
               .on('change',(column) => {
-                    svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
-                    const container=select('.chart-wrapper');
-                    if (container.node()) {
-                        container.dispatch('scroll');
-                    }
+                    // svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
+                    // const container=select('.chart-wrapper');
+                    // if (container.node()) {
+                    //     container.dispatch('scroll');
+                    // }
+
+                    const filteredDataResult = filteredData();
+                    const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
+                    
+                    svg1.attr('width', effectiveWidth);
+                    chartWrapper.style('width', `${effectiveWidth}px`);
+                    
+                    svg1.call(plot.width(effectiveWidth)
+                                .yCoordinate((d) => d[column])
+                                .yAxisLabel(column)
+                                .dataReceived(filteredDataResult));
+
                     // console.log(column);//Code Testing    
                 })
         );
-menuContainerX.call(
+    menuContainerX.call(
         menu().id('x-menu')
               .textForMenuLabel('Group Wise')
               .optionsWithinMenu(columnsForX)
               .on('change',(column) =>{
-                    svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
-                    const container=select('.chart-wrapper');
-                    if (container.node()) {
-                        container.dispatch('scroll');
-                    }
+                    // svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
+                    // const container=select('.chart-wrapper');
+                    // if (container.node()) {
+                    //     container.dispatch('scroll');
+                    // }
+
+                    const filteredDataResult = filteredData();
+                    const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
+                    
+                    // Update SVG and container dimensions first
+                    svg1.attr('width', effectiveWidth);
+                    chartWrapper.style('width', `${effectiveWidth}px`);
+                    
+                    // Then update the plot with new coordinates
+                    svg1.call(plot.width(effectiveWidth)
+                                .xCoordinate((d) => d[column])
+                                .xAxisLabel(column)
+                                .dataReceived(filteredDataResult));
 
                 // console.log('x menu changed: '+column);//Code Testing
               })
@@ -463,18 +499,23 @@ menuContainerX.call(
 window.addEventListener('resize', () => {	
      const newWidth = window.innerWidth;
      const newHeight=window.innerHeight-55;
+     const filteredDataResult = filteredData();
+     const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
 
-     chartWrapper.style('width', '100%')
-                 .style('height',`${newHeight}px`);
+     chartWrapper.style('height',`${newHeight}px`)
+                 .style('overflow-x','auto');
+                //  .style('width', '100%');
                  
-             svg1.attr('width', newWidth)
+             svg1.attr('width', effectiveWidth)
                  .attr('height', newHeight);
                  
-             plot.width(newWidth)
+             plot.width(effectiveWidth)
                  .height(newHeight);
 
-        renderChart(filteredData());
+        renderChart(filteredDataResult);
 	});
+    // Initial Render
+    renderChart(filteredData());
 };
 main();
 
