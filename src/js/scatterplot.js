@@ -44,12 +44,12 @@ export const scatterPlot = () => {
     //my() function is he place where it sets up all the selections like svg1 and does all the transformation needed using getter, setter functions, local declared variables. 
     const my = (svg1) => {
 
-        // we are creating a div that will contain all the svg chart body, named "chart-container"
-        //code in progress let chartContainer= select('body').select()
-
+    const effectiveWidth=width;
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
-    const xCoordinateOfCenter=scalePoint().domain(dataReceived.map(xCoordinate)).range([margin.left,width-margin.right]);
-    console.log(dataReceived);
+    const xCoordinateOfCenter=scalePoint()
+                                .domain(dataReceived.map(xCoordinate))
+                                .range([margin.left,effectiveWidth-margin.right]);
+    console.log(dataReceived);// Code Testing
     
     
     //legacy code const yCoordinateOfCenter=scaleLinear().domain([
@@ -59,7 +59,7 @@ export const scatterPlot = () => {
     const yCoordinateOfCenter=scaleLinear().domain(extent(dataReceived,yCoordinate)).range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
-    const rOfPlotCircle=scaleSqrt().domain([0,max(dataReceived,rValueCalculated)]).range([minRadius,maxRadius]);
+    const rOfPlotCircle=scaleSqrt().domain([0,max(dataReceived,(d) => d.zone_score/1000)]).range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
     // console.log('Creating marks. rValueCalculated type:', typeof rValueCalculated);//Code Testing
@@ -186,7 +186,7 @@ export const scatterPlot = () => {
                     enter.append('text')
                             .attr('class','y-axis-label')
                             .attr('transform',`rotate(-90)`)
-                            .attr('y', -120).attr('x', height/2)
+                            .attr('y', -120).attr('x', -height/2)
                             .attr('fill', 'black')
                             .attr('text-anchor','middle')
                             .text(yAxisLabel)
@@ -217,6 +217,8 @@ export const scatterPlot = () => {
                   .attr("text-anchor","end")
                   .attr("transform","rotate(-45)")
                   .style("font-size", "15px");// here .ticks(13).tickFormate(timeFormat('%b')) with axisBottom() in this case to latch it with the "xAxisG" is used to set time formate. you can see time formates by googling for d3 time formate.
+          xAxisG.select('.domain')
+                  .attr("d",`M${margin.left},0H${effectiveWidth-margin.right}`);
 
     /*code upgrade👇🏼
     // xAxisG.append('text')

@@ -277,10 +277,15 @@ const main = async () =>{
 const renderChart = (data) => {	
     svg1.selectAll("*").remove();//It clears all the content of previous chart type
     let chart;
+    //calculate effective width based on data size to make scrolling logic work.
+    const effectiveWidth= data.length >150 ? Math.max(width*2, data.length*30):width;
+    //set updated width to svg for overflow on x-axis
+    svg1.attr('width',effectiveWidth);//Super this will set the effective width to the svg container itself and hence the<svg> element to display the graph. here we aren't setting it for the X-axis scale, which itself is a part of the <svg>, not yet.This will actually trigger the horizonal scroll on whole svg element itself. 
+
     // for scatter plot:-
     if (currentChartType === 'scatterPlot') {
         chart = scatterPlot()
-                    .width(width)
+                    .width(effectiveWidth)//VIEhere we are setting effective width on axis, so that it could populate the ticks accordingly. 
                     .height(height)
                     .dataReceived(data)
                     .xCoordinate((d) => d.zone_name)
@@ -321,7 +326,7 @@ const renderChart = (data) => {
     const container = select('.chart-wrapper');
     if(container.node()){
         container.dispatch('scroll');
-    };
+    }; 
   };
 
 renderChart(filteredData());// to render something by default
