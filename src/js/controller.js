@@ -155,7 +155,7 @@ const main = async () =>{
 
     // Function to calculate effective width based on data points
     const calculateEffectiveWidth = (data) => {
-        return data.length > 150 ? Math.max(width * 2, data.length * 30) : width;
+        return data.length > 150 ? Math.max(width * 2.5, data.length * 30) : width;
     };
     
     const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
@@ -298,8 +298,8 @@ const renderChart = (data) => {
                     .width(effectiveWidth)//VIEhere we are setting effective width on axis, so that it could populate the ticks accordingly. 
                     .height(height)
                     .dataReceived(data)
-                    .xCoordinate((d) => d.zone_name)
-                    .yCoordinate((d) => d.zone_score)
+                    .xCoordinate((d) => d.zone_name)//Issue Found
+                    .yCoordinate((d) => d.zone_score)//Issue Found
                     .margin({
                         top: 30, 
                         right: 33, 
