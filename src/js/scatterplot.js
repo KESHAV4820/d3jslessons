@@ -145,7 +145,7 @@ export const scatterPlot = () => {
                     //  .attr('cx', d=> d.x)
                     //  .attr('cy', d=> d.y)
                      .attr('r',(d) => d.r),
-                    ).append('title')
+                    ).select('title')
                      .text(d => d.title),
 
         exit => exit.remove())
