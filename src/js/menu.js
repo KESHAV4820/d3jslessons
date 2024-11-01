@@ -32,21 +32,22 @@ export const menu = () => {
     const listeners= dispatch('change');//SuperNote other types of event like change are start or brush or end
 
     const my = (svg1) => {	
+        // here i am codding the label for the menu element
         svg1.selectAll('label')
             .data([null])
             .join('label')
             .attr('for', id)
             .text(textForMenuLabel);
-
+        // here i am codding for the options that will come up as options under the above label for the dropdown menu.
         svg1.selectAll('select')
             .data([null])
             .join('select')
             .attr('name', id)
             .attr('id', id)
             .on('change', (event) => {
-              console.log(event);//Code Testing
-              console.log(event.target.value);//Code Testing
-              listeners.call('change', null, event.target.value);//Super This line of code is actually sending the content that we clicked on, to controller.js .on() method.😎💃🕺 but why! there is "null". here if you put an object which is going to be refered with "this" keyword in controller.js, given the condition that you are using the oldschool way of function notation. but using "this" is a tricky business. becouse it could resolve to anything. Hence nope. Hence null. Here null simply says that the announcement of the event isn't for any one but for all.    
+            //   console.log(event);//Code Testing
+            //   console.log(event.target.value);//Code Testing
+              listeners.call('change', null, event.target.value);//SuperMarvelJust Beautiful This line of code is actually sending the content that we clicked on, to controller.js .on() method.😎💃🕺 but why! there is "null". here if you put an object which is going to be refered with "this" keyword in controller.js, given the condition that you are using the oldschool way of function notation. but using "this" is a tricky business. becouse it could resolve to anything. Hence nope. Hence null. Here null simply says that the announcement of the event isn't for any one but for all.    
             })//SuperVIERemember It
             .selectAll('option')
             .data(optionsWithinMenu)
@@ -68,7 +69,7 @@ export const menu = () => {
     my.optionsWithinMenu=function(_){
         return arguments.length?(optionsWithinMenu = _, my):optionsWithinMenu;
     }; 
-    //👇SuperImportant
+    //👇SuperVIELearnByHeartMarvelTake A Good LookJust Beautiful
     my.on = function(){
         let value = listeners.on.apply(listeners, arguments);
         return value === listeners? my: value;
