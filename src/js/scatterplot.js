@@ -38,9 +38,9 @@ export const scatterPlot = () => {
     
     // console.log('rValueCalculated:', rValueCalculated);// Code Testing
 
-    const rValueCalculated= (d) => {
-        return d.zone_score/1000;
-    };
+    // legacy code const rValueCalculated= (d) => {
+    //     return d.zone_score/1000;
+    // };// Usless Coding becouse d.zone_score will keep showing you the potted cirlcle with a radius  
 
     //my() function is he place where it sets up all the selections like svg1 and does all the transformation needed using getter, setter functions, local declared variables. 
     const my = (svg1) => {
@@ -66,7 +66,7 @@ export const scatterPlot = () => {
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
     const rOfPlotCircle=scaleSqrt()
-                                .domain([0,max(dataReceived,(d) => d.zone_score/1000)])//Issue Found
+                                .domain([0,max(dataReceived,(d) => d.zone_score/1000)])//for default
                                 .range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
@@ -79,7 +79,7 @@ export const scatterPlot = () => {
         x: xCoordinateOfCenter(xCoordinate(d)),
         y: yCoordinateOfCenter(yCoordinate(d)),
         title: `(${xCoordinate(d)},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
-        r: rOfPlotCircle(rValueCalculated(d)),
+        r: rOfPlotCircle(yCoordinate(d)/1000),
         data: d
         };
     });
@@ -263,7 +263,7 @@ export const scatterPlot = () => {
                                                 .text(xAxisLabel)
                                                 .attr('y', 115)),
 
-                    (exist) => exist.append()
+                    (exist) => exist.remove()
                 );
             /*code migrated☝🏼   to enter(), update(), exist()   
                   .append('text')

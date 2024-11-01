@@ -38,7 +38,7 @@ import {menu} from './menu';
         🅱️  now this 'change' event is added to the select element say svg1 in our case which is the standered element that emits the events in DOM. And when we get that event, we are extracting the value that was clicked on which resides in the target method.
         👉🏼 .on('change', (event)=>{listeners.call('change',null,event.target.value)})
         and now this data is funneled using our d3 dispatch library to the controller.js call back function used inside the.on() method has been used. Note: this process of funneling this data is done  by listeners.call(). Think of it like a pipe line
-    1️⃣7️⃣ VIE To remove the cache file of parcel bundler, so that you can see the latest changes that you made to the file after fresh bundling, you need to run this command in the root folder of the project👉"rmdir /s /q .parcel-cache" on CMD. Note that the npm server shouldn't be running at the time of executing this command. It wont work. 
+    1️⃣7️⃣ VIE To remove the cache file of parcel bundler, so that you can see the latest changes that you made to the file after fresh bundling, you need to run this command in the root folder of the project👉"rmdir /s /q .parcel-cache" on CMD in laptop, but 👉🏼"Remove-Item -Recurse -Force .parcel-cache" in desktop Z2 machine. Note that the npm server shouldn't be running at the time of executing this command. It wont work. 
     1️⃣8️⃣
     1️⃣9️⃣
     
@@ -222,7 +222,7 @@ const main = async () =>{
    */
     /*code migrated to scatterplot.js file
     // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
-    const xCoordinateOfCenter=scaleLinear().domain(extent(dataExtracted,xCoordinate)).range([margin.left,width-margin.right]);//Issue Found this scale function has to be tuned to handle name.
+    const xCoordinateOfCenter=scaleLinear().domain(extent(dataExtracted,xCoordinate)).range([margin.left,width-margin.right]);// this scale function has to be tuned to handle name.
     
     //legacy code const yCoordinateOfCenter=scaleLinear().domain([
     //     d3.min(dataExtracted, yCoordinate), 
@@ -273,7 +273,7 @@ const main = async () =>{
         bottom:130, 
         left:125,})
     .maxRadius(16)
-    .minRadius(2);
+    .minRadius(1);
 // svg1.call(plot);
 //Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
@@ -298,8 +298,8 @@ const renderChart = (data) => {
                     .width(effectiveWidth)//VIEhere we are setting effective width on axis, so that it could populate the ticks accordingly. 
                     .height(height)
                     .dataReceived(data)
-                    .xCoordinate((d) => d.zone_name)//Issue Found
-                    .yCoordinate((d) => d.zone_score)//Issue Found
+                    .xCoordinate((d) => d.zone_name)
+                    .yCoordinate((d) => d.zone_score)
                     .margin({
                         top: 30, 
                         right: 33, 
