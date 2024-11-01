@@ -1493,3 +1493,1497 @@ CGL,2018,9,KKR,348,Kerala,232,Thiruvananthpuram,88
 CGL,2018,9,KKR,348,Kerala,232,Thrissur(Trichur),26
 CGL,2018,9,KKR,348,Kerala,232,Ernakulam,0
 CGL,2018,9,KKR,348,Lakshadweep,0,Kavaratti,0
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Anantnag,0
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Baramullah,0
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Bhaderwah,0
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Jammu,1996
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Rajouri,0
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Srinagar(J&K),110
+CGL,2019,1,NWR,11918,Jammu & Kashmir,2423,Samba,317
+CGL,2019,1,NWR,11918,Ladakh,56,Leh,56
+CGL,2019,1,NWR,11918,"Himachal
+ Pradesh",702,Dharamshala,0
+CGL,2019,1,NWR,11918,"Himachal
+ Pradesh",702,Hamirpur,325
+CGL,2019,1,NWR,11918,"Himachal
+ Pradesh",702,Shimla,377
+CGL,2019,1,NWR,11918,Punjab,7316,Bhathinda ,0
+CGL,2019,1,NWR,11918,Punjab,7316,Jalandhar ,662
+CGL,2019,1,NWR,11918,Punjab,7316,Patiala,1620
+CGL,2019,1,NWR,11918,Punjab,7316,Amritsar,771
+CGL,2019,1,NWR,11918,Punjab,7316,Ludhiana,811
+CGL,2019,1,NWR,11918,Punjab,7316,Mohali,3452
+CGL,2019,1,NWR,11918,Chandigarh,0,Chandigarh,0
+CGL,2019,1,NWR,11918,Haryana,1421,Ambala,0
+CGL,2019,1,NWR,11918,Haryana,1421,Bhiwani,0
+CGL,2019,1,NWR,11918,Haryana,1421,Hisar,0
+CGL,2019,1,NWR,11918,Haryana,1421,Karnal,1421
+CGL,2019,1,NWR,11918,Haryana,1421,Yamunanagar,0
+CGL,2019,1,NWR,11918,Haryana,1421,Kurukshetra,0
+CGL,2019,1,NR,94857,Uttarakhand,5802,Almora,0
+CGL,2019,1,NR,94857,Uttarakhand,5802,Dehradun,2581
+CGL,2019,1,NR,94857,Uttarakhand,5802,Haldwani,1510
+CGL,2019,1,NR,94857,Uttarakhand,5802,"Srinagar
+(uttarakhand)",0
+CGL,2019,1,NR,94857,Uttarakhand,5802,Haridwar,578
+CGL,2019,1,NR,94857,Uttarakhand,5802,Roorkee,1133
+CGL,2019,1,NR,94857,Delhi,37602,Delhi,37602
+CGL,2019,1,NR,94857,Rajasthan,51453,Ajmer ,906
+CGL,2019,1,NR,94857,Rajasthan,51453,Alwar,1550
+CGL,2019,1,NR,94857,Rajasthan,51453,Bharatpur,0
+CGL,2019,1,NR,94857,Rajasthan,51453,Bikaner,903
+CGL,2019,1,NR,94857,Rajasthan,51453,jaipur,27134
+CGL,2019,1,NR,94857,Rajasthan,51453,Jodhpur,5308
+CGL,2019,1,NR,94857,Rajasthan,51453,kota,5052
+CGL,2019,1,NR,94857,Rajasthan,51453,Sriganganagar ,3159
+CGL,2019,1,NR,94857,Rajasthan,51453,Udaipur,2322
+CGL,2019,1,NR,94857,Rajasthan,51453,Dausa,0
+CGL,2019,1,NR,94857,Rajasthan,51453,Sikar,5119
+CGL,2019,1,CR,242933,Utar pradesh,146934,Agra,10620
+CGL,2019,1,CR,242933,Utar pradesh,146934,Aligarh,3197
+CGL,2019,1,CR,242933,Utar pradesh,146934,Prayagraj,16142
+CGL,2019,1,CR,242933,Utar pradesh,146934,Balia,0
+CGL,2019,1,CR,242933,Utar pradesh,146934,Bareilly,5070
+CGL,2019,1,CR,242933,Utar pradesh,146934,"Ayodhya
+(Faizabad)",0
+CGL,2019,1,CR,242933,Utar pradesh,146934,Gorakhpur,11982
+CGL,2019,1,CR,242933,Utar pradesh,146934,Jhansi,3833
+CGL,2019,1,CR,242933,Utar pradesh,146934,Kanpur,29495
+CGL,2019,1,CR,242933,Utar pradesh,146934,Lucknow,32279
+CGL,2019,1,CR,242933,Utar pradesh,146934,Meerut,8709
+CGL,2019,1,CR,242933,Utar pradesh,146934,Mirzapur,0
+CGL,2019,1,CR,242933,Utar pradesh,146934,"Varanasi
+(Banaras)",21548
+CGL,2019,1,CR,242933,Utar pradesh,146934,Mathura,0
+CGL,2019,1,CR,242933,Utar pradesh,146934,Moradabad,1433
+CGL,2019,1,CR,242933,Utar pradesh,146934,Muzafarnagar,2626
+CGL,2019,1,CR,242933,Utar pradesh,146934,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2019,1,CR,242933,Utar pradesh,146934,Greater Noida,0
+CGL,2019,1,CR,242933,Bihar,95999,Bhagalpur,3936
+CGL,2019,1,CR,242933,Bihar,95999,Darbahanga,2015
+CGL,2019,1,CR,242933,Bihar,95999,Gaya,0
+CGL,2019,1,CR,242933,Bihar,95999,Katihar,0
+CGL,2019,1,CR,242933,Bihar,95999,Muzaffarpur,2626
+CGL,2019,1,CR,242933,Bihar,95999,Patna,69092
+CGL,2019,1,CR,242933,Bihar,95999,Ara(Arrah),2333
+CGL,2019,1,CR,242933,Bihar,95999,"Aurangabad
+(Bihar)",718
+CGL,2019,1,CR,242933,Bihar,95999,Purnia,5909
+CGL,2019,1,ER,127695,Sikkim,123,Gangtok,123
+CGL,2019,1,ER,127695,Jharkhand,31082,Bokarp,0
+CGL,2019,1,ER,127695,Jharkhand,31082,Chaibasa,0
+CGL,2019,1,ER,127695,Jharkhand,31082,Dumka,0
+CGL,2019,1,ER,127695,Jharkhand,31082,Hazaribag,0
+CGL,2019,1,ER,127695,Jharkhand,31082,Ranchi,31082
+CGL,2019,1,ER,127695,Jharkhand,31082,Dhanbad,0
+CGL,2019,1,ER,127695,Jharkhand,31082,Jamshedpur,0
+CGL,2019,1,ER,127695,West Bengal,53481,Bankura,0
+CGL,2019,1,ER,127695,West Bengal,53481,Barasat,0
+CGL,2019,1,ER,127695,West Bengal,53481,Berhampore,4224
+CGL,2019,1,ER,127695,West Bengal,53481,"Bardhman
+(Burdwan)",0
+CGL,2019,1,ER,127695,West Bengal,53481,Chinsurah,0
+CGL,2019,1,ER,127695,West Bengal,53481,Cooch Behar ,0
+CGL,2019,1,ER,127695,West Bengal,53481,Darjeeling,0
+CGL,2019,1,ER,127695,West Bengal,53481,Jalpaiguri,0
+CGL,2019,1,ER,127695,West Bengal,53481,Jhargram,0
+CGL,2019,1,ER,127695,West Bengal,53481,Kolkata,42228
+CGL,2019,1,ER,127695,West Bengal,53481,Krishnanagar,0
+CGL,2019,1,ER,127695,West Bengal,53481,Malda,0
+CGL,2019,1,ER,127695,West Bengal,53481,Midnapur,0
+CGL,2019,1,ER,127695,West Bengal,53481,Purulia,5909
+CGL,2019,1,ER,127695,West Bengal,53481,siliguri,4855
+CGL,2019,1,ER,127695,West Bengal,53481,Suri,0
+CGL,2019,1,ER,127695,West Bengal,53481,Asansol,0
+CGL,2019,1,ER,127695,West Bengal,53481,Hooghly,6398
+CGL,2019,1,ER,127695,West Bengal,53481,Kalyani,0
+CGL,2019,1,ER,127695,Odisha,42511,Balasore,0
+CGL,2019,1,ER,127695,Odisha,42511,"Berhampore
+(Odisha)",0
+CGL,2019,1,ER,127695,Odisha,42511,Bhawanipatna,0
+CGL,2019,1,ER,127695,Odisha,42511,Bhubaneshwar,22128
+CGL,2019,1,ER,127695,Odisha,42511,Cutack,4656
+CGL,2019,1,ER,127695,Odisha,42511,Kendujhar,0
+CGL,2019,1,ER,127695,Odisha,42511,Koraput,0
+CGL,2019,1,ER,127695,Odisha,42511,Phulbani,0
+CGL,2019,1,ER,127695,Odisha,42511,Sambalpur,4016
+CGL,2019,1,ER,127695,Odisha,42511,Rourkela,0
+CGL,2019,1,ER,127695,Odisha,42511,Dhenkenal,1066
+CGL,2019,1,ER,127695,A & N Islands,498,Car Nicobar,0
+CGL,2019,1,ER,127695,A & N Islands,498,Port Blair,498
+CGL,2019,1,NER,18488,"Anunachal
+ Pradesh",639,Itanagar,639
+CGL,2019,1,NER,18488,Assam,9506,Barpeta,0
+CGL,2019,1,NER,18488,Assam,9506,Dibrugarh ,1322
+CGL,2019,1,NER,18488,Assam,9506,Diphu,0
+CGL,2019,1,NER,18488,Assam,9506,Goalpara,0
+CGL,2019,1,NER,18488,Assam,9506,"Guwahati
+(Dispur)",6345
+CGL,2019,1,NER,18488,Assam,9506,Halflong,0
+CGL,2019,1,NER,18488,Assam,9506,Jorhat,1002
+CGL,2019,1,NER,18488,Assam,9506,Kokrajhar,0
+CGL,2019,1,NER,18488,Assam,9506,Lakhimpur,0
+CGL,2019,1,NER,18488,Assam,9506,Sivasagar,0
+CGL,2019,1,NER,18488,Assam,9506,Silchar,837
+CGL,2019,1,NER,18488,Assam,9506,Tezpur,0
+CGL,2019,1,NER,18488,Nagaland,1058,Dimapur,0
+CGL,2019,1,NER,18488,Nagaland,1058,Kohima,1058
+CGL,2019,1,NER,18488,Meghalaya,1197,Shilong,1197
+CGL,2019,1,NER,18488,Meghalaya,1197,Tura,0
+CGL,2019,1,NER,18488,Manipur,4309,Imphal,3064
+CGL,2019,1,NER,18488,Manipur,4309,Churachandpur,1237
+CGL,2019,1,NER,18488,Manipur,4309,Ukhrul,89
+CGL,2019,1,NER,18488,Tripura,1373,Agartala,1373
+CGL,2019,1,NER,18488,Mizoram,325,Aizwal,325
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Bhopal,14316
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Chataarpur,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Chindwara,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Guna,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Gwalior,6961
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Indore,11928
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Jabalpur,6666
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Jhabua,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Khandwa,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Mandsaur,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Ratlam,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Rewa,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Shahdol,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Satna,2369
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Sagar,0
+CGL,2019,1,MPR,57930,Madhya pradesh,45301,Ujjain,1853
+CGL,2019,1,MPR,57930,Chhattisgarh,12626,Ambikapur,0
+CGL,2019,1,MPR,57930,Chhattisgarh,12626,Bilaspur,2708
+CGL,2019,1,MPR,57930,Chhattisgarh,12626,Jagdalpur,0
+CGL,2019,1,MPR,57930,Chhattisgarh,12626,Raipur,5676
+CGL,2019,1,MPR,57930,Chhattisgarh,12626,Durg-Bhilai,0
+CGL,2019,1,MPR,57930,Chhattisgarh,12626,Bhilainagar,0
+CGL,2019,1,WR,78812,Gujrat,13635,Ahmedabad,5099
+CGL,2019,1,WR,78812,Gujrat,13635,vadodara(Baroda)l,2018
+CGL,2019,1,WR,78812,Gujrat,13635,Bhuj,0
+CGL,2019,1,WR,78812,Gujrat,13635,"Panchmahal
+(godhra)",0
+CGL,2019,1,WR,78812,Gujrat,13635,Rajkot,1837
+CGL,2019,1,WR,78812,Gujrat,13635,Surat,2299
+CGL,2019,1,WR,78812,Gujrat,13635,Valsad,0
+CGL,2019,1,WR,78812,Gujrat,13635,Bhavnagar,0
+CGL,2019,1,WR,78812,Gujrat,13635,Kuchchh(kutch),0
+CGL,2019,1,WR,78812,Gujrat,13635,Anand,440
+CGL,2019,1,WR,78812,Gujrat,13635,Gandhinagar,1296
+CGL,2019,1,WR,78812,Gujrat,13635,Mehsana,644
+CGL,2019,1,WR,78812,Maharastra,57667,Amravati,4477
+CGL,2019,1,WR,78812,Maharastra,57667,Aurangabad,4185
+CGL,2019,1,WR,78812,Maharastra,57667,Kolhapur,3135
+CGL,2019,1,WR,78812,Maharastra,57667,Mumbai,12842
+CGL,2019,1,WR,78812,Maharastra,57667,Nagpur,12724
+CGL,2019,1,WR,78812,Maharastra,57667,Nanded,2552
+CGL,2019,1,WR,78812,Maharastra,57667,Nashik,3327
+CGL,2019,1,WR,78812,Maharastra,57667,Pune,12925
+CGL,2019,1,WR,78812,Maharastra,57667,Ratnagiri,0
+CGL,2019,1,WR,78812,Maharastra,57667,Thane,0
+CGL,2019,1,WR,78812,Maharastra,57667,Bhandara,0
+CGL,2019,1,WR,78812,Maharastra,57667,chandrapur,0
+CGL,2019,1,WR,78812,Maharastra,57667,Akola,0
+CGL,2019,1,WR,78812,Maharastra,57667,Jalgaon,1800
+CGL,2019,1,WR,78812,Maharastra,57667,Ahmednagar,0
+CGL,2019,1,WR,78812,Maharastra,57667,Alibag(Alibaug),0
+CGL,2019,1,WR,78812,Maharastra,57667,Navi Mumbai,0
+CGL,2019,1,WR,78812,Goa,510,Panaji(Panjim),510
+CGL,2019,1,SR,78812,Andhra Pradesh,46836,Guntur,4229
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Kurnool,5519
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Rajahmundry,3475
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Srikakulam,0
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Tirupati,4708
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Vishakhapatnam,10972
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Kakinada,2377
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Nellore,2050
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Chirala,0
+CGL,2019,1,SR,119421,Andhra Pradesh,46836,Vizianagaram,2540
+CGL,2019,1,SR,119421,Telangana,35270,Hyderabad,29973
+CGL,2019,1,SR,119421,Telangana,35270,Nizamabad,0
+CGL,2019,1,SR,119421,Telangana,35270,Warangal,3269
+CGL,2019,1,SR,119421,Telangana,35270,Karimnagar,2028
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Chennai(Madras),14343
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Coimbatore,3776
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Kanchipuram,0
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Madurai,5115
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Salem,3134
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Tiruchirapalli,3865
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Tirunelveli,4594
+CGL,2019,1,SR,119421,Tamil Nadu,36721,Vellore,1894
+CGL,2019,1,SR,119421,Puducherry,594,Puducherry,594
+CGL,2019,1,KKR,54946,Karnataka,18190,"Bengaluru
+(Bengalore)",9593
+CGL,2019,1,KKR,54946,Karnataka,18190,Belgavi(Belgaum),1223
+CGL,2019,1,KKR,54946,Karnataka,18190,Bijapur,0
+CGL,2019,1,KKR,54946,Karnataka,18190,Dharwar,0
+CGL,2019,1,KKR,54946,Karnataka,18190,"Kalaburagi
+(Gulbarga)",970
+CGL,2019,1,KKR,54946,Karnataka,18190,Hassan,0
+CGL,2019,1,KKR,54946,Karnataka,18190,Kolar,0
+CGL,2019,1,KKR,54946,Karnataka,18190,"Mangaluru
+(Manglore)",762
+CGL,2019,1,KKR,54946,Karnataka,18190,Mysuru(Mysore),1767
+CGL,2019,1,KKR,54946,Karnataka,18190,Shivamogga(Shimoga),735
+CGL,2019,1,KKR,54946,Karnataka,18190,Hubballi(Hubli),2903
+CGL,2019,1,KKR,54946,Karnataka,18190,Udupi,237
+CGL,2019,1,KKR,54946,Kerala,36750,Alappuzha,0
+CGL,2019,1,KKR,54946,Kerala,36750,Kannur(Cannanor),3481
+CGL,2019,1,KKR,54946,Kerala,36750,Kalpeta,0
+CGL,2019,1,KKR,54946,Kerala,36750,Kochi(cochin),0
+CGL,2019,1,KKR,54946,Kerala,36750,Kottayam,4274
+CGL,2019,1,KKR,54946,Kerala,36750,Kozhikode(Calicut),6393
+CGL,2019,1,KKR,54946,Kerala,36750,Malappuram,0
+CGL,2019,1,KKR,54946,Kerala,36750,Palakkad,0
+CGL,2019,1,KKR,54946,Kerala,36750,Pathanmthitta,0
+CGL,2019,1,KKR,54946,Kerala,36750,Kollam,5108
+CGL,2019,1,KKR,54946,Kerala,36750,Thiruvananthpuram,9195
+CGL,2019,1,KKR,54946,Kerala,36750,Thrissur(Trichur),4088
+CGL,2019,1,KKR,54946,Kerala,36750,Ernakulam,4211
+CGL,2019,1,KKR,54946,Lakshadweep,6,Kavaratti,6
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Anantnag,0
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Baramullah,0
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Bhaderwah,0
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Jammu,12
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Rajouri,0
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Srinagar(J&K),0
+CGL,2019,9,NWR,223,Jammu & Kashmir,14,Samba,2
+CGL,2019,9,NWR,223,Ladakh,0,Leh,0
+CGL,2019,9,NWR,223,"Himachal
+ Pradesh",19,Dharamshala,0
+CGL,2019,9,NWR,223,"Himachal
+ Pradesh",19,Hamirpur,6
+CGL,2019,9,NWR,223,"Himachal
+ Pradesh",19,Shimla,13
+CGL,2019,9,NWR,223,Punjab,165,Bhathinda ,0
+CGL,2019,9,NWR,223,Punjab,165,Jalandhar ,19
+CGL,2019,9,NWR,223,Punjab,165,Patiala,39
+CGL,2019,9,NWR,223,Punjab,165,Amritsar,7
+CGL,2019,9,NWR,223,Punjab,165,Ludhiana,43
+CGL,2019,9,NWR,223,Punjab,165,Mohali,57
+CGL,2019,9,NWR,223,Chandigarh,18,Chandigarh,0
+CGL,2019,9,NWR,223,Haryana,35,Ambala,0
+CGL,2019,9,NWR,223,Haryana,35,Bhiwani,0
+CGL,2019,9,NWR,223,Haryana,35,Hisar,0
+CGL,2019,9,NWR,223,Haryana,35,Karnal,35
+CGL,2019,9,NWR,223,Haryana,35,Yamunanagar,0
+CGL,2019,9,NWR,223,Haryana,35,Kurukshetra,0
+CGL,2019,9,NR,3814,Uttarakhand,161,Almora,0
+CGL,2019,9,NR,3814,Uttarakhand,161,Dehradun,77
+CGL,2019,9,NR,3814,Uttarakhand,161,Haldwani,41
+CGL,2019,9,NR,3814,Uttarakhand,161,"Srinagar
+(uttarakhand)",0
+CGL,2019,9,NR,3814,Uttarakhand,161,Haridwar,10
+CGL,2019,9,NR,3814,Uttarakhand,161,Roorkee,33
+CGL,2019,9,NR,3814,Delhi,2345,Delhi,2345
+CGL,2019,9,NR,3814,Rajasthan,1308,Ajmer ,17
+CGL,2019,9,NR,3814,Rajasthan,1308,Alwar,62
+CGL,2019,9,NR,3814,Rajasthan,1308,Bharatpur,0
+CGL,2019,9,NR,3814,Rajasthan,1308,Bikaner,110
+CGL,2019,9,NR,3814,Rajasthan,1308,jaipur,887
+CGL,2019,9,NR,3814,Rajasthan,1308,Jodhpur,0
+CGL,2019,9,NR,3814,Rajasthan,1308,kota,45
+CGL,2019,9,NR,3814,Rajasthan,1308,Sriganganagar ,36
+CGL,2019,9,NR,3814,Rajasthan,1308,Udaipur,26
+CGL,2019,9,NR,3814,Rajasthan,1308,Dausa,0
+CGL,2019,9,NR,3814,Rajasthan,1308,Sikar,63
+CGL,2019,9,CR,1424,Utar pradesh,863,Agra,74
+CGL,2019,9,CR,1424,Utar pradesh,863,Aligarh,22
+CGL,2019,9,CR,1424,Utar pradesh,863,Prayagraj,67
+CGL,2019,9,CR,1424,Utar pradesh,863,Balia,0
+CGL,2019,9,CR,1424,Utar pradesh,863,Bareilly,29
+CGL,2019,9,CR,1424,Utar pradesh,863,"Ayodhya
+(Faizabad)",0
+CGL,2019,9,CR,1424,Utar pradesh,863,Gorakhpur,35
+CGL,2019,9,CR,1424,Utar pradesh,863,Jhansi,19
+CGL,2019,9,CR,1424,Utar pradesh,863,Kanpur,225
+CGL,2019,9,CR,1424,Utar pradesh,863,Lucknow,261
+CGL,2019,9,CR,1424,Utar pradesh,863,Meerut,27
+CGL,2019,9,CR,1424,Utar pradesh,863,Mirzapur,0
+CGL,2019,9,CR,1424,Utar pradesh,863,"Varanasi
+(Banaras)",91
+CGL,2019,9,CR,1424,Utar pradesh,863,Mathura,0
+CGL,2019,9,CR,1424,Utar pradesh,863,Moradabad,7
+CGL,2019,9,CR,1424,Utar pradesh,863,Muzafarnagar,6
+CGL,2019,9,CR,1424,Utar pradesh,863,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2019,9,CR,1424,Utar pradesh,863,Greater Noida,0
+CGL,2019,9,CR,1424,Bihar,561,Bhagalpur,16
+CGL,2019,9,CR,1424,Bihar,561,Darbahanga,8
+CGL,2019,9,CR,1424,Bihar,561,Gaya,0
+CGL,2019,9,CR,1424,Bihar,561,Katihar,0
+CGL,2019,9,CR,1424,Bihar,561,Muzaffarpur,76
+CGL,2019,9,CR,1424,Bihar,561,Patna,389
+CGL,2019,9,CR,1424,Bihar,561,Ara(Arrah),22
+CGL,2019,9,CR,1424,Bihar,561,"Aurangabad
+(Bihar)",9
+CGL,2019,9,CR,1424,Bihar,561,Purnia,41
+CGL,2019,9,ER,730,Sikkim,0,Gangtok,0
+CGL,2019,9,ER,730,Jharkhand,157,Bokarp,0
+CGL,2019,9,ER,730,Jharkhand,157,Chaibasa,0
+CGL,2019,9,ER,730,Jharkhand,157,Dumka,0
+CGL,2019,9,ER,730,Jharkhand,157,Hazaribag,0
+CGL,2019,9,ER,730,Jharkhand,157,Ranchi,157
+CGL,2019,9,ER,730,Jharkhand,157,Dhanbad,0
+CGL,2019,9,ER,730,Jharkhand,157,Jamshedpur,0
+CGL,2019,9,ER,730,West Bengal,493,Bankura,0
+CGL,2019,9,ER,730,West Bengal,493,Barasat,0
+CGL,2019,9,ER,730,West Bengal,493,Berhampore,5
+CGL,2019,9,ER,730,West Bengal,493,"Bardhman
+(Burdwan)",0
+CGL,2019,9,ER,730,West Bengal,493,Chinsurah,0
+CGL,2019,9,ER,730,West Bengal,493,Cooch Behar ,0
+CGL,2019,9,ER,730,West Bengal,493,Darjeeling,0
+CGL,2019,9,ER,730,West Bengal,493,Jalpaiguri,0
+CGL,2019,9,ER,730,West Bengal,493,Jhargram,0
+CGL,2019,9,ER,730,West Bengal,493,Kolkata,438
+CGL,2019,9,ER,730,West Bengal,493,Krishnanagar,0
+CGL,2019,9,ER,730,West Bengal,493,Malda,0
+CGL,2019,9,ER,730,West Bengal,493,Midnapur,0
+CGL,2019,9,ER,730,West Bengal,493,Purulia,0
+CGL,2019,9,ER,730,West Bengal,493,siliguri,29
+CGL,2019,9,ER,730,West Bengal,493,Suri,0
+CGL,2019,9,ER,730,West Bengal,493,Asansol,0
+CGL,2019,9,ER,730,West Bengal,493,Hooghly,26
+CGL,2019,9,ER,730,West Bengal,493,Kalyani,0
+CGL,2019,9,ER,730,Odisha,80,Balasore,6
+CGL,2019,9,ER,730,Odisha,80,"Berhampore
+(Odisha)",5
+CGL,2019,9,ER,730,Odisha,80,Bhawanipatna,0
+CGL,2019,9,ER,730,Odisha,80,Bhubaneshwar,48
+CGL,2019,9,ER,730,Odisha,80,Cutack,5
+CGL,2019,9,ER,730,Odisha,80,Kendujhar,0
+CGL,2019,9,ER,730,Odisha,80,Koraput,0
+CGL,2019,9,ER,730,Odisha,80,Phulbani,0
+CGL,2019,9,ER,730,Odisha,80,Sambalpur,8
+CGL,2019,9,ER,730,Odisha,80,Rourkela,5
+CGL,2019,9,ER,730,Odisha,80,Dhenkenal,3
+CGL,2019,9,ER,730,A & N Islands,0,Car Nicobar,0
+CGL,2019,9,ER,730,A & N Islands,0,Port Blair,0
+CGL,2019,9,NER,84,"Anunachal
+ Pradesh",1,Itanagar,1
+CGL,2019,9,NER,84,Assam,47,Barpeta,0
+CGL,2019,9,NER,84,Assam,47,Dibrugarh ,3
+CGL,2019,9,NER,84,Assam,47,Diphu,0
+CGL,2019,9,NER,84,Assam,47,Goalpara,0
+CGL,2019,9,NER,84,Assam,47,"Guwahati
+(Dispur)",18
+CGL,2019,9,NER,84,Assam,47,Halflong,0
+CGL,2019,9,NER,84,Assam,47,Jorhat,1
+CGL,2019,9,NER,84,Assam,47,Kokrajhar,0
+CGL,2019,9,NER,84,Assam,47,Lakhimpur,0
+CGL,2019,9,NER,84,Assam,47,Sivasagar,0
+CGL,2019,9,NER,84,Assam,47,Silchar,5
+CGL,2019,9,NER,84,Assam,47,Tezpur,0
+CGL,2019,9,NER,84,Nagaland,6,Dimapur,0
+CGL,2019,9,NER,84,Nagaland,6,Kohima,6
+CGL,2019,9,NER,84,Meghalaya,10,Shilong,10
+CGL,2019,9,NER,84,Meghalaya,10,Tura,0
+CGL,2019,9,NER,84,Manipur,15,Imphal,7
+CGL,2019,9,NER,84,Manipur,15,Churachandpur,8
+CGL,2019,9,NER,84,Manipur,15,Ukhrul,0
+CGL,2019,9,NER,84,Tripura,4,Agartala,4
+CGL,2019,9,NER,84,Mizoram,1,Aizwal,1
+CGL,2019,9,MPR,217,Madhya pradesh,199,Bhopal,39
+CGL,2019,9,MPR,217,Madhya pradesh,199,Chataarpur,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Chindwara,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Guna,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Gwalior,52
+CGL,2019,9,MPR,217,Madhya pradesh,199,Indore,65
+CGL,2019,9,MPR,217,Madhya pradesh,199,Jabalpur,18
+CGL,2019,9,MPR,217,Madhya pradesh,199,Jhabua,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Khandwa,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Mandsaur,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Ratlam,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Rewa,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Shahdol,0
+CGL,2019,9,MPR,217,Madhya pradesh,199,Satna,11
+CGL,2019,9,MPR,217,Madhya pradesh,199,Sagar,6
+CGL,2019,9,MPR,217,Madhya pradesh,199,Ujjain,8
+CGL,2019,9,MPR,217,Chhattisgarh,18,Ambikapur,0
+CGL,2019,9,MPR,217,Chhattisgarh,18,Bilaspur,7
+CGL,2019,9,MPR,217,Chhattisgarh,18,Jagdalpur,0
+CGL,2019,9,MPR,217,Chhattisgarh,18,Raipur,9
+CGL,2019,9,MPR,217,Chhattisgarh,18,Durg-Bhilai,0
+CGL,2019,9,MPR,217,Chhattisgarh,18,Bhilainagar,2
+CGL,2019,9,WR,350,Gujrat,90,Ahmedabad,43
+CGL,2019,9,WR,350,Gujrat,90,vadodara(Baroda)l,9
+CGL,2019,9,WR,350,Gujrat,90,Bhuj,0
+CGL,2019,9,WR,350,Gujrat,90,"Panchmahal
+(godhra)",0
+CGL,2019,9,WR,350,Gujrat,90,Rajkot,15
+CGL,2019,9,WR,350,Gujrat,90,Surat,13
+CGL,2019,9,WR,350,Gujrat,90,Valsad,0
+CGL,2019,9,WR,350,Gujrat,90,Bhavnagar,0
+CGL,2019,9,WR,350,Gujrat,90,Kuchchh(kutch),0
+CGL,2019,9,WR,350,Gujrat,90,Anand,3
+CGL,2019,9,WR,350,Gujrat,90,Gandhinagar,4
+CGL,2019,9,WR,350,Gujrat,90,Mehsana,3
+CGL,2019,9,WR,350,Maharastra,248,Amravati,8
+CGL,2019,9,WR,350,Maharastra,248,Aurangabad,8
+CGL,2019,9,WR,350,Maharastra,248,Kolhapur,6
+CGL,2019,9,WR,350,Maharastra,248,Mumbai,84
+CGL,2019,9,WR,350,Maharastra,248,Nagpur,31
+CGL,2019,9,WR,350,Maharastra,248,Nanded,3
+CGL,2019,9,WR,350,Maharastra,248,Nashik,12
+CGL,2019,9,WR,350,Maharastra,248,Pune,93
+CGL,2019,9,WR,350,Maharastra,248,Ratnagiri,0
+CGL,2019,9,WR,350,Maharastra,248,Thane,0
+CGL,2019,9,WR,350,Maharastra,248,Bhandara,0
+CGL,2019,9,WR,350,Maharastra,248,chandrapur,8
+CGL,2019,9,WR,350,Maharastra,248,Akola,0
+CGL,2019,9,WR,350,Maharastra,248,Jalgaon,3
+CGL,2019,9,WR,350,Maharastra,248,Ahmednagar,0
+CGL,2019,9,WR,350,Maharastra,248,Alibag(Alibaug),0
+CGL,2019,9,WR,350,Maharastra,248,Navi Mumbai,0
+CGL,2019,9,WR,350,Goa,12,Panaji(Panjim),12
+CGL,2019,9,SR,590,Andhra Pradesh,168,Guntur,22
+CGL,2019,9,SR,590,Andhra Pradesh,168,Kurnool,15
+CGL,2019,9,SR,590,Andhra Pradesh,168,Rajahmundry,6
+CGL,2019,9,SR,590,Andhra Pradesh,168,Srikakulam,0
+CGL,2019,9,SR,590,Andhra Pradesh,168,Tirupati,34
+CGL,2019,9,SR,590,Andhra Pradesh,168,Vishakhapatnam,41
+CGL,2019,9,SR,590,Andhra Pradesh,168,Kakinada,3
+CGL,2019,9,SR,590,Andhra Pradesh,168,Nellore,11
+CGL,2019,9,SR,590,Andhra Pradesh,168,Chirala,3
+CGL,2019,9,SR,590,Andhra Pradesh,168,Vizianagaram,6
+CGL,2019,9,SR,590,Telangana,311,Hyderabad,289
+CGL,2019,9,SR,590,Telangana,311,Nizamabad,0
+CGL,2019,9,SR,590,Telangana,311,Warangal,16
+CGL,2019,9,SR,590,Telangana,311,Karimnagar,6
+CGL,2019,9,SR,590,Tamil Nadu,111,Chennai(Madras),63
+CGL,2019,9,SR,590,Tamil Nadu,111,Coimbatore,14
+CGL,2019,9,SR,590,Tamil Nadu,111,Kanchipuram,0
+CGL,2019,9,SR,590,Tamil Nadu,111,Madurai,11
+CGL,2019,9,SR,590,Tamil Nadu,111,Salem,5
+CGL,2019,9,SR,590,Tamil Nadu,111,Tiruchirapalli,9
+CGL,2019,9,SR,590,Tamil Nadu,111,Tirunelveli,7
+CGL,2019,9,SR,590,Tamil Nadu,111,Vellore,2
+CGL,2019,9,SR,590,Puducherry,0,Puducherry,0
+CGL,2019,9,KKR,257,Karnataka,77,"Bengaluru
+(Bengalore)",62
+CGL,2019,9,KKR,257,Karnataka,77,Belgavi(Belgaum),1
+CGL,2019,9,KKR,257,Karnataka,77,Bijapur,0
+CGL,2019,9,KKR,257,Karnataka,77,Dharwar,0
+CGL,2019,9,KKR,257,Karnataka,77,"Kalaburagi
+(Gulbarga)",0
+CGL,2019,9,KKR,257,Karnataka,77,Hassan,0
+CGL,2019,9,KKR,257,Karnataka,77,Kolar,0
+CGL,2019,9,KKR,257,Karnataka,77,"Mangaluru
+(Manglore)",5
+CGL,2019,9,KKR,257,Karnataka,77,Mysuru(Mysore),5
+CGL,2019,9,KKR,257,Karnataka,77,Shivamogga(Shimoga),0
+CGL,2019,9,KKR,257,Karnataka,77,Hubballi(Hubli),3
+CGL,2019,9,KKR,257,Karnataka,77,Udupi,1
+CGL,2019,9,KKR,257,Kerala,180,Alappuzha,0
+CGL,2019,9,KKR,257,Kerala,180,Kannur(Cannanor),9
+CGL,2019,9,KKR,257,Kerala,180,Kalpeta,0
+CGL,2019,9,KKR,257,Kerala,180,Kochi(cochin),0
+CGL,2019,9,KKR,257,Kerala,180,Kottayam,9
+CGL,2019,9,KKR,257,Kerala,180,Kozhikode(Calicut),28
+CGL,2019,9,KKR,257,Kerala,180,Malappuram,0
+CGL,2019,9,KKR,257,Kerala,180,Palakkad,0
+CGL,2019,9,KKR,257,Kerala,180,Pathanmthitta,0
+CGL,2019,9,KKR,257,Kerala,180,Kollam,14
+CGL,2019,9,KKR,257,Kerala,180,Thiruvananthpuram,52
+CGL,2019,9,KKR,257,Kerala,180,Thrissur(Trichur),22
+CGL,2019,9,KKR,257,Kerala,180,Ernakulam,46
+CGL,2019,9,KKR,257,Lakshadweep,0,Kavaratti,0
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Anantnag,0
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Baramullah,0
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Bhaderwah,0
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Jammu,0
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Rajouri,0
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Srinagar(J&K),543
+CGL,2020,1,NWR,21715,Jammu & Kashmir,3035,Samba,497
+CGL,2020,1,NWR,21715,Ladakh,304,Leh,304
+CGL,2020,1,NWR,21715,"Himachal
+ Pradesh",1939,Dharamshala,0
+CGL,2020,1,NWR,21715,"Himachal
+ Pradesh",1939,Hamirpur,1150
+CGL,2020,1,NWR,21715,"Himachal
+ Pradesh",1939,Shimla,789
+CGL,2020,1,NWR,21715,Punjab,13446,Bhathinda ,0
+CGL,2020,1,NWR,21715,Punjab,13446,Jalandhar ,4378
+CGL,2020,1,NWR,21715,Punjab,13446,Patiala,4353
+CGL,2020,1,NWR,21715,Punjab,13446,Amritsar,0
+CGL,2020,1,NWR,21715,Punjab,13446,Ludhiana,0
+CGL,2020,1,NWR,21715,Punjab,13446,Mohali,2922
+CGL,2020,1,NWR,21715,Chandigarh,0,Chandigarh,0
+CGL,2020,1,NWR,21715,Haryana,2991,Ambala,0
+CGL,2020,1,NWR,21715,Haryana,2991,Bhiwani,0
+CGL,2020,1,NWR,21715,Haryana,2991,Hisar,0
+CGL,2020,1,NWR,21715,Haryana,2991,Karnal,2991
+CGL,2020,1,NWR,21715,Haryana,2991,Yamunanagar,0
+CGL,2020,1,NWR,21715,Haryana,2991,Kurukshetra,0
+CGL,2020,1,NR,177118,Uttarakhand,16229,Almora,0
+CGL,2020,1,NR,177118,Uttarakhand,16229,Dehradun,6822
+CGL,2020,1,NR,177118,Uttarakhand,16229,Haldwani,3821
+CGL,2020,1,NR,177118,Uttarakhand,16229,"Srinagar
+(uttarakhand)",0
+CGL,2020,1,NR,177118,Uttarakhand,16229,Haridwar,611
+CGL,2020,1,NR,177118,Uttarakhand,16229,Roorkee,4975
+CGL,2020,1,NR,177118,Delhi,103177,Delhi,103177
+CGL,2020,1,NR,177118,Rajasthan,57712,Ajmer ,2552
+CGL,2020,1,NR,177118,Rajasthan,57712,Alwar,5712
+CGL,2020,1,NR,177118,Rajasthan,57712,Bharatpur,0
+CGL,2020,1,NR,177118,Rajasthan,57712,Bikaner,4623
+CGL,2020,1,NR,177118,Rajasthan,57712,jaipur,29313
+CGL,2020,1,NR,177118,Rajasthan,57712,Jodhpur,4353
+CGL,2020,1,NR,177118,Rajasthan,57712,kota,3999
+CGL,2020,1,NR,177118,Rajasthan,57712,Sriganganagar ,342
+CGL,2020,1,NR,177118,Rajasthan,57712,Udaipur,1815
+CGL,2020,1,NR,177118,Rajasthan,57712,Dausa,0
+CGL,2020,1,NR,177118,Rajasthan,57712,Sikar,5003
+CGL,2020,1,CR,175679,Utar pradesh,104934,Agra,11350
+CGL,2020,1,CR,175679,Utar pradesh,104934,Aligarh,0
+CGL,2020,1,CR,175679,Utar pradesh,104934,Prayagraj,16319
+CGL,2020,1,CR,175679,Utar pradesh,104934,Balia,0
+CGL,2020,1,CR,175679,Utar pradesh,104934,Bareilly,5182
+CGL,2020,1,CR,175679,Utar pradesh,104934,"Ayodhya
+(Faizabad)",0
+CGL,2020,1,CR,175679,Utar pradesh,104934,Gorakhpur,6361
+CGL,2020,1,CR,175679,Utar pradesh,104934,Jhansi,3477
+CGL,2020,1,CR,175679,Utar pradesh,104934,Kanpur,22771
+CGL,2020,1,CR,175679,Utar pradesh,104934,Lucknow,14360
+CGL,2020,1,CR,175679,Utar pradesh,104934,Meerut,8180
+CGL,2020,1,CR,175679,Utar pradesh,104934,Mirzapur,0
+CGL,2020,1,CR,175679,Utar pradesh,104934,"Varanasi
+(Banaras)",14957
+CGL,2020,1,CR,175679,Utar pradesh,104934,Mathura,0
+CGL,2020,1,CR,175679,Utar pradesh,104934,Moradabad,1080
+CGL,2020,1,CR,175679,Utar pradesh,104934,Muzafarnagar,897
+CGL,2020,1,CR,175679,Utar pradesh,104934,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2020,1,CR,175679,Utar pradesh,104934,Greater Noida,0
+CGL,2020,1,CR,175679,Bihar,70745,Bhagalpur,3450
+CGL,2020,1,CR,175679,Bihar,70745,Darbahanga,4223
+CGL,2020,1,CR,175679,Bihar,70745,Gaya,0
+CGL,2020,1,CR,175679,Bihar,70745,Katihar,0
+CGL,2020,1,CR,175679,Bihar,70745,Muzaffarpur,6727
+CGL,2020,1,CR,175679,Bihar,70745,Patna,50535
+CGL,2020,1,CR,175679,Bihar,70745,Ara(Arrah),1704
+CGL,2020,1,CR,175679,Bihar,70745,"Aurangabad
+(Bihar)",0
+CGL,2020,1,CR,175679,Bihar,70745,Purnia,4106
+CGL,2020,1,ER,102159,Sikkim,144,Gangtok,144
+CGL,2020,1,ER,102159,Jharkhand,24041,Bokarp,0
+CGL,2020,1,ER,102159,Jharkhand,24041,Chaibasa,0
+CGL,2020,1,ER,102159,Jharkhand,24041,Dumka,0
+CGL,2020,1,ER,102159,Jharkhand,24041,Hazaribag,0
+CGL,2020,1,ER,102159,Jharkhand,24041,Ranchi,24041
+CGL,2020,1,ER,102159,Jharkhand,24041,Dhanbad,0
+CGL,2020,1,ER,102159,Jharkhand,24041,Jamshedpur,0
+CGL,2020,1,ER,102159,West Bengal,46848,Bankura,0
+CGL,2020,1,ER,102159,West Bengal,46848,Barasat,0
+CGL,2020,1,ER,102159,West Bengal,46848,Berhampore,3475
+CGL,2020,1,ER,102159,West Bengal,46848,"Bardhman
+(Burdwan)",0
+CGL,2020,1,ER,102159,West Bengal,46848,Chinsurah,0
+CGL,2020,1,ER,102159,West Bengal,46848,Cooch Behar ,0
+CGL,2020,1,ER,102159,West Bengal,46848,Darjeeling,0
+CGL,2020,1,ER,102159,West Bengal,46848,Jalpaiguri,0
+CGL,2020,1,ER,102159,West Bengal,46848,Jhargram,0
+CGL,2020,1,ER,102159,West Bengal,46848,Kolkata,36262
+CGL,2020,1,ER,102159,West Bengal,46848,Krishnanagar,0
+CGL,2020,1,ER,102159,West Bengal,46848,Malda,0
+CGL,2020,1,ER,102159,West Bengal,46848,Midnapur,0
+CGL,2020,1,ER,102159,West Bengal,46848,Purulia,0
+CGL,2020,1,ER,102159,West Bengal,46848,siliguri,4395
+CGL,2020,1,ER,102159,West Bengal,46848,Suri,0
+CGL,2020,1,ER,102159,West Bengal,46848,Asansol,0
+CGL,2020,1,ER,102159,West Bengal,46848,Hooghly,6191
+CGL,2020,1,ER,102159,West Bengal,46848,Kalyani,0
+CGL,2020,1,ER,102159,Odisha,30623,Balasore,3136
+CGL,2020,1,ER,102159,Odisha,30623,"Berhampore
+(Odisha)",0
+CGL,2020,1,ER,102159,Odisha,30623,Bhawanipatna,0
+CGL,2020,1,ER,102159,Odisha,30623,Bhubaneshwar,12470
+CGL,2020,1,ER,102159,Odisha,30623,Cutack,4069
+CGL,2020,1,ER,102159,Odisha,30623,Kendujhar,0
+CGL,2020,1,ER,102159,Odisha,30623,Koraput,0
+CGL,2020,1,ER,102159,Odisha,30623,Phulbani,0
+CGL,2020,1,ER,102159,Odisha,30623,Sambalpur,3656
+CGL,2020,1,ER,102159,Odisha,30623,Rourkela,0
+CGL,2020,1,ER,102159,Odisha,30623,Dhenkenal,1189
+CGL,2020,1,ER,102159,A & N Islands,513,Car Nicobar,0
+CGL,2020,1,ER,102159,A & N Islands,513,Port Blair,513
+CGL,2020,1,NER,12159,"Anunachal
+ Pradesh",271,Itanagar,271
+CGL,2020,1,NER,12159,Assam,5403,Barpeta,0
+CGL,2020,1,NER,12159,Assam,5403,Dibrugarh ,745
+CGL,2020,1,NER,12159,Assam,5403,Diphu,0
+CGL,2020,1,NER,12159,Assam,5403,Goalpara,0
+CGL,2020,1,NER,12159,Assam,5403,"Guwahati
+(Dispur)",3636
+CGL,2020,1,NER,12159,Assam,5403,Halflong,0
+CGL,2020,1,NER,12159,Assam,5403,Jorhat,527
+CGL,2020,1,NER,12159,Assam,5403,Kokrajhar,0
+CGL,2020,1,NER,12159,Assam,5403,Lakhimpur,0
+CGL,2020,1,NER,12159,Assam,5403,Sivasagar,0
+CGL,2020,1,NER,12159,Assam,5403,Silchar,495
+CGL,2020,1,NER,12159,Assam,5403,Tezpur,0
+CGL,2020,1,NER,12159,Nagaland,1367,Dimapur,675
+CGL,2020,1,NER,12159,Nagaland,1367,Kohima,692
+CGL,2020,1,NER,12159,Meghalaya,829,Shilong,829
+CGL,2020,1,NER,12159,Meghalaya,829,Tura,0
+CGL,2020,1,NER,12159,Manipur,3500,Imphal,2418
+CGL,2020,1,NER,12159,Manipur,3500,Churachandpur,990
+CGL,2020,1,NER,12159,Manipur,3500,Ukhrul,92
+CGL,2020,1,NER,12159,Tripura,574,Agartala,574
+CGL,2020,1,NER,12159,Mizoram,215,Aizwal,215
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Bhopal,7928
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Chataarpur,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Chindwara,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Guna,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Gwalior,5303
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Indore,6446
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Jabalpur,4801
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Jhabua,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Khandwa,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Mandsaur,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Ratlam,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Rewa,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Shahdol,0
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Satna,1981
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Sagar,1632
+CGL,2020,1,MPR,41407,Madhya pradesh,29594,Ujjain,1503
+CGL,2020,1,MPR,41407,Chhattisgarh,11813,Ambikapur,0
+CGL,2020,1,MPR,41407,Chhattisgarh,11813,Bilaspur,3300
+CGL,2020,1,MPR,41407,Chhattisgarh,11813,Jagdalpur,0
+CGL,2020,1,MPR,41407,Chhattisgarh,11813,Raipur,4466
+CGL,2020,1,MPR,41407,Chhattisgarh,11813,Durg-Bhilai,4047
+CGL,2020,1,MPR,41407,Chhattisgarh,11813,Bhilainagar,0
+CGL,2020,1,WR,60809,Gujrat,10612,Ahmedabad,3424
+CGL,2020,1,WR,60809,Gujrat,10612,vadodara(Baroda)l,1519
+CGL,2020,1,WR,60809,Gujrat,10612,Bhuj,0
+CGL,2020,1,WR,60809,Gujrat,10612,"Panchmahal
+(godhra)",0
+CGL,2020,1,WR,60809,Gujrat,10612,Rajkot,1472
+CGL,2020,1,WR,60809,Gujrat,10612,Surat,1781
+CGL,2020,1,WR,60809,Gujrat,10612,Valsad,0
+CGL,2020,1,WR,60809,Gujrat,10612,Bhavnagar,0
+CGL,2020,1,WR,60809,Gujrat,10612,Kuchchh(kutch),0
+CGL,2020,1,WR,60809,Gujrat,10612,Anand,365
+CGL,2020,1,WR,60809,Gujrat,10612,Gandhinagar,1077
+CGL,2020,1,WR,60809,Gujrat,10612,Mehsana,974
+CGL,2020,1,WR,60809,Maharastra,49714,Amravati,5269
+CGL,2020,1,WR,60809,Maharastra,49714,Aurangabad,4040
+CGL,2020,1,WR,60809,Maharastra,49714,Kolhapur,3084
+CGL,2020,1,WR,60809,Maharastra,49714,Mumbai,10214
+CGL,2020,1,WR,60809,Maharastra,49714,Nagpur,10207
+CGL,2020,1,WR,60809,Maharastra,49714,Nanded,2654
+CGL,2020,1,WR,60809,Maharastra,49714,Nashik,3734
+CGL,2020,1,WR,60809,Maharastra,49714,Pune,8554
+CGL,2020,1,WR,60809,Maharastra,49714,Ratnagiri,0
+CGL,2020,1,WR,60809,Maharastra,49714,Thane,0
+CGL,2020,1,WR,60809,Maharastra,49714,Bhandara,0
+CGL,2020,1,WR,60809,Maharastra,49714,chandrapur,0
+CGL,2020,1,WR,60809,Maharastra,49714,Akola,0
+CGL,2020,1,WR,60809,Maharastra,49714,Jalgaon,1958
+CGL,2020,1,WR,60809,Maharastra,49714,Ahmednagar,3424
+CGL,2020,1,WR,60809,Maharastra,49714,Alibag(Alibaug),0
+CGL,2020,1,WR,60809,Maharastra,49714,Navi Mumbai,0
+CGL,2020,1,WR,60809,Goa,483,Panaji(Panjim),483
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Guntur,5192
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Kurnool,3700
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Rajahmundry,2478
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Srikakulam,0
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Tirupati,0
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Vishakhapatnam,6862
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Kakinada,1801
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Nellore,1505
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Chirala,1017
+CGL,2020,1,SR,83377,Andhra Pradesh,30083,Vizianagaram,1983
+CGL,2020,1,SR,83377,Telangana,20958,Hyderabad,16539
+CGL,2020,1,SR,83377,Telangana,20958,Nizamabad,0
+CGL,2020,1,SR,83377,Telangana,20958,Warangal,2602
+CGL,2020,1,SR,83377,Telangana,20958,Karimnagar,1817
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Chennai(Madras),10942
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Coimbatore,3368
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Kanchipuram,0
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Madurai,5060
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Salem,2883
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Tiruchirapalli,4239
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Tirunelveli,4003
+CGL,2020,1,SR,83377,Tamil Nadu,32336,Vellore,1841
+CGL,2020,1,SR,83377,Puducherry,0,Puducherry,0
+CGL,2020,1,KKR,42004,Karnataka,13944,"Bengaluru
+(Bengalore)",5616
+CGL,2020,1,KKR,42004,Karnataka,13944,Belgavi(Belgaum),1107
+CGL,2020,1,KKR,42004,Karnataka,13944,Bijapur,0
+CGL,2020,1,KKR,42004,Karnataka,13944,Dharwar,0
+CGL,2020,1,KKR,42004,Karnataka,13944,"Kalaburagi
+(Gulbarga)",882
+CGL,2020,1,KKR,42004,Karnataka,13944,Hassan,0
+CGL,2020,1,KKR,42004,Karnataka,13944,Kolar,0
+CGL,2020,1,KKR,42004,Karnataka,13944,"Mangaluru
+(Manglore)",764
+CGL,2020,1,KKR,42004,Karnataka,13944,Mysuru(Mysore),1659
+CGL,2020,1,KKR,42004,Karnataka,13944,Shivamogga(Shimoga),898
+CGL,2020,1,KKR,42004,Karnataka,13944,Hubballi(Hubli),2600
+CGL,2020,1,KKR,42004,Karnataka,13944,Udupi,418
+CGL,2020,1,KKR,42004,Kerala,28048,Alappuzha,0
+CGL,2020,1,KKR,42004,Kerala,28048,Kannur(Cannanor),3033
+CGL,2020,1,KKR,42004,Kerala,28048,Kalpeta,0
+CGL,2020,1,KKR,42004,Kerala,28048,Kochi(cochin),0
+CGL,2020,1,KKR,42004,Kerala,28048,Kottayam,0
+CGL,2020,1,KKR,42004,Kerala,28048,Kozhikode(Calicut),3302
+CGL,2020,1,KKR,42004,Kerala,28048,Malappuram,0
+CGL,2020,1,KKR,42004,Kerala,28048,Palakkad,0
+CGL,2020,1,KKR,42004,Kerala,28048,Pathanmthitta,0
+CGL,2020,1,KKR,42004,Kerala,28048,Kollam,3737
+CGL,2020,1,KKR,42004,Kerala,28048,Thiruvananthpuram,5218
+CGL,2020,1,KKR,42004,Kerala,28048,Thrissur(Trichur),3198
+CGL,2020,1,KKR,42004,Kerala,28048,Ernakulam,0
+CGL,2020,1,KKR,42004,Lakshadweep,12,Kavaratti,12
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Anantnag,0
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Baramullah,0
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Bhaderwah,0
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Jammu,4
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Rajouri,0
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Srinagar(J&K),1
+CGL,2020,9,NWR,137,Jammu & Kashmir,5,Samba,0
+CGL,2020,9,NWR,137,Ladakh,1,Leh,1
+CGL,2020,9,NWR,137,"Himachal
+ Pradesh",11,Dharamshala,0
+CGL,2020,9,NWR,137,"Himachal
+ Pradesh",11,Hamirpur,4
+CGL,2020,9,NWR,137,"Himachal
+ Pradesh",11,Shimla,7
+CGL,2020,9,NWR,137,Punjab,112,Bhathinda ,0
+CGL,2020,9,NWR,137,Punjab,112,Jalandhar ,64
+CGL,2020,9,NWR,137,Punjab,112,Patiala,26
+CGL,2020,9,NWR,137,Punjab,112,Amritsar,9
+CGL,2020,9,NWR,137,Punjab,112,Ludhiana,0
+CGL,2020,9,NWR,137,Punjab,112,Mohali,13
+CGL,2020,9,NWR,137,Chandigarh,0,Chandigarh,0
+CGL,2020,9,NWR,137,Haryana,8,Ambala,0
+CGL,2020,9,NWR,137,Haryana,8,Bhiwani,0
+CGL,2020,9,NWR,137,Haryana,8,Hisar,0
+CGL,2020,9,NWR,137,Haryana,8,Karnal,8
+CGL,2020,9,NWR,137,Haryana,8,Yamunanagar,0
+CGL,2020,9,NWR,137,Haryana,8,Kurukshetra,0
+CGL,2020,9,NR,3582,Uttarakhand,187,Almora,0
+CGL,2020,9,NR,3582,Uttarakhand,187,Dehradun,75
+CGL,2020,9,NR,3582,Uttarakhand,187,Haldwani,59
+CGL,2020,9,NR,3582,Uttarakhand,187,"Srinagar
+(uttarakhand)",0
+CGL,2020,9,NR,3582,Uttarakhand,187,Haridwar,1
+CGL,2020,9,NR,3582,Uttarakhand,187,Roorkee,52
+CGL,2020,9,NR,3582,Delhi,2073,Delhi,2073
+CGL,2020,9,NR,3582,Rajasthan,1322,Ajmer ,24
+CGL,2020,9,NR,3582,Rajasthan,1322,Alwar,116
+CGL,2020,9,NR,3582,Rajasthan,1322,Bharatpur,0
+CGL,2020,9,NR,3582,Rajasthan,1322,Bikaner,150
+CGL,2020,9,NR,3582,Rajasthan,1322,jaipur,827
+CGL,2020,9,NR,3582,Rajasthan,1322,Jodhpur,64
+CGL,2020,9,NR,3582,Rajasthan,1322,kota,43
+CGL,2020,9,NR,3582,Rajasthan,1322,Sriganganagar ,1
+CGL,2020,9,NR,3582,Rajasthan,1322,Udaipur,22
+CGL,2020,9,NR,3582,Rajasthan,1322,Dausa,0
+CGL,2020,9,NR,3582,Rajasthan,1322,Sikar,75
+CGL,2020,9,CR,1588,Utar pradesh,903,Agra,115
+CGL,2020,9,CR,1588,Utar pradesh,903,Aligarh,0
+CGL,2020,9,CR,1588,Utar pradesh,903,Prayagraj,109
+CGL,2020,9,CR,1588,Utar pradesh,903,Balia,0
+CGL,2020,9,CR,1588,Utar pradesh,903,Bareilly,29
+CGL,2020,9,CR,1588,Utar pradesh,903,"Ayodhya
+(Faizabad)",0
+CGL,2020,9,CR,1588,Utar pradesh,903,Gorakhpur,27
+CGL,2020,9,CR,1588,Utar pradesh,903,Jhansi,40
+CGL,2020,9,CR,1588,Utar pradesh,903,Kanpur,258
+CGL,2020,9,CR,1588,Utar pradesh,903,Lucknow,165
+CGL,2020,9,CR,1588,Utar pradesh,903,Meerut,39
+CGL,2020,9,CR,1588,Utar pradesh,903,Mirzapur,0
+CGL,2020,9,CR,1588,Utar pradesh,903,"Varanasi
+(Banaras)",110
+CGL,2020,9,CR,1588,Utar pradesh,903,Mathura,0
+CGL,2020,9,CR,1588,Utar pradesh,903,Moradabad,8
+CGL,2020,9,CR,1588,Utar pradesh,903,Muzafarnagar,3
+CGL,2020,9,CR,1588,Utar pradesh,903,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2020,9,CR,1588,Utar pradesh,903,Greater Noida,0
+CGL,2020,9,CR,1588,Bihar,685,Bhagalpur,0
+CGL,2020,9,CR,1588,Bihar,685,Darbahanga,25
+CGL,2020,9,CR,1588,Bihar,685,Gaya,0
+CGL,2020,9,CR,1588,Bihar,685,Katihar,0
+CGL,2020,9,CR,1588,Bihar,685,Muzaffarpur,71
+CGL,2020,9,CR,1588,Bihar,685,Patna,512
+CGL,2020,9,CR,1588,Bihar,685,Ara(Arrah),17
+CGL,2020,9,CR,1588,Bihar,685,"Aurangabad
+(Bihar)",0
+CGL,2020,9,CR,1588,Bihar,685,Purnia,33
+CGL,2020,9,ER,701,Sikkim,0,Gangtok,0
+CGL,2020,9,ER,701,Jharkhand,184,Bokarp,0
+CGL,2020,9,ER,701,Jharkhand,184,Chaibasa,0
+CGL,2020,9,ER,701,Jharkhand,184,Dumka,0
+CGL,2020,9,ER,701,Jharkhand,184,Hazaribag,0
+CGL,2020,9,ER,701,Jharkhand,184,Ranchi,184
+CGL,2020,9,ER,701,Jharkhand,184,Dhanbad,0
+CGL,2020,9,ER,701,Jharkhand,184,Jamshedpur,0
+CGL,2020,9,ER,701,West Bengal,439,Bankura,0
+CGL,2020,9,ER,701,West Bengal,439,Barasat,0
+CGL,2020,9,ER,701,West Bengal,439,Berhampore,6
+CGL,2020,9,ER,701,West Bengal,439,"Bardhman
+(Burdwan)",0
+CGL,2020,9,ER,701,West Bengal,439,Chinsurah,0
+CGL,2020,9,ER,701,West Bengal,439,Cooch Behar ,0
+CGL,2020,9,ER,701,West Bengal,439,Darjeeling,0
+CGL,2020,9,ER,701,West Bengal,439,Jalpaiguri,0
+CGL,2020,9,ER,701,West Bengal,439,Jhargram,0
+CGL,2020,9,ER,701,West Bengal,439,Kolkata,358
+CGL,2020,9,ER,701,West Bengal,439,Krishnanagar,0
+CGL,2020,9,ER,701,West Bengal,439,Malda,0
+CGL,2020,9,ER,701,West Bengal,439,Midnapur,0
+CGL,2020,9,ER,701,West Bengal,439,Purulia,0
+CGL,2020,9,ER,701,West Bengal,439,siliguri,31
+CGL,2020,9,ER,701,West Bengal,439,Suri,0
+CGL,2020,9,ER,701,West Bengal,439,Asansol,0
+CGL,2020,9,ER,701,West Bengal,439,Hooghly,50
+CGL,2020,9,ER,701,West Bengal,439,Kalyani,0
+CGL,2020,9,ER,701,Odisha,76,Balasore,4
+CGL,2020,9,ER,701,Odisha,76,"Berhampore
+(Odisha)",0
+CGL,2020,9,ER,701,Odisha,76,Bhawanipatna,0
+CGL,2020,9,ER,701,Odisha,76,Bhubaneshwar,42
+CGL,2020,9,ER,701,Odisha,76,Cutack,8
+CGL,2020,9,ER,701,Odisha,76,Kendujhar,0
+CGL,2020,9,ER,701,Odisha,76,Koraput,0
+CGL,2020,9,ER,701,Odisha,76,Phulbani,0
+CGL,2020,9,ER,701,Odisha,76,Sambalpur,9
+CGL,2020,9,ER,701,Odisha,76,Rourkela,6
+CGL,2020,9,ER,701,Odisha,76,Dhenkenal,1
+CGL,2020,9,ER,701,A & N Islands,2,Car Nicobar,0
+CGL,2020,9,ER,701,A & N Islands,2,Port Blair,2
+CGL,2020,9,NER,49,"Anunachal
+ Pradesh",0,Itanagar,0
+CGL,2020,9,NER,49,Assam,38,Barpeta,0
+CGL,2020,9,NER,49,Assam,38,Dibrugarh ,3
+CGL,2020,9,NER,49,Assam,38,Diphu,0
+CGL,2020,9,NER,49,Assam,38,Goalpara,27
+CGL,2020,9,NER,49,Assam,38,"Guwahati
+(Dispur)",31
+CGL,2020,9,NER,49,Assam,38,Halflong,0
+CGL,2020,9,NER,49,Assam,38,Jorhat,2
+CGL,2020,9,NER,49,Assam,38,Kokrajhar,0
+CGL,2020,9,NER,49,Assam,38,Lakhimpur,0
+CGL,2020,9,NER,49,Assam,38,Sivasagar,0
+CGL,2020,9,NER,49,Assam,38,Silchar,2
+CGL,2020,9,NER,49,Assam,38,Tezpur,0
+CGL,2020,9,NER,49,Nagaland,1,Dimapur,1
+CGL,2020,9,NER,49,Nagaland,1,Kohima,0
+CGL,2020,9,NER,49,Meghalaya,0,Shilong,0
+CGL,2020,9,NER,49,Meghalaya,0,Tura,0
+CGL,2020,9,NER,49,Manipur,9,Imphal,3
+CGL,2020,9,NER,49,Manipur,9,Churachandpur,6
+CGL,2020,9,NER,49,Manipur,9,Ukhrul,0
+CGL,2020,9,NER,49,Tripura,1,Agartala,1
+CGL,2020,9,NER,49,Mizoram,0,Aizwal,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Bhopal,40
+CGL,2020,9,MPR,254,Madhya pradesh,234,Chataarpur,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Chindwara,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Guna,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Gwalior,82
+CGL,2020,9,MPR,254,Madhya pradesh,234,Indore,56
+CGL,2020,9,MPR,254,Madhya pradesh,234,Jabalpur,15
+CGL,2020,9,MPR,254,Madhya pradesh,234,Jhabua,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Khandwa,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Mandsaur,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Ratlam,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Rewa,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Shahdol,0
+CGL,2020,9,MPR,254,Madhya pradesh,234,Satna,17
+CGL,2020,9,MPR,254,Madhya pradesh,234,Sagar,16
+CGL,2020,9,MPR,254,Madhya pradesh,234,Ujjain,8
+CGL,2020,9,MPR,254,Chhattisgarh,20,Ambikapur,0
+CGL,2020,9,MPR,254,Chhattisgarh,20,Bilaspur,4
+CGL,2020,9,MPR,254,Chhattisgarh,20,Jagdalpur,0
+CGL,2020,9,MPR,254,Chhattisgarh,20,Raipur,13
+CGL,2020,9,MPR,254,Chhattisgarh,20,Durg-Bhilai,3
+CGL,2020,9,MPR,254,Chhattisgarh,20,Bhilainagar,0
+CGL,2020,9,WR,233,Gujrat,63,Ahmedabad,30
+CGL,2020,9,WR,233,Gujrat,63,vadodara(Baroda)l,10
+CGL,2020,9,WR,233,Gujrat,63,Bhuj,0
+CGL,2020,9,WR,233,Gujrat,63,"Panchmahal
+(godhra)",0
+CGL,2020,9,WR,233,Gujrat,63,Rajkot,8
+CGL,2020,9,WR,233,Gujrat,63,Surat,8
+CGL,2020,9,WR,233,Gujrat,63,Valsad,0
+CGL,2020,9,WR,233,Gujrat,63,Bhavnagar,0
+CGL,2020,9,WR,233,Gujrat,63,Kuchchh(kutch),0
+CGL,2020,9,WR,233,Gujrat,63,Anand,1
+CGL,2020,9,WR,233,Gujrat,63,Gandhinagar,6
+CGL,2020,9,WR,233,Gujrat,63,Mehsana,0
+CGL,2020,9,WR,233,Maharastra,165,Amravati,7
+CGL,2020,9,WR,233,Maharastra,165,Aurangabad,9
+CGL,2020,9,WR,233,Maharastra,165,Kolhapur,9
+CGL,2020,9,WR,233,Maharastra,165,Mumbai,56
+CGL,2020,9,WR,233,Maharastra,165,Nagpur,26
+CGL,2020,9,WR,233,Maharastra,165,Nanded,2
+CGL,2020,9,WR,233,Maharastra,165,Nashik,13
+CGL,2020,9,WR,233,Maharastra,165,Pune,38
+CGL,2020,9,WR,233,Maharastra,165,Ratnagiri,0
+CGL,2020,9,WR,233,Maharastra,165,Thane,0
+CGL,2020,9,WR,233,Maharastra,165,Bhandara,0
+CGL,2020,9,WR,233,Maharastra,165,chandrapur,0
+CGL,2020,9,WR,233,Maharastra,165,Akola,0
+CGL,2020,9,WR,233,Maharastra,165,Jalgaon,5
+CGL,2020,9,WR,233,Maharastra,165,Ahmednagar,0
+CGL,2020,9,WR,233,Maharastra,165,Alibag(Alibaug),0
+CGL,2020,9,WR,233,Maharastra,165,Navi Mumbai,0
+CGL,2020,9,WR,233,Goa,5,Panaji(Panjim),5
+CGL,2020,9,SR,397,Andhra Pradesh,154,Guntur,43
+CGL,2020,9,SR,397,Andhra Pradesh,154,Kurnool,16
+CGL,2020,9,SR,397,Andhra Pradesh,154,Rajahmundry,7
+CGL,2020,9,SR,397,Andhra Pradesh,154,Srikakulam,0
+CGL,2020,9,SR,397,Andhra Pradesh,154,Tirupati,23
+CGL,2020,9,SR,397,Andhra Pradesh,154,Vishakhapatnam,34
+CGL,2020,9,SR,397,Andhra Pradesh,154,Kakinada,6
+CGL,2020,9,SR,397,Andhra Pradesh,154,Nellore,10
+CGL,2020,9,SR,397,Andhra Pradesh,154,Chirala,6
+CGL,2020,9,SR,397,Andhra Pradesh,154,Vizianagaram,2
+CGL,2020,9,SR,397,Telangana,153,Hyderabad,128
+CGL,2020,9,SR,397,Telangana,153,Nizamabad,0
+CGL,2020,9,SR,397,Telangana,153,Warangal,10
+CGL,2020,9,SR,397,Telangana,153,Karimnagar,15
+CGL,2020,9,SR,397,Tamil Nadu,90,Chennai(Madras),46
+CGL,2020,9,SR,397,Tamil Nadu,90,Coimbatore,15
+CGL,2020,9,SR,397,Tamil Nadu,90,Kanchipuram,0
+CGL,2020,9,SR,397,Tamil Nadu,90,Madurai,7
+CGL,2020,9,SR,397,Tamil Nadu,90,Salem,8
+CGL,2020,9,SR,397,Tamil Nadu,90,Tiruchirapalli,7
+CGL,2020,9,SR,397,Tamil Nadu,90,Tirunelveli,5
+CGL,2020,9,SR,397,Tamil Nadu,90,Vellore,2
+CGL,2020,9,SR,397,Puducherry,0,Puducherry,0
+CGL,2020,9,KKR,166,Karnataka,45,"Bengaluru
+(Bengalore)",32
+CGL,2020,9,KKR,166,Karnataka,45,Belgavi(Belgaum),3
+CGL,2020,9,KKR,166,Karnataka,45,Bijapur,0
+CGL,2020,9,KKR,166,Karnataka,45,Dharwar,0
+CGL,2020,9,KKR,166,Karnataka,45,"Kalaburagi
+(Gulbarga)",0
+CGL,2020,9,KKR,166,Karnataka,45,Hassan,0
+CGL,2020,9,KKR,166,Karnataka,45,Kolar,0
+CGL,2020,9,KKR,166,Karnataka,45,"Mangaluru
+(Manglore)",3
+CGL,2020,9,KKR,166,Karnataka,45,Mysuru(Mysore),0
+CGL,2020,9,KKR,166,Karnataka,45,Shivamogga(Shimoga),2
+CGL,2020,9,KKR,166,Karnataka,45,Hubballi(Hubli),2
+CGL,2020,9,KKR,166,Karnataka,45,Udupi,0
+CGL,2020,9,KKR,166,Kerala,121,Alappuzha,0
+CGL,2020,9,KKR,166,Kerala,121,Kannur(Cannanor),15
+CGL,2020,9,KKR,166,Kerala,121,Kalpeta,0
+CGL,2020,9,KKR,166,Kerala,121,Kochi(cochin),0
+CGL,2020,9,KKR,166,Kerala,121,Kottayam,16
+CGL,2020,9,KKR,166,Kerala,121,Kozhikode(Calicut),20
+CGL,2020,9,KKR,166,Kerala,121,Malappuram,0
+CGL,2020,9,KKR,166,Kerala,121,Palakkad,0
+CGL,2020,9,KKR,166,Kerala,121,Pathanmthitta,0
+CGL,2020,9,KKR,166,Kerala,121,Kollam,0
+CGL,2020,9,KKR,166,Kerala,121,Thiruvananthpuram,18
+CGL,2020,9,KKR,166,Kerala,121,Thrissur(Trichur),10
+CGL,2020,9,KKR,166,Kerala,121,Ernakulam,30
+CGL,2020,9,KKR,166,Lakshadweep,0,Kavaratti,0
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Anantnag,0
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Baramullah,0
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Bhaderwah,0
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Jammu,2712
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Rajouri,0
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Srinagar(J&K),613
+CGL,2021,1,NWR,26696,Jammu & Kashmir,3960,Samba,635
+CGL,2021,1,NWR,26696,Ladakh,230,Leh,230
+CGL,2021,1,NWR,26696,"Himachal
+ Pradesh",2407,Dharamshala,0
+CGL,2021,1,NWR,26696,"Himachal
+ Pradesh",2407,Hamirpur,1379
+CGL,2021,1,NWR,26696,"Himachal
+ Pradesh",2407,Shimla,1028
+CGL,2021,1,NWR,26696,Punjab,16541,Bhathinda ,0
+CGL,2021,1,NWR,26696,Punjab,16541,Jalandhar ,5116
+CGL,2021,1,NWR,26696,Punjab,16541,Patiala,5071
+CGL,2021,1,NWR,26696,Punjab,16541,Amritsar,2199
+CGL,2021,1,NWR,26696,Punjab,16541,Ludhiana,0
+CGL,2021,1,NWR,26696,Punjab,16541,Mohali,4155
+CGL,2021,1,NWR,26696,Chandigarh,0,Chandigarh,0
+CGL,2021,1,NWR,26696,Haryana,3558,Ambala,0
+CGL,2021,1,NWR,26696,Haryana,3558,Bhiwani,0
+CGL,2021,1,NWR,26696,Haryana,3558,Hisar,0
+CGL,2021,1,NWR,26696,Haryana,3558,Karnal,3558
+CGL,2021,1,NWR,26696,Haryana,3558,Yamunanagar,0
+CGL,2021,1,NWR,26696,Haryana,3558,Kurukshetra,0
+CGL,2021,1,NR,181597,Uttarakhand,17342,Almora,0
+CGL,2021,1,NR,181597,Uttarakhand,17342,Dehradun,7214
+CGL,2021,1,NR,181597,Uttarakhand,17342,Haldwani,3919
+CGL,2021,1,NR,181597,Uttarakhand,17342,"Srinagar
+(uttarakhand)",0
+CGL,2021,1,NR,181597,Uttarakhand,17342,Haridwar,0
+CGL,2021,1,NR,181597,Uttarakhand,17342,Roorkee,6209
+CGL,2021,1,NR,181597,Delhi,105908,Delhi,105908
+CGL,2021,1,NR,181597,Rajasthan,58347,Ajmer ,2308
+CGL,2021,1,NR,181597,Rajasthan,58347,Alwar,5511
+CGL,2021,1,NR,181597,Rajasthan,58347,Bharatpur,0
+CGL,2021,1,NR,181597,Rajasthan,58347,Bikaner,3818
+CGL,2021,1,NR,181597,Rajasthan,58347,jaipur,30847
+CGL,2021,1,NR,181597,Rajasthan,58347,Jodhpur,4068
+CGL,2021,1,NR,181597,Rajasthan,58347,kota,3498
+CGL,2021,1,NR,181597,Rajasthan,58347,Sriganganagar ,437
+CGL,2021,1,NR,181597,Rajasthan,58347,Udaipur,1854
+CGL,2021,1,NR,181597,Rajasthan,58347,Dausa,0
+CGL,2021,1,NR,181597,Rajasthan,58347,Sikar,6006
+CGL,2021,1,CR,205225,Utar pradesh,141005,Agra,11491
+CGL,2021,1,CR,205225,Utar pradesh,141005,Aligarh,3156
+CGL,2021,1,CR,205225,Utar pradesh,141005,Prayagraj,25809
+CGL,2021,1,CR,205225,Utar pradesh,141005,Balia,0
+CGL,2021,1,CR,205225,Utar pradesh,141005,Bareilly,5944
+CGL,2021,1,CR,205225,Utar pradesh,141005,"Ayodhya
+(Faizabad)",0
+CGL,2021,1,CR,205225,Utar pradesh,141005,Gorakhpur,5344
+CGL,2021,1,CR,205225,Utar pradesh,141005,Jhansi,4413
+CGL,2021,1,CR,205225,Utar pradesh,141005,Kanpur,23714
+CGL,2021,1,CR,205225,Utar pradesh,141005,Lucknow,26658
+CGL,2021,1,CR,205225,Utar pradesh,141005,Meerut,9094
+CGL,2021,1,CR,205225,Utar pradesh,141005,Mirzapur,0
+CGL,2021,1,CR,205225,Utar pradesh,141005,"Varanasi
+(Banaras)",20342
+CGL,2021,1,CR,205225,Utar pradesh,141005,Mathura,0
+CGL,2021,1,CR,205225,Utar pradesh,141005,Moradabad,2485
+CGL,2021,1,CR,205225,Utar pradesh,141005,Muzafarnagar,2555
+CGL,2021,1,CR,205225,Utar pradesh,141005,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2021,1,CR,205225,Utar pradesh,141005,Greater Noida,0
+CGL,2021,1,CR,205225,Bihar,64220,Bhagalpur,4694
+CGL,2021,1,CR,205225,Bihar,64220,Darbahanga,0
+CGL,2021,1,CR,205225,Bihar,64220,Gaya,0
+CGL,2021,1,CR,205225,Bihar,64220,Katihar,0
+CGL,2021,1,CR,205225,Bihar,64220,Muzaffarpur,9188
+CGL,2021,1,CR,205225,Bihar,64220,Patna,44008
+CGL,2021,1,CR,205225,Bihar,64220,Ara(Arrah),1945
+CGL,2021,1,CR,205225,Bihar,64220,"Aurangabad
+(Bihar)",0
+CGL,2021,1,CR,205225,Bihar,64220,Purnia,4385
+CGL,2021,1,ER,108427,Sikkim,95,Gangtok,95
+CGL,2021,1,ER,108427,Jharkhand,30588,Bokarp,0
+CGL,2021,1,ER,108427,Jharkhand,30588,Chaibasa,0
+CGL,2021,1,ER,108427,Jharkhand,30588,Dumka,0
+CGL,2021,1,ER,108427,Jharkhand,30588,Hazaribag,3436
+CGL,2021,1,ER,108427,Jharkhand,30588,Ranchi,16926
+CGL,2021,1,ER,108427,Jharkhand,30588,Dhanbad,0
+CGL,2021,1,ER,108427,Jharkhand,30588,Jamshedpur,4974
+CGL,2021,1,ER,108427,West Bengal,51881,Bankura,0
+CGL,2021,1,ER,108427,West Bengal,51881,Barasat,0
+CGL,2021,1,ER,108427,West Bengal,51881,Berhampore,2946
+CGL,2021,1,ER,108427,West Bengal,51881,"Bardhman
+(Burdwan)",0
+CGL,2021,1,ER,108427,West Bengal,51881,Chinsurah,0
+CGL,2021,1,ER,108427,West Bengal,51881,Cooch Behar ,0
+CGL,2021,1,ER,108427,West Bengal,51881,Darjeeling,0
+CGL,2021,1,ER,108427,West Bengal,51881,Jalpaiguri,0
+CGL,2021,1,ER,108427,West Bengal,51881,Jhargram,0
+CGL,2021,1,ER,108427,West Bengal,51881,Kolkata,31387
+CGL,2021,1,ER,108427,West Bengal,51881,Krishnanagar,0
+CGL,2021,1,ER,108427,West Bengal,51881,Malda,0
+CGL,2021,1,ER,108427,West Bengal,51881,Midnapur,0
+CGL,2021,1,ER,108427,West Bengal,51881,Purulia,0
+CGL,2021,1,ER,108427,West Bengal,51881,siliguri,5624
+CGL,2021,1,ER,108427,West Bengal,51881,Suri,0
+CGL,2021,1,ER,108427,West Bengal,51881,Asansol,6705
+CGL,2021,1,ER,108427,West Bengal,51881,Hooghly,0
+CGL,2021,1,ER,108427,West Bengal,51881,Kalyani,8165
+CGL,2021,1,ER,108427,Odisha,25322,Balasore,2799
+CGL,2021,1,ER,108427,Odisha,25322,"Berhampore
+(Odisha)",0
+CGL,2021,1,ER,108427,Odisha,25322,Bhawanipatna,0
+CGL,2021,1,ER,108427,Odisha,25322,Bhubaneshwar,9957
+CGL,2021,1,ER,108427,Odisha,25322,Cutack,3264
+CGL,2021,1,ER,108427,Odisha,25322,Kendujhar,0
+CGL,2021,1,ER,108427,Odisha,25322,Koraput,0
+CGL,2021,1,ER,108427,Odisha,25322,Phulbani,0
+CGL,2021,1,ER,108427,Odisha,25322,Sambalpur,3109
+CGL,2021,1,ER,108427,Odisha,25322,Rourkela,2323
+CGL,2021,1,ER,108427,Odisha,25322,Dhenkenal,924
+CGL,2021,1,ER,108427,A & N Islands,541,Car Nicobar,0
+CGL,2021,1,ER,108427,A & N Islands,541,Port Blair,541
+CGL,2021,1,NER,19920,"Anunachal
+ Pradesh",644,Itanagar,644
+CGL,2021,1,NER,19920,Assam,9526,Barpeta,0
+CGL,2021,1,NER,19920,Assam,9526,Dibrugarh ,1488
+CGL,2021,1,NER,19920,Assam,9526,Diphu,0
+CGL,2021,1,NER,19920,Assam,9526,Goalpara,0
+CGL,2021,1,NER,19920,Assam,9526,"Guwahati
+(Dispur)",5931
+CGL,2021,1,NER,19920,Assam,9526,Halflong,0
+CGL,2021,1,NER,19920,Assam,9526,Jorhat,1035
+CGL,2021,1,NER,19920,Assam,9526,Kokrajhar,0
+CGL,2021,1,NER,19920,Assam,9526,Lakhimpur,0
+CGL,2021,1,NER,19920,Assam,9526,Sivasagar,0
+CGL,2021,1,NER,19920,Assam,9526,Silchar,1072
+CGL,2021,1,NER,19920,Assam,9526,Tezpur,0
+CGL,2021,1,NER,19920,Nagaland,1438,Dimapur,298
+CGL,2021,1,NER,19920,Nagaland,1438,Kohima,1140
+CGL,2021,1,NER,19920,Meghalaya,1679,Shilong,1679
+CGL,2021,1,NER,19920,Meghalaya,1679,Tura,0
+CGL,2021,1,NER,19920,Manipur,5181,Imphal,3709
+CGL,2021,1,NER,19920,Manipur,5181,Churachandpur,1359
+CGL,2021,1,NER,19920,Manipur,5181,Ukhrul,113
+CGL,2021,1,NER,19920,Tripura,1066,Agartala,1066
+CGL,2021,1,NER,19920,Mizoram,386,Aizwal,386
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Bhopal,8731
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Chataarpur,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Chindwara,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Guna,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Gwalior,5649
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Indore,7436
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Jabalpur,5619
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Jhabua,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Khandwa,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Mandsaur,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Ratlam,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Rewa,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Shahdol,0
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Satna,2577
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Sagar,1369
+CGL,2021,1,MPR,41980,Madhya pradesh,33031,Ujjain,1650
+CGL,2021,1,MPR,41980,Chhattisgarh,8949,Ambikapur,0
+CGL,2021,1,MPR,41980,Chhattisgarh,8949,Bilaspur,2844
+CGL,2021,1,MPR,41980,Chhattisgarh,8949,Jagdalpur,0
+CGL,2021,1,MPR,41980,Chhattisgarh,8949,Raipur,3128
+CGL,2021,1,MPR,41980,Chhattisgarh,8949,Durg-Bhilai,2977
+CGL,2021,1,MPR,41980,Chhattisgarh,8949,Bhilainagar,0
+CGL,2021,1,WR,53936,Gujrat,12598,Ahmedabad,3804
+CGL,2021,1,WR,53936,Gujrat,12598,vadodara(Baroda)l,1595
+CGL,2021,1,WR,53936,Gujrat,12598,Bhuj,0
+CGL,2021,1,WR,53936,Gujrat,12598,"Panchmahal
+(godhra)",0
+CGL,2021,1,WR,53936,Gujrat,12598,Rajkot,1790
+CGL,2021,1,WR,53936,Gujrat,12598,Surat,2250
+CGL,2021,1,WR,53936,Gujrat,12598,Valsad,0
+CGL,2021,1,WR,53936,Gujrat,12598,Bhavnagar,0
+CGL,2021,1,WR,53936,Gujrat,12598,Kuchchh(kutch),0
+CGL,2021,1,WR,53936,Gujrat,12598,Anand,644
+CGL,2021,1,WR,53936,Gujrat,12598,Gandhinagar,1390
+CGL,2021,1,WR,53936,Gujrat,12598,Mehsana,0
+CGL,2021,1,WR,53936,Maharastra,40847,Amravati,4508
+CGL,2021,1,WR,53936,Maharastra,40847,Aurangabad,3099
+CGL,2021,1,WR,53936,Maharastra,40847,Kolhapur,2404
+CGL,2021,1,WR,53936,Maharastra,40847,Mumbai,9821
+CGL,2021,1,WR,53936,Maharastra,40847,Nagpur,7564
+CGL,2021,1,WR,53936,Maharastra,40847,Nanded,2029
+CGL,2021,1,WR,53936,Maharastra,40847,Nashik,3043
+CGL,2021,1,WR,53936,Maharastra,40847,Pune,6883
+CGL,2021,1,WR,53936,Maharastra,40847,Ratnagiri,0
+CGL,2021,1,WR,53936,Maharastra,40847,Thane,0
+CGL,2021,1,WR,53936,Maharastra,40847,Bhandara,0
+CGL,2021,1,WR,53936,Maharastra,40847,chandrapur,0
+CGL,2021,1,WR,53936,Maharastra,40847,Akola,0
+CGL,2021,1,WR,53936,Maharastra,40847,Jalgaon,1496
+CGL,2021,1,WR,53936,Maharastra,40847,Ahmednagar,0
+CGL,2021,1,WR,53936,Maharastra,40847,Alibag(Alibaug),0
+CGL,2021,1,WR,53936,Maharastra,40847,Navi Mumbai,0
+CGL,2021,1,WR,53936,Goa,491,Panaji(Panjim),491
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Guntur,3184
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Kurnool,3972
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Rajahmundry,2842
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Srikakulam,0
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Tirupati,3374
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Vishakhapatnam,7831
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Kakinada,2065
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Nellore,1503
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Chirala,1206
+CGL,2021,1,SR,91665,Andhra Pradesh,34063,Vizianagaram,2553
+CGL,2021,1,SR,91665,Telangana,23361,Hyderabad,18624
+CGL,2021,1,SR,91665,Telangana,23361,Nizamabad,0
+CGL,2021,1,SR,91665,Telangana,23361,Warangal,2835
+CGL,2021,1,SR,91665,Telangana,23361,Karimnagar,1902
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Chennai(Madras),12047
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Coimbatore,3562
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Kanchipuram,0
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Madurai,6071
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Salem,3038
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Tiruchirapalli,3061
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Tirunelveli,4309
+CGL,2021,1,SR,91665,Tamil Nadu,34241,Vellore,2153
+CGL,2021,1,SR,91665,Puducherry,0,Puducherry,0
+CGL,2021,1,KKR,50989,Karnataka,233277,"Bengaluru
+(Bengalore)",5998
+CGL,2021,1,KKR,50989,Karnataka,233277,Belgavi(Belgaum),2275
+CGL,2021,1,KKR,50989,Karnataka,233277,Bijapur,0
+CGL,2021,1,KKR,50989,Karnataka,233277,Dharwar,0
+CGL,2021,1,KKR,50989,Karnataka,233277,"Kalaburagi
+(Gulbarga)",1905
+CGL,2021,1,KKR,50989,Karnataka,233277,Hassan,0
+CGL,2021,1,KKR,50989,Karnataka,233277,Kolar,0
+CGL,2021,1,KKR,50989,Karnataka,233277,"Mangaluru
+(Manglore)",1344
+CGL,2021,1,KKR,50989,Karnataka,233277,Mysuru(Mysore),4402
+CGL,2021,1,KKR,50989,Karnataka,233277,Shivamogga(Shimoga),1561
+CGL,2021,1,KKR,50989,Karnataka,233277,Hubballi(Hubli),5109
+CGL,2021,1,KKR,50989,Karnataka,233277,Udupi,683
+CGL,2021,1,KKR,50989,Kerala,27712,Alappuzha,0
+CGL,2021,1,KKR,50989,Kerala,27712,Kannur(Cannanor),3806
+CGL,2021,1,KKR,50989,Kerala,27712,Kalpeta,0
+CGL,2021,1,KKR,50989,Kerala,27712,Kochi(cochin),0
+CGL,2021,1,KKR,50989,Kerala,27712,Kottayam,3821
+CGL,2021,1,KKR,50989,Kerala,27712,Kozhikode(Calicut),3171
+CGL,2021,1,KKR,50989,Kerala,27712,Malappuram,0
+CGL,2021,1,KKR,50989,Kerala,27712,Palakkad,0
+CGL,2021,1,KKR,50989,Kerala,27712,Pathanmthitta,0
+CGL,2021,1,KKR,50989,Kerala,27712,Kollam,4310
+CGL,2021,1,KKR,50989,Kerala,27712,Thiruvananthpuram,3743
+CGL,2021,1,KKR,50989,Kerala,27712,Thrissur(Trichur),3764
+CGL,2021,1,KKR,50989,Kerala,27712,Ernakulam,0
+CGL,2021,1,KKR,50989,Lakshadweep,0,Kavaratti,0
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Anantnag,0
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Baramullah,0
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Bhaderwah,0
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Jammu,15
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Rajouri,0
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Srinagar(J&K),1
+CGL,2021,9,NWR,194,Jammu & Kashmir,19,Samba,3
+CGL,2021,9,NWR,194,Ladakh,0,Leh,0
+CGL,2021,9,NWR,194,"Himachal
+ Pradesh",20,Dharamshala,0
+CGL,2021,9,NWR,194,"Himachal
+ Pradesh",20,Hamirpur,12
+CGL,2021,9,NWR,194,"Himachal
+ Pradesh",20,Shimla,8
+CGL,2021,9,NWR,194,Punjab,142,Bhathinda ,0
+CGL,2021,9,NWR,194,Punjab,142,Jalandhar ,57
+CGL,2021,9,NWR,194,Punjab,142,Patiala,30
+CGL,2021,9,NWR,194,Punjab,142,Amritsar,8
+CGL,2021,9,NWR,194,Punjab,142,Ludhiana,0
+CGL,2021,9,NWR,194,Punjab,142,Mohali,47
+CGL,2021,9,NWR,194,Chandigarh,0,Chandigarh,0
+CGL,2021,9,NWR,194,Haryana,13,Ambala,0
+CGL,2021,9,NWR,194,Haryana,13,Bhiwani,0
+CGL,2021,9,NWR,194,Haryana,13,Hisar,0
+CGL,2021,9,NWR,194,Haryana,13,Karnal,13
+CGL,2021,9,NWR,194,Haryana,13,Yamunanagar,0
+CGL,2021,9,NWR,194,Haryana,13,Kurukshetra,0
+CGL,2021,9,NR,3544,Uttarakhand,186,Almora,0
+CGL,2021,9,NR,3544,Uttarakhand,186,Dehradun,94
+CGL,2021,9,NR,3544,Uttarakhand,186,Haldwani,42
+CGL,2021,9,NR,3544,Uttarakhand,186,"Srinagar
+(uttarakhand)",1
+CGL,2021,9,NR,3544,Uttarakhand,186,Haridwar,0
+CGL,2021,9,NR,3544,Uttarakhand,186,Roorkee,50
+CGL,2021,9,NR,3544,Delhi,2084,Delhi,2084
+CGL,2021,9,NR,3544,Rajasthan,1274,Ajmer ,26
+CGL,2021,9,NR,3544,Rajasthan,1274,Alwar,92
+CGL,2021,9,NR,3544,Rajasthan,1274,Bharatpur,23
+CGL,2021,9,NR,3544,Rajasthan,1274,Bikaner,108
+CGL,2021,9,NR,3544,Rajasthan,1274,jaipur,821
+CGL,2021,9,NR,3544,Rajasthan,1274,Jodhpur,0
+CGL,2021,9,NR,3544,Rajasthan,1274,kota,46
+CGL,2021,9,NR,3544,Rajasthan,1274,Sriganganagar ,0
+CGL,2021,9,NR,3544,Rajasthan,1274,Udaipur,28
+CGL,2021,9,NR,3544,Rajasthan,1274,Dausa,0
+CGL,2021,9,NR,3544,Rajasthan,1274,Sikar,95
+CGL,2021,9,CR,1645,Utar pradesh,1116,Agra,74
+CGL,2021,9,CR,1645,Utar pradesh,1116,Aligarh,31
+CGL,2021,9,CR,1645,Utar pradesh,1116,Prayagraj,164
+CGL,2021,9,CR,1645,Utar pradesh,1116,Balia,0
+CGL,2021,9,CR,1645,Utar pradesh,1116,Bareilly,22
+CGL,2021,9,CR,1645,Utar pradesh,1116,"Ayodhya
+(Faizabad)",0
+CGL,2021,9,CR,1645,Utar pradesh,1116,Gorakhpur,12
+CGL,2021,9,CR,1645,Utar pradesh,1116,Jhansi,49
+CGL,2021,9,CR,1645,Utar pradesh,1116,Kanpur,319
+CGL,2021,9,CR,1645,Utar pradesh,1116,Lucknow,206
+CGL,2021,9,CR,1645,Utar pradesh,1116,Meerut,34
+CGL,2021,9,CR,1645,Utar pradesh,1116,Mirzapur,0
+CGL,2021,9,CR,1645,Utar pradesh,1116,"Varanasi
+(Banaras)",173
+CGL,2021,9,CR,1645,Utar pradesh,1116,Mathura,0
+CGL,2021,9,CR,1645,Utar pradesh,1116,Moradabad,0
+CGL,2021,9,CR,1645,Utar pradesh,1116,Muzafarnagar,18
+CGL,2021,9,CR,1645,Utar pradesh,1116,"Gautam 
+Budhnagar
+(Noida)",0
+CGL,2021,9,CR,1645,Utar pradesh,1116,Greater Noida,0
+CGL,2021,9,CR,1645,Bihar,529,Bhagalpur,23
+CGL,2021,9,CR,1645,Bihar,529,Darbahanga,0
+CGL,2021,9,CR,1645,Bihar,529,Gaya,0
+CGL,2021,9,CR,1645,Bihar,529,Katihar,0
+CGL,2021,9,CR,1645,Bihar,529,Muzaffarpur,75
+CGL,2021,9,CR,1645,Bihar,529,Patna,380
+CGL,2021,9,CR,1645,Bihar,529,Ara(Arrah),6
+CGL,2021,9,CR,1645,Bihar,529,"Aurangabad
+(Bihar)",0
+CGL,2021,9,CR,1645,Bihar,529,Purnia,45
+CGL,2021,9,ER,762,Sikkim,529,Gangtok,1
+CGL,2021,9,ER,762,Jharkhand,227,Bokarp,0
+CGL,2021,9,ER,762,Jharkhand,227,Chaibasa,0
+CGL,2021,9,ER,762,Jharkhand,227,Dumka,0
+CGL,2021,9,ER,762,Jharkhand,227,Hazaribag,37
+CGL,2021,9,ER,762,Jharkhand,227,Ranchi,128
+CGL,2021,9,ER,762,Jharkhand,227,Dhanbad,0
+CGL,2021,9,ER,762,Jharkhand,227,Jamshedpur,29
+CGL,2021,9,ER,762,West Bengal,479,Bankura,0
+CGL,2021,9,ER,762,West Bengal,479,Barasat,0
+CGL,2021,9,ER,762,West Bengal,479,Berhampore,2
+CGL,2021,9,ER,762,West Bengal,479,"Bardhman
+(Burdwan)",0
+CGL,2021,9,ER,762,West Bengal,479,Chinsurah,0
+CGL,2021,9,ER,762,West Bengal,479,Cooch Behar ,0
+CGL,2021,9,ER,762,West Bengal,479,Darjeeling,0
+CGL,2021,9,ER,762,West Bengal,479,Jalpaiguri,0
+CGL,2021,9,ER,762,West Bengal,479,Jhargram,0
+CGL,2021,9,ER,762,West Bengal,479,Kolkata,327
+CGL,2021,9,ER,762,West Bengal,479,Krishnanagar,0
+CGL,2021,9,ER,762,West Bengal,479,Malda,0
+CGL,2021,9,ER,762,West Bengal,479,Midnapur,0
+CGL,2021,9,ER,762,West Bengal,479,Purulia,0
+CGL,2021,9,ER,762,West Bengal,479,siliguri,38
+CGL,2021,9,ER,762,West Bengal,479,Suri,0
+CGL,2021,9,ER,762,West Bengal,479,Asansol,59
+CGL,2021,9,ER,762,West Bengal,479,Hooghly,0
+CGL,2021,9,ER,762,West Bengal,479,Kalyani,55
+CGL,2021,9,ER,762,Odisha,55,Balasore,5
+CGL,2021,9,ER,762,Odisha,55,"Berhampore
+(Odisha)",0
+CGL,2021,9,ER,762,Odisha,55,Bhawanipatna,0
+CGL,2021,9,ER,762,Odisha,55,Bhubaneshwar,25
+CGL,2021,9,ER,762,Odisha,55,Cutack,8
+CGL,2021,9,ER,762,Odisha,55,Kendujhar,0
+CGL,2021,9,ER,762,Odisha,55,Koraput,0
+CGL,2021,9,ER,762,Odisha,55,Phulbani,0
+CGL,2021,9,ER,762,Odisha,55,Sambalpur,4
+CGL,2021,9,ER,762,Odisha,55,Rourkela,0
+CGL,2021,9,ER,762,Odisha,55,Dhenkenal,1
+CGL,2021,9,ER,762,A & N Islands,0,Car Nicobar,0
+CGL,2021,9,ER,762,A & N Islands,0,Port Blair,0
+CGL,2021,9,NER,75,"Anunachal
+ Pradesh",0,Itanagar,0
+CGL,2021,9,NER,75,Assam,34,Barpeta,0
+CGL,2021,9,NER,75,Assam,34,Dibrugarh ,3
+CGL,2021,9,NER,75,Assam,34,Diphu,0
+CGL,2021,9,NER,75,Assam,34,Goalpara,0
+CGL,2021,9,NER,75,Assam,34,"Guwahati
+(Dispur)",2
+CGL,2021,9,NER,75,Assam,34,Halflong,0
+CGL,2021,9,NER,75,Assam,34,Jorhat,0
+CGL,2021,9,NER,75,Assam,34,Kokrajhar,0
+CGL,2021,9,NER,75,Assam,34,Lakhimpur,0
+CGL,2021,9,NER,75,Assam,34,Sivasagar,0
+CGL,2021,9,NER,75,Assam,34,Silchar,2
+CGL,2021,9,NER,75,Assam,34,Tezpur,0
+CGL,2021,9,NER,75,Nagaland,6,Dimapur,1
+CGL,2021,9,NER,75,Nagaland,6,Kohima,5
+CGL,2021,9,NER,75,Meghalaya,7,Shilong,7
+CGL,2021,9,NER,75,Meghalaya,7,Tura,0
+CGL,2021,9,NER,75,Manipur,25,Imphal,7
+CGL,2021,9,NER,75,Manipur,25,Churachandpur,16
+CGL,2021,9,NER,75,Manipur,25,Ukhrul,2
+CGL,2021,9,NER,75,Tripura,1,Agartala,1
+CGL,2021,9,NER,75,Mizoram,2,Aizwal,2
+CGL,2021,9,MPR,327,Madhya pradesh,294,Bhopal,69
+CGL,2021,9,MPR,327,Madhya pradesh,294,Chataarpur,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Chindwara,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Guna,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Gwalior,77
+CGL,2021,9,MPR,327,Madhya pradesh,294,Indore,80
+CGL,2021,9,MPR,327,Madhya pradesh,294,Jabalpur,31
+CGL,2021,9,MPR,327,Madhya pradesh,294,Jhabua,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Khandwa,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Mandsaur,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Ratlam,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Rewa,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Shahdol,0
+CGL,2021,9,MPR,327,Madhya pradesh,294,Satna,17
+CGL,2021,9,MPR,327,Madhya pradesh,294,Sagar,12
+CGL,2021,9,MPR,327,Madhya pradesh,294,Ujjain,8
+CGL,2021,9,MPR,327,Chhattisgarh,33,Ambikapur,0
+CGL,2021,9,MPR,327,Chhattisgarh,33,Bilaspur,9
+CGL,2021,9,MPR,327,Chhattisgarh,33,Jagdalpur,0
+CGL,2021,9,MPR,327,Chhattisgarh,33,Raipur,18
+CGL,2021,9,MPR,327,Chhattisgarh,33,Durg-Bhilai,6
+CGL,2021,9,MPR,327,Chhattisgarh,33,Bhilainagar,0
+CGL,2021,9,WR,296,Gujrat,84,Ahmedabad,30
+CGL,2021,9,WR,296,Gujrat,84,vadodara(Baroda)l,9
+CGL,2021,9,WR,296,Gujrat,84,Bhuj,0
+CGL,2021,9,WR,296,Gujrat,84,"Panchmahal
+(godhra)",0
+CGL,2021,9,WR,296,Gujrat,84,Rajkot,12
+CGL,2021,9,WR,296,Gujrat,84,Surat,17
+CGL,2021,9,WR,296,Gujrat,84,Valsad,0
+CGL,2021,9,WR,296,Gujrat,84,Bhavnagar,0
+CGL,2021,9,WR,296,Gujrat,84,Kuchchh(kutch),0
+CGL,2021,9,WR,296,Gujrat,84,Anand,6
+CGL,2021,9,WR,296,Gujrat,84,Gandhinagar,5
+CGL,2021,9,WR,296,Gujrat,84,Mehsana,5
+CGL,2021,9,WR,296,Maharastra,206,Amravati,10
+CGL,2021,9,WR,296,Maharastra,206,Aurangabad,4
+CGL,2021,9,WR,296,Maharastra,206,Kolhapur,7
+CGL,2021,9,WR,296,Maharastra,206,Mumbai,87
+CGL,2021,9,WR,296,Maharastra,206,Nagpur,21
+CGL,2021,9,WR,296,Maharastra,206,Nanded,6
+CGL,2021,9,WR,296,Maharastra,206,Nashik,11
+CGL,2021,9,WR,296,Maharastra,206,Pune,55
+CGL,2021,9,WR,296,Maharastra,206,Ratnagiri,0
+CGL,2021,9,WR,296,Maharastra,206,Thane,0
+CGL,2021,9,WR,296,Maharastra,206,Bhandara,0
+CGL,2021,9,WR,296,Maharastra,206,chandrapur,0
+CGL,2021,9,WR,296,Maharastra,206,Akola,0
+CGL,2021,9,WR,296,Maharastra,206,Jalgaon,5
+CGL,2021,9,WR,296,Maharastra,206,Ahmednagar,0
+CGL,2021,9,WR,296,Maharastra,206,Alibag(Alibaug),0
+CGL,2021,9,WR,296,Maharastra,206,Navi Mumbai,0
+CGL,2021,9,WR,296,Goa,6,Panaji(Panjim),6
+CGL,2021,9,SR,490,Andhra Pradesh,190,Guntur,20
+CGL,2021,9,SR,490,Andhra Pradesh,190,Kurnool,17
+CGL,2021,9,SR,490,Andhra Pradesh,190,Rajahmundry,11
+CGL,2021,9,SR,490,Andhra Pradesh,190,Srikakulam,0
+CGL,2021,9,SR,490,Andhra Pradesh,190,Tirupati,22
+CGL,2021,9,SR,490,Andhra Pradesh,190,Vishakhapatnam,54
+CGL,2021,9,SR,490,Andhra Pradesh,190,Kakinada,13
+CGL,2021,9,SR,490,Andhra Pradesh,190,Nellore,10
+CGL,2021,9,SR,490,Andhra Pradesh,190,Chirala,8
+CGL,2021,9,SR,490,Andhra Pradesh,190,Vizianagaram,10
+CGL,2021,9,SR,490,Telangana,204,Hyderabad,180
+CGL,2021,9,SR,490,Telangana,204,Nizamabad,0
+CGL,2021,9,SR,490,Telangana,204,Warangal,14
+CGL,2021,9,SR,490,Telangana,204,Karimnagar,10
+CGL,2021,9,SR,490,Tamil Nadu,96,Chennai(Madras),52
+CGL,2021,9,SR,490,Tamil Nadu,96,Coimbatore,19
+CGL,2021,9,SR,490,Tamil Nadu,96,Kanchipuram,0
+CGL,2021,9,SR,490,Tamil Nadu,96,Madurai,12
+CGL,2021,9,SR,490,Tamil Nadu,96,Salem,5
+CGL,2021,9,SR,490,Tamil Nadu,96,Tiruchirapalli,2
+CGL,2021,9,SR,490,Tamil Nadu,96,Tirunelveli,2
+CGL,2021,9,SR,490,Tamil Nadu,96,Vellore,4
+CGL,2021,9,SR,490,Puducherry,0,Puducherry,0
+CGL,2021,9,KKR,208,Karnataka,72,"Bengaluru
+(Bengalore)",45
+CGL,2021,9,KKR,208,Karnataka,72,Belgavi(Belgaum),3
+CGL,2021,9,KKR,208,Karnataka,72,Bijapur,0
+CGL,2021,9,KKR,208,Karnataka,72,Dharwar,0
+CGL,2021,9,KKR,208,Karnataka,72,"Kalaburagi
+(Gulbarga)",0
+CGL,2021,9,KKR,208,Karnataka,72,Hassan,0
+CGL,2021,9,KKR,208,Karnataka,72,Kolar,0
+CGL,2021,9,KKR,208,Karnataka,72,"Mangaluru
+(Manglore)",3
+CGL,2021,9,KKR,208,Karnataka,72,Mysuru(Mysore),18
+CGL,2021,9,KKR,208,Karnataka,72,Shivamogga(Shimoga),1
+CGL,2021,9,KKR,208,Karnataka,72,Hubballi(Hubli),2
+CGL,2021,9,KKR,208,Karnataka,72,Udupi,0
+CGL,2021,9,KKR,208,Kerala,136,Alappuzha,0
+CGL,2021,9,KKR,208,Kerala,136,Kannur(Cannanor),29
+CGL,2021,9,KKR,208,Kerala,136,Kalpeta,0
+CGL,2021,9,KKR,208,Kerala,136,Kochi(cochin),0
+CGL,2021,9,KKR,208,Kerala,136,Kottayam,0
+CGL,2021,9,KKR,208,Kerala,136,Kozhikode(Calicut),14
+CGL,2021,9,KKR,208,Kerala,136,Malappuram,0
+CGL,2021,9,KKR,208,Kerala,136,Palakkad,0
+CGL,2021,9,KKR,208,Kerala,136,Pathanmthitta,0
+CGL,2021,9,KKR,208,Kerala,136,Kollam,12
+CGL,2021,9,KKR,208,Kerala,136,Thiruvananthpuram,9
+CGL,2021,9,KKR,208,Kerala,136,Thrissur(Trichur),7
+CGL,2021,9,KKR,208,Kerala,136,Ernakulam,41
+CGL,2021,9,KKR,208,Lakshadweep,0,Kavaratti,0
