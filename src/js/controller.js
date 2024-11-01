@@ -10,8 +10,8 @@ import {csv,
         // format
     } from 'd3';// all of the deconstructed words here are actually functions or SuperConcept functions that gives you access to another function when right parameter is passed into them. like sya axisLeft(). axisLeft(yourchoiceofaxis) will actually return another function, which will actually takes as the parameter to itself the append instructions on the svg1 selection. 
 import {scatterPlot} from './charts/scatterplot';
-import {lineChartPlot} from './charts/linechart';
-import {barChartPlot} from './charts/barChart';
+import {lineChartPlot} from './charts/linechartplot';
+import {barChartPlot} from './charts/barchartplot';
 import {pieChartPlot} from './charts/piechartplot';
 import {menu} from './menu';
 
