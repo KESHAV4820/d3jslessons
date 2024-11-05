@@ -1533,18 +1533,18 @@ CGL,2019,1,NR,94857,Uttarakhand,5802,"Srinagar
 (uttarakhand)",0
 CGL,2019,1,NR,94857,Uttarakhand,5802,Haridwar,578
 CGL,2019,1,NR,94857,Uttarakhand,5802,Roorkee,1133
-CGL,2019,1,NR,94857,Delhi,37602,Delhi,37602
-CGL,2019,1,NR,94857,Rajasthan,51453,Ajmer ,906
-CGL,2019,1,NR,94857,Rajasthan,51453,Alwar,1550
-CGL,2019,1,NR,94857,Rajasthan,51453,Bharatpur,0
-CGL,2019,1,NR,94857,Rajasthan,51453,Bikaner,903
-CGL,2019,1,NR,94857,Rajasthan,51453,jaipur,27134
-CGL,2019,1,NR,94857,Rajasthan,51453,Jodhpur,5308
-CGL,2019,1,NR,94857,Rajasthan,51453,kota,5052
-CGL,2019,1,NR,94857,Rajasthan,51453,Sriganganagar ,3159
-CGL,2019,1,NR,94857,Rajasthan,51453,Udaipur,2322
-CGL,2019,1,NR,94857,Rajasthan,51453,Dausa,0
-CGL,2019,1,NR,94857,Rajasthan,51453,Sikar,5119
+CGL,2019,1,NR,94857,Delhi,142706,Delhi,142706
+CGL,2019,1,NR,94857,Rajasthan,83152,Ajmer ,906
+CGL,2019,1,NR,94857,Rajasthan,83152,Alwar,1550
+CGL,2019,1,NR,94857,Rajasthan,83152,Bharatpur,0
+CGL,2019,1,NR,94857,Rajasthan,83152,Bikaner,903
+CGL,2019,1,NR,94857,Rajasthan,83152,jaipur,27134
+CGL,2019,1,NR,94857,Rajasthan,83152,Jodhpur,5308
+CGL,2019,1,NR,94857,Rajasthan,83152,kota,5052
+CGL,2019,1,NR,94857,Rajasthan,83152,Sriganganagar ,3159
+CGL,2019,1,NR,94857,Rajasthan,83152,Udaipur,2322
+CGL,2019,1,NR,94857,Rajasthan,83152,Dausa,0
+CGL,2019,1,NR,94857,Rajasthan,83152,Sikar,5119
 CGL,2019,1,CR,242933,Utar pradesh,146934,Agra,10620
 CGL,2019,1,CR,242933,Utar pradesh,146934,Aligarh,3197
 CGL,2019,1,CR,242933,Utar pradesh,146934,Prayagraj,16142
@@ -2013,13 +2013,13 @@ CGL,2020,1,NWR,21715,"Himachal
  Pradesh",1939,Hamirpur,1150
 CGL,2020,1,NWR,21715,"Himachal
  Pradesh",1939,Shimla,789
-CGL,2020,1,NWR,21715,Punjab,13446,Bhathinda ,0
-CGL,2020,1,NWR,21715,Punjab,13446,Jalandhar ,4378
-CGL,2020,1,NWR,21715,Punjab,13446,Patiala,4353
-CGL,2020,1,NWR,21715,Punjab,13446,Amritsar,0
-CGL,2020,1,NWR,21715,Punjab,13446,Ludhiana,0
-CGL,2020,1,NWR,21715,Punjab,13446,Mohali,2922
-CGL,2020,1,NWR,21715,Chandigarh,0,Chandigarh,0
+CGL,2020,1,NWR,21715,Punjab,10524,Bhathinda ,0
+CGL,2020,1,NWR,21715,Punjab,10524,Jalandhar ,4378
+CGL,2020,1,NWR,21715,Punjab,10524,Patiala,4353
+CGL,2020,1,NWR,21715,Punjab,10524,Amritsar,0
+CGL,2020,1,NWR,21715,Punjab,10524,Ludhiana,0
+CGL,2020,1,NWR,21715,Punjab,10524,Mohali,0
+CGL,2020,1,NWR,21715,Chandigarh,2922,Chandigarh,2922
 CGL,2020,1,NWR,21715,Haryana,2991,Ambala,0
 CGL,2020,1,NWR,21715,Haryana,2991,Bhiwani,0
 CGL,2020,1,NWR,21715,Haryana,2991,Hisar,0
@@ -2720,21 +2720,21 @@ CGL,2021,1,SR,91665,Tamil Nadu,34241,Tiruchirapalli,3061
 CGL,2021,1,SR,91665,Tamil Nadu,34241,Tirunelveli,4309
 CGL,2021,1,SR,91665,Tamil Nadu,34241,Vellore,2153
 CGL,2021,1,SR,91665,Puducherry,0,Puducherry,0
-CGL,2021,1,KKR,50989,Karnataka,233277,"Bengaluru
+CGL,2021,1,KKR,50989,Karnataka,23277,"Bengaluru
 (Bengalore)",5998
-CGL,2021,1,KKR,50989,Karnataka,233277,Belgavi(Belgaum),2275
-CGL,2021,1,KKR,50989,Karnataka,233277,Bijapur,0
-CGL,2021,1,KKR,50989,Karnataka,233277,Dharwar,0
-CGL,2021,1,KKR,50989,Karnataka,233277,"Kalaburagi
+CGL,2021,1,KKR,50989,Karnataka,23277,Belgavi(Belgaum),2275
+CGL,2021,1,KKR,50989,Karnataka,23277,Bijapur,0
+CGL,2021,1,KKR,50989,Karnataka,23277,Dharwar,0
+CGL,2021,1,KKR,50989,Karnataka,23277,"Kalaburagi
 (Gulbarga)",1905
-CGL,2021,1,KKR,50989,Karnataka,233277,Hassan,0
-CGL,2021,1,KKR,50989,Karnataka,233277,Kolar,0
-CGL,2021,1,KKR,50989,Karnataka,233277,"Mangaluru
+CGL,2021,1,KKR,50989,Karnataka,23277,Hassan,0
+CGL,2021,1,KKR,50989,Karnataka,23277,Kolar,0
+CGL,2021,1,KKR,50989,Karnataka,23277,"Mangaluru
 (Manglore)",1344
-CGL,2021,1,KKR,50989,Karnataka,233277,Mysuru(Mysore),4402
-CGL,2021,1,KKR,50989,Karnataka,233277,Shivamogga(Shimoga),1561
-CGL,2021,1,KKR,50989,Karnataka,233277,Hubballi(Hubli),5109
-CGL,2021,1,KKR,50989,Karnataka,233277,Udupi,683
+CGL,2021,1,KKR,50989,Karnataka,23277,Mysuru(Mysore),4402
+CGL,2021,1,KKR,50989,Karnataka,23277,Shivamogga(Shimoga),1561
+CGL,2021,1,KKR,50989,Karnataka,23277,Hubballi(Hubli),5109
+CGL,2021,1,KKR,50989,Karnataka,23277,Udupi,683
 CGL,2021,1,KKR,50989,Kerala,27712,Alappuzha,0
 CGL,2021,1,KKR,50989,Kerala,27712,Kannur(Cannanor),3806
 CGL,2021,1,KKR,50989,Kerala,27712,Kalpeta,0
