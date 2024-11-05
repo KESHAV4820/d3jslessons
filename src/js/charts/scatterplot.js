@@ -44,6 +44,8 @@ export const scatterPlot = () => {
 
     //my() function is he place where it sets up all the selections like svg1 and does all the transformation needed using getter, setter functions, local declared variables. 
     const my = (svg1) => {
+        // clear all prexisting elements in chart
+        svg1.selectAll('.bar').remove();
 
     // const effectiveWidth=width;
     // calculating point padding based on number of points to render
