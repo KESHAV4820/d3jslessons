@@ -432,12 +432,13 @@ renderChart(filteredData());// to render something by default
                     svg1.attr('width', effectiveWidth);
                     chartWrapper.style('width', `${effectiveWidth}px`);
                     
-                    renderChart(filteredDataResult);
-                /* code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
+                    // renderChart(filteredDataResult);
+                // code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
                         svg1.call(plot.width(effectiveWidth)
                                 .yCoordinate((d) => d[column])
                                 .yAxisLabel(column)
-                                .dataReceived(filteredDataResult));*/
+                                .dataReceived(filteredDataResult));
+                    //
 
                     // console.log(column);//Code Testing    
                 })
@@ -461,12 +462,13 @@ renderChart(filteredData());// to render something by default
                     chartWrapper.style('width', `${effectiveWidth}px`);
                     
                     // Then update the plot with new coordinates
-                    renderChart(filteredDataResult);
-            /* code upgradethis code failed as soon as different chart manu was made operational. 
+                    // renderChart(filteredDataResult);
+            // code upgradethis code failed as soon as different chart manu was made operational. 
                  svg1.call(plot.width(effectiveWidth)
                                 .xCoordinate((d) => d[column])
                                 .xAxisLabel(column)
-                                .dataReceived(filteredDataResult)); */
+                                .dataReceived(filteredDataResult)); 
+            //
 
                 // console.log('x menu changed: '+column);//Code Testing
               })
