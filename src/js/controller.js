@@ -179,7 +179,7 @@ const main = async () =>{
         // console.log("type of uniqueExamTier :"+typeof(uniqueExamTiers));//Code Testing
         // console.log("uniqueExamName :"+uniqueExamTiers);//Code Testing
 
-    //Now turning these unique values into options formate for their menus
+    //Now turning these unique values into options formate for their menus becouse we need to pass value and text in the html components of the dropdown menu we are going to create.
         const columnsForExamName = uniqueExamNames.map((examname) => ({value: examname, text:examname}));
         const columnsForExamTier=uniqueExamTiers.map((examtier) => ({value: examtier, text: examtier}));
         const columnsForExamYear=uniqueExamYears.map((examyear) => ({value: examyear, text:examyear}));
@@ -262,7 +262,7 @@ const main = async () =>{
 
     // console.log('Setting up scatterPlot');//Code Testing
 
-//code migratedcode upgrade👇🏼 to implement multiple type of charts rendering.
+//code migratedcode upgrade👇🏼 to implement multiple type of charts rendering.(By default)
     const plot=scatterPlot()
     .width(width)
     .height(height)
