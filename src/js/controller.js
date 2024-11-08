@@ -151,9 +151,12 @@ const chartTypes = [
     // {value:'lineChartPlot',text:'LineChart Plot'}
 ];
 
-let currentChartType = 'scatterPlot';// default value
+
 
 const main = async () =>{
+    // SuperConceptThese👇🏼😟 are state tracking variable. When switching to a new chart type, dfault buggs were comming up. Hence, this to track axis fields.
+    let currentXField='zone_name';
+    let currentYField='zone_score';
     const dataExtracted =await csv(csvDataPath, parseRow); 
     // console.log(dataExtracted);//Code Testing
 
@@ -282,6 +285,7 @@ const main = async () =>{
 //Concept becouse reusable chart in d3.js expects as an input a d3 selection which in our case is svg1, basically an element where the svg is plotting or charting the graph. Or the same can also be passed as :- "scatterPlot().width(width).height(height)(svg1)"
     // console.log('scatterplot setup complete');//Code Testing
 //
+let currentChartType = 'scatterPlot';// default value
 // Function to render the selected Chart type
 const renderChart = (data) => {	
     svg1.selectAll("*").remove();//It clears all the content of previous chart type
@@ -302,8 +306,8 @@ const renderChart = (data) => {
                     .width(effectiveWidth)//VIEhere we are setting effective width on axis, so that it could populate the ticks accordingly. 
                     .height(height)
                     .dataReceived(data)
-                    .xCoordinate((d) => d.zone_name)
-                    .yCoordinate((d) => d.zone_score)
+                    .xCoordinate((d) => d[currentXField])
+                    .yCoordinate((d) => d[currentYField])
                     .margin({
                         top: 30, 
                         right: 33, 
@@ -312,7 +316,7 @@ const renderChart = (data) => {
                     .maxRadius(16)
                     .minRadius(2);
 
-        }
+        };
         // Placeholder for other chart types, e.g., barChartPlot, pieChartPlot
         // for barchart:-
         if (currentChartType === 'barChartPlot') {
@@ -320,9 +324,15 @@ const renderChart = (data) => {
                 .width(width)
                 .height(height)
                 .dataReceived(data)
-                .xCoordinate(d => d.zone_name)
-                .yCoordinate(d => d.zone_score)
-                .margin({ top: 30, right: 33, bottom: 130, left: 125 });
+                .xCoordinate(d => d[currentXField])
+                .yCoordinate(d => d[currentYField])
+                .margin({ 
+                    top: 30, 
+                    right: 33, 
+                    bottom: 130, 
+                    left: 125 
+                        }
+                    );
         }
         // for Piechart:-
         // if (currentChartType === 'pieChartPlot') {
@@ -334,8 +344,9 @@ const renderChart = (data) => {
         //         .yCoordinate(d => d.zone_score)
         //         .margin({ top: 30, right: 33, bottom: 130, left: 125 });
         // }
-
-        svg1.call(chart);
+        if(chart){
+            svg1.call(chart);
+        }
         //Forceing the reflow of svg once again
         svg1.node().getBoundingClientRect();
 
@@ -425,6 +436,7 @@ renderChart(filteredData());// to render something by default
                     // if (container.node()) {
                     //     container.dispatch('scroll');
                     // }
+                    currentYField=column;// Note: changed the state based on menu selection on Y
 
                     const filteredDataResult = filteredData();
                     const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
@@ -432,13 +444,13 @@ renderChart(filteredData());// to render something by default
                     svg1.attr('width', effectiveWidth);
                     chartWrapper.style('width', `${effectiveWidth}px`);
                     
-                    // renderChart(filteredDataResult);
-                // code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
+                    renderChart(filteredDataResult);
+                /* code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
                         svg1.call(plot.width(effectiveWidth)
                                 .yCoordinate((d) => d[column])
                                 .yAxisLabel(column)
                                 .dataReceived(filteredDataResult));
-                    //
+                    */
 
                     // console.log(column);//Code Testing    
                 })
@@ -453,6 +465,7 @@ renderChart(filteredData());// to render something by default
                     // if (container.node()) {
                     //     container.dispatch('scroll');
                     // }
+                    currentXField=column; // changed the state based on selection on X axis.
 
                     const filteredDataResult = filteredData();
                     const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
@@ -462,13 +475,13 @@ renderChart(filteredData());// to render something by default
                     chartWrapper.style('width', `${effectiveWidth}px`);
                     
                     // Then update the plot with new coordinates
-                    // renderChart(filteredDataResult);
-            // code upgradethis code failed as soon as different chart manu was made operational. 
+                    renderChart(filteredDataResult);
+            /* code upgradethis code failed as soon as different chart manu was made operational. 
                  svg1.call(plot.width(effectiveWidth)
                                 .xCoordinate((d) => d[column])
                                 .xAxisLabel(column)
                                 .dataReceived(filteredDataResult)); 
-            //
+            */
 
                 // console.log('x menu changed: '+column);//Code Testing
               })
@@ -526,7 +539,7 @@ window.addEventListener('resize', () => {
         renderChart(filteredDataResult);
 	});
     // Initial Render
-    renderChart(filteredData());
+    // renderChart(filteredData());//07/11/2024
 };
 main();
 

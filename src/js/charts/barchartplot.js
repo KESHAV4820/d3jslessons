@@ -32,6 +32,8 @@ export const barChartPlot = () => {
             .domain(dataReceived.map(xCoordinate))
             .range([margin.left, width - margin.right])
             .padding(0.2);
+            console.log(dataReceived);// Code Testing
+            
 
         const yScale = scaleLinear()
             .domain([0, max(dataReceived, yCoordinate)])
@@ -91,10 +93,17 @@ export const barChartPlot = () => {
                     .attr('x', -height/2)
                     .attr('fill', 'black')
                     .attr('text-anchor', 'middle')
-                    .text(yAxisLabel),
-                update => update.call(update => update
-                    .transition(t)
-                    .text(yAxisLabel)),
+                    .text(yAxisLabel)
+                    .call(((enter) => 
+                        enter.transition(t)
+                                .attr('y',-97)
+                                .attr('x',-height/2))),
+                update => update.call(update => 
+                    update.attr('y', height*5)
+                          .transition(t)
+                          .text(yAxisLabel))
+                          .attr('y',-97)
+                          .attr('x',-height/2),
                 exit => exit.remove()
             );
 
@@ -122,10 +131,15 @@ export const barChartPlot = () => {
                     .attr('x', width/2)
                     .attr('fill', 'black')
                     .attr('text-anchor', 'middle')
-                    .text(xAxisLabel),
-                update => update.call(update => update
-                    .transition(t)
-                    .text(xAxisLabel)),
+                    .text(xAxisLabel)
+                    .call((enter) => enter.transition(t))
+                    .attr('y',55)
+                    .attr('x',width/2),
+                update => update.call(update => 
+                    update.attr('y',height*55)
+                          .transition(t)
+                          .text(xAxisLabel)
+                          .attr('y',115)),
                 exit => exit.remove()
             );
 
