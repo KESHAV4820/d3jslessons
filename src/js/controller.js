@@ -335,15 +335,21 @@ const renderChart = (data) => {
                     );
         }
         // for Piechart:-
-        // if (currentChartType === 'pieChartPlot') {
-        //     chart = pieChartPlot()
-        //         .width(width)
-        //         .height(height)
-        //         .dataReceived(data)
-        //         .xCoordinate(d => d.zone_name)
-        //         .yCoordinate(d => d.zone_score)
-        //         .margin({ top: 30, right: 33, bottom: 130, left: 125 });
-        // }
+        if (currentChartType === 'pieChartPlot') {
+            chart = pieChartPlot()
+                .width(width)
+                .height(height)
+                .dataReceived(data)
+                .xCoordinate(d => d[currentXField])
+                .yCoordinate(d => d[currentYField])
+                .margin({ 
+                    top: 30, 
+                    right: 33, 
+                    bottom: 130, 
+                    left: 125 
+                        }
+                    );
+        }
         if(chart){
             svg1.call(chart);
         }
