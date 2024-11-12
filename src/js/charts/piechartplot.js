@@ -37,7 +37,7 @@ export const pieChartPlot = () => {
                     };
                 }
                 //for the rest of the case
-                acc[key].value += yCoordinate(d);
+                acc[key].value = yCoordinate(d);
                 return acc;
         	},{});
 
