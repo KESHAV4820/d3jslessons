@@ -41,7 +41,7 @@ import {menu} from './menu';
         🅱️  now this 'change' event is added to the select element say svg1 in our case which is the standered element that emits the events in DOM. And when we get that event, we are extracting the value that was clicked on which resides in the target method.
         👉🏼 .on('change', (event)=>{listeners.call('change',null,event.target.value)})
         and now this data is funneled using our d3 dispatch library to the controller.js call back function used inside the.on() method has been used. Note: this process of funneling this data is done  by listeners.call(). Think of it like a pipe line
-    1️⃣7️⃣ VIE To remove the cache file of parcel bundler, so that you can see the latest changes that you made to the file after fresh bundling, you need to run this command in the root folder of the project👉"rmdir /s /q .parcel-cache" on CMD in laptop, but 👉🏼"Remove-Item -Recurse -Force .parcel-cache" in desktop Z2 machine. Note that the npm server shouldn't be running at the time of executing this command. It wont work. 
+    1️⃣7️⃣ VIE To remove the cache file of parcel bundler, so that you can see the latest changes that you made to the file after fresh bundling, you need to run this command in the root folder of the project👉"rmdir /s /q .parcel-cache" on CMD Or sometimes, this command 👉🏼"Remove-Item -Recurse -Force .parcel-cache" is used as well. Note that the npm server shouldn't be running at the time of executing this command. It wont work. 
     1️⃣8️⃣
     1️⃣9️⃣
     
@@ -147,7 +147,7 @@ const menuChartType= select('body')
 const chartTypes = [
     {value:'scatterPlot', text:'Scatter Plot'},
     {value:'barChartPlot', text:'BarChart Plot'},
-    // {value:'pieChartPlot', text:'PieChart Plot'},
+    {value:'pieChartPlot', text:'PieChart Plot'},
     // {value:'lineChartPlot',text:'LineChart Plot'}
 ];
 

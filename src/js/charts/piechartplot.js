@@ -21,15 +21,29 @@ export const pieChartPlot = () => {
     const my = (svg1) => {
         // Clear existing elements
         svg1.selectAll('.pie-slice').remove();
-        // svg1.selectAll('.pie-label').remove();
+        svg1.selectAll('.pie-label').remove();
 
         const radius = Math.min(width - margin.left - margin.right, 
                               height - margin.top - margin.bottom) / 2;
 
+        // Grouping the data on X-Axis becouse of more than once occurance
+        const groupData= dataReceived.reduce((acc,d) => {	
+                const key = xCoordinate(d);
+                //for the case of first occurance
+                if(!acc[key]){
+                    acc[key]={
+                        key,
+                        value:0
+                    };
+                }
+                //for the rest of the case
+                acc[key].value += yCoordinate(d);
+                return acc;
+        	},{});
+
         // Create pie layout
         const pieLayout = pie()
-            .value(d => yCoordinate(d))
-            .sort(null);
+            .value(d => d.value);
 
         // Create arc generator
         const arcGenerator = arc()
@@ -54,7 +68,7 @@ export const pieChartPlot = () => {
 
         // Create pie slices
         const slices = pieGroup.selectAll('.pie-slice')
-            .data(pieLayout(dataReceived))
+            .data(pieLayout(Object.values(groupData)))
             .join(
                 enter => enter.append('path')
                     .attr('class', 'pie-slice')
@@ -68,7 +82,7 @@ export const pieChartPlot = () => {
                             return t => arcGenerator(interpolate(t));
                         }))
                     .append('title')
-                    .text(d => `${xCoordinate(d.data)}: ${commaFormat(yCoordinate(d.data))}`),
+                    .text(d => `${d.data.key}: ${commaFormat(d.data.value)}`),
                 
                 update => update.call(update => update.transition(t)
                     .attrTween('d', function(d) {
@@ -88,7 +102,7 @@ export const pieChartPlot = () => {
             .outerRadius(radius * 0.6);
 
         const labels = pieGroup.selectAll('.pie-label')
-            .data(pieLayout(dataReceived))
+            .data(pieLayout(Object.values(groupData)))
             .join(
                 enter => enter.append('text')
                     .attr('class', 'pie-label')
@@ -97,13 +111,13 @@ export const pieChartPlot = () => {
                     .style('text-anchor', 'middle')
                     .style('font-size', '12px')
                     .style('opacity', 0)
-                    .text(d => xCoordinate(d.data))
+                    .text(d => d.data.key)
                     .call(enter => enter.transition(t)
                         .style('opacity', 1)),
                 
                 update => update.call(update => update.transition(t)
                     .attr('transform', d => `translate(${labelArc.centroid(d)})`)
-                    .text(d => xCoordinate(d.data))),
+                    .text(d => d.data.key)),
                 
                 exit => exit.call(exit => exit.transition(t)
                     .style('opacity', 0)
@@ -133,7 +147,7 @@ export const pieChartPlot = () => {
             });
     };
 
-    // Getter/Setter methods
+    // Getter and Setter methods or functions
     my.width = function(_) {
         return arguments.length ? (width = +_, my) : width;
     };
