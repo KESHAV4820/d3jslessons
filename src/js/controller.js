@@ -148,7 +148,7 @@ const chartTypes = [
     {value:'scatterPlot', text:'Scatter Plot'},
     {value:'barChartPlot', text:'BarChart Plot'},
     {value:'pieChartPlot', text:'PieChart Plot'},
-    // {value:'lineChartPlot',text:'LineChart Plot'}
+    {value:'lineChartPlot',text:'LineChart Plot'}
 ];
 
 
@@ -288,7 +288,9 @@ const main = async () =>{
 let currentChartType = 'scatterPlot';// default value
 // Function to render the selected Chart type
 const renderChart = (data) => {	
-    svg1.selectAll("*").remove();//It clears all the content of previous chart type
+    if (currentChartType !== 'lineChartPlot') {
+        svg1.selectAll("*").remove();//It clears all the content of previous chart type
+    };
     let chart;
 
     //calculate effective width based on data size to make scrolling logic work.
@@ -337,6 +339,22 @@ const renderChart = (data) => {
         // for Piechart:-
         if (currentChartType === 'pieChartPlot') {
             chart = pieChartPlot()
+                .width(width)
+                .height(height)
+                .dataReceived(data)
+                .xCoordinate(d => d[currentXField])
+                .yCoordinate(d => d[currentYField])
+                .margin({ 
+                    top: 30, 
+                    right: 33, 
+                    bottom: 130, 
+                    left: 125 
+                        }
+                    );
+        }
+        // for Linechart:-
+        if (currentChartType === 'lineChartPlot') {
+            chart = lineChartPlot()
                 .width(width)
                 .height(height)
                 .dataReceived(data)
