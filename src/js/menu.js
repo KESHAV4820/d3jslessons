@@ -23,13 +23,13 @@
     <Option value="tata">TATA</Option>
 </select> 
 */}
-import { dispatch } from "d3";//Note For event listening.
+import { dispatch, select } from "d3";//Note For event listening.
 export const menu = () => {
     let id;
     let textForMenuLabel;
     let optionsWithinMenu;
     // let changeHandler;
-    const listeners= dispatch('change');//SuperNote other types of event like change are start or brush or end
+    const listeners= dispatch('change','clear');//SuperNote other types of event like change are start or brush or end or clear
 
     const my = (svg1) => {	
         // here i am codding the label for the menu element
@@ -54,9 +54,31 @@ export const menu = () => {
             .join('option')
             .attr('value',(d) => d.value)
             .text((d) => d.text);
+
+            // Adding a clear graph button
+            if ( id === 'menu-charttype') {
+            svg1.selectAll('.clear-graph-button')
+                .data([null])
+                .join('button')
+                .attr('class','clear-graph-button')
+                .text('Clear Graph')
+                .on('click', () => {	
+                    // select.property('value','');//To reset the previous dropdown selections
+                    // svg1.selectAll("*").remove();// to clear the existing chart elements Usless Coding It failed to work.
+                    // Targeting the main SVG conponent to clear
+                    const chartWrapper = document.querySelector('.chart-wrapper');
+                    if (chartWrapper) {
+                        const mainSvg = chartWrapper.querySelector('svg');
+                        if(mainSvg){
+                            while (mainSvg.firstChild) {
+                                mainSvg.removeChild(mainSvg.firstChild);
+                            }
+                        }
+                    }
+                    listeners.call('clear',null);
+                	});
+            };
     	};
-
-
 
 
     // Now defining getter and setter functions for above my();

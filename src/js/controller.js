@@ -62,13 +62,15 @@ const csvDataPath = [
 ].join('/');// Remember ItJust Beautiful this is how we make a address more clean for maintainance.
 */}
 import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel handle asset
+//code for future use
+// import csvDataPath from './../../data/place_centric_data.csv'; // Let Parcel handle asset
 
 
 // console.log(csvDataPath);// Code Testing.
 
 // const commaFormat = format(',');// this adds comma separator code migrated to scatterplot.js
 
-const parseRow = (d)=>{
+const parseRow_examCentric = (d)=>{
     d.exam_name=d.exam_name;
     d.exam_year=+d.exam_year;
     d.exam_tier=+d.exam_tier;
@@ -80,7 +82,12 @@ const parseRow = (d)=>{
     d.city_name=d.city_name;
     return d;
 };
-// csv(csvDataPath, parseRow).then(data =>{console.log(data);});// Code Testing
+//code for future use
+// const parseRow_placeCentric = (d)=>{
+    
+//     return d;
+// };
+// csv(csvDataPath, parseRow_examCentric).then(data =>{console.log(data);});// Code Testing
 
 //VIEConcept Now i will define "Accessor functions". They are used to set value in "Idempotent style" of programming. In this, we program in a manner that user need not remember the "order and number of parameter" to be given to the function. You can pass the parameters in much more fluid manner, not totally fluid, but fluid to a great extent. They are very useful in largescale programming.
 /*code migrated to scatterplot getter setter accessor function
@@ -157,7 +164,7 @@ const main = async () =>{
     // SuperConceptThese👇🏼😟 are state tracking variable. When switching to a new chart type, dfault buggs were comming up. Hence, this to track axis fields.
     let currentXField='zone_name';
     let currentYField='zone_score';
-    const dataExtracted =await csv(csvDataPath, parseRow); 
+    const dataExtracted =await csv(csvDataPath, parseRow_examCentric); 
     // console.log(dataExtracted);//Code Testing
 
     // Function to calculate effective width based on data points
@@ -215,7 +222,7 @@ const main = async () =>{
     .width(width)
     .height(height)
     .dataReceived(dataExtracted) 
-    // .dataReceived( await csv(csvDataPath,parseRow))//Alternative Code
+    // .dataReceived( await csv(csvDataPath,parseRow_examCentric))//Alternative Code
     .xCoordinate((d) => d.zone_score )
     .yCoordinate((d) => d.zone_score)
     .margin({
@@ -270,7 +277,7 @@ const main = async () =>{
     .width(width)
     .height(height)
     // .dataReceived(dataExtracted)//Alternative Code17/10/2024 code upgrade👇🏼
-    // .dataReceived( await csv(csvDataPath,parseRow))Alternative Code24/10/2024code upgrade👇🏼
+    // .dataReceived( await csv(csvDataPath,parseRow_examCentric))Alternative Code24/10/2024code upgrade👇🏼
     .dataReceived(filteredData())// 
     .xCoordinate((d) => d.zone_name)
     .yCoordinate((d) => d.zone_score)
@@ -288,8 +295,9 @@ const main = async () =>{
 let currentChartType = 'scatterPlot';// default value
 // Function to render the selected Chart type
 const renderChart = (data) => {	
+    // svg1.selectAll("*").remove();//It clears all the content of previous chart type
     if (currentChartType !== 'lineChartPlot') {
-        svg1.selectAll("*").remove();//It clears all the content of previous chart type
+        svg1.selectAll("*").remove();
     };
     let chart;
 
@@ -520,7 +528,7 @@ renderChart(filteredData());// to render something by default
                 .width(width)
                 .height(height)
                 .dataReceived(dataExtracted) 
-                // .dataReceived( await csv(csvDataPath,parseRow))//Alternative Code
+                // .dataReceived( await csv(csvDataPath,parseRow_examCentric))//Alternative Code
                 .xCoordinate((d) => d[columnsForXaxis[i]])
                 .xAxisLabel(columnsForXaxis[i])
                 .yCoordinate((d) => d[dataExtracted[0][j]])

@@ -207,7 +207,8 @@ svg {
 .menu-container-examname,
 .menu-container-examtier,
 .menu-container-examyear,
-.menu-container-charttype {
+.menu-container-charttype,
+.clear-graph-button {
     position: fixed;
     z-index: 1000;
     background-color: white;
@@ -247,6 +248,11 @@ svg {
 .menu-container-charttype {
     top: 15px;
     right: 400px;
+}
+
+.clear-graph-button{
+    top: 15px;
+    right: 150px;
 }
 
 /* Ensure menus don't interfere with scrolling */
