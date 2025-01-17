@@ -1,8 +1,5 @@
 'use strict';
 
-
-'use strict';
-
 import {
     select,
     line,

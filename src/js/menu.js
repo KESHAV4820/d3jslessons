@@ -24,12 +24,16 @@
 </select> 
 */}
 import { dispatch, select } from "d3";//Note For event listening.
+
+//Create a global state to track pending changes
+const pendingChanges = new Map();
+
 export const menu = () => {
     let id;
     let textForMenuLabel;
     let optionsWithinMenu;
     // let changeHandler;
-    const listeners= dispatch('change','clear');//SuperNote other types of event like change are start or brush or end or clear
+    const listeners= dispatch('change','clear','apply');//SuperNote other types of event like change are start or brush or end or clear
 
     const my = (svg1) => {	
         // here i am codding the label for the menu element
@@ -38,8 +42,8 @@ export const menu = () => {
             .join('label')
             .attr('for', id)
             .text(textForMenuLabel);
-        // here i am codding for the options that will come up as options under the above label for the dropdown menu.
-        svg1.selectAll('select')
+        // here i am codding for the options that will come up as options under the above label for the dropdown menu.But first, we have to select a dropdown menu like 👇🏼this
+        const select=svg1.selectAll('select')
             .data([null])
             .join('select')
             .attr('name', id)
@@ -47,13 +51,21 @@ export const menu = () => {
             .on('change', (event) => {
             //   console.log(event);//Code Testing
             //   console.log(event.target.value);//Code Testing
+              pendingChanges.set(id, event.target.value);//storing the pending changes in the set form
               listeners.call('change', null, event.target.value);//SuperMarvelJust Beautiful This line of code is actually sending the content that we clicked on, to controller.js .on() method.😎💃🕺 but why! there is "null". here if you put an object which is going to be refered with "this" keyword in controller.js, given the condition that you are using the oldschool way of function notation. but using "this" is a tricky business. becouse it could resolve to anything. Hence nope. Hence null. Here null simply says that the announcement of the event isn't for any one but for all.    
             })//SuperVIERemember It
-            .selectAll('option')
+
+            //Options
+          select.selectAll('option')
             .data(optionsWithinMenu)
             .join('option')
             .attr('value',(d) => d.value)
             .text((d) => d.text);
+
+        //Adding a control button
+         if (id === 'menu-charttype') {
+            
+         }
 
             // Adding a clear graph button
             if ( id === 'menu-charttype') {

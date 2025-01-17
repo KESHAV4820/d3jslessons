@@ -64,7 +64,7 @@ export const scatterPlot = () => {
     //code upgrade👇
     const yCoordinateOfCenter=scaleLinear()
                                 .domain(extent(dataReceived,yCoordinate))
-                                .range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max,dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
+                                .range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max(dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
     const rOfPlotCircle=scaleSqrt()
