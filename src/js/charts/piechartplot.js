@@ -7,7 +7,8 @@ import {
     scaleOrdinal,
     schemeCategory10,
     format,
-    transition
+    transition,
+    interpolate as d3Interpolate
 } from 'd3';
 
 const commaFormat = format(',');
@@ -78,7 +79,7 @@ export const pieChartPlot = () => {
                     .each(function(d) { this._current = d; })
                     .call(enter => enter.transition(t)
                         .attrTween('d', function(d) {
-                            const interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
+                            const interpolate = d3Interpolate({startAngle: 0, endAngle: 0}, d);
                             return t => arcGenerator(interpolate(t));
                         }))
                     .append('title')
@@ -86,7 +87,7 @@ export const pieChartPlot = () => {
                 
                 update => update.call(update => update.transition(t)
                     .attrTween('d', function(d) {
-                        const interpolate = d3.interpolate(this._current, d);
+                        const interpolate = d3Interpolate(this._current, d);
                         this._current = interpolate(1);
                         return t => arcGenerator(interpolate(t));
                     })),

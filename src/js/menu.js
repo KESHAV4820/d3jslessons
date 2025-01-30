@@ -23,10 +23,10 @@
     <Option value="tata">TATA</Option>
 </select> 
 */}
-import { dispatch, select } from "d3";//Note For event listening.
-
+import { dispatch, select as d3Select } from "d3";//Note For event listening.
+import { clearChartData, currentChartType } from "./controller";
 //Create a global state to track pending changes
-const pendingChanges = new Map();
+// const pendingChanges = new Map();
 
 export const menu = () => {
     let id;
@@ -34,7 +34,8 @@ export const menu = () => {
     let optionsWithinMenu;
     // let changeHandler;
     const listeners= dispatch('change','clear','apply');//SuperNote other types of event like change are start or brush or end or clear
-
+    let sharedButtonContainer;
+/*
     const my = (svg1) => {	
         // here i am codding the label for the menu element
         svg1.selectAll('label')
@@ -51,9 +52,14 @@ export const menu = () => {
             .on('change', (event) => {
             //   console.log(event);//Code Testing
             //   console.log(event.target.value);//Code Testing
-              pendingChanges.set(id, event.target.value);//storing the pending changes in the set form
-              listeners.call('change', null, event.target.value);//SuperMarvelJust Beautiful This line of code is actually sending the content that we clicked on, to controller.js .on() method.😎💃🕺 but why! there is "null". here if you put an object which is going to be refered with "this" keyword in controller.js, given the condition that you are using the oldschool way of function notation. but using "this" is a tricky business. becouse it could resolve to anything. Hence nope. Hence null. Here null simply says that the announcement of the event isn't for any one but for all.    
-            })//SuperVIERemember It
+            //   pendingChanges.set(id, event.target.value);//storing the pending changes in the set form
+            //   listeners.call('change', null, event.target.value);//forced stopSuperMarvelJust Beautiful This line of code is actually sending the content that we clicked on, to controller.js .on() method.😎💃🕺 but why! there is "null". here if you put an object which is going to be refered with "this" keyword in controller.js, given the condition that you are using the oldschool way of function notation. but using "this" is a tricky business. becouse it could resolve to anything. Hence nope. Hence null. Here null simply says that the announcement of the event isn't for any one but for all.
+            
+            listeners.call('change', null,{
+                menuId: id,
+                value: event.target.value
+            });
+        });//SuperVIERemember It
 
             //Options
           select.selectAll('option')
@@ -62,35 +68,167 @@ export const menu = () => {
             .attr('value',(d) => d.value)
             .text((d) => d.text);
 
-        //Adding a control button
-         if (id === 'menu-charttype') {
-            
-         }
+        // creating shared button container
+        
+            const buttonContainer = svg1.selectAll('.control-buttons')
+                .data([null])
+                .join('div')
+                .attr('class', 'control-buttons')
+                .style('margin-top', '10px')
+                .style('display', 'flex')
+                .style('gap','10px');
+
+            buttonContainer.selectAll('.apply-button')
+                .data([null])
+                .join('button')
+                .attr('class', 'apply-button')
+                .text('OK')
+                .on('click', () => {
+                //     const entries = Array.from(pendingChanges.entries());
+                //     console.log('Processing entries:',entries);
+
+                //   entries.forEach(([menuId, value]) => {
+                //     const eventData = { 
+                //         menuId,
+                //         value
+                //     };
+                //     console.log('Dispatching event with data:', eventData);
+                //     listeners.call('apply', null, eventData);
+                //         });
+
+                const updates = {};
+                ['x-menu','y-menu','menu-examname','menu-examtier','menu-examyear','menu-charttype'].forEach(menuId => {
+                    const select = document.getElementById(menuId);
+                    if (select) {
+                        updates[menuId] = select.value;
+                    }
+                });
+                
+                // Dispatch apply event with all updates
+                Object.entries(updates).forEach(([menuId, value]) => {
+                    listeners.call('apply', null, { menuId, value });
+                });
+            });
+                // pendingChanges.clear();
 
             // Adding a clear graph button
-            if ( id === 'menu-charttype') {
-            svg1.selectAll('.clear-graph-button')
+            buttonContainer.selectAll('.clear-graph-button')
                 .data([null])
                 .join('button')
                 .attr('class','clear-graph-button')
                 .text('Clear Graph')
                 .on('click', () => {	
-                    // select.property('value','');//To reset the previous dropdown selections
-                    // svg1.selectAll("*").remove();// to clear the existing chart elements Usless Coding It failed to work.
-                    // Targeting the main SVG conponent to clear
                     const chartWrapper = document.querySelector('.chart-wrapper');
                     if (chartWrapper) {
                         const mainSvg = chartWrapper.querySelector('svg');
                         if(mainSvg){
-                            while (mainSvg.firstChild) {
-                                mainSvg.removeChild(mainSvg.firstChild);
+                            // while (mainSvg.firstChild) {
+                            //     mainSvg.removeChild(mainSvg.firstChild);
+                            
                             }
                         }
+                        listeners.call('clear',null);
+                    });
+                }
+*/
+const my = (svg1) => {
+    svg1.selectAll('label')
+        .data([null])
+        .join('label')
+        .attr('for', id)
+        .text(textForMenuLabel);
+
+    const select = svg1.selectAll('select')
+        .data([null])
+        .join('select')
+        .attr('name', id)
+        .attr('id', id)
+        .on('change', (event) => {
+            // Dispatch change event with both menuId and value
+            listeners.call('change', null, {
+                menuId: id,
+                value: event.target.value
+            });
+        });
+
+    select.selectAll('option')
+        .data(optionsWithinMenu)
+        .join('option')
+        .attr('value', (d) => d.value)
+        .text((d) => d.text);
+
+    // Create or update shared button container
+    if (!sharedButtonContainer) {
+        sharedButtonContainer = d3Select('body')
+            .append('div')
+            // .join('div')
+            .attr('class', 'shared-control-buttons')
+            // .style('position', 'fixed')
+            .style('margin-top', '10px')
+            // .style('right', '10px')
+            .style('display', 'flex')
+            .style('gap', '10px');
+
+        // Add OK button
+        sharedButtonContainer
+            // .selectAll('.apply-button')
+            .append('button')
+            // .data([null])
+            // .join('button')
+            .attr('class', 'apply-button')
+            .text('OK')
+            .on('click', () => {
+                // Get current select values for all menus
+                const batchUpdates = {};
+                const menuIds=['x-menu','y-menu','menu-examname','menu-examtier','menu-examyear','menu-charttype'];menuIds.forEach(menuId => {
+                    const select = document.getElementById(menuId);
+                    if (select) {
+                        batchUpdates[menuId] = select.value;
                     }
-                    listeners.call('clear',null);
-                	});
-            };
-    	};
+                });
+                console.log('Batch Updates:', batchUpdates);//Code Testing
+                
+                // Dispatch apply event with all updates
+                // Object.entries(updates).forEach(([menuId, value]) => {
+                // to dispatch only if we have updates
+                    if (Object.keys(batchUpdates).length>0) {
+                        listeners.call('apply', null,{
+                            type:'batch',
+                            updates: batchUpdates
+                        });
+                    } else {
+                        console.warn('No menu values found to update');
+                    }
+    
+                    // handleMenuUpdate({menuId, value});
+                // });
+            });
+
+        // Add Clear Graph button
+        sharedButtonContainer
+            // .selectAll('.clear-graph-button')
+            // .data([null])
+            // .join('button')
+            .append('button')
+            .attr('class', 'clear-graph-button')
+            .text('Clear Graph')
+            .on('click', () => {
+                const chartWrapper = document.querySelector('.chart-wrapper');
+                if (chartWrapper) {
+                    const svg=d3Select(chartWrapper)
+                    .select('svg');
+                    // Remove only data driven elements, preserving the rest of the structure.
+                    svg.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point')
+                    .remove();
+
+                }
+                //To clear the global variable named "globalChartData" in controller.js which helps in cumulative rendering of graphs
+                clearChartData(currentChartType);
+
+                listeners.call('clear', null);
+            });
+    }
+};            
 
 
     // Now defining getter and setter functions for above my();

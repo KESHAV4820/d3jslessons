@@ -23,6 +23,7 @@ import {selectAll,
     select,
     style
 } from 'd3';
+import { cwd } from 'process';
 
 const commaFormat = format(',');// this adds comma separator
 
@@ -47,15 +48,27 @@ export const scatterPlot = () => {
         // clear all prexisting elements in chart
         svg1.selectAll('.bar').remove();
 
+        //Validate data
+        if (!dataReceived || !dataReceived.length) {
+        console.warn('No data received for scatter plot');
+        return;
+        };
     // const effectiveWidth=width;
     // calculating point padding based on number of points to render
     const pointPadding = dataReceived.length>150 ? 0.2: 0.5;
+    // now creating scales using accessor functions
+    const xValues = dataReceived.map(xCoordinate);
+    const yValues = dataReceived.map(yCoordinate);
+    console.log(xValues,yValues);//debugging log
+    
+
         // now i will first generate the X coordinate and Y coordinate for the center of the circles, and then radious of the circle that will be used in scatter plot
     const xCoordinateOfCenter=scalePoint()
-                                .domain(dataReceived.map(xCoordinate))
+                                // .domain(dataReceived.map(xCoordinate))
+                                .domain(xValues)
                                 .range([margin.left,width-margin.right])
                                 .padding(pointPadding);
-    console.log(dataReceived);// Code Testing
+    // console.log(dataReceived);// Code Testing
     
     
     //legacy code const yCoordinateOfCenter=scaleLinear().domain([
@@ -63,29 +76,31 @@ export const scatterPlot = () => {
     //     d3.max,dataReceived,yCoordinate)]);
     //code upgrade👇
     const yCoordinateOfCenter=scaleLinear()
-                                .domain(extent(dataReceived,yCoordinate))
+                                // .domain(extent(dataReceived,yCoordinate))
+                                .domain(extent(yValues))
                                 .range([height-margin.bottom,margin.top]);//Concept if you want to start your scale with 0, then you can write into .domain() like .domain([0, d3.max(dataReceived,YCoordinate)]); For example in barchart, we always start from 0.
     // console.log(yCoordinateOfCenter.domain());//Code Testing 
     
     const rOfPlotCircle=scaleSqrt()
-                                .domain([0,max(dataReceived,(d) => d.zone_score/1000)])//for default
+                                // .domain([0,max(dataReceived,(d) => d.zone_score/1000)])//for default
+                                .domain([0,max(yValues)])
                                 .range([minRadius,maxRadius]);
 
     // Now we will process the data and create marks that has to be plotted using the scale of the Axis for the chart that we calcuted just above in xCoordinateOfCenter function(yes, it is a function Take A Good Look), yCoordinateOfCenter function.
     // console.log('Creating marks. rValueCalculated type:', typeof rValueCalculated);//Code Testing
     
-    const marks=dataReceived.map(d =>{
+    const marks=dataReceived.map(d =>({
         // console.log('Processing data point:', d);//Code Testing
         // console.log('rValueCalculated(d):', rValueCalculated(d));//Code Testing
-        return {
+        // return {
         x: xCoordinateOfCenter(xCoordinate(d)),
         y: yCoordinateOfCenter(yCoordinate(d)),
         title: `(${xCoordinate(d)},${commaFormat(yCoordinate(d))})`,// this will let us know the value on the point.
-        r: rOfPlotCircle(yCoordinate(d)/1000),
+        r: rOfPlotCircle(yCoordinate(d)*3),
         data: d
-        };
-    });
-    console.log(marks);//Code Testing
+        // };
+    }));
+    // console.log(marks);//Code Testing
     
 
     // svg1.selectAll('circle').data,dataReceived).join('circle').attr('cx');
@@ -100,10 +115,10 @@ export const scatterPlot = () => {
         .text(d=>d.title);
     */
 
-        const positionCircles = (circleCoordinates) => {	
-        circleCoordinates.attr('cx',(d) => d.x)
-                         .attr('cy', (d) => d.y);
-    	}
+        // const positionCircles = (circleCoordinates) => {	
+        // circleCoordinates.attr('cx',(d) => d.x)
+        //                  .attr('cy', (d) => d.y);
+    	// }
 
         const t=transition().duration(1000);
                             // .ease(easeLinear);
@@ -128,11 +143,13 @@ export const scatterPlot = () => {
 */
     
         const circlePlotted=svg1.selectAll('circle')
-                          .data(marks)
-                          .join(enter =>enter.append('circle')
-                        //    .attr('cx', d=> d.x)
-                        //    .attr('cy', d=> d.y)
-                           .call(positionCircles)
+                    .data(marks)
+                    .join(
+                        enter =>enter.append('circle')
+                           .attr('class','scatter-point')
+                           .attr('cx', d=> d.x)
+                           .attr('cy', d=> d.y)
+                        //    .call(positionCircles)
                            .attr('r',0)
                            .call(enter => enter.transition(t))//Concept Note this pattern of using .call(). Explained👇🏼 at ⭐1️⃣.
                            .attr('r',(d) => d.r)
@@ -142,16 +159,28 @@ export const scatterPlot = () => {
  is not selection object which in our case is svg1. but if you want to chain some method or attribute like ⚡append() or ⚡selectAll() or ⚡data() next to it, what will you do? Concept .call() always return the selection object. so you need to use .call() on the object/parameters after which you want to be sure to use the method chaining. Hence to append() which we can't do on default transition() object returned, we called .call() on it and now we get selection object on which append() will work.😎 Remember that transition and selection object has only few methods in common like .attr(), .style(), .text(), .html(), .on(), .call().
  */ 
         
-        update=> update.call((update) => update.transition(t).delay((d,i) => i*10)
-                     .call(positionCircles)
-                    //  .attr('cx', d=> d.x)
-                    //  .attr('cy', d=> d.y)
-                     .attr('r',(d) => d.r),
-                    ).select('title')
-                     .text(d => d.title),
+                    update=> update.call((update) => update
+                     .transition(t)
+                     .delay((d,i) => i*10)
+                     .attr('class','scatter-point')
+                    //  .call(positionCircles)
+                     .attr('cx', d=> d.x)
+                     .attr('cy', d=> d.y)
+                     .attr('r',(d) => d.r)
+                     .select('title')
+                     .text(d => d.title)),
 
-        exit => exit.remove())
-                    .attr('r',0);
+                    exit => exit.transition(t)
+                    // .remove())
+                    .attr('r',0)
+                    .remove()
+                );
+
+            //update tooltips
+            // circlePlotted.selectAll('title')
+            //         .data(marks)
+            //         .join('title')
+            //         .text(d => d.title);
 
 
     // putting y and x axis in the chart. 
@@ -282,7 +311,7 @@ export const scatterPlot = () => {
                   .attr('x',580);
                   */
 
-};
+    };
 
 
     // Now defining getter and setter functions for above my();

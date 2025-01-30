@@ -10,7 +10,8 @@ import {
     format,
     transition,
     min,
-    max
+    max,
+    color
 } from 'd3';
 
 const commaFormat = format(',');
@@ -24,42 +25,129 @@ export const lineChartPlot = () => {
     let yAxisLabel = "CANDIDATE COUNT →";
 
     const my = (svg1) => {
-        // Clear existing elements
-        // svg1.selectAll('.line').remove();
-        // svg1.selectAll('.x-axis').remove();
-        // svg1.selectAll('.y-axis').remove();
-        // svg1.selectAll('.x-axis-label').remove();
-        // svg1.selectAll('.y-axis-label').remove();// This code has been suppressed just to tinker with code. Normally, this code has to be uncommented
+        // To Clear pre-existing elements
+        svg1.selectAll('.line, .linedata-point')
+            .remove();
+        console.log('Data received in lineChartPlot: ',dataReceived);//debugging log
+        
+        // to handle multiple series
+        // const allData = Array.isArray(dataReceived) ? [{data:dataReceived}]: Object.values(dataReceived);//Bug Found
+        // new data transformation logic
+        let allData;
+        if (Array.isArray(dataReceived)) {
+        // If dataReceived  is an array, it's a single series
+        allData = [{
+            data: dataReceived,
+            color:'#4682B4'
+        }];
+        } else if (typeof dataReceived === 'object'){
+            // If dataReceived is an object containing multiple series
+            allData = Object.values(dataReceived);
+        } else {
+            console.error('Invalid data format received');
+            return;
+        };
+        allData[0].data.forEach((d) => console.log(d));
+        console.log('Processed allData: ',allData);//debugging log
+        console.log(allData[0]);//debugging log
+        // console.log(allData[0].data[0].data);//debugging log
+        // console.log(allData[0].data[0].data);//debugging log
+        
+        
 
-        const pointPadding = dataReceived.length > 150 ? 0.2 : 0.5;
+        // Above transformation is outputing data on 3rd level of nesting. that is, inside allData array, there are many objects having dataset information, in an Array of object fashion, now inside each data object,there are two parameters named color and data. so to reach all of the data set like d1 for one selection of data, d2 for next set of selection of data,and so on we need to iterate over the allData variable which is array of object.So we are using helper functions which will access these long chains of parameters. 
+        const getDataFromSeries = (series) => {	
+            if (series.data?.[0]?.data) {
+                return series.data[0].data;
+            }
+            // if series has direct data array
+            return series.data;
+        	};
+        const getColorFromSeries = (series) => {	
+            if (series.data?.[0]?.color) {
+                return series.data[0].color;
+            }
+            return series.color;
+        	};
 
+        // Get all unique x-values and all y-values properly
+        // const allXValues =[...new Set(allData.flatMap((series) => series.data[0].data.map((d) => xCoordinate(d))))];
+        const allXValues = [...new Set(allData.flatMap((series) => getDataFromSeries(series).map((d) => xCoordinate(d))
+        ))];
+        // const allYValues = allData.flatMap((series) => series.data[0].data.map((d) => yCoordinate(d)));
+        const allYValues = allData.flatMap((series) => getDataFromSeries(series).map((d) => yCoordinate(d))
+        );
+        
+        // create scales using all data points
+        // const allPoints = allData.reduce((acc, series) => {	acc.concat(series.data), []});
+
+        // const pointPadding = dataReceived.length > 150 ? 0.2 : 0.5;
+        // console.log('data received:',dataReceived);//debugging log
+        
         // Create scales
         const xScale = scalePoint()
-            .domain(dataReceived.map(xCoordinate))
+            // .domain(dataReceived.map(xCoordinate))
+            .domain(allXValues)
             .range([margin.left, width - margin.right])
-            .padding(pointPadding);
+            // .padding(pointPadding);
+            .padding(allXValues.length > 150 ? 0.2 : 0.5);
 
         const yScale = scaleLinear()
-            .domain([min(dataReceived, yCoordinate), max(dataReceived, yCoordinate)])
+            // .domain([min(dataReceived, yCoordinate), max(dataReceived, yCoordinate)])
+            .domain([min(allYValues), max(allYValues)])
             .range([height - margin.bottom, margin.top]);
 
         // Create line generator
         const lineGenerator = line()
-            .x(d => xScale(xCoordinate(d)))
-            .y(d => yScale(yCoordinate(d)));
+            .x(d => {
+                // console.log(xCoordinate(d));//debugging log
+                return xScale(xCoordinate(d))})
+            .y(d => {
+                    // console.log(yCoordinate(d));//debugging log
+                                    
+                return yScale(yCoordinate(d))
+            });
 
         const t = transition().duration(1000);
 
-        // Create line
-        svg1.append('path')
-            .datum(dataReceived)
-            .attr('class', 'line')
-            .attr('fill', 'none')
-            .attr('stroke', '#4682B4')
-            .attr('stroke-width', 2)
-            .attr('d', lineGenerator)
-            .call(enter => enter.transition(t)
-                .attr('d', lineGenerator));
+        //Render each series separately
+        allData[0].data.forEach((series, index) => {
+            // const color = series.color || '#4682B4';
+            const seriesData = getDataFromSeries(series);
+            const seriesColor = getColorFromSeries(series);
+            console.log(seriesColor,seriesData);//debugging log
+            
+            // Create line
+            svg1.append('path')
+                // .datum(series.data[0].data)
+                .datum(seriesData)
+                .attr('class', 'line')
+                .attr('fill', 'none')
+                // .attr('stroke', series.data[0].color)
+                .attr('stroke', seriesColor)
+                .attr('stroke-width', 2)
+                .attr('d', lineGenerator)
+                .call(enter => enter.transition(t)
+                    .attr('d', lineGenerator));
+    
+            // Now adding the data points on this line for better understanding of the user
+            svg1.selectAll(null)
+                // .data(dataReceived)
+                // .data(series.data[0].data)
+                .data(seriesData)
+                .join('circle')
+                .attr('class', 'linedata-point')
+                .attr('cx', d => xScale(xCoordinate(d)))
+                .attr('cy', d => yScale(yCoordinate(d)))
+                .attr('r', 15)
+                // .attr('fill', series.color || '#4682B4')
+                // .attr('fill', series.data[0].color)
+                .attr('fill', seriesColor)
+            //Adding hower response on these circles on the line
+                .append('title')
+                .text((d) => `x-axis: ${xCoordinate(d)}: y-axis: ${yCoordinate(d)}`);
+        });
+
 
         // X Axis
         const xAxisG = svg1.selectAll('.x-axis')

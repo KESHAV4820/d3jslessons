@@ -70,6 +70,26 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 
 // const commaFormat = format(',');// this adds comma separator code migrated to scatterplot.js
 
+// Global data storage for chart rendering
+const globalChartData = {
+    lineChart: [],
+    barChart: [],
+    scatterChart: [],
+    pieChart: []
+};
+
+// Function to clear specific chart type data from global variable above
+const clearChartData = (chartType = null) => {
+    if (chartType && globalChartData[chartType]) {
+        globalChartData[chartType] = [];
+    } else {
+        // If no specific type, clear all chart data
+        Object.keys(globalChartData).forEach(key => {
+            globalChartData[key] = [];
+        });
+    }
+};
+
 const parseRow_examCentric = (d)=>{
     d.exam_name=d.exam_name;
     d.exam_year=+d.exam_year;
@@ -158,10 +178,19 @@ const chartTypes = [
     {value:'lineChartPlot',text:'LineChart Plot'}
 ];
 
-
+const appState = {
+    currentXField: 'zone_name',
+    currentYField: 'zone_score',
+    selectedExamName: 'CGL',
+    selectedExamTier: 1,
+    selectedExamYear: 2016,
+    currentChartType: 'scatterPlot'
+};
+export const {currentChartType}=appState;// this export is being used in menu.js in clearChartData()function as parameter.
 
 const main = async () =>{
     // SuperConceptThese👇🏼😟 are state tracking variable. When switching to a new chart type, dfault buggs were comming up. Hence, this to track axis fields.
+    
     let currentXField='zone_name';
     let currentYField='zone_score';
     const dataExtracted =await csv(csvDataPath, parseRow_examCentric); 
@@ -188,7 +217,7 @@ const main = async () =>{
         // console.log("uniqueExamTier :"+uniqueExamTiers);//Code Testing
         // console.log("type of uniqueExamTier :"+typeof(uniqueExamTiers));//Code Testing
         // console.log("uniqueExamName :"+uniqueExamTiers);//Code Testing
-
+        
     //Now turning these unique values into options formate for their menus becouse we need to pass value and text in the html components of the dropdown menu we are going to create.
         const columnsForExamName = uniqueExamNames.map((examname) => ({value: examname, text:examname}));
         const columnsForExamTier=uniqueExamTiers.map((examtier) => ({value: examtier, text: examtier}));
@@ -198,6 +227,15 @@ const main = async () =>{
         // console.log("type ofcolumnsForExamTier :"+typeof(columnsForExamTier));//Code Testing
         // console.log("columnsForExamName :"+uniqueExamTiers);//Code Testing
         
+        let currentState ={
+            xField: 'zone_name',
+            yField: 'zone_score',
+            examName: columnsForExamName[0].value,
+            examTier: columnsForExamTier[0].value,
+            examYear: columnsForExamYear[0].value,
+            chartType: 'scatterPlot',
+        };//newly added20/01/2025
+
     // we are putting some default values for the system to function properly right from start
         let selectedExamName = columnsForExamName[0].value;
         let selectedExamTier = columnsForExamTier[0].value;
@@ -210,13 +248,143 @@ const main = async () =>{
 
     // now a function to filter the data according to selected options in the the Exam Name, Exam Tier, Exam Year menus
         const filteredData= () => {	
-            return dataExtracted.filter((d) => 
-            d.exam_name=== selectedExamName &&
-            d.exam_tier=== +selectedExamTier &&
-            d.exam_year=== +selectedExamYear
-                );
-        	};
-   
+            // return dataExtracted.filter((d) => 
+            // d.exam_name=== selectedExamName &&
+            // d.exam_tier=== +selectedExamTier &&
+            // d.exam_year=== +selectedExamYear
+            //     );
+
+            // First filter by exam attributes
+            let filteredResults = dataExtracted.filter(d => 
+                (!appState.selectedExamName || d.exam_name === appState.selectedExamName) &&
+                (!appState.selectedExamTier || d.exam_tier === +appState.selectedExamTier) &&
+                (!appState.selectedExamYear || d.exam_year === +appState.selectedExamYear)
+            );
+
+            // Sort data if needed (especially important for line charts)
+            if (appState.currentChartType === 'lineChartPlot') {
+                filteredResults.sort((a, b) => {
+                    const valA = a[appState.currentXField];
+                    const valB = b[appState.currentXField];
+                    return typeof valA === 'number' ? valA - valB : valA.localeCompare(valB);
+                });
+            }
+
+            // Add data validation
+            if (filteredResults.length === 0) {
+                console.warn('No data matches the current filter criteria');
+                return [];
+            }
+
+            // Validate that required fields exist in the data
+            const hasRequiredFields = filteredResults.every(d => 
+                d.hasOwnProperty(appState.currentXField) && 
+                d.hasOwnProperty(appState.currentYField)
+            );
+
+            if (!hasRequiredFields) {
+                console.error('Required fields missing in data');
+                return [];
+            }
+
+            return filteredResults;
+
+
+    };
+    // Update the menu change handlers
+    const handleMenuUpdate = (eventData) => {
+        // First, validate the input
+        if (!eventData) {
+            console.error('No event data received in handleMenuUpdate');
+            return;
+        };
+
+        const {type, updates, menuId, value} = eventData;
+
+        // this is meant to handle batch and single update as well
+        if (type=== 'batch' && updates) {
+            console.log('Processing batch update:', updates);
+            
+            // update all state at once
+            if (typeof updates === 'object' && updates !== null) {
+                Object.entries(updates).forEach(([key, val]) => {	
+                    if (key && val !== undefined) {
+                        switch(key) {
+                            case 'x-menu':
+                                appState.currentXField = val;
+                                break;
+                            case 'y-menu':
+                                appState.currentYField = val;
+                                break;
+                            case 'menu-examname':
+                                appState.selectedExamName = val;
+                                break;
+                            case 'menu-examtier':
+                                appState.selectedExamTier = val;
+                                break;
+                            case 'menu-examyear':
+                                appState.selectedExamYear = val;
+                                break;
+                            case 'menu-charttype':
+                                appState.currentChartType = val;
+                                break;
+                            default:
+                                console.log(`Unknown key: ${key}`);
+                        };
+                        
+                    }
+                    });
+                // After all updates, render once
+                const newData = filteredData();
+                const effectiveWidth = calculateEffectiveWidth(newData);
+
+                svg1.attr('width', effectiveWidth);
+                chartWrapper.style('width', `${effectiveWidth}px`);
+
+                // Log state before rendering
+                console.log('AppState after batch update:', { ...appState });//Code Testing
+                console.log('Filtered data count:', newData.length);// Code Testing
+
+                renderChart(newData);
+            } 
+            else if (menuId && value !== undefined) {//To handle single update
+                console.log('Processing single update:', {menuId, value});//Code Testing
+                switch(menuId) {
+                    case 'x-menu':
+                        appState.currentXField = value;
+                        break;
+                    case 'y-menu':
+                        appState.currentYField = value;
+                        break;
+                    case 'menu-examname':
+                        appState.selectedExamName = value;
+                        break;
+                    case 'menu-examtier':
+                        appState.selectedExamTier = value;
+                        break;
+                    case 'menu-examyear':
+                        appState.selectedExamYear = value;
+                        break;
+                    case 'menu-charttype':
+                        appState.currentChartType = value;
+                        break;
+                    default: console.warn(`Unkown menuId: ${menuId}`);
+                }
+                
+                const newData = filteredData();
+                const effectiveWidth = calculateEffectiveWidth(newData);
+                svg1.attr('width', effectiveWidth);
+                chartWrapper.style('width', `${effectiveWidth}px`);
+                renderChart(newData);
+            }
+            else {
+                console.error('Invalid event data structure:', eventData);
+            }
+    console.log('Current App state:', {...appState});//Code Testing
+    // console.log('Filtered Data Count:', newData.length);//Code Testing
+    };
+  };
+    
 /*code migrated to setInterval()
     const plot = scatterPlot()
     .width(width)
@@ -295,22 +463,102 @@ const main = async () =>{
 let currentChartType = 'scatterPlot';// default value
 // Function to render the selected Chart type
 const renderChart = (data) => {	
-    // svg1.selectAll("*").remove();//It clears all the content of previous chart type
-    if (currentChartType !== 'lineChartPlot') {
-        svg1.selectAll("*").remove();
+    console.log('1. Initial data entering renderChart:',data);//Code Testing
+    console.log('Rendering chart with:',{
+        chartType:appState.currentChartType,
+        xField:appState.currentXField,
+        yField:appState.currentYField,
+    });//debugging log
+    
+    // svg1.selectAll("*").remove();//ConceptNoteIt clears all the content of previous chart type
+    // if (currentChartType !== 'lineChartPlot') {
+    //     svg1.selectAll("*").remove();
+    // };
+
+    //First Clear whatever was plotted out there, even for cumulative rendering.
+    svg1.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point').remove();
+
+    if (appState.currentChartType === 'lineChartPlot') {
+        console.log("2. Processing linechartplot data");//debugging log
+        
+        // const newDataSignature = JSON.stringify({
+        //     data: data,
+        //     xField: appState.currentXField,
+        //     yField: appState.currentYField
+        // });
+        
+        // const isDuplicate = globalChartData.lineChart.some(entry => 
+        //     JSON.stringify({
+        //         data: entry.data,
+        //         xField: entry.xField,
+        //         yField: entry.yField
+        //     }) === newDataSignature
+        // );
+
+        // if (!isDuplicate) {
+        //     globalChartData.lineChart.push({
+        //         data: data,
+        //         xField: appState.currentXField,
+        //         yField: appState.currentYField
+        //     });
+        // }
+        
+        // globalChartData.lineChart = [{
+        //     data: data,
+        //     xField: appState.currentXField,
+        //     yField: appState.currentYField
+        // }];
+        //NoteFor line chart, we are using all the accumulated data in global variable. We shall do the same for others if we want the same for all of them.
+        // data = globalChartData.lineChart.map((entry) => entry.data).flat();
+        // data = globalChartData.lineChart[0].data;
+
+        //Creating a unique identifier for each set of filtered data series
+        const seriesId = `${appState.selectedExamName}_${appState.selectedExamYear}_${appState.selectedExamTier}_${appState.currentYField}_${appState.currentXField}_${appState.currentChartType}`;
+        console.log("3. Generated seriesId:", seriesId);//debugging log
+        
+        //Store as separate series
+        if (!globalChartData.lineChart) {
+            console.log("4. Initializing globalChartData.lineChart");
+            globalChartData.lineChart = {};
+        }
+        console.log("5. Current globalChartData.lineChart:",globalChartData.lineChart);//debugging log
+
+        globalChartData.lineChart[seriesId] = {
+        data: [...data], //Creating a copy of the data
+        xField: appState.currentXField,
+        yField: appState.currentYField,
+        color: getSeriesColor() // this is a helper function. i will make it even better such that, for each line, it dynamically chooses a color that hasn't been chosen before.
     };
+    console.log("6. Updated globalChartData.lineChart:", globalChartData.lineChart);//debugging log
+    
+    //Converting to array of series for D3
+    data = Object.values(globalChartData.lineChart);
+    console.log("7. Processed data for chart:", data);//debugging log
+    };
+    // Helper function used inside appState to assign color to linechart. It uses golden index approach
+    // let hue ;
+    // hue= Math.random()*360; // to start with a random hue
+    function getSeriesColor() {
+        const goldenRatio = 1.61803398875;
+        const hue = (Math.random()*360 + goldenRatio*360) % 360;
+        const saturation = 70;
+        const lightness = 50;
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    };
+
     let chart;
 
     //calculate effective width based on data size to make scrolling logic work.
     const effectiveWidth= calculateEffectiveWidth(data);
-
+    console.log("8. Chart dimensions:",{effectiveWidth,height});//debugging log
+    
     //set updated width to svg and container for overflow on x-axis
     svg1.attr('width',effectiveWidth);//Super this will set the effective width to the svg container itself and hence the<svg> element to display the graph. here we aren't setting it for the X-axis scale, which itself is a part of the <svg>, not yet.This will actually trigger the horizonal scroll on whole svg element itself. 
         chartWrapper.style('width', `${effectiveWidth}px`)
                     .style('overflow-x', 'auto')
                     .style('display', 'block');
 
-    // for scatter plot:-
+/*    // for scatter plot:-
     if (currentChartType === 'scatterPlot') {
         chart = scatterPlot()
                     .width(effectiveWidth)//VIEhere we are setting effective width on axis, so that it could populate the ticks accordingly. 
@@ -386,7 +634,98 @@ const renderChart = (data) => {
     // if(container.node()){
     //     container.dispatch('scroll');
     // }; 
-  };
+*/
+  
+        //Common chart configuration
+        const chartConfig = { 
+            width: effectiveWidth,
+            height: height,
+            // dataReceived: data,
+            dataReceived: appState.currentChartType === 'lineChartPlot'? 
+            // globalChartData.lineChart.map(entry => entry.data).flat() 
+            data
+            : data,
+            xCoordinate: d => d[appState.currentXField],// Use appState value
+            yCoordinate: d => d[appState.currentYField],// Use appState value
+            margin: {
+                top: 30,
+                right: 33,
+                bottom: 130,
+                left: 125
+                }
+        };
+        console.log("9. Chart configuration:", chartConfig);//debugging log
+        
+        //Create appropriate chart based on current selection
+        switch (appState.currentChartType) {
+            case 'scatterPlot':
+            chart = scatterPlot()
+                .width(chartConfig.width)
+                .height(chartConfig.height)
+                .dataReceived(chartConfig.dataReceived)
+                .xCoordinate(chartConfig.xCoordinate)
+                .yCoordinate(chartConfig.yCoordinate)
+                .margin(chartConfig.margin)
+                .maxRadius(16)
+                .minRadius(2);
+            break;
+
+        case 'barChartPlot':
+            chart = barChartPlot()
+                .width(chartConfig.width)
+                .height(chartConfig.height)
+                .dataReceived(chartConfig.dataReceived)
+                .xCoordinate(chartConfig.xCoordinate)
+                .yCoordinate(chartConfig.yCoordinate)
+                .margin(chartConfig.margin);
+            break;
+
+        case 'pieChartPlot':
+            chart = pieChartPlot()
+                .width(chartConfig.width)
+                .height(chartConfig.height)
+                .dataReceived(chartConfig.dataReceived)
+                .xCoordinate(chartConfig.xCoordinate)
+                .yCoordinate(chartConfig.yCoordinate)
+                .margin(chartConfig.margin);
+            break;
+
+        case 'lineChartPlot':
+            console.log("10. Creating lineChartPlot");//debugging log
+            
+            chart = lineChartPlot()
+                .width(chartConfig.width)
+                .height(chartConfig.height)
+                .dataReceived(chartConfig.dataReceived)
+                .xCoordinate(chartConfig.xCoordinate)
+                .yCoordinate(chartConfig.yCoordinate)
+                .margin(chartConfig.margin);
+            break;
+
+        default:
+            console.error('Unknown chart type:', appState.currentChartType);
+            return;
+        };
+
+        // Update axis labels based on selected fields
+        if (chart.xAxisLabel) {
+            chart.xAxisLabel(appState.currentXField);
+        };
+        if (chart.yAxisLabel) {
+            chart.yAxisLabel(appState.currentYField);
+        };
+        //Now Rendering the chart
+        if (chart) {
+            console.log('Applying Chart configuration: ', chartConfig);//debugging log
+            // console.log('11. Final chart configuration:',{
+            //     data: chartConfig.dataReceived,
+            //     xField:appState.currentXField,
+            //     yField:appState.currentYField
+            // });//debugging log
+            svg1.call(chart);
+        }
+
+};
 
 renderChart(filteredData());// to render something by default
 
@@ -395,44 +734,48 @@ renderChart(filteredData());// to render something by default
                         menu().id('menu-examname')
                               .textForMenuLabel('Exam Name')
                               .optionsWithinMenu(columnsForExamName)//👈🏼
-                              .on('change', function(column){
-                                selectedExamName=column;
-                                // svg1.call(plot.dataReceived(filteredData()));//code upgrade👇🏼
-                                renderChart(filteredData());
-                                console.log('Exam Name Menu Changed: '+column);//Code Testing
-                            })
+                              .on('apply', handleMenuUpdate)
+                            //   .on('change', function(column){
+                            //     selectedExamName=column;
+                            //     // svg1.call(plot.dataReceived(filteredData()));//code upgrade👇🏼
+                            //     renderChart(filteredData());
+                            //     console.log('Exam Name Menu Changed: '+column);//Code Testing
+                            // })
                     );    
     menuExamTier.call(
                     menu().id('menu-examtier')
                             .textForMenuLabel('Exam Tier')
                             .optionsWithinMenu(columnsForExamTier)
-                            .on('change', (column) => {
-                            selectedExamTier = column;
-                            // svg1.call(plot.dataReceived(filteredData()));
-                            renderChart(filteredData());
-                            // console.log('Exam Tier Menu Changed: '+column);// Code Testing
-                            })
+                            .on('apply', handleMenuUpdate)
+                            // .on('change', (column) => {
+                            // selectedExamTier = column;
+                            // // svg1.call(plot.dataReceived(filteredData()));
+                            // renderChart(filteredData());
+                            // // console.log('Exam Tier Menu Changed: '+column);// Code Testing
+                            // })
                     );
     menuExamYear.call(
                     menu().id('menu-examyear')
                             .textForMenuLabel('Exam Year')
                             .optionsWithinMenu(columnsForExamYear)
-                            .on('change', (column) => {
-                                selectedExamYear=column;
-                                // svg1.call(plot.dataReceived(filteredData()));
-                                renderChart(filteredData());
-                            // console.log('Exam Year Menu Changed: '+column);// Code Testing
-                            })
+                            .on('apply', handleMenuUpdate)
+                            // .on('change', (column) => {
+                            //     selectedExamYear=column;
+                            //     // svg1.call(plot.dataReceived(filteredData()));
+                            //     renderChart(filteredData());
+                            // // console.log('Exam Year Menu Changed: '+column);// Code Testing
+                            // })
                     );
       menuChartType.call(
                         menu().id('menu-charttype')
                               .textForMenuLabel('Chart Type')
                               .optionsWithinMenu(chartTypes)
-                              .on('change', (chartType) => {	
-                                currentChartType=chartType;
-                                renderChart(filteredData());
-                                // console.log('Menu Chart Type Changed: '+chartType);//Code Testing
-                              	})
+                              .on('apply', handleMenuUpdate)
+                            //   .on('change', (chartType) => {	
+                            //     currentChartType=chartType;
+                            //     renderChart(filteredData());
+                            //     // console.log('Menu Chart Type Changed: '+chartType);//Code Testing
+                            //   	})
                         );
 
     const columnsForX=[
@@ -462,32 +805,40 @@ renderChart(filteredData());// to render something by default
         menu().id('y-menu')
               .textForMenuLabel('Candidate Counts')
               .optionsWithinMenu(columnsForY)
-              .on('change',(column) => {
+              .on('change',({menuId, value}) => {
                     // svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
                     // const container=select('.chart-wrapper');
                     // if (container.node()) {
                     //     container.dispatch('scroll');
                     // }
-                    currentYField=column;// Note: changed the state based on menu selection on Y
-
-                    const filteredDataResult = filteredData();
-                    const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
+                    // currentYField=column;// Note: changed the state based on menu selection on Y forced stop20/01/2025
+                    console.log('Y axis changes:', menuId, value);//Code Testing
+                 })
+              .on('apply', handleMenuUpdate)
+                // .on('apply', ({menuId,value}) => {//newly added
+                //     console.log('Applying Y axis change from apply section:', menuId, value);//Code Testing
                     
-                    svg1.attr('width', effectiveWidth);
-                    chartWrapper.style('width', `${effectiveWidth}px`);
-                    
-                    renderChart(filteredDataResult);
-                /* code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
-                        svg1.call(plot.width(effectiveWidth)
-                                .yCoordinate((d) => d[column])
-                                .yAxisLabel(column)
-                                .dataReceived(filteredDataResult));
-                    */
+                //     if (menuId === 'y-menu') {
+                //         currentYField=value;//newly added
+                //         // const filteredDataResult = filteredData();
+                //         // const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
+                        
+                //         // svg1.attr('width', effectiveWidth);
+                //         // chartWrapper.style('width', `${effectiveWidth}px`);
+                        
+                //         renderChart(filteredData());
+                //     }
+                // /* code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
+                //         svg1.call(plot.width(effectiveWidth)
+                //                 .yCoordinate((d) => d[column])
+                //                 .yAxisLabel(column)
+                //                 .dataReceived(filteredDataResult));
+                //     */
 
-                    // console.log(column);//Code Testing    
-                })
+                //     // console.log(column);//Code Testing    
+                // })
         );
-    menuContainerX.call(
+/*    menuContainerX.call(
         menu().id('x-menu')
               .textForMenuLabel('Group Wise')
               .optionsWithinMenu(columnsForX)
@@ -508,16 +859,39 @@ renderChart(filteredData());// to render something by default
                     
                     // Then update the plot with new coordinates
                     renderChart(filteredDataResult);
-            /* code upgradethis code failed as soon as different chart manu was made operational. 
-                 svg1.call(plot.width(effectiveWidth)
-                                .xCoordinate((d) => d[column])
-                                .xAxisLabel(column)
-                                .dataReceived(filteredDataResult)); 
-            */
+            //  code upgradethis code failed as soon as different chart manu was made operational. 
+            //      svg1.call(plot.width(effectiveWidth)
+            //                     .xCoordinate((d) => d[column])
+            //                     .xAxisLabel(column)
+            //                     .dataReceived(filteredDataResult)); 
+            
 
                 // console.log('x menu changed: '+column);//Code Testing
               })
         );
+*/
+
+    menuContainerX.call(
+        menu().id('x-menu')
+              .textForMenuLabel('Group Wise')
+              .optionsWithinMenu(columnsForX)
+              .on('change', ({menuId,value}) => {
+                console.log('X-axis change:',menuId, value);// Code Testing
+              })
+              .on('apply',handleMenuUpdate)
+            //   .on('apply',({menuId, value}) => {
+            //       console.log('Applying X axis change in apply section:', menuId, value);//Code Testing
+                
+            //      if (menuId === 'x-menu') {
+            //         currentXField = value;
+            //         // const filteredDataResult = filteredData();
+            //         // const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
+            //         // svg1.attr('width', effectiveWidth);
+            //         // chartWrapper.style('width', `${effectiveWidth}px`);
+            //         renderChart(filteredData());
+            //     }	
+            // })
+    );    
 
     /*NoteVIETake A Good LookThis section was just for learning that how graphs actually form and automatically take the data. 
     let i =0;//counter variable to set offset for x axis
@@ -573,6 +947,9 @@ window.addEventListener('resize', () => {
     // Initial Render
     // renderChart(filteredData());//07/11/2024
 };
+
+export {clearChartData};
 main();
+
 
 

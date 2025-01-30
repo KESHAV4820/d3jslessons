@@ -208,6 +208,7 @@ svg {
 .menu-container-examtier,
 .menu-container-examyear,
 .menu-container-charttype,
+.apply-button,
 .clear-graph-button {
     position: fixed;
     z-index: 1000;
@@ -232,17 +233,17 @@ svg {
 
 .menu-container-examname {
     top: 15px;
-    right: 1650px;
+    right: 1500px;
 }
 
 .menu-container-examtier {
     top: 15px;
-    right: 1250px;
+    right: 1200px;
 }
 
 .menu-container-examyear {
     top: 15px;
-    right: 850px;
+    right: 800px;
 }
 
 .menu-container-charttype {
@@ -250,9 +251,32 @@ svg {
     right: 400px;
 }
 
+.apply-button{
+    top: 15px;
+    right: 200px;
+    font-size: 20px;
+    background-color: greenyellow;
+}
+.apply-button:hover {
+    background-color: #f8fc08;
+}
+
+.apply-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.189rem rgba(13, 78, 24, 0.685);
+}
+
 .clear-graph-button{
     top: 15px;
-    right: 150px;
+    right: 50px;
+    background-color: rgba(247, 102, 6, 0.774);
+}
+.clear-graph-button:hover {
+    background-color: #fa9006;
+}
+.clear-graph-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.189rem rgba(0, 0, 0, 0.685);
 }
 
 /* Ensure menus don't interfere with scrolling */
