@@ -13,6 +13,7 @@ import {
     max,
     color
 } from 'd3';
+import { currentYField } from '../controller';
 
 const commaFormat = format(',');
 
@@ -139,13 +140,25 @@ export const lineChartPlot = () => {
                 .attr('class', 'linedata-point')
                 .attr('cx', d => xScale(xCoordinate(d)))
                 .attr('cy', d => yScale(yCoordinate(d)))
-                .attr('r', 15)
+                .attr('r', 10)
                 // .attr('fill', series.color || '#4682B4')
                 // .attr('fill', series.data[0].color)
                 .attr('fill', seriesColor)
             //Adding hower response on these circles on the line
                 .append('title')
-                .text((d) => `x-axis: ${xCoordinate(d)}: y-axis: ${yCoordinate(d)}`);
+                // .text((d) => `${xCoordinate(d)}: ${yCoordinate(d)} Exam: ${d.exam_name} ${d.exam_year} tier:${d.exam_tier}`);
+                .text((d) => {	
+                    return JSON.stringify({
+                        type: 'batch',
+                            updates: {
+                                'x-menu': xCoordinate(d),
+                                'y-menu': currentYField,
+                                'menu-examname': d.exam_name,
+                                'menu-examtier': d.exam_tier,
+                                'menu-examyear': d.exam_year
+                            }
+                    },null,2);
+                	});
         });
 
 

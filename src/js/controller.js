@@ -186,7 +186,7 @@ const appState = {
     selectedExamYear: 2016,
     currentChartType: 'scatterPlot'
 };
-export const {currentChartType}=appState;// this export is being used in menu.js in clearChartData()function as parameter.
+export const {currentChartType,currentYField}=appState;// this export is being used in menu.js in clearChartData()function as parameter.
 
 const main = async () =>{
     // SuperConceptThese👇🏼😟 are state tracking variable. When switching to a new chart type, dfault buggs were comming up. Hence, this to track axis fields.
@@ -227,14 +227,14 @@ const main = async () =>{
         // console.log("type ofcolumnsForExamTier :"+typeof(columnsForExamTier));//Code Testing
         // console.log("columnsForExamName :"+uniqueExamTiers);//Code Testing
         
-        let currentState ={
-            xField: 'zone_name',
-            yField: 'zone_score',
-            examName: columnsForExamName[0].value,
-            examTier: columnsForExamTier[0].value,
-            examYear: columnsForExamYear[0].value,
-            chartType: 'scatterPlot',
-        };//newly added20/01/2025
+        // let currentState ={
+        //     xField: 'zone_name',
+        //     yField: 'zone_score',
+        //     examName: columnsForExamName[0].value,
+        //     examTier: columnsForExamTier[0].value,
+        //     examYear: columnsForExamYear[0].value,
+        //     chartType: 'scatterPlot',
+        // };//newly added20/01/2025
 
     // we are putting some default values for the system to function properly right from start
         let selectedExamName = columnsForExamName[0].value;
