@@ -14,6 +14,7 @@ import {lineChartPlot} from './charts/linechartplot';
 import {barChartPlot} from './charts/barchartplot';
 import {pieChartPlot} from './charts/piechartplot';
 import {menu} from './menu';
+import { WIDTH_CONSTRAINTS } from '../projectConstants';
 
 {/*SuperNote:-
     0️⃣D3.js is highly dependent on method chaining.
@@ -196,9 +197,90 @@ const main = async () =>{
     const dataExtracted =await csv(csvDataPath, parseRow_examCentric); 
     // console.log(dataExtracted);//Code Testing
 
+    // Define constants for width constraints for different scales of X-axis
+    const WIDTH_CONSTRAINTS = {
+        city_name: {
+            MIN_WIDTH_PER_ITEM: 80,  // Minimum width per city label
+            MAX_WIDTH_PER_ITEM: 120, // Maximum width per city label
+            MIN_TOTAL_WIDTH: width,   // Minimum total width for city view
+            MAX_TOTAL_WIDTH: 15000    // Maximum total width for city view
+        },
+        state_name: {
+            MIN_WIDTH_PER_ITEM: 60,   // Minimum width per state label
+            MAX_WIDTH_PER_ITEM: 100,  // Maximum width per state label
+            MIN_TOTAL_WIDTH: width,   // Minimum total width for state view
+            MAX_TOTAL_WIDTH: 5000     // Maximum total width for state view
+        },
+        zone_name: {
+            MIN_WIDTH_PER_ITEM: 100,  // Minimum width per zone label
+            MAX_WIDTH_PER_ITEM: 200,  // Maximum width per zone label
+            MIN_TOTAL_WIDTH: width,   // Minimum total width for zone view
+            MAX_TOTAL_WIDTH: 1400     // Maximum total width for zone view (7 zones * 200)
+        }
+    };
     // Function to calculate effective width based on data points
     const calculateEffectiveWidth = (data) => {
-        return data.length > 150 ? Math.max(width * 2.5, data.length * 30) : width;
+        // return data.length > 150 ? Math.max(width * 2.5, data.length * 30) : width;
+        console.log(data);//debugging log
+        console.log(data.length);//debugging log// Our line chart plot uses data in object formate for cumulative chart rendering purpose. Hence data is embadded like data[i].data. hence simple data.length doesn't give data length directly in case of linechart. it may appear like 1 or 2 or 3 or ....as much data set possible to compare at one time.NoteRemember It Hence we are going to assume that we aren't going to compare more than 20 data sets.
+        
+        
+        if (!data || data.length === 0) return width;
+
+        const constraints = WIDTH_CONSTRAINTS[appState.currentXField];
+        if (!constraints) return width;
+
+        // const calculateWidth = Math.max(
+        //     constraints.MIN_TOTAL_WIDTH,
+        //     Math.min(
+        //     data.length * constraints.MIN_WIDTH_PER_ITEM,
+        //     data.length * constraints.MAX_WIDTH_PER_ITEM,
+        //     constraints.MAX_TOTAL_WIDTH
+        //     )
+        // );//legacy code it worked fine for other charts but 
+
+        let calculateWidth;
+        if (data.length > 20) {
+        // Calculate width based on number of items and constraints
+            calculateWidth = Math.max(
+            constraints.MIN_TOTAL_WIDTH,
+            Math.min(
+            data.length * constraints.MIN_WIDTH_PER_ITEM,
+            data.length * constraints.MAX_WIDTH_PER_ITEM,
+            constraints.MAX_TOTAL_WIDTH
+            )
+        );
+    };
+    if (data.length>=1 && data.length<=20) {
+        if (appState.currentChartType === 'lineChartPlot') {
+            switch (appState.currentXField) {
+                case 'zone_name':
+                    calculateWidth = 1750;
+                break;
+
+                case 'state_name':
+                    calculateWidth = 5000;
+                break;
+
+                case 'city_name':
+                    calculateWidth = 15000;
+                break;
+
+                default:
+                    console.error('unknown kind of field selected on x-dropdown menu')
+                    break;
+            }
+        }else{
+            console.log("Probably, you aren't receiving any data or very small dataset in non-linechart types to calculate data.length. Check it.");//debugging log
+        }
+    }
+        //For debugging
+        console.log(`Width calculate for ${appState.currentXField}:`,{
+            dataLength: data.length, calculateWidth,
+            minPossibleWidth: constraints.MIN_TOTAL_WIDTH,
+            maxPossibleWidth: constraints.MAX_TOTAL_WIDTH,
+        });
+        return calculateWidth;
     };
     
     const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
@@ -336,7 +418,7 @@ const main = async () =>{
                     });
                 // After all updates, render once
                 const newData = filteredData();
-                const effectiveWidth = calculateEffectiveWidth(newData);
+                const effectiveWidth =calculateEffectiveWidth(newData);
 
                 svg1.attr('width', effectiveWidth);
                 chartWrapper.style('width', `${effectiveWidth}px`);
