@@ -8,8 +8,10 @@ import {
     axisLeft,
     format,
     transition,
-    max
+    max,
+    dispatch
 } from 'd3';
+
 
 const commaFormat = format(',');
 
@@ -20,7 +22,10 @@ export const barChartPlot = () => {
     let margin;
     let yAxisLabel = "CANDIDATE COUNT →";
     let xAxisLabel = "PLACES →";
-
+    
+    //Creating dispatch for component-level events. This allows the chart to communicate with the controller.js
+    const listeners = dispatch('barClicked');// to use dispatch/listener pattern to pass the click event to the controller where drillDownHandler() is actually declared. 
+    
     const my = (svg1) => {
         // clear all prexisting elements in chart
         svg1.selectAll('.bar').remove();
@@ -143,7 +148,7 @@ export const barChartPlot = () => {
                 exit => exit.remove()
             );
 
-        //trying to add hover effects😕
+        //trying to add hover effects😕. Note .on() being used here isn't setter/getter function. it's built-in DOM event handler of D3.js itself.
         bars.on('mouseover', function() {
             select(this)
                 .transition()
@@ -155,6 +160,13 @@ export const barChartPlot = () => {
                 .transition()
                 .duration(300)
                 .style('opacity', 1);
+        })
+        .on('click', function (event, d) {
+            // Using the listeners.call to send the event up to the controller
+            listeners.call('barClicked', null, {
+                data:d,
+                entireDataset:dataReceived
+            });
         });
     };
 
@@ -191,5 +203,47 @@ export const barChartPlot = () => {
         return arguments.length ? (margin = _, my) : margin;
     };
 
+    my.on = function() {
+        let value = listeners.on.apply(listeners, arguments);
+        return value === listeners ? my:value;
+    };
+    /*Note
+    Component .on() (my.on = function...):
+   - Custom implementation
+   - Handles component-level events
+   - Allows communication between chart and controller
+   - Used for application logic and data flow
+   - Example: Telling controller about drill-down actions
+    */
+    
+
     return my;
 };
+
+
+
+
+/* Note and Concept
+EVENT HANDLING EXPLANATION:
+
+1. D3's .on() (bars.on('click', ...)):
+   - It is  built into D3
+   - Handles DOM-level events (clicks, hovers, etc.)
+   - Works directly with DOM elements
+   - Used for visual effects and capturing raw user interactions
+   - It works only within the chart, that is, only within the barchartplot.js file. It can't talk to other files while interacting with this file here. for that you need component style .on() function or as you may like to define it like .onNNN(), but the crux is that it is a setter getter function that helps propagate the interaction of the d3's .on() functions interaction to other files of the project like controller.js in our case.
+   - Example: Changing opacity on hover
+
+2. Component .on() (my.on = function...):
+   - Custom/user-made implementation
+   - it Handles on component-level events
+   - it Allows communication between the concerned chart and controller
+   - useing for maintaining the application logic and data flow
+   - Example: Telling controller about drill-down actions
+
+The flow of control is like :
+1. User clicks a bar
+2. D3's .on('click') picksup the DOM event
+3. listeners.call() will dispatch this event up to the component level
+4. Controller's .on('barClicked') receives this event and handles the drill-down function
+*/

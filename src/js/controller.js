@@ -14,6 +14,7 @@ import {lineChartPlot} from './charts/linechartplot';
 import {barChartPlot} from './charts/barchartplot';
 import {pieChartPlot} from './charts/piechartplot';
 import {menu} from './menu';
+import { createDrillDownHandler } from './drilldownlogic';
 import { WIDTH_CONSTRAINTS } from '../projectConstants';
 
 {/*SuperNote:-
@@ -44,6 +45,19 @@ import { WIDTH_CONSTRAINTS } from '../projectConstants';
         and now this data is funneled using our d3 dispatch library to the controller.js call back function used inside the.on() method has been used. Note: this process of funneling this data is done  by listeners.call(). Think of it like a pipe line
     1️⃣7️⃣ VIE To remove the cache file of parcel bundler, so that you can see the latest changes that you made to the file after fresh bundling, you need to run this command in the root folder of the project👉"rmdir /s /q .parcel-cache" on CMD Or sometimes, this command 👉🏼"Remove-Item -Recurse -Force .parcel-cache" is used as well. Note that the npm server shouldn't be running at the time of executing this command. It wont work. 
     1️⃣8️⃣
+    1. D3's .on() (bars.on('click', ...)):
+   - Built into D3
+   - Handles DOM-level events (clicks, hovers, etc.)
+   - Works directly with DOM elements
+   - Used for visual effects and capturing raw user interactions
+   - Example: Changing opacity on hover
+
+    2. Component .on() (my.on = function...):
+    - Custom implementation
+    - Handles component-level events
+    - Allows communication between chart and controller
+    - Used for application logic and data flow
+    - Example: Telling controller about drill-down actions
     1️⃣9️⃣
     
 */}
@@ -70,6 +84,8 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 // console.log(csvDataPath);// Code Testing.
 
 // const commaFormat = format(',');// this adds comma separator code migrated to scatterplot.js
+
+export const drillDownHandler = createDrillDownHandler();
 
 // Global data storage for chart rendering
 const globalChartData = {
@@ -759,7 +775,14 @@ const renderChart = (data) => {
                 .dataReceived(chartConfig.dataReceived)
                 .xCoordinate(chartConfig.xCoordinate)
                 .yCoordinate(chartConfig.yCoordinate)
-                .margin(chartConfig.margin);
+                .margin(chartConfig.margin)
+                //this👇🏼 is custom made(user made) bar click handling event to listen from the the barchartplot itself
+                .on('barClicked', ({data, entireDataset}) => {
+                    const drillDownUpdate = drillDownHandler.handleDrillDown(data, entireDataset);
+                    if (drillDownUpdate) {
+                        handleMenuUpdate(drillDownUpdate);
+                    }
+                });
             break;
 
         case 'pieChartPlot':
