@@ -13,6 +13,7 @@ import {
     max,
     color
 } from 'd3';
+import { appState } from '../controller';
 import { currentYField } from '../controller';
 
 const commaFormat = format(',');
@@ -48,7 +49,7 @@ export const lineChartPlot = () => {
             console.error('Invalid data format received');
             return;
         };
-        allData[0].data.forEach((d) => console.log(d));
+        allData[0].data.forEach((d) => console.log(d));//debugging log
         console.log('Processed allData: ',allData);//debugging log
         console.log(allData[0]);//debugging log
         // console.log(allData[0].data[0].data);//debugging log
@@ -148,15 +149,17 @@ export const lineChartPlot = () => {
                 .append('title')
                 // .text((d) => `${xCoordinate(d)}: ${yCoordinate(d)} Exam: ${d.exam_name} ${d.exam_year} tier:${d.exam_tier}`);
                 .text((d) => {	
+                    // console.log(d);//debugging log
+                    
                     return JSON.stringify({
                         type: 'batch',
                             updates: {
-                                'x-menu': xCoordinate(d),
-                                'y-menu': currentYField,
-                                'menu-examname': d.exam_name,
-                                'menu-examtier': d.exam_tier,
-                                'menu-examyear': d.exam_year
-                            }
+                        'x-menu': xCoordinate(d),
+                        'y-menu': appState.currentYField,
+                        'menu-examname': d.exam_name,
+                        'menu-examtier': d.exam_tier,
+                        'menu-examyear': d.exam_year
+                        }
                     },null,2);
                 	});
         });

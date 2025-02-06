@@ -27,6 +27,8 @@ export const barChartPlot = () => {
     const listeners = dispatch('barClicked');// to use dispatch/listener pattern to pass the click event to the controller where drillDownHandler() is actually declared. 
     
     const my = (svg1) => {
+        console.log('Initializing bar chart with data:', dataReceived);//debugging log
+        
         // clear all prexisting elements in chart
         svg1.selectAll('.bar').remove();
 
@@ -162,10 +164,19 @@ export const barChartPlot = () => {
                 .style('opacity', 1);
         })
         .on('click', function (event, d) {
+            console.group('Bar Click Event');//debugging log
+            console.log('Clicked bar data:', d); // debugging log
+            console.log('Current x coordinate:', xCoordinate(d)); // debugging log
+            console.log('Current y coordinate:', yCoordinate(d));// debugging log
+            console.log('Full dataset:', dataReceived);// debugging log
+            console.groupEnd();
+
             // Using the listeners.call to send the event up to the controller
             listeners.call('barClicked', null, {
                 data:d,
-                entireDataset:dataReceived
+                entireDataset:dataReceived,
+                currentXField: xCoordinate(d),
+                currentYField: yCoordinate(d)
             });
         });
     };
@@ -204,6 +215,8 @@ export const barChartPlot = () => {
     };
 
     my.on = function() {
+        console.log('Setting up event listener:', arguments[0]);//debugging log
+        
         let value = listeners.on.apply(listeners, arguments);
         return value === listeners ? my:value;
     };
