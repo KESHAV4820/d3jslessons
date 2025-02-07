@@ -31,6 +31,9 @@ export const createDrillDownHandler = () => {
 
     // Handling function for drill-down clicks
     const handleDrillDown = (clickedData, currentData) => {
+        console.log(clickedData);//debugging log
+        console.log(currentData);//debugging log
+        
         const currentLevel = drillDownState.currentLevel;// To register which field is currently selected on the x-axis dropDown menu to get the next Geographical location it will point.
         const nextLevel = geoHierarchy[currentLevel].nextLevel;// Got the next level of Geolocation based on currentlevel.Just Beautiful
         

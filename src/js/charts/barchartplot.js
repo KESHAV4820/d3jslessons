@@ -25,6 +25,8 @@ export const barChartPlot = () => {
     
     //Creating dispatch for component-level events. This allows the chart to communicate with the controller.js
     const listeners = dispatch('barClicked');// to use dispatch/listener pattern to pass the click event to the controller where drillDownHandler() is actually declared. 
+    console.log('Listeners created:', listeners);//debugging log
+    
     
     const my = (svg1) => {
         console.log('Initializing bar chart with data:', dataReceived);//debugging log
@@ -50,35 +52,124 @@ export const barChartPlot = () => {
         const bars = svg1.selectAll('.bar')
             .data(dataReceived)
             .join(
-                enter => enter.append('rect')
+                enter => {
+                const rect=enter.append('rect')
                     .attr('class', 'bar')
                     .attr('x', d => xScale(xCoordinate(d)))
                     .attr('width', xScale.bandwidth())
-                    .attr('y', height - margin.bottom)
-                    .attr('height', 0)
+                    // .attr('y', height - margin.bottom)//
+                    .attr('y', d => yScale(yCoordinate(d)))//Alternative Code
+                    // .attr('height', 0)
+                    .attr('height', d => height - margin.bottom - yScale(yCoordinate(d)))//Alternative Code
                     .attr('fill', '#4682B4')  // Added consistent color
+                    // .style('cursor', 'pointer')
+                    // .on('click', function(event, d) {
+                    //     console.log('Bar clicked:', d);  // Explicit console log
+                    //     console.log('Event:', event);    // Log the event object
+                        
+                    //     // Verify coordinates and scales
+                    //     console.log('xCoordinate:', xCoordinate(d));
+                    //     console.log('yCoordinate:', yCoordinate(d));
+                    //     console.log('xScale:', xScale(xCoordinate(d)));
+                    //     console.log('yScale:', yScale(yCoordinate(d)));
+                        
+                    //     listeners.call('barClicked', null, {
+                    //         data: d,
+                    //         entireDataset: dataReceived
+                    //     });
+                    // })//working codelegacy code
                     .call(enter => enter.transition(t)
                         .attr('y', d => yScale(yCoordinate(d)))
                         .attr('height', d => height - margin.bottom - yScale(yCoordinate(d)))
-                    )
-                    .append('title')
-                    .text(d => `${xCoordinate(d)}: ${commaFormat(yCoordinate(d))}`),
+                    );
+                    // .style('cursor', 'pointer')
+                    // .on('click', function(event, d) {
+                    //     console.log('Bar clicked:', d);  // Explicit console log
+                    //     console.log('Event:', event);    // Log the event object
+                        
+                    //     // Verify coordinates and scales
+                    //     console.log('xCoordinate:', xCoordinate(d));
+                    //     console.log('yCoordinate:', yCoordinate(d));
+                    //     console.log('xScale:', xScale(xCoordinate(d)));
+                    //     console.log('yScale:', yScale(yCoordinate(d)));
+                        
+                    //     listeners.call('barClicked', null, {
+                    //         data: d,
+                    //         entireDataset: dataReceived
+                    //     });
+                    // })//working codecode upgrade
+                    rect.append('title')
+                    .text(d => `${xCoordinate(d)}: ${commaFormat(yCoordinate(d))}`);
+
+                    return rect;
+                },
+                /* SuperConcept: i was trying to chain .on() on enter, update selection to add the event listen like .on(click,__). But i was failing. why? becouse at the end of the chain, i was using ".append()" to add titles to the bars in barchart as they enter or get updated. But .append() has a sneaky property, such that it won't return you the original selection object as the .attr() method does while in chains. instead, .append() return the object that it appended. like title in our case. And my .on(click) wasn't working as it was not getting applied on the bars, but rather the title name as it was the last thing being return in the chain. Hence, to fix this problem, we broke the implementation of method chaining using the "const rect" variable which at the end we use to add titles and returing it. NOw finally, const bars can be used to implement the listeners like i have done. it was tricky. Remember It
                 
-                update => update.call(update => update.transition(t)
+                */
+                update => {
+                const rect=update.call(update => update.transition(t)
                     .attr('x', d => xScale(xCoordinate(d)))
                     .attr('width', xScale.bandwidth())
                     .attr('y', d => yScale(yCoordinate(d)))
                     .attr('height', d => height - margin.bottom - yScale(yCoordinate(d)))
                     .select('title')
-                    .text(d => `${xCoordinate(d)}: ${commaFormat(yCoordinate(d))}`)),
-                
+                );
+                // .style('cursor', 'pointer')
+                //     .on('click', function(event, d) {
+                    //         console.log('Bar clicked:', d);  // Explicit console log
+                    //         console.log('Event:', event);    // Log the event object
+                    
+                    //         // Verify coordinates and scales
+                    //         console.log('xCoordinate:', xCoordinate(d));
+                    //         console.log('yCoordinate:', yCoordinate(d));
+                    //         console.log('xScale:', xScale(xCoordinate(d)));
+                    //         console.log('yScale:', yScale(yCoordinate(d)));
+                    
+                    //         listeners.call('barClicked', null, {
+                        //             data: d,
+                        //             entireDataset: dataReceived
+                        //         });
+                        //     }),//working code 
+                        
+                        rect.select('title')
+                        .text(d => `${xCoordinate(d)}: ${commaFormat(yCoordinate(d))}`);
+                        return rect;
+            },
                 exit => exit.call(exit => exit.transition(t)
                     .attr('y', height - margin.bottom)
                     .attr('height', 0)
                     .remove())
             );
+            
+            bars.style('cursor', 'pointer') // Set cursor for all bars at once
+                .on('mouseover', function() {
+                    select(this)
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 0.7);
+                })
+                .on('mouseout', function() {
+                    select(this)
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 1);
+                })
+                .on('click', function(event, d) {
+                    console.log('Bar clicked:', d);  // Explicit console log
+                    console.log('Event:', event);    // Log the event object
+                    
+                    // Verify coordinates and scales
+                    console.log('xCoordinate:', xCoordinate(d));
+                    console.log('yCoordinate:', yCoordinate(d));
+                    console.log('xScale:', xScale(xCoordinate(d)));
+                    console.log('yScale:', yScale(yCoordinate(d)));
+                    
+                    listeners.call('barClicked', null, {
+                        data: d,
+                        entireDataset: dataReceived
+                    });
+                });
 
-        // Y Axis
         const yAxisG = svg1.selectAll('g.y-axis')
             .data([null])
             .join('g')

@@ -147,21 +147,21 @@ export const lineChartPlot = () => {
                 .attr('fill', seriesColor)
             //Adding hower response on these circles on the line
                 .append('title')
-                // .text((d) => `${xCoordinate(d)}: ${yCoordinate(d)} Exam: ${d.exam_name} ${d.exam_year} tier:${d.exam_tier}`);
-                .text((d) => {	
-                    // console.log(d);//debugging log
+                .text((d) => `${xCoordinate(d)}: ${yCoordinate(d)} Exam: ${d.exam_name} ${d.exam_year} tier:${d.exam_tier}`);
+                // .text((d) => {	
+                //     // console.log(d);//debugging log
                     
-                    return JSON.stringify({
-                        type: 'batch',
-                            updates: {
-                        'x-menu': xCoordinate(d),
-                        'y-menu': appState.currentYField,
-                        'menu-examname': d.exam_name,
-                        'menu-examtier': d.exam_tier,
-                        'menu-examyear': d.exam_year
-                        }
-                    },null,2);
-                	});
+                //     return JSON.stringify({
+                //         type: 'batch',
+                //             updates: {
+                //         'x-menu': xCoordinate(d),
+                //         'y-menu': appState.currentYField,
+                //         'menu-examname': d.exam_name,
+                //         'menu-examtier': d.exam_tier,
+                //         'menu-examyear': d.exam_year
+                //         }
+                //     },null,2);
+                // 	});
         });
 
 

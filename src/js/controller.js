@@ -770,19 +770,25 @@ const renderChart = (data) => {
                 .yCoordinate(chartConfig.yCoordinate)
                 .margin(chartConfig.margin)
                 // Listening post for bars getting Clicked or click events from the bar chart
-                .on('barClicked', ({data, entireDataset, currentXVal, currentYVal}) => {
-                    console.group('Bar Click Handler in Controller');//debugging log
-                    console.log('Clicked data:', data);//debugging log
-                    console.log('Current X field:', appState.currentXField);//debugging log
-                    console.log('Current Y field:', appState.currentYField);//debugging log
-                    console.log('Current filters:',{
-                        examName: appState.selectedExamName,
-                        examTier: appState.selectedExamTier,
-                        examYear: appState.selectedExamYear,
-                    });//debugging log
+                .on('barClicked', (clickEvent) => {
+                    // console.group('Bar Click Handler in Controller');//debugging log
+                    // console.log('Clicked data:', data);//debugging log
+                    console.log(`Bar Clicked Event Received:`, clickEvent);//Code Testing
+                    if (!clickEvent || !clickEvent.data) {
+                        console.error('Invalid click event:',clickEvent);
+                        return;
+                    }
+                    
+                    // console.log('Current X field:', appState.currentXField);//debugging log
+                    // console.log('Current Y field:', appState.currentYField);//debugging log
+                    // console.log('Current filters:',{
+                    //     examName: appState.selectedExamName,
+                    //     examTier: appState.selectedExamTier,
+                    //     examYear: appState.selectedExamYear,
+                    // });//debugging log
                                         
                     
-                    const drillDownUpdate = drillDownHandler.handleDrillDown(data, entireDataset);
+                    const drillDownUpdate = drillDownHandler.handleDrillDown(clickEvent.data, clickEvent.entireDataset);
                     console.log('Drill down update:', drillDownUpdate);//debugging log
 
 
@@ -793,9 +799,9 @@ const renderChart = (data) => {
                     }else{
                         console.log('no drill-down update available');//debugging log
                     }
-                    console.groupEnd();//debugging log
+                    // console.groupEnd();//debugging log
                 });
-                console.groupEnd();//debugging log
+                // console.groupEnd();//debugging log
             break;
 
         case 'pieChartPlot':
