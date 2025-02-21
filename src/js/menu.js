@@ -25,6 +25,7 @@
 */}
 import { dispatch, select as d3Select } from "d3";//Note For event listening.
 import { clearChartData, currentChartType } from "./controller";
+// import { drillDownHandler } from "./controller";
 //Create a global state to track pending changes
 // const pendingChanges = new Map();
 
@@ -213,6 +214,12 @@ const my = (svg1) => {
             .attr('class', 'clear-graph-button')
             .text('Clear Graph')
             .on('click', () => {
+                // To reset the drilldown state for barchart not working as of now.
+                // console.log(drillDownHandler);//debugging log
+                
+                // if (currentChartType === 'barChartPlot') {
+                //     drillDownHandler.resetBarChart();
+                // };
                 const chartWrapper = document.querySelector('.chart-wrapper');
                 if (chartWrapper) {
                     const svg=d3Select(chartWrapper)
@@ -224,6 +231,7 @@ const my = (svg1) => {
                 }
                 //To clear the global variable named "globalChartData" in controller.js which helps in cumulative rendering of graphs
                 clearChartData(currentChartType);
+
 
                 listeners.call('clear', null);
             });

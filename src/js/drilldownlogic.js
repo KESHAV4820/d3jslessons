@@ -2,7 +2,10 @@
 *this module is meant to use a system of logic that will always point in one direction which is ZONE➡️STATE➡️CITY
  * That is, in which ever chart, this logic will be used, with appropriate modifications, it will render data of states within that zone. If clicked item was say related to State, then after the click, it will render city within that state related data
  */
-export const createDrillDownHandler = () => {
+export const createDrillDownHandler = (fullDataset) => {
+    // Storing the full Data set👹😈. No more mind fuck
+        const completeData = fullDataset;
+
     // Object For Tracking the drill-down state
     const drillDownState = {
         currentLevel: 'zone', // Can be 'zone', 'state', or 'city'. Default being zone
@@ -29,10 +32,111 @@ export const createDrillDownHandler = () => {
         }
     };
 
+     // New filtering function
+     const filterDataByGeography = (clickedItem) => {
+
+        console.log(clickedItem);//debugging log output:
+        console.log('data reaching filterDataByGeography at the start:',completeData);//debugging log output:
+        
+        const currentLevel = drillDownState.currentLevel;
+        const nextLevel = geoHierarchy[currentLevel].nextLevel;
+        
+        if (!nextLevel) return null;
+
+        // Get the clicked item's geographical identifiers
+        const examFilters = {
+            exam_name: clickedItem.exam_name,
+            exam_year: clickedItem.exam_year,
+            exam_tier: clickedItem.exam_tier
+        };
+        
+        // Separating the data filtration and handling for zone➡️state and state➡️city drilldown.
+        if (currentLevel === 'zone') {
+            // zone to state transition
+            const zoneFilter ={
+                ...examFilters,
+                zone_name: clickedItem.zone_name
+            };
+            console.log('meta data in zonetostate: ',currentLevel,nextLevel,zoneFilter);//debugging log
+
+            // data filteration for this drill down
+            const stateResults = completeData.filter((item) => 
+            Object.entries(zoneFilter).every(([key, value]) => item[key]===value));
+            console.log('stateResults =',stateResults);//debugging log
+            
+
+            // De-duplicating the above result
+            const uniqueStates = Array.from(
+                new Set(stateResults.map(
+                    (item) => item.state_name
+                ))).map(
+                    (stateName) => stateResults.find(
+                        (item) => item.state_name === stateName)
+                );
+                console.log('State Data after de-duplication: ',uniqueStates);//debugging log
+                
+            return uniqueStates;
+        }
+        else if (currentLevel === 'state'){
+            // state to city transition. Note this stage can't depend on the filterd data of above drilldown stage. It's becouse of the     structure of the data storage in our .csv file. Also, it's a ONE➡️MANY relation where MANY is also unique enteris and hence, no de-duplication is needed.
+            const stateFilter ={
+                ...examFilters,
+                zone_name: clickedItem.zone_name,
+                state_name: clickedItem.state_name
+            };
+            console.log('meta data in statetocity: ',currentLevel,nextLevel,stateFilter);//debugging log
+            // only the data filtration needed
+            const cityResults = completeData.filter(
+            (item) =>Object.entries(stateFilter).every(([key, value]) => item[key] === value));
+            
+            console.log(cityResults);//debugging log
+            console.log('no de-duplication needed here');//debugging log
+            
+            return cityResults;
+        };
+        return null;
+        //legacy codeBug Found it was using the filtered data from zone➡️state drill down for state➡️city drill down and hence only first city of the state was getting rendered. // Now we shall add geographic parameter like zone_name or state_name or city_name based on current level, in the filters that we have updated just above☝🏼
+        // switch (currentLevel) {
+        //     case 'zone':
+        //         filters.zone_name = clickedItem.zone_name;
+        //         break;
+        //     case 'state':
+        //         filters.zone_name = clickedItem.zone_name;
+        //         filters.state_name = clickedItem.state_name;
+        //         break;
+        //     default:
+        //         console.warn('Unknown level:', currentLevel);
+        //         return null;
+        // }
+
+        // // Filter the data based on all criteria
+        // const filteredData = data.filter(item => {
+        //     return Object.keys(filters).every(key => item[key] === filters[key]);
+        // });
+        // if (filteredData.length === 0) {
+        //     console.warn('No data found after filtering');
+        //     return null;
+        // }
+
+        // //For State ➡️ city, there is one to many relationship, but since the names of each city is unique, Hence we need not remove duplicates.
+        // if (currentLevel === 'state'){
+        //     return filteredData;// returning the control right from here.😎
+        // };
+
+        // // Remove duplicates for Zone ➡️ state case, becouse there is one to many relation, but names of states are repeated in the .csv file.
+        // const nextLevelField = geoHierarchy[nextLevel].idField;
+        // const uniqueItems = Array.from(new Set(filteredData.map(item => item[nextLevelField])))
+        //     .map(uniqueValue => {
+        //         return filteredData.find(item => item[nextLevelField] === uniqueValue);
+        //     });
+
+        // return uniqueItems;
+    };
+
     // Handling function for drill-down clicks
-    const handleDrillDown = (clickedData, currentData) => {
-        console.log(clickedData);//debugging log
-        console.log(currentData);//debugging log
+    const handleDrillDown = (clickedData) => {
+        console.log('Drill-down triggered for:',clickedData);//debugging log output: {exam_name: 'CGL', exam_year: 2016, exam_tier: 1, zone_name: 'NR', zone_score: 450241, …} like city_name: "Sikar" city_score: 0 exam_name: "CGL" exam_tier: 1 exam_year: 2016 state_name: "Rajasthan" state_score: 131834 zone_name:"NR" zone_score:450241
+        // console.log(currentData);//debugging log output: (235) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…},  …]
         
         const currentLevel = drillDownState.currentLevel;// To register which field is currently selected on the x-axis dropDown menu to get the next Geographical location it will point.
         const nextLevel = geoHierarchy[currentLevel].nextLevel;// Got the next level of Geolocation based on currentlevel.Just Beautiful
@@ -41,7 +145,19 @@ export const createDrillDownHandler = () => {
             console.log('At lowest level - no further drill-down possible');
             return null;
             //Using this code for now. Latter on, i will try to use some indicators or make it irr-responsive.
-        }
+        };
+
+        console.log('data being fed to filterDataByGeography() :',clickedData);//debugging log
+        
+        // Filter data for next level
+        const filteredData = filterDataByGeography(clickedData);
+        console.log('data comming out of filterDataByGeography() :',filteredData);//debugging log
+        
+        
+        if (!filteredData || filteredData.length === 0) {
+            console.warn('No data found for next level');
+            return null;
+        };
 
         // Store current state in history for back navigation
         drillDownState.history.push({
@@ -62,7 +178,8 @@ export const createDrillDownHandler = () => {
 
         return {
             type: 'batch',
-            updates
+            updates,
+            filteredData // Include filtered data in the response
         };
     };
 
@@ -71,7 +188,7 @@ export const createDrillDownHandler = () => {
         if (drillDownState.history.length === 0) {
             console.log('At top level - cannot drill up');
             return null;
-        }
+        };
 
         const previousState = drillDownState.history.pop();
         drillDownState.currentLevel = previousState.level;
@@ -100,16 +217,20 @@ export const createDrillDownHandler = () => {
     });
 
     // Reset drill-down state
-    const reset = () => {
+    const resetBarChart = () => {
         drillDownState.currentLevel = 'zone';
         drillDownState.history = [];
         drillDownState.filters = {};
+        console.log('barchart reset has been fired', drillDownState.currentLevel, drillDownState.history, drillDownState.filters);//debugging log
+        
     };
 
     return {
         handleDrillDown,
         handleDrillUp,
         getCurrentLevelInfo,
-        reset
+        resetBarChart
     };
 };
+
+// export const {resetBarChart}=createDrillDownHandler;

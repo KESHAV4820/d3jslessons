@@ -3,7 +3,7 @@
 //Note: to use live server extension for development, you need to change the folder name in the setting of workspace which starts like this: " Live Server › Settings: Multi Root Workspace Name This the entry point of server when you're in multiroot workspace ". there you need to change the name of the file from 'allexamstable project' to 'd3js charting' folder name. 
 
 
-import {csv, 
+import {color, csv, 
         select,
         style,
         text,
@@ -44,7 +44,9 @@ import { WIDTH_CONSTRAINTS } from '../projectConstants';
         👉🏼 .on('change', (event)=>{listeners.call('change',null,event.target.value)})
         and now this data is funneled using our d3 dispatch library to the controller.js call back function used inside the.on() method has been used. Note: this process of funneling this data is done  by listeners.call(). Think of it like a pipe line
     1️⃣7️⃣ VIE To remove the cache file of parcel bundler, so that you can see the latest changes that you made to the file after fresh bundling, you need to run this command in the root folder of the project👉"rmdir /s /q .parcel-cache" on CMD Or sometimes, this command 👉🏼"Remove-Item -Recurse -Force .parcel-cache" is used as well. Note that the npm server shouldn't be running at the time of executing this command. It wont work. 
-    1️⃣8️⃣
+    1️⃣8️⃣See What Happened Here Carefully: if npm run start:dev isn't working becouse the port where it has to work is jammed, then either you can change the port number or you can terminate the process that is using your port(e.g. 1234). use these commands in normal command prompt: 
+    👉🏼 netstat -ano | findstr :1234
+    👉🏼 taskkill /pid p_id /f
     1️⃣9️⃣
     
 */}
@@ -71,9 +73,9 @@ import csvDataPath from './../../data/sampletestingdata.csv'; // Let Parcel hand
 // console.log(csvDataPath);// Code Testing.
 
 // const commaFormat = format(',');// this adds comma separator code migrated to scatterplot.js
-// Added👇🏼 drill-down handler initialization
-const drillDownHandler = createDrillDownHandler();
-console.log('Initialized the drill-down handler');//debugging log
+// // Added👇🏼 drill-down handler initialization
+// const drillDownHandler = createDrillDownHandler();
+// console.log('Initialized the drill-down handler');//debugging log
 
 
 // Global data storage for chart rendering
@@ -82,6 +84,15 @@ const globalChartData = {
     barChart: [],
     scatterChart: [],
     pieChart: []
+};
+console.log('globalchartData',globalChartData);//debugging log
+
+function getSeriesColor() {
+    const goldenRatio = 1.61803398875;
+    const hue = (Math.random()*360 + goldenRatio*360) % 360;
+    const saturation = 70;
+    const lightness = 50;
+return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 };
 
 // Function to clear specific chart type data from global variable above
@@ -108,6 +119,8 @@ const parseRow_examCentric = (d)=>{
     d.city_name=d.city_name;
     return d;
 };
+
+
 //code for future use
 // const parseRow_placeCentric = (d)=>{
     
@@ -190,7 +203,9 @@ export const appState = {
     selectedExamName: 'CGL',
     selectedExamTier: 1,
     selectedExamYear: 2016,
-    currentChartType: 'scatterPlot'
+    currentChartType: 'scatterPlot',
+    selectedZone: null, // newly added
+    selectedState: null // newly added
 };
 export const {currentChartType,currentYField}=appState;// this export is being used in menu.js in clearChartData()function as parameter.
 
@@ -200,94 +215,77 @@ const main = async () =>{
     let currentXField='zone_name';
     let currentYField='zone_score';
     const dataExtracted =await csv(csvDataPath, parseRow_examCentric); 
-    // console.log(dataExtracted);//Code Testing
+    console.log(dataExtracted);//Code Testing
 
-    // Define constants for width constraints for different scales of X-axis
-    const WIDTH_CONSTRAINTS = {
-        city_name: {
-            MIN_WIDTH_PER_ITEM: 80,  // Minimum width per city label
-            MAX_WIDTH_PER_ITEM: 120, // Maximum width per city label
-            MIN_TOTAL_WIDTH: width,   // Minimum total width for city view
-            MAX_TOTAL_WIDTH: 15000    // Maximum total width for city view
-        },
-        state_name: {
-            MIN_WIDTH_PER_ITEM: 60,   // Minimum width per state label
-            MAX_WIDTH_PER_ITEM: 100,  // Maximum width per state label
-            MIN_TOTAL_WIDTH: width,   // Minimum total width for state view
-            MAX_TOTAL_WIDTH: 5000     // Maximum total width for state view
-        },
-        zone_name: {
-            MIN_WIDTH_PER_ITEM: 100,  // Minimum width per zone label
-            MAX_WIDTH_PER_ITEM: 200,  // Maximum width per zone label
-            MIN_TOTAL_WIDTH: width,   // Minimum total width for zone view
-            MAX_TOTAL_WIDTH: 1400     // Maximum total width for zone view (7 zones * 200)
-        }
-    };
-    // Function to calculate effective width based on data points
+    // Added👇🏼 drill-down handler initialization
+    const drillDownHandler = createDrillDownHandler(dataExtracted);
+    console.log('Initialized the drill-down handler');//debugging log
+
     const calculateEffectiveWidth = (data) => {
-        // return data.length > 150 ? Math.max(width * 2.5, data.length * 30) : width;
-        console.log(data);//debugging log
-        console.log(data.length);//debugging log// Our line chart plot uses data in object formate for cumulative chart rendering purpose. Hence data is embadded like data[i].data. hence simple data.length doesn't give data length directly in case of linechart. it may appear like 1 or 2 or 3 or ....as much data set possible to compare at one time.NoteRemember It Hence we are going to assume that we aren't going to compare more than 20 data sets.
+        // Early return if no data
+        if (!data) {
+            console.warn('No data provided to calculateEffectiveWidth',data);
+            return width;
+        };
+        
+        console.log('data received to calculateEffectiveWidth',data);//debugging log
+
         
         
-        if (!data || data.length === 0) return width;
 
-        const constraints = WIDTH_CONSTRAINTS[appState.currentXField];
-        if (!constraints) return width;
-
-        // const calculateWidth = Math.max(
-        //     constraints.MIN_TOTAL_WIDTH,
-        //     Math.min(
-        //     data.length * constraints.MIN_WIDTH_PER_ITEM,
-        //     data.length * constraints.MAX_WIDTH_PER_ITEM,
-        //     constraints.MAX_TOTAL_WIDTH
-        //     )
-        // );//legacy code it worked fine for other charts but 
-
-        let calculateWidth;
-        if (data.length > 20) {
-        // Calculate width based on number of items and constraints
-            calculateWidth = Math.max(
-            constraints.MIN_TOTAL_WIDTH,
-            Math.min(
-            data.length * constraints.MIN_WIDTH_PER_ITEM,
-            data.length * constraints.MAX_WIDTH_PER_ITEM,
-            constraints.MAX_TOTAL_WIDTH
-            )
-        );
-    };
-    if (data.length>=1 && data.length<=20) {
+        // Constants for width calculation
+        const MIN_WIDTH = width; // minimum width (viewport width)
+        const MIN_WIDTH_PER_ITEM = 25; // minimum pixels per data point
+        const MAX_WIDTH = 15000; // maximum allowed width
+        
+        //Handle line chart's nested data structure
+        let dataLength;
         if (appState.currentChartType === 'lineChartPlot') {
-            switch (appState.currentXField) {
-                case 'zone_name':
-                    calculateWidth = 1750;
-                break;
+            //NoteKnowledge Gap: this is how we traverse object. by using Object.values(object_name) with .forEach() or [index];
+            const firstSeries = Object.values(data)[0];
+            console.log('Data in firstlevel for linechart:',firstSeries);//debugging log
+            
+            //To assign the maximum length from the length of all series or dataset pool in linechart data
+            let maxSeriesLength=0;
+            Object.values(data).forEach(eachSeries =>{
+            const currentSeriesLength=Object.values(eachSeries)[0].length;
+            // console.log(currentSeriesLength);//debugging log
+            
+            maxSeriesLength=currentSeriesLength>maxSeriesLength?currentSeriesLength:maxSeriesLength;
+            // console.log(currentSeriesLength);//debugging log
+            
+            });
+            console.log('one of the series has maximum length of all: ',maxSeriesLength);//debugging log
 
-                case 'state_name':
-                    calculateWidth = 5000;
-                break;
+            // dataLength = firstSeries && firstSeries.data ? firstSeries.data.length:0;
+            dataLength = maxSeriesLength;
+            console.log('data length accepted for padding calculation:',dataLength);//debugging log
+            
+        } else {
+            // For other chart types, use array length directly
+            dataLength = Array.isArray(data)?data.length:0;
+        };
 
-                case 'city_name':
-                    calculateWidth = 15000;
-                break;
-
-                default:
-                    console.error('unknown kind of field selected on x-dropdown menu')
-                    break;
-            }
-        }else{
-            console.log("Probably, you aren't receiving any data or very small dataset in non-linechart types to calculate data.length. Check it.");//debugging log
-        }
-    }
-        //For debugging
-        console.log(`Width calculate for ${appState.currentXField}:`,{
-            dataLength: data.length, calculateWidth,
-            minPossibleWidth: constraints.MIN_TOTAL_WIDTH,
-            maxPossibleWidth: constraints.MAX_TOTAL_WIDTH,
-        });
-        return calculateWidth;
-    };
+        // Calculate required width based on number of data points
+        let calculatedWidth = Math.max(
+            MIN_WIDTH, // never go below minimum width
+            data.length * MIN_WIDTH_PER_ITEM // allocate space per data point
+        );
+        
+        // Ensure we don't exceed maximum width
+        calculatedWidth = Math.min(calculatedWidth, MAX_WIDTH);
     
+        console.log('Width calculation:', {
+            dataPoints: data.length,
+            calculatedWidth,
+            minWidth: MIN_WIDTH,
+            maxWidth: MAX_WIDTH,
+            widthPerItem: MIN_WIDTH_PER_ITEM
+        });
+    
+        return calculatedWidth;
+    };
+
     const columnsForXaxis=Object.keys(dataExtracted[0]).filter(
         (column) => typeof dataExtracted[0][column] === 'string'
     );//SuperConceptObject.keys(dataExtracted[0]) gives an array of things in first row. 
@@ -348,6 +346,14 @@ const main = async () =>{
                 (!appState.selectedExamYear || d.exam_year === +appState.selectedExamYear)
             );
 
+            // Applying geographical filters if they exist
+            if (appState.selectedZone) {
+                filteredResults = filteredResults.filter(d => d.zone_name === appState.selectedZone);
+                };
+            if (appState.selectedState){
+                filteredResults = filteredResults.filter(d => d.state_name === appState.selectedState);
+            };
+
             // Sort data if needed (especially important for line charts)
             if (appState.currentChartType === 'lineChartPlot') {
                 filteredResults.sort((a, b) => {
@@ -380,6 +386,9 @@ const main = async () =>{
     };
     // Update the menu change handlers
     const handleMenuUpdate = (eventData) => {
+
+        console.log('what data is being given to handleMenuUpdate',eventData);//debugging log
+        
         // First, validate the input
         if (!eventData) {
             console.error('No event data received in handleMenuUpdate');
@@ -415,14 +424,39 @@ const main = async () =>{
                             case 'menu-charttype':
                                 appState.currentChartType = val;
                                 break;
+                            case 'zone_name':
+                                appState.selectedZone = val;
+                                break;
+                            case 'state_name':
+                                appState.selectedState = val;
+                                break;
                             default:
                                 console.log(`Unknown key: ${key}`);
                         };
                         
                     }
-                    });
-                // After all updates, render once
-                const newData = filteredData();
+                });
+
+            // After all updates, render once
+            let newData = filteredData();
+            if (appState.currentChartType === 'lineChartPlot') {
+                const seriesId = `${appState.selectedExamName}_${appState.selectedExamYear}_${appState.selectedExamTier}_${appState.currentYField}_${appState.currentXField}`;
+
+                if (!globalChartData.lineChart) {
+                    globalChartData.lineChart={};
+                };
+
+                globalChartData.lineChart[seriesId]={
+                    data: [...newData],
+                    xField: appState.currentXField,
+                    yField: appState.currentYField,
+                    color: getSeriesColor()
+                };
+
+                newData = globalChartData.lineChart;
+
+            }
+
                 const effectiveWidth =calculateEffectiveWidth(newData);
 
                 svg1.attr('width', effectiveWidth);
@@ -431,42 +465,44 @@ const main = async () =>{
                 // Log state before rendering
                 console.log('AppState after batch update:', { ...appState });//Code Testing
                 console.log('Filtered data count:', newData.length);// Code Testing
+                console.log("final data being sent in newData variable inside handleMenuUpdate in controller",newData,'And finally the globarChartData object contents:',globalChartData);//debugging log
+                
 
                 renderChart(newData);
             } 
-            else if (menuId && value !== undefined) {//To handle single update
-                console.log('Processing single update:', {menuId, value});//Code Testing
-                switch(menuId) {
-                    case 'x-menu':
-                        appState.currentXField = value;
-                        break;
-                    case 'y-menu':
-                        appState.currentYField = value;
-                        break;
-                    case 'menu-examname':
-                        appState.selectedExamName = value;
-                        break;
-                    case 'menu-examtier':
-                        appState.selectedExamTier = value;
-                        break;
-                    case 'menu-examyear':
-                        appState.selectedExamYear = value;
-                        break;
-                    case 'menu-charttype':
-                        appState.currentChartType = value;
-                        break;
-                    default: console.warn(`Unkown menuId: ${menuId}`);
-                }
+            // else if (menuId && value !== undefined) {//To handle single update
+            //     console.log('Processing single update:', {menuId, value});//Code Testing
+            //     switch(menuId) {
+            //         case 'x-menu':
+            //             appState.currentXField = value;
+            //             break;
+            //         case 'y-menu':
+            //             appState.currentYField = value;
+            //             break;
+            //         case 'menu-examname':
+            //             appState.selectedExamName = value;
+            //             break;
+            //         case 'menu-examtier':
+            //             appState.selectedExamTier = value;
+            //             break;
+            //         case 'menu-examyear':
+            //             appState.selectedExamYear = value;
+            //             break;
+            //         case 'menu-charttype':
+            //             appState.currentChartType = value;
+            //             break;
+            //         default: console.warn(`Unkown menuId: ${menuId}`);
+            //     }
                 
-                const newData = filteredData();
-                const effectiveWidth = calculateEffectiveWidth(newData);
-                svg1.attr('width', effectiveWidth);
-                chartWrapper.style('width', `${effectiveWidth}px`);
-                renderChart(newData);
-            }
-            else {
-                console.error('Invalid event data structure:', eventData);
-            }
+            //     const newData = filteredData();
+            //     const effectiveWidth = calculateEffectiveWidth(newData);
+            //     svg1.attr('width', effectiveWidth);
+            //     chartWrapper.style('width', `${effectiveWidth}px`);
+            //     renderChart(newData);
+            // }
+            // else {
+            //     console.error('Invalid event data structure:', eventData);
+            // } working code forced stop
     console.log('Current App state:', {...appState});//Code Testing
     // console.log('Filtered Data Count:', newData.length);//Code Testing
     };
@@ -556,6 +592,26 @@ const renderChart = (data) => {
         xField:appState.currentXField,
         yField:appState.currentYField,
     });//debugging log
+    // to validate the structure of data
+    // if (!data || !Array.isArray(data) || data.length === 0) {
+    //     console.error('Invalid or empty data:', data);
+    //     return;
+    // };
+
+    // //to validate if the required fields exist in the data
+    // const hasRequiredFields = data.every((d) => 
+    //     d.hasOwnProperty(appState.currentXField) 
+    // && d.hasOwnProperty(appState.currentYField)
+    // );
+    // if (!hasRequiredFields) {
+    //     console.error('Required fields missing in data');
+    //         return;
+    // };
+
+    // Log the actual values being used for x and y
+    console.log('Sample x values:', data.map((d) => d[appState.currentXField]));//debugging log
+    console.log('Sample y values:', data.map((d) => d[appState.currentYField]));//debugging log
+    
     
     // svg1.selectAll("*").remove();//ConceptNoteIt clears all the content of previous chart type
     // if (currentChartType !== 'lineChartPlot') {
@@ -565,79 +621,94 @@ const renderChart = (data) => {
     //First Clear whatever was plotted out there, even for cumulative rendering.
     svg1.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point').remove();
 
-    if (appState.currentChartType === 'lineChartPlot') {
-        console.log("2. Processing linechartplot data");//debugging log
-        
-        // const newDataSignature = JSON.stringify({
-        //     data: data,
-        //     xField: appState.currentXField,
-        //     yField: appState.currentYField
-        // });
-        
-        // const isDuplicate = globalChartData.lineChart.some(entry => 
-        //     JSON.stringify({
-        //         data: entry.data,
-        //         xField: entry.xField,
-        //         yField: entry.yField
-        //     }) === newDataSignature
-        // );
+    const effectiveWidth = calculateEffectiveWidth(data);
 
-        // if (!isDuplicate) {
-        //     globalChartData.lineChart.push({
-        //         data: data,
-        //         xField: appState.currentXField,
-        //         yField: appState.currentYField
-        //     });
-        // }
-        
-        // globalChartData.lineChart = [{
-        //     data: data,
-        //     xField: appState.currentXField,
-        //     yField: appState.currentYField
-        // }];
-        //NoteFor line chart, we are using all the accumulated data in global variable. We shall do the same for others if we want the same for all of them.
-        // data = globalChartData.lineChart.map((entry) => entry.data).flat();
-        // data = globalChartData.lineChart[0].data;
-
-        //Creating a unique identifier for each set of filtered data series
-        const seriesId = `${appState.selectedExamName}_${appState.selectedExamYear}_${appState.selectedExamTier}_${appState.currentYField}_${appState.currentXField}_${appState.currentChartType}`;
-        console.log("3. Generated seriesId:", seriesId);//debugging log
-        
-        //Store as separate series
-        if (!globalChartData.lineChart) {
-            console.log("4. Initializing globalChartData.lineChart");
-            globalChartData.lineChart = {};
+    //Common chart configuration
+    const chartConfig = {
+        width: effectiveWidth,
+        height: height,
+        dataReceived: data,
+        xCoordinate: d => String(d[appState.currentXField]), // Ensure string conversion
+        yCoordinate: d => +d[appState.currentYField],        // Ensure number conversion
+        margin: {
+            top: 30,
+            right: 33,
+            bottom: 130,
+            left: 125
         }
-        console.log("5. Current globalChartData.lineChart:",globalChartData.lineChart);//debugging log
+    };
 
-        globalChartData.lineChart[seriesId] = {
-        data: [...data], //Creating a copy of the data
-        xField: appState.currentXField,
-        yField: appState.currentYField,
-        color: getSeriesColor() // this is a helper function. i will make it even better such that, for each line, it dynamically chooses a color that hasn't been chosen before.
-    };
-    console.log("6. Updated globalChartData.lineChart:", globalChartData.lineChart);//debugging log
+    // if (appState.currentChartType === 'lineChartPlot') {
+    //     console.log("2. Processing linechartplot data");//debugging log
+        
+    //     // const newDataSignature = JSON.stringify({
+    //     //     data: data,
+    //     //     xField: appState.currentXField,
+    //     //     yField: appState.currentYField
+    //     // });
+        
+    //     // const isDuplicate = globalChartData.lineChart.some(entry => 
+    //     //     JSON.stringify({
+    //     //         data: entry.data,
+    //     //         xField: entry.xField,
+    //     //         yField: entry.yField
+    //     //     }) === newDataSignature
+    //     // );
+
+    //     // if (!isDuplicate) {
+    //     //     globalChartData.lineChart.push({
+    //     //         data: data,
+    //     //         xField: appState.currentXField,
+    //     //         yField: appState.currentYField
+    //     //     });
+    //     // }
+        
+    //     // globalChartData.lineChart = [{
+    //     //     data: data,
+    //     //     xField: appState.currentXField,
+    //     //     yField: appState.currentYField
+    //     // }];
+    //     //NoteFor line chart, we are using all the accumulated data in global variable. We shall do the same for others if we want the same for all of them.
+    //     // data = globalChartData.lineChart.map((entry) => entry.data).flat();
+    //     // data = globalChartData.lineChart[0].data;
+
+    //     //Creating a unique identifier for each set of filtered data series
+    //     const seriesId = `${appState.selectedExamName}_${appState.selectedExamYear}_${appState.selectedExamTier}_${appState.currentYField}_${appState.currentXField}_${appState.currentChartType}`;
+    //     console.log("3. Generated seriesId:", seriesId);//debugging log
+        
+    //     //Store as separate series
+    //     if (!globalChartData.lineChart) {
+    //         console.log("4. Initializing globalChartData.lineChart");
+    //         globalChartData.lineChart = {};
+    //     }
+    //     console.log("5. Current globalChartData.lineChart:",globalChartData.lineChart);//debugging log
+
+    //     globalChartData.lineChart[seriesId] = {
+    //     data: [...data], //Creating a copy of the data
+    //     xField: appState.currentXField,
+    //     yField: appState.currentYField,
+    //     color: getSeriesColor() // this is a helper function. i will make it even better such that, for each line, it dynamically chooses a color that hasn't been chosen before.
+    // };
+    // console.log("6. Updated globalChartData.lineChart:", globalChartData.lineChart);//debugging log
     
-    //Converting to array of series for D3
-    data = Object.values(globalChartData.lineChart);
-    console.log("7. Processed data for chart:", data);//debugging log
-    };
-    // Helper function used inside appState to assign color to linechart. It uses golden index approach
-    // let hue ;
-    // hue= Math.random()*360; // to start with a random hue
-    function getSeriesColor() {
-        const goldenRatio = 1.61803398875;
-        const hue = (Math.random()*360 + goldenRatio*360) % 360;
-        const saturation = 70;
-        const lightness = 50;
-    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-    };
+    // //Converting to array of series for D3
+    // data = Object.values(globalChartData.lineChart);
+    // console.log("7. Processed data for chart:", data);//debugging log
+    // };
+    // // Helper function used inside appState to assign color to linechart. It uses golden index approach
+    // function getSeriesColor() {
+    //     const goldenRatio = 1.61803398875;
+    //     const hue = (Math.random()*360 + goldenRatio*360) % 360;
+    //     const saturation = 70;
+    //     const lightness = 50;
+    // return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    // };
 
     let chart;
 
     //calculate effective width based on data size to make scrolling logic work.
-    const effectiveWidth= calculateEffectiveWidth(data);
-    console.log("8. Chart dimensions:",{effectiveWidth,height});//debugging log
+    // const effectiveWidth= calculateEffectiveWidth(data);
+    // console.log("8. Chart dimensions:",{effectiveWidth,height});//debugging log
     
     //set updated width to svg and container for overflow on x-axis
     svg1.attr('width',effectiveWidth);//Super this will set the effective width to the svg container itself and hence the<svg> element to display the graph. here we aren't setting it for the X-axis scale, which itself is a part of the <svg>, not yet.This will actually trigger the horizonal scroll on whole svg element itself. 
@@ -645,102 +716,6 @@ const renderChart = (data) => {
                     .style('overflow-x', 'auto')
                     .style('display', 'block');
 
-/*    // for scatter plot:-
-    if (currentChartType === 'scatterPlot') {
-        chart = scatterPlot()
-                    .width(effectiveWidth)//VIEhere we are setting effective width on axis, so that it could populate the ticks accordingly. 
-                    .height(height)
-                    .dataReceived(data)
-                    .xCoordinate((d) => d[currentXField])
-                    .yCoordinate((d) => d[currentYField])
-                    .margin({
-                        top: 30, 
-                        right: 33, 
-                        bottom: 130, 
-                        left: 125})
-                    .maxRadius(16)
-                    .minRadius(2);
-
-        };
-        // Placeholder for other chart types, e.g., barChartPlot, pieChartPlot
-        // for barchart:-
-        if (currentChartType === 'barChartPlot') {
-            chart = barChartPlot()
-                .width(width)
-                .height(height)
-                .dataReceived(data)
-                .xCoordinate(d => d[currentXField])
-                .yCoordinate(d => d[currentYField])
-                .margin({ 
-                    top: 30, 
-                    right: 33, 
-                    bottom: 130, 
-                    left: 125 
-                        }
-                    );
-        }
-        // for Piechart:-
-        if (currentChartType === 'pieChartPlot') {
-            chart = pieChartPlot()
-                .width(width)
-                .height(height)
-                .dataReceived(data)
-                .xCoordinate(d => d[currentXField])
-                .yCoordinate(d => d[currentYField])
-                .margin({ 
-                    top: 30, 
-                    right: 33, 
-                    bottom: 130, 
-                    left: 125 
-                        }
-                    );
-        }
-        // for Linechart:-
-        if (currentChartType === 'lineChartPlot') {
-            chart = lineChartPlot()
-                .width(width)
-                .height(height)
-                .dataReceived(data)
-                .xCoordinate(d => d[currentXField])
-                .yCoordinate(d => d[currentYField])
-                .margin({ 
-                    top: 30, 
-                    right: 33, 
-                    bottom: 130, 
-                    left: 125 
-                        }
-                    );
-        }
-        if(chart){
-            svg1.call(chart);
-        }
-        //Forceing the reflow of svg once again
-        svg1.node().getBoundingClientRect();
-
-    // const container = select('.chart-wrapper');
-    // if(container.node()){
-    //     container.dispatch('scroll');
-    // }; 
-*/
-  
-        //Common chart configuration
-        const chartConfig = { 
-            width: effectiveWidth,
-            height: height,
-            // dataReceived: data,
-            dataReceived: appState.currentChartType === 'lineChartPlot'? 
-            // globalChartData.lineChart.map(entry => entry.data).flat() 
-            data
-            : data,
-            xCoordinate: d => d[appState.currentXField],// Use appState value
-            yCoordinate: d => d[appState.currentYField],// Use appState value
-            margin: {
-                top: 30,
-                right: 33,
-                bottom: 130,
-                left: 125
-                }
-        };
         console.log("9. Chart configuration:", chartConfig);//debugging log
         
         //Create appropriate chart based on current selection
@@ -799,9 +774,7 @@ const renderChart = (data) => {
                     }else{
                         console.log('no drill-down update available');//debugging log
                     }
-                    // console.groupEnd();//debugging log
                 });
-                // console.groupEnd();//debugging log
             break;
 
         case 'pieChartPlot':

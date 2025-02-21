@@ -141,34 +141,6 @@ export const barChartPlot = () => {
                     .remove())
             );
             
-            bars.style('cursor', 'pointer') // Set cursor for all bars at once
-                .on('mouseover', function() {
-                    select(this)
-                        .transition()
-                        .duration(300)
-                        .style('opacity', 0.7);
-                })
-                .on('mouseout', function() {
-                    select(this)
-                        .transition()
-                        .duration(300)
-                        .style('opacity', 1);
-                })
-                .on('click', function(event, d) {
-                    console.log('Bar clicked:', d);  // Explicit console log
-                    console.log('Event:', event);    // Log the event object
-                    
-                    // Verify coordinates and scales
-                    console.log('xCoordinate:', xCoordinate(d));
-                    console.log('yCoordinate:', yCoordinate(d));
-                    console.log('xScale:', xScale(xCoordinate(d)));
-                    console.log('yScale:', yScale(yCoordinate(d)));
-                    
-                    listeners.call('barClicked', null, {
-                        data: d,
-                        entireDataset: dataReceived
-                    });
-                });
 
         const yAxisG = svg1.selectAll('g.y-axis')
             .data([null])
@@ -259,13 +231,13 @@ export const barChartPlot = () => {
             console.log('Clicked bar data:', d); // debugging log
             console.log('Current x coordinate:', xCoordinate(d)); // debugging log
             console.log('Current y coordinate:', yCoordinate(d));// debugging log
-            console.log('Full dataset:', dataReceived);// debugging log
+            console.log('Full dataset:', dataReceived);// debugging log//Bug Found
             console.groupEnd();
 
             // Using the listeners.call to send the event up to the controller
             listeners.call('barClicked', null, {
                 data:d,
-                entireDataset:dataReceived,
+                entireDataset:dataReceived,//Bug Found
                 currentXField: xCoordinate(d),
                 currentYField: yCoordinate(d)
             });
