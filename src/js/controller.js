@@ -619,7 +619,7 @@ const renderChart = (data) => {
     // };
 
     //First Clear whatever was plotted out there, even for cumulative rendering.
-    svg1.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point').remove();
+    svg1.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point, .grid-group').remove();
 
     const effectiveWidth = calculateEffectiveWidth(data);
 

@@ -16,6 +16,7 @@ import {
 } from 'd3';
 import { appState } from '../controller';
 import { currentYField } from '../controller';
+import { exit } from 'process';
 
 const commaFormat = format(',');
 
@@ -29,7 +30,7 @@ export const lineChartPlot = () => {
 
     const my = (svg1) => {
         // To Clear pre-existing elements
-        svg1.selectAll('.line, .linedata-point')
+        svg1.selectAll('.line, .linedata-point, .x-grid, .y-grid, .grid-group')
             .remove();
         console.log('Data received at the start in lineChartPlot: ',dataReceived);//debugging log
         
@@ -63,21 +64,6 @@ export const lineChartPlot = () => {
                 yField:series.yField
                 };
         	});
-
-        // const seriesData=Object.entries(dataReceived).forEach(([key,value]) => {
-        //         // console.log(`id: ${key},
-        //         //              data: ${value.data},
-        //         //              color:${value.color},
-        //         //              xField:${value.xField},
-        //         //              yField:${value.yField}`);//debugging log
-        //         return {
-        //             'id':key,
-        //             'data':value.data,
-        //             'color':value.color,
-        //             'xField':value.xField,
-        //             'yField':value.yField
-        //         };
-        //     });
             console.log('seriesData:',seriesData);//debugging log
             
 
@@ -91,12 +77,6 @@ export const lineChartPlot = () => {
         const allYValues = seriesData.flatMap((series) => series.data.map((d) => yCoordinate(d)));
         console.log('allYvalues: ',allYValues);//debugging log
         
-        
-        // create scales using all data points
-        // const allPoints = allData.reduce((acc, series) => {	acc.concat(series.data), []});
-
-        // const pointPadding = dataReceived.length > 150 ? 0.2 : 0.5;
-        // console.log('data received:',dataReceived);//debugging log
         
         // Create scales
         const xScale = scalePoint()
@@ -171,6 +151,59 @@ export const lineChartPlot = () => {
                 //     },null,2);
                 // 	});
         });
+
+        // WE shall create a grid group that stays behind the plotting area in the chart on which the ploting of the data using the graph will make sense to the user viewing it. 
+        // First, create a dedicated group for grid lines that will stay behind everything
+    const gridGroup = svg1.selectAll('.grid-group')
+    .data([null])
+    .join('g')
+    .attr('class', 'grid-group');
+
+    // Y-grid lines (render these first)
+    gridGroup.selectAll('.y-grid')
+    .data(yScale.ticks())
+    .join(
+        enter => enter.append('line')
+        .attr('class', 'y-grid')
+        .attr('x1', margin.left)
+        .attr('x2', width - margin.right)
+        .attr('stroke', '#000')
+        .attr('stroke-dasharray', '5,5')
+        .attr('opacity', 0)
+        .attr('y1', d => yScale(d))
+        .attr('y2', d => yScale(d))
+        .transition(t)
+        .attr('opacity', 1),
+        update => update.transition(t)
+        .attr('y1', d => yScale(d))
+        .attr('y2', d => yScale(d)),
+        exit => exit.transition(t)
+        .attr('opacity', 0)
+        .remove()
+    );
+
+    // X-grid lines
+    gridGroup.selectAll('.x-grid')
+        .data(xScale.domain())
+        .join(
+        enter => enter.append('line')
+            .attr('class', 'x-grid')
+            .attr('y1', margin.top)
+            .attr('y2', height - margin.bottom)
+            .attr('stroke', '#000')
+            .attr('stroke-dasharray', '5,5')
+            .attr('opacity', 0)
+            .attr('x1', d => xScale(d))
+            .attr('x2', d => xScale(d))
+            .transition(t)
+            .attr('opacity', 1),
+        update => update.transition(t)
+            .attr('x1', d => xScale(d))
+            .attr('x2', d => xScale(d)),
+        exit => exit.transition(t)
+            .attr('opacity', 0)
+            .remove()
+);
 
 
         // X Axis

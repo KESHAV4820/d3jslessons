@@ -225,7 +225,7 @@ const my = (svg1) => {
                     const svg=d3Select(chartWrapper)
                     .select('svg');
                     // Remove only data driven elements, preserving the rest of the structure.
-                    svg.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point')
+                    svg.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point, .x-grid, .y-grid, .grid-group')
                     .remove();
 
                 }
