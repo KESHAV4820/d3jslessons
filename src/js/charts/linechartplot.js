@@ -94,10 +94,10 @@ export const lineChartPlot = () => {
         // Create line generator
         const lineGenerator = line()
             .x(d => {
-                console.log(xCoordinate(d));//debugging log
+                // console.log(xCoordinate(d));//debugging log
                 return xScale(xCoordinate(d))})
             .y(d => {
-                    console.log(yCoordinate(d));//debugging log
+                    // console.log(yCoordinate(d));//debugging log
                                     
                 return yScale(yCoordinate(d))
             });
@@ -154,56 +154,56 @@ export const lineChartPlot = () => {
 
         // WE shall create a grid group that stays behind the plotting area in the chart on which the ploting of the data using the graph will make sense to the user viewing it. 
         // First, create a dedicated group for grid lines that will stay behind everything
-    const gridGroup = svg1.selectAll('.grid-group')
-    .data([null])
-    .join('g')
-    .attr('class', 'grid-group');
+        const gridGroup = svg1.selectAll('.grid-group')
+        .data([null])
+        .join('g')
+        .attr('class', 'grid-group');
 
-    // Y-grid lines (render these first)
-    gridGroup.selectAll('.y-grid')
-    .data(yScale.ticks())
-    .join(
-        enter => enter.append('line')
-        .attr('class', 'y-grid')
-        .attr('x1', margin.left)
-        .attr('x2', width - margin.right)
-        .attr('stroke', '#000')
-        .attr('stroke-dasharray', '5,5')
-        .attr('opacity', 0)
-        .attr('y1', d => yScale(d))
-        .attr('y2', d => yScale(d))
-        .transition(t)
-        .attr('opacity', 1),
-        update => update.transition(t)
-        .attr('y1', d => yScale(d))
-        .attr('y2', d => yScale(d)),
-        exit => exit.transition(t)
-        .attr('opacity', 0)
-        .remove()
-    );
-
-    // X-grid lines
-    gridGroup.selectAll('.x-grid')
-        .data(xScale.domain())
+        // Y-grid lines (render these first)
+        gridGroup.selectAll('.y-grid')
+        .data(yScale.ticks())
         .join(
-        enter => enter.append('line')
-            .attr('class', 'x-grid')
-            .attr('y1', margin.top)
-            .attr('y2', height - margin.bottom)
-            .attr('stroke', '#000')
-            .attr('stroke-dasharray', '5,5')
+            enter => enter.append('line')
+            .attr('class', 'y-grid')
+            .attr('x1', margin.left)
+            .attr('x2', width - margin.right)
+            .attr('stroke', '#888')
+            // .attr('stroke-dasharray', '5,5')
             .attr('opacity', 0)
-            .attr('x1', d => xScale(d))
-            .attr('x2', d => xScale(d))
+            .attr('y1', d => yScale(d))
+            .attr('y2', d => yScale(d))
             .transition(t)
             .attr('opacity', 1),
-        update => update.transition(t)
-            .attr('x1', d => xScale(d))
-            .attr('x2', d => xScale(d)),
-        exit => exit.transition(t)
+            update => update.transition(t)
+            .attr('y1', d => yScale(d))
+            .attr('y2', d => yScale(d)),
+            exit => exit.transition(t)
             .attr('opacity', 0)
             .remove()
-);
+        );
+
+        // X-grid lines
+        gridGroup.selectAll('.x-grid')
+            .data(xScale.domain())
+            .join(
+            enter => enter.append('line')
+                .attr('class', 'x-grid')
+                .attr('y1', margin.top)
+                .attr('y2', height - margin.bottom)
+                .attr('stroke', '#aaa')
+                // .attr('stroke-dasharray', '5,5')
+                .attr('opacity', 0)
+                .attr('x1', d => xScale(d))
+                .attr('x2', d => xScale(d))
+                .transition(t)
+                .attr('opacity', 1),
+            update => update.transition(t)
+                .attr('x1', d => xScale(d))
+                .attr('x2', d => xScale(d)),
+            exit => exit.transition(t)
+                .attr('opacity', 0)
+                .remove()
+        );
 
 
         // X Axis

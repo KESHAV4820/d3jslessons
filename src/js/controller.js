@@ -236,7 +236,7 @@ const main = async () =>{
         // Constants for width calculation
         const MIN_WIDTH = width; // minimum width (viewport width)
         const MIN_WIDTH_PER_ITEM = 25; // minimum pixels per data point
-        const MAX_WIDTH = 15000; // maximum allowed width
+        const MAX_WIDTH = 20000; // maximum allowed width
         
         //Handle line chart's nested data structure
         let dataLength;
@@ -269,14 +269,14 @@ const main = async () =>{
         // Calculate required width based on number of data points
         let calculatedWidth = Math.max(
             MIN_WIDTH, // never go below minimum width
-            data.length * MIN_WIDTH_PER_ITEM // allocate space per data point
+            dataLength * MIN_WIDTH_PER_ITEM // allocate space per data point
         );
         
         // Ensure we don't exceed maximum width
         calculatedWidth = Math.min(calculatedWidth, MAX_WIDTH);
     
         console.log('Width calculation:', {
-            dataPoints: data.length,
+            dataPoints: dataLength,
             calculatedWidth,
             minWidth: MIN_WIDTH,
             maxWidth: MAX_WIDTH,
