@@ -291,7 +291,7 @@ export const barChartPlot = () => {
             // Using the listeners.call to send the event up to the controller
             listeners.call('barClicked', null, {
                 data:d,
-                entireDataset:dataReceived,//Bug Found
+                // entireDataset:dataReceived,//Bug Found//Resolved: as on now this is used to filter zone to state data only. for state to city, we don't use it. it creates problem. In future, our aim is to make the data filtration independent just like state to city. 
                 currentXField: xCoordinate(d),
                 currentYField: yCoordinate(d)
             });

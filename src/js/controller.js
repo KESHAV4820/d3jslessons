@@ -230,9 +230,6 @@ const main = async () =>{
         
         console.log('data received to calculateEffectiveWidth',data);//debugging log
 
-        
-        
-
         // Constants for width calculation
         const MIN_WIDTH = width; // minimum width (viewport width)
         const MIN_WIDTH_PER_ITEM = 25; // minimum pixels per data point
@@ -396,10 +393,56 @@ const main = async () =>{
         };
 
         const {type, updates, menuId, value} = eventData;
+        console.log('type:',type, 'updates:',updates, 'menuId:',menuId, 'value:',value);//debugging log
+        
+        // More Intelligent Reset Logic
+        const shouldResetGeographicalFilters = (updates['x-menu'] && ['zone_name','state_name','city_name'].includes(updates['x-menu'])) ||(updates['menu-charttype']); 
+
+        if (shouldResetGeographicalFilters) {
+            if (updates['x-menu'] === 'zone_name') {
+                appState.selectedZone = null;
+                appState.selectedState = null;
+                if (drillDownHandler) {
+                    drillDownHandler.resetBarChart();
+                };
+            }else if(updates['x-menu']==='state_name'){
+                appState.selectedState = null;
+            }
+        }
 
         // this is meant to handle batch and single update as well
         if (type=== 'batch' && updates) {
-            console.log('Processing batch update:', updates);
+            console.log('Processing batch update:', updates);//debugging log
+
+            //Checking if this update action is a reseting of drill-down state action (when OK button is pressed)
+            const {
+                // state_name,
+                x_menu,
+                y_menu,
+                // zone_name
+                menu_charttype
+            }=updates;
+            console.log(
+                // 'state_name:',state_name,
+                'x-menu:',x_menu,
+                'y_menu:',y_menu,
+                // 'zone_name:',zone_name
+                'menu_charttype:',menu_charttype
+            );//debugging log
+            
+            if (x_menu!==undefined || y_menu!==undefined || menu_charttype!==undefined) {
+                // Reseting any😵‍💫 drill-down geographical filters
+                appState.selectedZone = null;
+                appState.selectedState = null;
+                console.log(`selectedZone:${appState.selectedZone}, selectedState:${appState.selectedState}`);//debugging log
+                
+
+                //Also reset the drill-down state if you have access to it
+                if (drillDownHandler) {
+                    console.log("firing restBarChart()");//debugging log
+                    drillDownHandler.resetBarChart();
+                };
+            };
             
             // update all state at once
             if (typeof updates === 'object' && updates !== null) {
@@ -469,7 +512,7 @@ const main = async () =>{
                 
 
                 renderChart(newData);
-            } 
+            };
             // else if (menuId && value !== undefined) {//To handle single update
             //     console.log('Processing single update:', {menuId, value});//Code Testing
             //     switch(menuId) {
@@ -611,6 +654,7 @@ const renderChart = (data) => {
     // Log the actual values being used for x and y
     console.log('Sample x values:', data.map((d) => d[appState.currentXField]));//debugging log
     console.log('Sample y values:', data.map((d) => d[appState.currentYField]));//debugging log
+    
     
     
     // svg1.selectAll("*").remove();//ConceptNoteIt clears all the content of previous chart type
