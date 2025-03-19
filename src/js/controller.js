@@ -409,7 +409,10 @@ const main = async () =>{
                 appState.selectedState = null;
             }
         }
-
+        console.log('shouldResetGeographicalFilters:',shouldResetGeographicalFilters);//debugging log
+        console.log('appState after OK click inside shouldResetGeographicalFilters:',appState);//debugging log
+        
+        
         // this is meant to handle batch and single update as well
         if (type=== 'batch' && updates) {
             console.log('Processing batch update:', updates);//debugging log

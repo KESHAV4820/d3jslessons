@@ -24,8 +24,9 @@
 </select> 
 */}
 import { dispatch, select as d3Select } from "d3";//Note For event listening.
-import { clearChartData, currentChartType } from "./controller";
+import { appState, clearChartData, currentChartType } from "./controller";
 // import { drillDownHandler } from "./controller";
+import { resetBarChart } from "./drilldownlogic";
 //Create a global state to track pending changes
 // const pendingChanges = new Map();
 
@@ -188,10 +189,16 @@ const my = (svg1) => {
                     }
                 });
                 console.log('Batch Updates:', batchUpdates);//Code Testing
+
+                // Reset geographical filters when OK button is pressed to avoid any drill down related parameter
+                if (appState.currentChartType==='barChartPlot') {
+                    appState.selectedZone = null;
+                    appState.selectedState = null;
+                    resetBarChart;
+                    console.log('Reset geographical filters on OK button press. appState: ',appState);
+                }
                 
                 // Dispatch apply event with all updates
-                // Object.entries(updates).forEach(([menuId, value]) => {
-                // to dispatch only if we have updates
                     if (Object.keys(batchUpdates).length>0) {
                         listeners.call('apply', null,{
                             type:'batch',

@@ -269,4 +269,4 @@ export const createDrillDownHandler = (fullDataset) => {
     };
 };
 
-// export const {resetBarChart}=createDrillDownHandler;
+export const {resetBarChart}=createDrillDownHandler;
