@@ -1,0 +1,347 @@
+/* code upgrade first time 
+body{
+    margin: 0;
+    margin-top: 35px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+.tick text {
+    font-size: 24px;
+}
+
+.y-axis-label{
+font-size: 35px;
+}
+
+.x-axis-label{
+    font-size: 35px;
+}
+
+.menu-container-y{
+    position: fixed;
+    top: 45;
+    left: 20;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-container-x{
+    position: fixed;
+    top: 1075;
+    left: 1450;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-dataselectionmenu{
+    position: fixed;
+    top: 5;
+    left: 5;
+    display: flex;
+    justify-content: space-around;
+} */
+
+/* code upgrade second time
+body {
+    margin: 0;
+    margin-top: 35px;
+    margin-left: 15px;
+    
+}
+
+
+.chart-container {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 20px 0;
+   
+    height: calc(100vh - 150px);
+    position: relative;
+    
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+.chart-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.chart-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chart-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chart-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.tick text {
+    font-size: 24px;
+}
+
+.y-axis-label {
+    font-size: 35px;
+}
+
+.x-axis-label {
+    font-size: 35px;
+}
+
+.menu-container-y {
+    position: fixed;
+    top: 45px;
+    left: 20px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000; 
+}
+
+.menu-container-x {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+}
+
+.container-dataselectionmenu {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+}
+
+
+.chart-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.chart-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to left, transparent, white);
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.menu-container-examname{
+    position: fixed;
+    top: 15;
+    left: 650;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-container-examyear{
+    position: fixed;
+    top: 15;
+    left: 900;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-container-examtier{
+    position: fixed;
+    top: 15;
+    left: 1150;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-container-charttype{
+    position: fixed;
+    top: 15;
+    left: 350;
+    display: flex;
+    justify-content: space-around;
+} */
+
+/* Basic body styling */
+body {
+    margin: 0;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+/* Chart wrapper styling */
+.chart-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    /* width: 100%; */
+    /* height: calc(100vh - 55px); */
+    scroll-behavior: smooth;
+}
+
+/* SVG styling */
+svg {
+    display: block;
+    min-width: max-content; /* Ensures SVG maintains minimum width needed */
+}
+
+/* Menu container shared styling */
+.menu-container-x,
+.menu-container-y,
+.menu-container-examname,
+.menu-container-examtier,
+.menu-container-examyear,
+.menu-container-charttype,
+.apply-button,
+.clear-graph-button {
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Position menus */
+.menu-container-y {
+    top: 45px;
+    left: 20px;
+}
+
+.menu-container-x {
+    top: 1050px;
+    right: 20px;
+}
+
+.menu-container-examname {
+    top: 15px;
+    right: 1500px;
+}
+
+.menu-container-examtier {
+    top: 15px;
+    right: 1200px;
+}
+
+.menu-container-examyear {
+    top: 15px;
+    right: 800px;
+}
+
+.menu-container-charttype {
+    top: 15px;
+    right: 400px;
+}
+
+.apply-button{
+    top: 15px;
+    right: 200px;
+    font-size: 20px;
+    background-color: greenyellow;
+}
+.apply-button:hover {
+    background-color: #f8fc08;
+}
+
+.apply-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.189rem rgba(13, 78, 24, 0.685);
+}
+
+.clear-graph-button{
+    top: 15px;
+    right: 50px;
+    background-color: rgba(247, 102, 6, 0.774);
+}
+.clear-graph-button:hover {
+    background-color: #fa9006;
+}
+.clear-graph-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.189rem rgba(0, 0, 0, 0.685);
+}
+
+/* Ensure menus don't interfere with scrolling */
+select {
+    max-width: 120px;
+}
+
+/* Updated axis text styling with preserved sizes from old stylesheet */
+.tick text {
+    font-size: 24px;
+}
+
+.y-axis-label {
+    font-size: 35px;
+}
+
+.x-axis-label {
+    font-size: 35px;
+}
+
+/* Axis text general styling */
+.axis text {
+    font-size: 12px;
+}
+
+/* Scrollbar styling */
+.chart-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.chart-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Fade indicators for scroll hints */
+.chart-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, transparent, white);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.chart-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to left, transparent, white);
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 1;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "d3js-charting",
+  "version": "1.0.0",
+  "description": "to understand visual representation of data",
+  "default": "index.js",
+  "scripts": {
+    "start:dev": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Keshav Rising",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-raw": "^2.12.0",
+    "path-browserify": "^1.0.1"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "d3": "^7.9.0",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.12.0",
+    "pg-promise": "^11.8.0",
+    "print-js": "^1.6.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5"
+  }
+}
