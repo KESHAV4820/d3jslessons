@@ -208,7 +208,7 @@ export const appState = {
     selectedState: null // newly added
 };
 export const {currentChartType,currentYField}=appState;// this export is being used in menu.js in clearChartData()function as parameter.
-
+let drillDownHandler;
 const main = async () =>{
     // SuperConceptThese👇🏼😟 are state tracking variable. When switching to a new chart type, dfault buggs were comming up. Hence, this to track axis fields.
     
@@ -218,8 +218,19 @@ const main = async () =>{
     console.log(dataExtracted);//Code Testing
 
     // Added👇🏼 drill-down handler initialization
-    const drillDownHandler = createDrillDownHandler(dataExtracted);
+     drillDownHandler = createDrillDownHandler(dataExtracted);
     console.log('Initialized the drill-down handler');//debugging log
+
+    // Initialize drill-down level based on initial X-axis selection
+        if (drillDownHandler) {
+            if (appState.currentXField === 'state_name') {
+                drillDownHandler.setCurrentLevel('state');
+            } else if (appState.currentXField === 'city_name') {
+                drillDownHandler.setCurrentLevel('city');
+            } else {
+                drillDownHandler.setCurrentLevel('zone');
+            }
+        };
 
     const calculateEffectiveWidth = (data) => {
         // Early return if no data
@@ -404,6 +415,8 @@ const main = async () =>{
                 appState.selectedState = null;
                 if (drillDownHandler) {
                     drillDownHandler.resetBarChart();
+                    console.log('resetBarChart has been initiated in controller to address requirement of resetingGeographicalFilters');//debugging log
+                    
                 };
             }else if(updates['x-menu']==='state_name'){
                 appState.selectedState = null;
@@ -442,7 +455,7 @@ const main = async () =>{
 
                 //Also reset the drill-down state if you have access to it
                 if (drillDownHandler) {
-                    console.log("firing restBarChart()");//debugging log
+                    console.log("restBarChart() being initiated in controller if batch-update after OK press has been done");//debugging log
                     drillDownHandler.resetBarChart();
                 };
             };
@@ -454,6 +467,14 @@ const main = async () =>{
                         switch(key) {
                             case 'x-menu':
                                 appState.currentXField = val;
+                                // Determine and set the drill-down level based on X-axis selection
+                                if (val === 'zone_name') {
+                                    if (drillDownHandler) drillDownHandler.setCurrentLevel('zone');
+                                } else if (val === 'state_name') {
+                                    if (drillDownHandler) drillDownHandler.setCurrentLevel('state');
+                                } else if (val === 'city_name') {
+                                    if (drillDownHandler) drillDownHandler.setCurrentLevel('city');
+                                }
                                 break;
                             case 'y-menu':
                                 appState.currentYField = val;
@@ -1092,8 +1113,8 @@ window.addEventListener('resize', () => {
     // renderChart(filteredData());//07/11/2024
 };
 
-export {clearChartData};
 main();
+export {clearChartData, drillDownHandler};
 
 
 

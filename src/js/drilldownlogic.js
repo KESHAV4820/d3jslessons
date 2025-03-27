@@ -6,6 +6,15 @@ export const createDrillDownHandler = (fullDataset) => {
     // Storing the full Data set👹😈. No more mind fuck
         const completeData = fullDataset;
 
+        const setCurrentLevel = (level) => {
+            if (['zone', 'state', 'city'].includes(level)) {
+                drillDownState.currentLevel = level;
+                console.log(`Drill-down level set to: ${level}`);
+            } else {
+                console.error(`Invalid level: ${level}`);
+            }
+        };
+
     // Object For Tracking the drill-down state
     const drillDownState = {
         currentLevel: 'zone', // Can be 'zone', 'state', or 'city'. Default being zone
@@ -148,6 +157,8 @@ export const createDrillDownHandler = (fullDataset) => {
         
         const currentLevel = drillDownState.currentLevel;// To register which field is currently selected on the x-axis dropDown menu to get the next Geographical location it will point.
         const nextLevel = geoHierarchy[currentLevel].nextLevel;// Got the next level of Geolocation based on currentlevel.Just Beautiful
+        console.log('currentLevel: ',currentLevel,'nextLevel: ',nextLevel);//debugging log
+        
         
         if (!nextLevel) {
             console.log('At lowest level - no further drill-down possible');
@@ -166,7 +177,8 @@ export const createDrillDownHandler = (fullDataset) => {
             console.warn('No data found for next level');
             return null;
         };
-
+        console.log('drillDownState: ', drillDownState);//debugging log
+        
         // Store current state in history for back navigation
         drillDownState.history.push({
             level: currentLevel,//which option on x-axis dropdown menu
@@ -178,18 +190,23 @@ export const createDrillDownHandler = (fullDataset) => {
             //Reseting the filters completely😈 wehn starting from zone level😼 to avoid the Bug
             drillDownState.filters = {};
         };
+        console.log('drillDownState:',drillDownState);//debugging log
+        
 
         // Updating the filters based on clicked item Very tricky. Take A Good Look Marvel
         drillDownState.filters[geoHierarchy[currentLevel].idField] = clickedData[geoHierarchy[currentLevel].idField];
         drillDownState.currentLevel = nextLevel;
+        console.log('drillDownState:',drillDownState);//debugging log
+        
 
         // Generate menu update parameters
         const updates = {
             'x-menu': geoHierarchy[nextLevel].idField,
             'y-menu': geoHierarchy[nextLevel].scoreField,
-            // ...drillDownState.filters
+            ...drillDownState.filters
         };
-
+        console.log('updates before adding current filters: ',updates);//debugging log
+        
         // Add current filters to updates
         Object.keys(drillDownState.filters)
               .forEach( (key) => {	
@@ -240,24 +257,30 @@ export const createDrillDownHandler = (fullDataset) => {
 
     // Reset drill-down state
     const resetBarChart = () => {
-        // level -specific reset logic
-        switch (drillDownState.currentLevel) {
-            case 'zone':
-                drillDownState.filters={};
-                break;
-            case 'state':
-                delete drillDownState.filters['state_name'];
-                break;
-            case 'city':
-                delete drillDownState.filters['city_name'];
-                break;
-        }
+        // // level -specific reset logic
+        // switch (drillDownState.currentLevel) {
+        //     case 'zone':
+        //         drillDownState.filters={};
+        //         break;
+        //     case 'state':
+        //         delete drillDownState.filters['state_name'];
+        //         delete drillDownState.filters['zone_name'];
+        //         // drillDownState.filters={};
+        //         break;
+        //     case 'city':
+        //         delete drillDownState.filters['city_name'];
+        //         break;
+        // }
 
-
-        drillDownState.currentLevel = 'zone';
+        //preserving the current level and the filters; but resetting the history
+        
+        drillDownState.filters = {};
+        // drillDownState.currentLevel = 'zone';
         drillDownState.history = [];
-        // drillDownState.filters = {};
-        console.log('barchart reset has been fired', drillDownState.currentLevel, drillDownState.history, drillDownState.filters);//debugging log
+        console.log('barchart reset has been fired', 
+            drillDownState.currentLevel, 
+            drillDownState.history, 
+            drillDownState.filters);//debugging log
         
     };
 
@@ -265,7 +288,8 @@ export const createDrillDownHandler = (fullDataset) => {
         handleDrillDown,
         handleDrillUp,
         getCurrentLevelInfo,
-        resetBarChart
+        resetBarChart,
+        setCurrentLevel
     };
 };
 

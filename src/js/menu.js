@@ -25,8 +25,8 @@
 */}
 import { dispatch, select as d3Select } from "d3";//Note For event listening.
 import { appState, clearChartData, currentChartType } from "./controller";
-// import { drillDownHandler } from "./controller";
-import { resetBarChart } from "./drilldownlogic";
+import { drillDownHandler } from "./controller";
+// import { resetBarChart } from "./drilldownlogic";
 //Create a global state to track pending changes
 // const pendingChanges = new Map();
 
@@ -194,7 +194,11 @@ const my = (svg1) => {
                 if (appState.currentChartType==='barChartPlot') {
                     appState.selectedZone = null;
                     appState.selectedState = null;
-                    resetBarChart;
+                    if (drillDownHandler) {
+                        // resetBarChart;
+                        drillDownHandler.resetBarChart();
+                        console.log('Reset of drillDownHandler has been attempted');//debugging log
+                    }
                     console.log('Reset geographical filters on OK button press. appState: ',appState);
                 }
                 

@@ -180,7 +180,7 @@ export const barChartPlot = () => {
             .attr('class', 'x-grid')
             .attr('y1', margin.top)
             .attr('y2', height - margin.bottom)
-            .attr('stroke', '#000')
+            .attr('stroke', '#fff')
             .attr('stroke-dasharray', '5,5')
             .attr('opacity', 0)
             .attr('x1', d => xScale(d))
