@@ -11,10 +11,12 @@ import {
     transition,
     min,
     max,
-    color
+    color,
+    index
 } from 'd3';
 import { appState } from '../controller';
 import { currentYField } from '../controller';
+import { exit } from 'process';
 
 const commaFormat = format(',');
 
@@ -28,63 +30,53 @@ export const lineChartPlot = () => {
 
     const my = (svg1) => {
         // To Clear pre-existing elements
-        svg1.selectAll('.line, .linedata-point')
+        svg1.selectAll('.line, .linedata-point, .x-grid, .y-grid, .grid-group')
             .remove();
-        console.log('Data received in lineChartPlot: ',dataReceived);//debugging log
-        
-        // to handle multiple series
-        // const allData = Array.isArray(dataReceived) ? [{data:dataReceived}]: Object.values(dataReceived);//Bug Found
-        // new data transformation logic
-        let allData;
-        if (Array.isArray(dataReceived)) {
-        // If dataReceived  is an array, it's a single series
-        allData = [{
-            data: dataReceived,
-            color:'#4682B4'
-        }];
-        } else if (typeof dataReceived === 'object'){
-            // If dataReceived is an object containing multiple series
-            allData = Object.values(dataReceived);
-        } else {
-            console.error('Invalid data format received');
-            return;
-        };
-        allData[0].data.forEach((d) => console.log(d));//debugging log
-        console.log('Processed allData: ',allData);//debugging log
-        console.log(allData[0]);//debugging log
-        // console.log(allData[0].data[0].data);//debugging log
-        // console.log(allData[0].data[0].data);//debugging log
+        console.log('Data received at the start in lineChartPlot: ',dataReceived);//debugging log
         
         
-
-        // Above transformation is outputing data on 3rd level of nesting. that is, inside allData array, there are many objects having dataset information, in an Array of object fashion, now inside each data object,there are two parameters named color and data. so to reach all of the data set like d1 for one selection of data, d2 for next set of selection of data,and so on we need to iterate over the allData variable which is array of object.So we are using helper functions which will access these long chains of parameters. 
-        const getDataFromSeries = (series) => {	
-            if (series.data?.[0]?.data) {
-                return series.data[0].data;
-            }
-            // if series has direct data array
-            return series.data;
-        	};
-        const getColorFromSeries = (series) => {	
-            if (series.data?.[0]?.color) {
-                return series.data[0].color;
-            }
-            return series.color;
-        	};
+        
+        console.log('Processed dataReceived: ',dataReceived);//debugging log
+        // console.log('dataReceived[0] :',dataReceived[0]);//debugging log
+        console.log(Object.entries(dataReceived));//debugging log
+        Object.entries(dataReceived).forEach(([key, value]) => console.log(key,':',value)//debugging log
+        );
+        Object.entries(dataReceived).forEach(([key,value]) => {
+            console.log(value.data);//debugging log
+            console.log(value.color);//debugging log
+        });
+        
+        // console.log('dataReceived[0].data :',dataReceived[0].data);//debugging log
+        // console.log('Object.values(dataReceived[0].data) :',Object.values(dataReceived[0].data));//debugging log
+        // Object.values(dataReceived[0].data).forEach((eachSeries) => console.log('iteration within dataReceived[0].data',eachSeries.data, eachSeries.color));
+        // console.log(dataReceived[0].data[0].color);//debugging log
+        
+        
+        // Above transformation is outputing data on 3rd level of nesting. that is, inside dataReceived array, there are many objects having dataset information, in an Array of object fashion, now inside each data object,there are two parameters named color and data. so to reach all of the data set like d1 for one selection of data, d2 for next set of selection of data,and so on we need to iterate over the dataReceived variable which is array of object.So we are using helper functions which will access these long chains of parameters. 
+        
+        //trying to transform the nested🤮data into consistant format(2nd attempt👹)
+        const seriesData=Object.entries(dataReceived).filter(([key]) => key !== 'color' && key !== 'data').map(([key,series]) => {	
+            return {
+                id:key,
+                data:series.data,
+                color:series.color,
+                xField:series.xField,
+                yField:series.yField
+                };
+        	});
+            console.log('seriesData:',seriesData);//debugging log
+            
 
         // Get all unique x-values and all y-values properly
-        // const allXValues =[...new Set(allData.flatMap((series) => series.data[0].data.map((d) => xCoordinate(d))))];
-        const allXValues = [...new Set(allData.flatMap((series) => getDataFromSeries(series).map((d) => xCoordinate(d))
-        ))];
-        // const allYValues = allData.flatMap((series) => series.data[0].data.map((d) => yCoordinate(d)));
-        const allYValues = allData.flatMap((series) => getDataFromSeries(series).map((d) => yCoordinate(d))
-        );
+        const allXValues = [...new Set(
+            seriesData.flatMap((series) => series.data.map((d) => xCoordinate(d))
+            ))];
+        console.log('allXvalues: ',allXValues);//debugging log
         
-        // create scales using all data points
-        // const allPoints = allData.reduce((acc, series) => {	acc.concat(series.data), []});
-
-        // const pointPadding = dataReceived.length > 150 ? 0.2 : 0.5;
-        // console.log('data received:',dataReceived);//debugging log
+        
+        const allYValues = seriesData.flatMap((series) => series.data.map((d) => yCoordinate(d)));
+        console.log('allYvalues: ',allYValues);//debugging log
+        
         
         // Create scales
         const xScale = scalePoint()
@@ -113,20 +105,16 @@ export const lineChartPlot = () => {
         const t = transition().duration(1000);
 
         //Render each series separately
-        allData[0].data.forEach((series, index) => {
-            // const color = series.color || '#4682B4';
-            const seriesData = getDataFromSeries(series);
-            const seriesColor = getColorFromSeries(series);
-            console.log(seriesColor,seriesData);//debugging log
+        seriesData.forEach(eachDataset =>{
             
             // Create line
             svg1.append('path')
                 // .datum(series.data[0].data)
-                .datum(seriesData)
+                .datum(eachDataset.data)
                 .attr('class', 'line')
                 .attr('fill', 'none')
                 // .attr('stroke', series.data[0].color)
-                .attr('stroke', seriesColor)
+                .attr('stroke', eachDataset.color)
                 .attr('stroke-width', 2)
                 .attr('d', lineGenerator)
                 .call(enter => enter.transition(t)
@@ -136,7 +124,7 @@ export const lineChartPlot = () => {
             svg1.selectAll(null)
                 // .data(dataReceived)
                 // .data(series.data[0].data)
-                .data(seriesData)
+                .data(eachDataset.data)
                 .join('circle')
                 .attr('class', 'linedata-point')
                 .attr('cx', d => xScale(xCoordinate(d)))
@@ -144,7 +132,7 @@ export const lineChartPlot = () => {
                 .attr('r', 10)
                 // .attr('fill', series.color || '#4682B4')
                 // .attr('fill', series.data[0].color)
-                .attr('fill', seriesColor)
+                .attr('fill', eachDataset.color)
             //Adding hower response on these circles on the line
                 .append('title')
                 .text((d) => `${xCoordinate(d)}: ${yCoordinate(d)} Exam: ${d.exam_name} ${d.exam_year} tier:${d.exam_tier}`);
@@ -163,6 +151,59 @@ export const lineChartPlot = () => {
                 //     },null,2);
                 // 	});
         });
+
+        // WE shall create a grid group that stays behind the plotting area in the chart on which the ploting of the data using the graph will make sense to the user viewing it. 
+        // First, create a dedicated group for grid lines that will stay behind everything
+        const gridGroup = svg1.selectAll('.grid-group')
+        .data([null])
+        .join('g')
+        .attr('class', 'grid-group');
+
+        // Y-grid lines (render these first)
+        gridGroup.selectAll('.y-grid')
+        .data(yScale.ticks())
+        .join(
+            enter => enter.append('line')
+            .attr('class', 'y-grid')
+            .attr('x1', margin.left)
+            .attr('x2', width - margin.right)
+            .attr('stroke', '#888')
+            // .attr('stroke-dasharray', '5,5')
+            .attr('opacity', 0)
+            .attr('y1', d => yScale(d))
+            .attr('y2', d => yScale(d))
+            .transition(t)
+            .attr('opacity', 1),
+            update => update.transition(t)
+            .attr('y1', d => yScale(d))
+            .attr('y2', d => yScale(d)),
+            exit => exit.transition(t)
+            .attr('opacity', 0)
+            .remove()
+        );
+
+        // X-grid lines
+        gridGroup.selectAll('.x-grid')
+            .data(xScale.domain())
+            .join(
+            enter => enter.append('line')
+                .attr('class', 'x-grid')
+                .attr('y1', margin.top)
+                .attr('y2', height - margin.bottom)
+                .attr('stroke', '#aaa')
+                // .attr('stroke-dasharray', '5,5')
+                .attr('opacity', 0)
+                .attr('x1', d => xScale(d))
+                .attr('x2', d => xScale(d))
+                .transition(t)
+                .attr('opacity', 1),
+            update => update.transition(t)
+                .attr('x1', d => xScale(d))
+                .attr('x2', d => xScale(d)),
+            exit => exit.transition(t)
+                .attr('opacity', 0)
+                .remove()
+        );
 
 
         // X Axis

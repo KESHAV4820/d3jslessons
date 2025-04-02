@@ -140,35 +140,61 @@ export const barChartPlot = () => {
                     .attr('height', 0)
                     .remove())
             );
+    
+    // WE shall create a grid group that stays behind the plotting area in the chart on which the ploting of the data using the graph will make sense to the user viewing it. 
+        // First, create a dedicated group for grid lines that will stay behind everything
+
+    const gridGroup = svg1.selectAll('.grid-group')
+    .data([null])
+    .join('g')
+    .attr('class', 'grid-group');
+
+    // Y-grid lines (render these first)
+    gridGroup.selectAll('.y-grid')
+    .data(yScale.ticks())
+    .join(
+        enter => enter.append('line')
+        .attr('class', 'y-grid')
+        .attr('x1', margin.left)
+        .attr('x2', width - margin.right)
+        .attr('stroke', '#000')
+        .attr('stroke-dasharray', '5,5')
+        .attr('opacity', 0)
+        .attr('y1', d => yScale(d))
+        .attr('y2', d => yScale(d))
+        .transition(t)
+        .attr('opacity', 1),
+        update => update.transition(t)
+        .attr('y1', d => yScale(d))
+        .attr('y2', d => yScale(d)),
+        exit => exit.transition(t)
+        .attr('opacity', 0)
+        .remove()
+    );
+
+    // X-grid lines
+    gridGroup.selectAll('.x-grid')
+        .data(xScale.domain())
+        .join(
+        enter => enter.append('line')
+            .attr('class', 'x-grid')
+            .attr('y1', margin.top)
+            .attr('y2', height - margin.bottom)
+            .attr('stroke', '#fff')
+            .attr('stroke-dasharray', '5,5')
+            .attr('opacity', 0)
+            .attr('x1', d => xScale(d))
+            .attr('x2', d => xScale(d))
+            .transition(t)
+            .attr('opacity', 1),
+        update => update.transition(t)
+            .attr('x1', d => xScale(d))
+            .attr('x2', d => xScale(d)),
+        exit => exit.transition(t)
+            .attr('opacity', 0)
+            .remove()
+    );
             
-            bars.style('cursor', 'pointer') // Set cursor for all bars at once
-                .on('mouseover', function() {
-                    select(this)
-                        .transition()
-                        .duration(300)
-                        .style('opacity', 0.7);
-                })
-                .on('mouseout', function() {
-                    select(this)
-                        .transition()
-                        .duration(300)
-                        .style('opacity', 1);
-                })
-                .on('click', function(event, d) {
-                    console.log('Bar clicked:', d);  // Explicit console log
-                    console.log('Event:', event);    // Log the event object
-                    
-                    // Verify coordinates and scales
-                    console.log('xCoordinate:', xCoordinate(d));
-                    console.log('yCoordinate:', yCoordinate(d));
-                    console.log('xScale:', xScale(xCoordinate(d)));
-                    console.log('yScale:', yScale(yCoordinate(d)));
-                    
-                    listeners.call('barClicked', null, {
-                        data: d,
-                        entireDataset: dataReceived
-                    });
-                });
 
         const yAxisG = svg1.selectAll('g.y-axis')
             .data([null])
@@ -259,13 +285,13 @@ export const barChartPlot = () => {
             console.log('Clicked bar data:', d); // debugging log
             console.log('Current x coordinate:', xCoordinate(d)); // debugging log
             console.log('Current y coordinate:', yCoordinate(d));// debugging log
-            console.log('Full dataset:', dataReceived);// debugging log
+            console.log('Full dataset:', dataReceived);// debugging log//Bug Found
             console.groupEnd();
 
             // Using the listeners.call to send the event up to the controller
             listeners.call('barClicked', null, {
                 data:d,
-                entireDataset:dataReceived,
+                // entireDataset:dataReceived,//Bug Found//Resolved: as on now this is used to filter zone to state data only. for state to city, we don't use it. it creates problem. In future, our aim is to make the data filtration independent just like state to city. 
                 currentXField: xCoordinate(d),
                 currentYField: yCoordinate(d)
             });

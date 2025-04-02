@@ -24,7 +24,9 @@
 </select> 
 */}
 import { dispatch, select as d3Select } from "d3";//Note For event listening.
-import { clearChartData, currentChartType } from "./controller";
+import { appState, clearChartData, currentChartType } from "./controller";
+import { drillDownHandler } from "./controller";
+// import { resetBarChart } from "./drilldownlogic";
 //Create a global state to track pending changes
 // const pendingChanges = new Map();
 
@@ -187,10 +189,20 @@ const my = (svg1) => {
                     }
                 });
                 console.log('Batch Updates:', batchUpdates);//Code Testing
+
+                // Reset geographical filters when OK button is pressed to avoid any drill down related parameter
+                if (appState.currentChartType==='barChartPlot') {
+                    appState.selectedZone = null;
+                    appState.selectedState = null;
+                    if (drillDownHandler) {
+                        // resetBarChart;
+                        drillDownHandler.resetBarChart();
+                        console.log('Reset of drillDownHandler has been attempted');//debugging log
+                    }
+                    console.log('Reset geographical filters on OK button press. appState: ',appState);
+                }
                 
                 // Dispatch apply event with all updates
-                // Object.entries(updates).forEach(([menuId, value]) => {
-                // to dispatch only if we have updates
                     if (Object.keys(batchUpdates).length>0) {
                         listeners.call('apply', null,{
                             type:'batch',
@@ -213,17 +225,24 @@ const my = (svg1) => {
             .attr('class', 'clear-graph-button')
             .text('Clear Graph')
             .on('click', () => {
+                // To reset the drilldown state for barchart not working as of now.
+                // console.log(drillDownHandler);//debugging log
+                
+                // if (currentChartType === 'barChartPlot') {
+                //     drillDownHandler.resetBarChart();
+                // };
                 const chartWrapper = document.querySelector('.chart-wrapper');
                 if (chartWrapper) {
                     const svg=d3Select(chartWrapper)
                     .select('svg');
                     // Remove only data driven elements, preserving the rest of the structure.
-                    svg.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point')
+                    svg.selectAll('.line, .linedata-point, .bar, .pie-group, .scatter-point, .x-grid, .y-grid, .grid-group')
                     .remove();
 
                 }
                 //To clear the global variable named "globalChartData" in controller.js which helps in cumulative rendering of graphs
                 clearChartData(currentChartType);
+
 
                 listeners.call('clear', null);
             });
