@@ -897,7 +897,7 @@ renderChart(filteredData());// to render something by default
 // we are adding id, options, eventlistener getter setter on each dropdonw menu element.
     menuExamName.call(
                         menu().id('menu-examname')
-                              .textForMenuLabel('Exam Name')
+                              .textForMenuLabel('Exam Name :')
                               .optionsWithinMenu(columnsForExamName)//👈🏼
                               .on('apply', handleMenuUpdate)
                             //   .on('change', function(column){
@@ -909,7 +909,7 @@ renderChart(filteredData());// to render something by default
                     );    
     menuExamTier.call(
                     menu().id('menu-examtier')
-                            .textForMenuLabel('Exam Tier')
+                            .textForMenuLabel('Exam Tier :')
                             .optionsWithinMenu(columnsForExamTier)
                             .on('apply', handleMenuUpdate)
                             // .on('change', (column) => {
@@ -921,7 +921,7 @@ renderChart(filteredData());// to render something by default
                     );
     menuExamYear.call(
                     menu().id('menu-examyear')
-                            .textForMenuLabel('Exam Year')
+                            .textForMenuLabel('Exam Year :')
                             .optionsWithinMenu(columnsForExamYear)
                             .on('apply', handleMenuUpdate)
                             // .on('change', (column) => {
@@ -933,7 +933,7 @@ renderChart(filteredData());// to render something by default
                     );
       menuChartType.call(
                         menu().id('menu-charttype')
-                              .textForMenuLabel('Chart Type')
+                              .textForMenuLabel('Chart Type :')
                               .optionsWithinMenu(chartTypes)
                               .on('apply', handleMenuUpdate)
                             //   .on('change', (chartType) => {	
@@ -968,94 +968,22 @@ renderChart(filteredData());// to render something by default
     
     menuContainerY.call(
         menu().id('y-menu')
-              .textForMenuLabel('Candidate Counts')
+              .textForMenuLabel('Y-Axis :')
               .optionsWithinMenu(columnsForY)
               .on('change',({menuId, value}) => {
-                    // svg1.call(plot.yCoordinate((d) => d[column]).yAxisLabel(column));
-                    // const container=select('.chart-wrapper');
-                    // if (container.node()) {
-                    //     container.dispatch('scroll');
-                    // }
-                    // currentYField=column;// Note: changed the state based on menu selection on Y forced stop20/01/2025
                     console.log('Y axis changes:', menuId, value);//Code Testing
                  })
               .on('apply', handleMenuUpdate)
-                // .on('apply', ({menuId,value}) => {//newly added
-                //     console.log('Applying Y axis change from apply section:', menuId, value);//Code Testing
-                    
-                //     if (menuId === 'y-menu') {
-                //         currentYField=value;//newly added
-                //         // const filteredDataResult = filteredData();
-                //         // const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
-                        
-                //         // svg1.attr('width', effectiveWidth);
-                //         // chartWrapper.style('width', `${effectiveWidth}px`);
-                        
-                //         renderChart(filteredData());
-                //     }
-                // /* code upgrade☝🏼 this code wasn't compatible with the multiple charts. It broke as soon as different charting was chosen from the charts drop down menu 
-                //         svg1.call(plot.width(effectiveWidth)
-                //                 .yCoordinate((d) => d[column])
-                //                 .yAxisLabel(column)
-                //                 .dataReceived(filteredDataResult));
-                //     */
-
-                //     // console.log(column);//Code Testing    
-                // })
         );
-/*    menuContainerX.call(
-        menu().id('x-menu')
-              .textForMenuLabel('Group Wise')
-              .optionsWithinMenu(columnsForX)
-              .on('change',(column) =>{
-                    // svg1.call(plot.xCoordinate((d) => d[column]).xAxisLabel(column));
-                    // const container=select('.chart-wrapper');
-                    // if (container.node()) {
-                    //     container.dispatch('scroll');
-                    // }
-                    currentXField=column; // changed the state based on selection on X axis.
-
-                    const filteredDataResult = filteredData();
-                    const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
-                    
-                    // Update SVG and container dimensions first
-                    svg1.attr('width', effectiveWidth);
-                    chartWrapper.style('width', `${effectiveWidth}px`);
-                    
-                    // Then update the plot with new coordinates
-                    renderChart(filteredDataResult);
-            //  code upgradethis code failed as soon as different chart manu was made operational. 
-            //      svg1.call(plot.width(effectiveWidth)
-            //                     .xCoordinate((d) => d[column])
-            //                     .xAxisLabel(column)
-            //                     .dataReceived(filteredDataResult)); 
-            
-
-                // console.log('x menu changed: '+column);//Code Testing
-              })
-        );
-*/
 
     menuContainerX.call(
         menu().id('x-menu')
-              .textForMenuLabel('Group Wise')
+              .textForMenuLabel('X-Axis :')
               .optionsWithinMenu(columnsForX)
               .on('change', ({menuId,value}) => {
                 console.log('X-axis change:',menuId, value);// Code Testing
               })
               .on('apply',handleMenuUpdate)
-            //   .on('apply',({menuId, value}) => {
-            //       console.log('Applying X axis change in apply section:', menuId, value);//Code Testing
-                
-            //      if (menuId === 'x-menu') {
-            //         currentXField = value;
-            //         // const filteredDataResult = filteredData();
-            //         // const effectiveWidth = calculateEffectiveWidth(filteredDataResult);
-            //         // svg1.attr('width', effectiveWidth);
-            //         // chartWrapper.style('width', `${effectiveWidth}px`);
-            //         renderChart(filteredData());
-            //     }	
-            // })
     );    
 
     /*NoteVIETake A Good LookThis section was just for learning that how graphs actually form and automatically take the data. 

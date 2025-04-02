@@ -193,6 +193,7 @@ body {
     /* width: 100%; */
     /* height: calc(100vh - 55px); */
     scroll-behavior: smooth;
+    margin-top: 65px;
 }
 
 /* SVG styling */
@@ -222,33 +223,33 @@ svg {
 
 /* Position menus */
 .menu-container-y {
-    top: 45px;
+    top: 55px;
     left: 20px;
 }
 
 .menu-container-x {
-    top: 1050px;
+    top: 685px;
     right: 20px;
 }
 
 .menu-container-examname {
     top: 15px;
-    right: 1500px;
-}
-
-.menu-container-examtier {
-    top: 15px;
-    right: 1200px;
+    right: 1050px;
 }
 
 .menu-container-examyear {
     top: 15px;
-    right: 800px;
+    right: 850px;
+}
+
+.menu-container-examtier {
+    top: 15px;
+    right: 650px;
 }
 
 .menu-container-charttype {
     top: 15px;
-    right: 400px;
+    right: 350px;
 }
 
 .apply-button{
@@ -290,11 +291,11 @@ select {
 }
 
 .y-axis-label {
-    font-size: 35px;
+    font-size: 20px;
 }
 
 .x-axis-label {
-    font-size: 35px;
+    font-size: 20px;
 }
 
 /* Axis text general styling */
