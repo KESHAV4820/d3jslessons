@@ -965,23 +965,44 @@ renderChart(filteredData());// to render something by default
         // 'city_name',
         { value:'city_score',text:'City Score'},
     ];
+    // Following is the object that will be used to set the values of the y-axis menu based on the x-axis menu selection.
+    const inputCoupling = {
+    'zone_name': 'zone_score',
+    'state_name': 'state_score',
+    'city_name': 'city_score',
+    };
     
-    menuContainerY.call(
-        menu().id('y-menu')
-              .textForMenuLabel('Y-Axis :')
-              .optionsWithinMenu(columnsForY)
-              .on('change',({menuId, value}) => {
-                    console.log('Y axis changes:', menuId, value);//Code Testing
-                 })
-              .on('apply', handleMenuUpdate)
-        );
+    const yAxisMenu=menu().id('y-menu')
+            .textForMenuLabel('Y-Axis :')
+            .optionsWithinMenu(columnsForY)
+            .on('change',({menuId, value, programmatic}) => {
+                if (programmatic) {
+                    console.log('Programmatic coupling changed y-axis menu:', menuId, value);//Code Testing
+                };
+                if(!programmatic) {
+                console.log('Y axis changes:', menuId, value);//Code Testing
+                };
+            })
+            .on('apply', handleMenuUpdate)
+    menuContainerY.call(yAxisMenu);
 
     menuContainerX.call(
         menu().id('x-menu')
               .textForMenuLabel('X-Axis :')
               .optionsWithinMenu(columnsForX)
-              .on('change', ({menuId,value}) => {
-                console.log('X-axis change:',menuId, value);// Code Testing
+              .on('change', ({menuId,value,programmatic}) => {
+                if (!programmatic) {
+                    console.log('X-axis change:',menuId, value);// Code Testing
+                    const correspondingYValue = inputCoupling[value];
+                    if (correspondingYValue) {
+                        yAxisMenu.setValue(correspondingYValue);
+                        console.log('Coupling Y-axis to:', correspondingYValue);//Code Testing
+
+                        appState.currentYField = correspondingYValue;
+                        console.log('appstate updated to: ',appState);//debugging log
+                        
+                    };
+                };
               })
               .on('apply',handleMenuUpdate)
     );    
