@@ -243,7 +243,7 @@ const main = async () =>{
 
         // Constants for width calculation
         const MIN_WIDTH = width; // minimum width (viewport width)
-        const MIN_WIDTH_PER_ITEM = 25; // minimum pixels per data point
+        const MIN_WIDTH_PER_ITEM = 30; // minimum pixels per data point
         const MAX_WIDTH = 20000; // maximum allowed width
         
         //Handle line chart's nested data structure
@@ -271,7 +271,18 @@ const main = async () =>{
             
         } else {
             // For other chart types, use array length directly
-            dataLength = Array.isArray(data)?data.length:0;
+            if (Array.isArray(data)) {
+                // to create the Set of unique values to determine the x-axis length further
+                const xAxisField = appState.currentXField || 'zone_name'; // default to 'zone_name'
+                const uniqueValues = new Set(data.map(item => item[xAxisField]));
+                dataLength = uniqueValues.size;
+            } else{
+                dataLength = 0;
+            }
+            // dataLength = Array.isArray(data)?data.length:0;
+            console.log(dataLength);//debugging log
+            console.log(data);//debugging log
+            
         };
 
         // Calculate required width based on number of data points
