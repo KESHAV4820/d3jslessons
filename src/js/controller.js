@@ -243,35 +243,65 @@ const main = async () =>{
 
         // Constants for width calculation
         const MIN_WIDTH = width; // minimum width (viewport width)
-        const MIN_WIDTH_PER_ITEM = 25; // minimum pixels per data point
+        const MIN_WIDTH_PER_ITEM = 30; // minimum pixels per data point
         const MAX_WIDTH = 20000; // maximum allowed width
         
         //Handle line chart's nested data structure
         let dataLength;
         if (appState.currentChartType === 'lineChartPlot') {
             //NoteKnowledge Gap: this is how we traverse object. by using Object.values(object_name) with .forEach() or [index];
-            const firstSeries = Object.values(data)[0];
-            console.log('Data in firstlevel for linechart:',firstSeries);//debugging log
+            
+            // const firstSeries = Object.values(data)[0];
+            // console.log('Data in firstlevel for linechart:',firstSeries);//debugging log
             
             //To assign the maximum length from the length of all series or dataset pool in linechart data
             let maxSeriesLength=0;
+            const uniqueXValue = new Set();
+
             Object.values(data).forEach(eachSeries =>{
-            const currentSeriesLength=Object.values(eachSeries)[0].length;
+                // console.log(eachSeries.data);//debugging log to see the structure of data for further processing.
+                const seriesData = eachSeries.data;
+                // const currentSeriesLength=Object.values(eachSeries)[0].length;
+            if (Array.isArray(seriesData)) {
+                // to create the Set of unique values to determine the x-axis length further
+                const xAxisField = appState.currentXField || 'zone_name'; // default to 'zone_name'
+                
+                //Now our uniquexvalue set will be given values to store.
+                seriesData.forEach(item => {
+                    if (item[xAxisField]) {
+                        uniqueXValue.add(item[xAxisField]);
+                    };
+                });
+                
+            }
+            const currentSeriesLength = uniqueXValue.size;
             // console.log(currentSeriesLength);//debugging log
             
+            //Logic to assign the maximum length out of all series in linechart data for x-axis length
             maxSeriesLength=currentSeriesLength>maxSeriesLength?currentSeriesLength:maxSeriesLength;
             // console.log(currentSeriesLength);//debugging log
             
             });
-            console.log('one of the series has maximum length of all: ',maxSeriesLength);//debugging log
+            // console.log('one of the series has maximum length of all: ',maxSeriesLength);//debugging log
 
             // dataLength = firstSeries && firstSeries.data ? firstSeries.data.length:0;
             dataLength = maxSeriesLength;
-            console.log('data length accepted for padding calculation:',dataLength);//debugging log
+            // console.log('data length accepted for padding calculation:',dataLength);//debugging log
             
         } else {
             // For other chart types, use array length directly
-            dataLength = Array.isArray(data)?data.length:0;
+            if (Array.isArray(data)) {
+                // to create the Set of unique values to determine the x-axis length further
+                const xAxisField = appState.currentXField || 'zone_name'; // default to 'zone_name'
+                const uniqueValues = new Set(data.map(item => item[xAxisField]));
+                dataLength = uniqueValues.size;
+            } else{
+                dataLength = 0;
+            }
+            // dataLength = Array.isArray(data)?data.length:0;
+            // console.log(dataLength);//debugging log
+            // console.log(data);//debugging log
+            
         };
 
         // Calculate required width based on number of data points
@@ -965,23 +995,44 @@ renderChart(filteredData());// to render something by default
         // 'city_name',
         { value:'city_score',text:'City Score'},
     ];
+    // Following is the object that will be used to set the values of the y-axis menu based on the x-axis menu selection.
+    const inputCoupling = {
+    'zone_name': 'zone_score',
+    'state_name': 'state_score',
+    'city_name': 'city_score',
+    };
     
-    menuContainerY.call(
-        menu().id('y-menu')
-              .textForMenuLabel('Y-Axis :')
-              .optionsWithinMenu(columnsForY)
-              .on('change',({menuId, value}) => {
-                    console.log('Y axis changes:', menuId, value);//Code Testing
-                 })
-              .on('apply', handleMenuUpdate)
-        );
+    const yAxisMenu=menu().id('y-menu')
+            .textForMenuLabel('Y-Axis :')
+            .optionsWithinMenu(columnsForY)
+            .on('change',({menuId, value, programmatic}) => {
+                if (programmatic) {
+                    console.log('Programmatic coupling changed y-axis menu:', menuId, value);//Code Testing
+                };
+                if(!programmatic) {
+                console.log('Y axis changes:', menuId, value);//Code Testing
+                };
+            })
+            .on('apply', handleMenuUpdate)
+    menuContainerY.call(yAxisMenu);
 
     menuContainerX.call(
         menu().id('x-menu')
               .textForMenuLabel('X-Axis :')
               .optionsWithinMenu(columnsForX)
-              .on('change', ({menuId,value}) => {
-                console.log('X-axis change:',menuId, value);// Code Testing
+              .on('change', ({menuId,value,programmatic}) => {
+                if (!programmatic) {
+                    console.log('X-axis change:',menuId, value);// Code Testing
+                    const correspondingYValue = inputCoupling[value];
+                    if (correspondingYValue) {
+                        yAxisMenu.setValue(correspondingYValue);
+                        console.log('Coupling Y-axis to:', correspondingYValue);//Code Testing
+
+                        appState.currentYField = correspondingYValue;
+                        console.log('appstate updated to: ',appState);//debugging log
+                        
+                    };
+                };
               })
               .on('apply',handleMenuUpdate)
     );    

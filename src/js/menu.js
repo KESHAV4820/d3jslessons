@@ -37,102 +37,29 @@ export const menu = () => {
     // let changeHandler;
     const listeners= dispatch('change','clear','apply');//SuperNote other types of event like change are start or brush or end or clear
     let sharedButtonContainer;
-/*
-    const my = (svg1) => {	
-        // here i am codding the label for the menu element
-        svg1.selectAll('label')
-            .data([null])
-            .join('label')
-            .attr('for', id)
-            .text(textForMenuLabel);
-        // here i am codding for the options that will come up as options under the above label for the dropdown menu.But first, we have to select a dropdown menu like 👇🏼this
-        const select=svg1.selectAll('select')
-            .data([null])
-            .join('select')
-            .attr('name', id)
-            .attr('id', id)
-            .on('change', (event) => {
-            //   console.log(event);//Code Testing
-            //   console.log(event.target.value);//Code Testing
-            //   pendingChanges.set(id, event.target.value);//storing the pending changes in the set form
-            //   listeners.call('change', null, event.target.value);//forced stopSuperMarvelJust Beautiful This line of code is actually sending the content that we clicked on, to controller.js .on() method.😎💃🕺 but why! there is "null". here if you put an object which is going to be refered with "this" keyword in controller.js, given the condition that you are using the oldschool way of function notation. but using "this" is a tricky business. becouse it could resolve to anything. Hence nope. Hence null. Here null simply says that the announcement of the event isn't for any one but for all.
-            
-            listeners.call('change', null,{
+
+    // Updating the options programmatically for menu-axis coupling
+    const updateOptions = (newOptions) => {
+        optionsWithinMenu = newOptions;
+        return my;
+    };
+
+    // Set value programmatically
+    const setValue = (newValue) => {
+        const select = document.getElementById(id);
+        if (select) {
+            select.value = newValue;
+
+            // forwarding the change event for the use by other components
+            listeners.call('change', null, {
                 menuId: id,
-                value: event.target.value
+                value: newValue,
+                programmatic: true // This will be value when y-axis menu value changes due to coupling, not user action
             });
-        });//SuperVIERemember It
+        };
+        return my;
+    };
 
-            //Options
-          select.selectAll('option')
-            .data(optionsWithinMenu)
-            .join('option')
-            .attr('value',(d) => d.value)
-            .text((d) => d.text);
-
-        // creating shared button container
-        
-            const buttonContainer = svg1.selectAll('.control-buttons')
-                .data([null])
-                .join('div')
-                .attr('class', 'control-buttons')
-                .style('margin-top', '10px')
-                .style('display', 'flex')
-                .style('gap','10px');
-
-            buttonContainer.selectAll('.apply-button')
-                .data([null])
-                .join('button')
-                .attr('class', 'apply-button')
-                .text('OK')
-                .on('click', () => {
-                //     const entries = Array.from(pendingChanges.entries());
-                //     console.log('Processing entries:',entries);
-
-                //   entries.forEach(([menuId, value]) => {
-                //     const eventData = { 
-                //         menuId,
-                //         value
-                //     };
-                //     console.log('Dispatching event with data:', eventData);
-                //     listeners.call('apply', null, eventData);
-                //         });
-
-                const updates = {};
-                ['x-menu','y-menu','menu-examname','menu-examtier','menu-examyear','menu-charttype'].forEach(menuId => {
-                    const select = document.getElementById(menuId);
-                    if (select) {
-                        updates[menuId] = select.value;
-                    }
-                });
-                
-                // Dispatch apply event with all updates
-                Object.entries(updates).forEach(([menuId, value]) => {
-                    listeners.call('apply', null, { menuId, value });
-                });
-            });
-                // pendingChanges.clear();
-
-            // Adding a clear graph button
-            buttonContainer.selectAll('.clear-graph-button')
-                .data([null])
-                .join('button')
-                .attr('class','clear-graph-button')
-                .text('Clear Graph')
-                .on('click', () => {	
-                    const chartWrapper = document.querySelector('.chart-wrapper');
-                    if (chartWrapper) {
-                        const mainSvg = chartWrapper.querySelector('svg');
-                        if(mainSvg){
-                            // while (mainSvg.firstChild) {
-                            //     mainSvg.removeChild(mainSvg.firstChild);
-                            
-                            }
-                        }
-                        listeners.call('clear',null);
-                    });
-                }
-*/
 const my = (svg1) => {
     svg1.selectAll('label')
         .data([null])
@@ -146,10 +73,11 @@ const my = (svg1) => {
         .attr('name', id)
         .attr('id', id)
         .on('change', (event) => {
-            // Dispatch change event with both menuId and value
+            // Dispatching the change event with both menuId and value
             listeners.call('change', null, {
                 menuId: id,
-                value: event.target.value
+                value: event.target.value,
+                programmatic: false // This will be the flag value when user action happens
             });
         });
 
@@ -182,7 +110,8 @@ const my = (svg1) => {
             .on('click', () => {
                 // Get current select values for all menus
                 const batchUpdates = {};
-                const menuIds=['x-menu','y-menu','menu-examname','menu-examtier','menu-examyear','menu-charttype'];menuIds.forEach(menuId => {
+                const menuIds=['x-menu','y-menu','menu-examname','menu-examtier','menu-examyear','menu-charttype'];
+                    menuIds.forEach(menuId => {
                     const select = document.getElementById(menuId);
                     if (select) {
                         batchUpdates[menuId] = select.value;
@@ -190,7 +119,7 @@ const my = (svg1) => {
                 });
                 console.log('Batch Updates:', batchUpdates);//Code Testing
 
-                // Reset geographical filters when OK button is pressed to avoid any drill down related parameter
+                // Reseting geographical filters when OK button is pressed to avoid any drill down related parameter
                 if (appState.currentChartType==='barChartPlot') {
                     appState.selectedZone = null;
                     appState.selectedState = null;
@@ -265,6 +194,12 @@ const my = (svg1) => {
         let value = listeners.on.apply(listeners, arguments);
         return value === listeners? my: value;
     };
+
+    // Take A Good LookConcept: it's not a getter or setter function. It normal function that we are exposing to the outside world.
+    //  Exposing the updateOptions method to the outside world
+    my.updateOptions = updateOptions;
+    // Exposing the setValue method to the outside world
+    my.setValue = setValue;
  
     return my;
 
