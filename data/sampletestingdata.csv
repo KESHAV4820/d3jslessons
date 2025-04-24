@@ -502,7 +502,7 @@ CGL,2016,9,KKR,248,Kerala,109,Kollam,0
 CGL,2016,9,KKR,248,Kerala,109,Thiruvananthpuram,35
 CGL,2016,9,KKR,248,Kerala,109,Thrissur(Trichur),15
 CGL,2016,9,KKR,248,Kerala,109,Ernakulam,0
-CGL,2016,9,KKR,248,Lakshadweep,0,Kavaratti,0
+CGL,2016,9,KKR,248,Lakshadweep,109,Kavaratti,0
 CGL,2017,1,NWR,86379,Jammu & Kashmir,13723,Anantnag,734
 CGL,2017,1,NWR,86379,Jammu & Kashmir,13723,Baramullah,398
 CGL,2017,1,NWR,86379,Jammu & Kashmir,13723,Bhaderwah,0
@@ -32735,3 +32735,507 @@ Constable,2015,9,KKR,250,Kerala,0,Thiruvananthpuram,0
 Constable,2015,9,KKR,250,Kerala,0,Thrissur(Trichur),0
 Constable,2015,9,KKR,250,Kerala,0,Ernakulam,0
 Constable,2015,9,KKR,250,Lakshadweep,0,Kavaratti,0
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Anantnag,0
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Baramullah,0
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Bhaderwah,0
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Jammu,1743
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Rajouri,0
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Srinagar(J&K),479
+JE,2024,1,NWR,9615,Jammu & Kashmir,2722,Samba,500
+JE,2024,1,NWR,9615,Ladakh,150,Leh,150
+JE,2024,1,NWR,9615,"Himachal
+ Pradesh",2008,Dharamshala,0
+JE,2024,1,NWR,9615,"Himachal
+ Pradesh",2008,Hamirpur,1123
+JE,2024,1,NWR,9615,"Himachal
+ Pradesh",2008,Shimla,885
+JE,2024,1,NWR,9615,Punjab,4735,Bhathinda ,1424
+JE,2024,1,NWR,9615,Punjab,4735,Jalandhar ,0
+JE,2024,1,NWR,9615,Punjab,4735,Patiala,2395
+JE,2024,1,NWR,9615,Punjab,4735,Amritsar,916
+JE,2024,1,NWR,9615,Punjab,4735,Ludhiana,0
+JE,2024,1,NWR,9615,Punjab,4735,Mohali,0
+JE,2024,1,NWR,9615,Chandigarh,0,Chandigarh,0
+JE,2024,1,NWR,9615,Haryana,0,Ambala,0
+JE,2024,1,NWR,9615,Haryana,0,Bhiwani,0
+JE,2024,1,NWR,9615,Haryana,0,Hisar,0
+JE,2024,1,NWR,9615,Haryana,0,Karnal,0
+JE,2024,1,NWR,9615,Haryana,0,Yamunanagar,0
+JE,2024,1,NWR,9615,Haryana,0,Kurukshetra,0
+JE,2024,1,NR,37336,Uttarakhand,6064,Almora,0
+JE,2024,1,NR,37336,Uttarakhand,6064,Dehradun,1826
+JE,2024,1,NR,37336,Uttarakhand,6064,Haldwani,1627
+JE,2024,1,NR,37336,Uttarakhand,6064,"Srinagar
+(uttarakhand)",0
+JE,2024,1,NR,37336,Uttarakhand,6064,Haridwar,0
+JE,2024,1,NR,37336,Uttarakhand,6064,Roorkee,2611
+JE,2024,1,NR,37336,Delhi,18362,Delhi,18362
+JE,2024,1,NR,37336,Rajasthan,12910,Ajmer ,1701
+JE,2024,1,NR,37336,Rajasthan,12910,Alwar,0
+JE,2024,1,NR,37336,Rajasthan,12910,Bharatpur,0
+JE,2024,1,NR,37336,Rajasthan,12910,Bikaner,1111
+JE,2024,1,NR,37336,Rajasthan,12910,jaipur,7809
+JE,2024,1,NR,37336,Rajasthan,12910,Jodhpur,2289
+JE,2024,1,NR,37336,Rajasthan,12910,kota,0
+JE,2024,1,NR,37336,Rajasthan,12910,Sriganganagar ,0
+JE,2024,1,NR,37336,Rajasthan,12910,Udaipur,0
+JE,2024,1,NR,37336,Rajasthan,12910,Dausa,0
+JE,2024,1,NR,37336,Rajasthan,12910,Sikar,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Agra,5108
+JE,2024,1,CR,80236,Uttar pradesh,52770,Aligarh,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Prayagraj,8259
+JE,2024,1,CR,80236,Uttar pradesh,52770,Balia,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Bareilly,2694
+JE,2024,1,CR,80236,Uttar pradesh,52770,"Ayodhya
+(Faizabad)",0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Gorakhpur,2909
+JE,2024,1,CR,80236,Uttar pradesh,52770,Jhansi,1741
+JE,2024,1,CR,80236,Uttar pradesh,52770,Kanpur,8346
+JE,2024,1,CR,80236,Uttar pradesh,52770,Lucknow,13072
+JE,2024,1,CR,80236,Uttar pradesh,52770,Meerut,3026
+JE,2024,1,CR,80236,Uttar pradesh,52770,Mirzapur,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,"Varanasi
+(Banaras)",7615
+JE,2024,1,CR,80236,Uttar pradesh,52770,Mathura,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Moradabad,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Muzafarnagar,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,"Gautam 
+Budhnagar
+(Noida)",0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Greater Noida,0
+JE,2024,1,CR,80236,Uttar pradesh,52770,Sitapur,0
+JE,2024,1,CR,80236,Bihar,27466,Bhagalpur,2413
+JE,2024,1,CR,80236,Bihar,27466,Darbahanga,616
+JE,2024,1,CR,80236,Bihar,27466,Gaya,1629
+JE,2024,1,CR,80236,Bihar,27466,Katihar,0
+JE,2024,1,CR,80236,Bihar,27466,Muzaffarpur,5543
+JE,2024,1,CR,80236,Bihar,27466,Patna,15206
+JE,2024,1,CR,80236,Bihar,27466,Ara(Arrah),615
+JE,2024,1,CR,80236,Bihar,27466,"Aurangabad
+(Bihar)",0
+JE,2024,1,CR,80236,Bihar,27466,Purnia,1444
+JE,2024,1,ER,21209,Sikkim,20,Gangtok,20
+JE,2024,1,ER,21209,Jharkhand,8031,Bokaro,0
+JE,2024,1,ER,21209,Jharkhand,8031,Chaibasa,0
+JE,2024,1,ER,21209,Jharkhand,8031,Dumka,0
+JE,2024,1,ER,21209,Jharkhand,8031,Hazaribag,0
+JE,2024,1,ER,21209,Jharkhand,8031,Ranchi,4086
+JE,2024,1,ER,21209,Jharkhand,8031,Dhanbad,2684
+JE,2024,1,ER,21209,Jharkhand,8031,Jamshedpur,1261
+JE,2024,1,ER,21209,West Bengal,8213,Bankura,0
+JE,2024,1,ER,21209,West Bengal,8213,Barasat,0
+JE,2024,1,ER,21209,West Bengal,8213,Berhampore,0
+JE,2024,1,ER,21209,West Bengal,8213,"Bardhman
+(Burdwan)",0
+JE,2024,1,ER,21209,West Bengal,8213,Chinsurah,0
+JE,2024,1,ER,21209,West Bengal,8213,Cooch Behar ,0
+JE,2024,1,ER,21209,West Bengal,8213,Darjeeling,0
+JE,2024,1,ER,21209,West Bengal,8213,Jalpaiguri,0
+JE,2024,1,ER,21209,West Bengal,8213,Jhargram,0
+JE,2024,1,ER,21209,West Bengal,8213,Kolkata,4602
+JE,2024,1,ER,21209,West Bengal,8213,Krishnanagar,0
+JE,2024,1,ER,21209,West Bengal,8213,Malda,0
+JE,2024,1,ER,21209,West Bengal,8213,Midnapur,0
+JE,2024,1,ER,21209,West Bengal,8213,Purulia,0
+JE,2024,1,ER,21209,West Bengal,8213,siliguri,934
+JE,2024,1,ER,21209,West Bengal,8213,Suri,0
+JE,2024,1,ER,21209,West Bengal,8213,Asansol,1026
+JE,2024,1,ER,21209,West Bengal,8213,Hooghly,0
+JE,2024,1,ER,21209,West Bengal,8213,Kalyani,1023
+JE,2024,1,ER,21209,West Bengal,8213,Durgapur,628
+JE,2024,1,ER,21209,Odisha,4803,Balasore,532
+JE,2024,1,ER,21209,Odisha,4803,"Berhampore
+(Odisha)",426
+JE,2024,1,ER,21209,Odisha,4803,Bhawanipatna,0
+JE,2024,1,ER,21209,Odisha,4803,Bhubaneshwar,1998
+JE,2024,1,ER,21209,Odisha,4803,Cutack,613
+JE,2024,1,ER,21209,Odisha,4803,Kendujhar,0
+JE,2024,1,ER,21209,Odisha,4803,Koraput,0
+JE,2024,1,ER,21209,Odisha,4803,Phulbani,0
+JE,2024,1,ER,21209,Odisha,4803,Sambalpur,499
+JE,2024,1,ER,21209,Odisha,4803,Rourkela,735
+JE,2024,1,ER,21209,Odisha,4803,Dhenkenal,0
+JE,2024,1,ER,21209,A & N Islands,142,Car Nicobar,0
+JE,2024,1,ER,21209,A & N Islands,142,Port Blair,142
+JE,2024,1,NER,3398,"Anunachal
+ Pradesh",289,Itanagar,289
+JE,2024,1,NER,3398,Assam,1673,Barpeta,0
+JE,2024,1,NER,3398,Assam,1673,Dibrugarh ,293
+JE,2024,1,NER,3398,Assam,1673,Diphu,0
+JE,2024,1,NER,3398,Assam,1673,Goalpara,0
+JE,2024,1,NER,3398,Assam,1673,"Guwahati
+(Dispur)",896
+JE,2024,1,NER,3398,Assam,1673,Halflong,0
+JE,2024,1,NER,3398,Assam,1673,Jorhat,204
+JE,2024,1,NER,3398,Assam,1673,Kokrajhar,0
+JE,2024,1,NER,3398,Assam,1673,Lakhimpur,0
+JE,2024,1,NER,3398,Assam,1673,Sivasagar,0
+JE,2024,1,NER,3398,Assam,1673,Silchar,155
+JE,2024,1,NER,3398,Assam,1673,Tezpur,125
+JE,2024,1,NER,3398,Nagaland,319,Dimapur,0
+JE,2024,1,NER,3398,Nagaland,319,Kohima,319
+JE,2024,1,NER,3398,Meghalaya,217,Shilong,217
+JE,2024,1,NER,3398,Meghalaya,217,Tura,0
+JE,2024,1,NER,3398,Manipur,342,Imphal,342
+JE,2024,1,NER,3398,Manipur,342,Churachandpur,0
+JE,2024,1,NER,3398,Manipur,342,Ukhrul,0
+JE,2024,1,NER,3398,Tripura,518,Agartala,518
+JE,2024,1,NER,3398,Mizoram,40,Aizwal,40
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Bhopal,4029
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Chataarpur,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Chindwara,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Guna,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Gwalior,1018
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Indore,2935
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Jabalpur,1756
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Jhabua,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Khandwa,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Mandsaur,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Ratlam,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Rewa,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Shahdol,0
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Satna,729
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Sagar,524
+JE,2024,1,MPR,16119,Madhya pradesh,11456,Ujjain,465
+JE,2024,1,MPR,16119,Chhattisgarh,4663,Ambikapur,0
+JE,2024,1,MPR,16119,Chhattisgarh,4663,Bilaspur,0
+JE,2024,1,MPR,16119,Chhattisgarh,4663,Jagdalpur,0
+JE,2024,1,MPR,16119,Chhattisgarh,4663,Raipur,2897
+JE,2024,1,MPR,16119,Chhattisgarh,4663,Durg-Bhilai,1766
+JE,2024,1,MPR,16119,Chhattisgarh,4663,Bhilainagar,0
+JE,2024,1,WR,31307,Gujrat,5919,Ahmedabad,1382
+JE,2024,1,WR,31307,Gujrat,5919,vadodara(Baroda)l,847
+JE,2024,1,WR,31307,Gujrat,5919,Bhuj,0
+JE,2024,1,WR,31307,Gujrat,5919,"Panchmahal
+(godhra)",0
+JE,2024,1,WR,31307,Gujrat,5919,Rajkot,763
+JE,2024,1,WR,31307,Gujrat,5919,Surat,1668
+JE,2024,1,WR,31307,Gujrat,5919,Valsad,0
+JE,2024,1,WR,31307,Gujrat,5919,Bhavnagar,0
+JE,2024,1,WR,31307,Gujrat,5919,Kuchchh(kutch),0
+JE,2024,1,WR,31307,Gujrat,5919,Anand,184
+JE,2024,1,WR,31307,Gujrat,5919,Gandhinagar,574
+JE,2024,1,WR,31307,Gujrat,5919,Mehsana,501
+JE,2024,1,WR,31307,Maharastra,25237,Amravati,2175
+JE,2024,1,WR,31307,Maharastra,25237,Aurangabad,2346
+JE,2024,1,WR,31307,Maharastra,25237,Kolhapur,1961
+JE,2024,1,WR,31307,Maharastra,25237,Mumbai,4284
+JE,2024,1,WR,31307,Maharastra,25237,Nagpur,4458
+JE,2024,1,WR,31307,Maharastra,25237,Nanded,1139
+JE,2024,1,WR,31307,Maharastra,25237,Nashik,0
+JE,2024,1,WR,31307,Maharastra,25237,Pune,7583
+JE,2024,1,WR,31307,Maharastra,25237,Ratnagiri,0
+JE,2024,1,WR,31307,Maharastra,25237,Thane,0
+JE,2024,1,WR,31307,Maharastra,25237,Bhandara,0
+JE,2024,1,WR,31307,Maharastra,25237,chandrapur,0
+JE,2024,1,WR,31307,Maharastra,25237,Akola,0
+JE,2024,1,WR,31307,Maharastra,25237,Jalgaon,1291
+JE,2024,1,WR,31307,Maharastra,25237,Ahmednagar,0
+JE,2024,1,WR,31307,Maharastra,25237,Alibag(Alibaug),0
+JE,2024,1,WR,31307,Maharastra,25237,Navi Mumbai,0
+JE,2024,1,WR,31307,Goa,151,Panaji(Panjim),151
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Guntur,1313
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Kurnool,2182
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Rajahmundry,0
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Srikakulam,1333
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Tirupati,2273
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Vishakhapatnam,5032
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Vijayvada,2272
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Kakinada,1241
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Nellore,752
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Chirala,556
+JE,2024,1,SR,44954,Andhra Pradesh,18197,Vizianagaram,1290
+JE,2024,1,SR,44954,Telangana,19340,Hyderabad,14813
+JE,2024,1,SR,44954,Telangana,19340,Nizamabad,0
+JE,2024,1,SR,44954,Telangana,19340,Warangal,2480
+JE,2024,1,SR,44954,Telangana,19340,Karimnagar,2047
+JE,2024,1,SR,44954,Tamil Nadu,7169,Chennai(Madras),2010
+JE,2024,1,SR,44954,Tamil Nadu,7169,Coimbatore,556
+JE,2024,1,SR,44954,Tamil Nadu,7169,Kanchipuram,0
+JE,2024,1,SR,44954,Tamil Nadu,7169,Madurai,1317
+JE,2024,1,SR,44954,Tamil Nadu,7169,Salem,704
+JE,2024,1,SR,44954,Tamil Nadu,7169,Tiruchirapalli,1416
+JE,2024,1,SR,44954,Tamil Nadu,7169,Tirunelveli,820
+JE,2024,1,SR,44954,Tamil Nadu,7169,Vellore,346
+JE,2024,1,SR,44954,Puducherry,248,Puducherry,248
+JE,2024,1,KKR,13419,Karnataka,7402,"Bengaluru
+(Bengalore)",2955
+JE,2024,1,KKR,13419,Karnataka,7402,Belgavi(Belgaum),565
+JE,2024,1,KKR,13419,Karnataka,7402,Bijapur,0
+JE,2024,1,KKR,13419,Karnataka,7402,Dharwar,0
+JE,2024,1,KKR,13419,Karnataka,7402,"Kalaburagi
+(Gulbarga)",461
+JE,2024,1,KKR,13419,Karnataka,7402,Hassan,0
+JE,2024,1,KKR,13419,Karnataka,7402,Kolar,0
+JE,2024,1,KKR,13419,Karnataka,7402,"Mangaluru
+(Manglore)",222
+JE,2024,1,KKR,13419,Karnataka,7402,Mysuru(Mysore),1166
+JE,2024,1,KKR,13419,Karnataka,7402,Shivamogga(Shimoga),393
+JE,2024,1,KKR,13419,Karnataka,7402,Hubballi(Hubli),1561
+JE,2024,1,KKR,13419,Karnataka,7402,Udupi,79
+JE,2024,1,KKR,13419,Kerala,6017,Alappuzha,0
+JE,2024,1,KKR,13419,Kerala,6017,Kannur(Cannanor),0
+JE,2024,1,KKR,13419,Kerala,6017,Kalpeta,0
+JE,2024,1,KKR,13419,Kerala,6017,Kochi(cochin),0
+JE,2024,1,KKR,13419,Kerala,6017,Kottayam,1301
+JE,2024,1,KKR,13419,Kerala,6017,Kozhikode(Calicut),1277
+JE,2024,1,KKR,13419,Kerala,6017,Malappuram,0
+JE,2024,1,KKR,13419,Kerala,6017,Palakkad,0
+JE,2024,1,KKR,13419,Kerala,6017,Pathanmthitta,0
+JE,2024,1,KKR,13419,Kerala,6017,Kollam,0
+JE,2024,1,KKR,13419,Kerala,6017,Thiruvananthpuram,1348
+JE,2024,1,KKR,13419,Kerala,6017,Thrissur(Trichur),134
+JE,2024,1,KKR,13419,Kerala,6017,Ernakulam,1957
+JE,2024,1,KKR,13419,Lakshadweep,0,Kavaratti,0
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Anantnag,0
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Baramullah,0
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Bhaderwah,0
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Jammu,6
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Rajouri,0
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Srinagar(J&K),0
+JE,2024,9,NWR,49,Jammu & Kashmir,8,Samba,2
+JE,2024,9,NWR,49,Ladakh,0,Leh,0
+JE,2024,9,NWR,49,"Himachal
+ Pradesh",12,Dharamshala,0
+JE,2024,9,NWR,49,"Himachal
+ Pradesh",12,Hamirpur,6
+JE,2024,9,NWR,49,"Himachal
+ Pradesh",12,Shimla,6
+JE,2024,9,NWR,49,Punjab,29,Bhathinda ,7
+JE,2024,9,NWR,49,Punjab,29,Jalandhar ,0
+JE,2024,9,NWR,49,Punjab,29,Patiala,16
+JE,2024,9,NWR,49,Punjab,29,Amritsar,6
+JE,2024,9,NWR,49,Punjab,29,Ludhiana,0
+JE,2024,9,NWR,49,Punjab,29,Mohali,0
+JE,2024,9,NWR,49,Chandigarh,0,Chandigarh,0
+JE,2024,9,NWR,49,Haryana,0,Ambala,0
+JE,2024,9,NWR,49,Haryana,0,Bhiwani,0
+JE,2024,9,NWR,49,Haryana,0,Hisar,0
+JE,2024,9,NWR,49,Haryana,0,Karnal,0
+JE,2024,9,NWR,49,Haryana,0,Yamunanagar,0
+JE,2024,9,NWR,49,Haryana,0,Kurukshetra,0
+JE,2024,9,NR,618,Uttarakhand,37,Almora,0
+JE,2024,9,NR,618,Uttarakhand,37,Dehradun,10
+JE,2024,9,NR,618,Uttarakhand,37,Haldwani,14
+JE,2024,9,NR,618,Uttarakhand,37,"Srinagar
+(uttarakhand)",0
+JE,2024,9,NR,618,Uttarakhand,37,Haridwar,0
+JE,2024,9,NR,618,Uttarakhand,37,Roorkee,13
+JE,2024,9,NR,618,Delhi,270,Delhi,270
+JE,2024,9,NR,618,Rajasthan,311,Ajmer ,42
+JE,2024,9,NR,618,Rajasthan,311,Alwar,0
+JE,2024,9,NR,618,Rajasthan,311,Bharatpur,0
+JE,2024,9,NR,618,Rajasthan,311,Bikaner,24
+JE,2024,9,NR,618,Rajasthan,311,jaipur,194
+JE,2024,9,NR,618,Rajasthan,311,Jodhpur,51
+JE,2024,9,NR,618,Rajasthan,311,kota,0
+JE,2024,9,NR,618,Rajasthan,311,Sriganganagar ,0
+JE,2024,9,NR,618,Rajasthan,311,Udaipur,0
+JE,2024,9,NR,618,Rajasthan,311,Dausa,0
+JE,2024,9,NR,618,Rajasthan,311,Sikar,0
+JE,2024,9,CR,625,Uttar pradesh,452,Agra,43
+JE,2024,9,CR,625,Uttar pradesh,452,Aligarh,0
+JE,2024,9,CR,625,Uttar pradesh,452,Prayagraj,64
+JE,2024,9,CR,625,Uttar pradesh,452,Balia,0
+JE,2024,9,CR,625,Uttar pradesh,452,Bareilly,16
+JE,2024,9,CR,625,Uttar pradesh,452,"Ayodhya
+(Faizabad)",0
+JE,2024,9,CR,625,Uttar pradesh,452,Gorakhpur,13
+JE,2024,9,CR,625,Uttar pradesh,452,Jhansi,6
+JE,2024,9,CR,625,Uttar pradesh,452,Kanpur,98
+JE,2024,9,CR,625,Uttar pradesh,452,Lucknow,142
+JE,2024,9,CR,625,Uttar pradesh,452,Meerut,13
+JE,2024,9,CR,625,Uttar pradesh,452,Mirzapur,0
+JE,2024,9,CR,625,Uttar pradesh,452,"Varanasi
+(Banaras)",57
+JE,2024,9,CR,625,Uttar pradesh,452,Mathura,0
+JE,2024,9,CR,625,Uttar pradesh,452,Moradabad,0
+JE,2024,9,CR,625,Uttar pradesh,452,Muzafarnagar,0
+JE,2024,9,CR,625,Uttar pradesh,452,"Gautam 
+Budhnagar
+(Noida)",0
+JE,2024,9,CR,625,Uttar pradesh,452,Greater Noida,0
+JE,2024,9,CR,625,Uttar pradesh,452,Sitapur,0
+JE,2024,9,CR,625,Bihar,173,Bhagalpur,10
+JE,2024,9,CR,625,Bihar,173,Darbahanga,4
+JE,2024,9,CR,625,Bihar,173,Gaya,3
+JE,2024,9,CR,625,Bihar,173,Katihar,0
+JE,2024,9,CR,625,Bihar,173,Muzaffarpur,53
+JE,2024,9,CR,625,Bihar,173,Patna,89
+JE,2024,9,CR,625,Bihar,173,Ara(Arrah),10
+JE,2024,9,CR,625,Bihar,173,"Aurangabad
+(Bihar)",0
+JE,2024,9,CR,625,Bihar,173,Purnia,4
+JE,2024,9,ER,97,Sikkim,0,Gangtok,0
+JE,2024,9,ER,97,Jharkhand,35,Bokaro,0
+JE,2024,9,ER,97,Jharkhand,35,Chaibasa,0
+JE,2024,9,ER,97,Jharkhand,35,Dumka,0
+JE,2024,9,ER,97,Jharkhand,35,Hazaribag,0
+JE,2024,9,ER,97,Jharkhand,35,Ranchi,19
+JE,2024,9,ER,97,Jharkhand,35,Dhanbad,12
+JE,2024,9,ER,97,Jharkhand,35,Jamshedpur,4
+JE,2024,9,ER,97,West Bengal,55,Bankura,0
+JE,2024,9,ER,97,West Bengal,55,Barasat,0
+JE,2024,9,ER,97,West Bengal,55,Berhampore,0
+JE,2024,9,ER,97,West Bengal,55,"Bardhman
+(Burdwan)",0
+JE,2024,9,ER,97,West Bengal,55,Chinsurah,0
+JE,2024,9,ER,97,West Bengal,55,Cooch Behar ,0
+JE,2024,9,ER,97,West Bengal,55,Darjeeling,0
+JE,2024,9,ER,97,West Bengal,55,Jalpaiguri,0
+JE,2024,9,ER,97,West Bengal,55,Jhargram,0
+JE,2024,9,ER,97,West Bengal,55,Kolkata,32
+JE,2024,9,ER,97,West Bengal,55,Krishnanagar,0
+JE,2024,9,ER,97,West Bengal,55,Malda,0
+JE,2024,9,ER,97,West Bengal,55,Midnapur,0
+JE,2024,9,ER,97,West Bengal,55,Purulia,0
+JE,2024,9,ER,97,West Bengal,55,siliguri,9
+JE,2024,9,ER,97,West Bengal,55,Suri,0
+JE,2024,9,ER,97,West Bengal,55,Asansol,6
+JE,2024,9,ER,97,West Bengal,55,Hooghly,0
+JE,2024,9,ER,97,West Bengal,55,Kalyani,4
+JE,2024,9,ER,97,West Bengal,55,Durgapur,4
+JE,2024,9,ER,97,Odisha,7,Balasore,0
+JE,2024,9,ER,97,Odisha,7,"Berhampore
+(Odisha)",0
+JE,2024,9,ER,97,Odisha,7,Bhawanipatna,0
+JE,2024,9,ER,97,Odisha,7,Bhubaneshwar,3
+JE,2024,9,ER,97,Odisha,7,Cutack,1
+JE,2024,9,ER,97,Odisha,7,Kendujhar,0
+JE,2024,9,ER,97,Odisha,7,Koraput,0
+JE,2024,9,ER,97,Odisha,7,Phulbani,0
+JE,2024,9,ER,97,Odisha,7,Sambalpur,2
+JE,2024,9,ER,97,Odisha,7,Rourkela,1
+JE,2024,9,ER,97,Odisha,7,Dhenkenal,0
+JE,2024,9,ER,97,A & N Islands,0,Car Nicobar,0
+JE,2024,9,ER,97,A & N Islands,0,Port Blair,0
+JE,2024,9,NER,19,"Anunachal
+ Pradesh",0,Itanagar,0
+JE,2024,9,NER,19,Assam,10,Barpeta,0
+JE,2024,9,NER,19,Assam,10,Dibrugarh ,3
+JE,2024,9,NER,19,Assam,10,Diphu,0
+JE,2024,9,NER,19,Assam,10,Goalpara,0
+JE,2024,9,NER,19,Assam,10,"Guwahati
+(Dispur)",5
+JE,2024,9,NER,19,Assam,10,Halflong,0
+JE,2024,9,NER,19,Assam,10,Jorhat,0
+JE,2024,9,NER,19,Assam,10,Kokrajhar,0
+JE,2024,9,NER,19,Assam,10,Lakhimpur,0
+JE,2024,9,NER,19,Assam,10,Sivasagar,0
+JE,2024,9,NER,19,Assam,10,Silchar,1
+JE,2024,9,NER,19,Assam,10,Tezpur,1
+JE,2024,9,NER,19,Nagaland,0,Dimapur,0
+JE,2024,9,NER,19,Nagaland,0,Kohima,0
+JE,2024,9,NER,19,Meghalaya,2,Shilong,2
+JE,2024,9,NER,19,Meghalaya,2,Tura,0
+JE,2024,9,NER,19,Manipur,3,Imphal,3
+JE,2024,9,NER,19,Manipur,3,Churachandpur,0
+JE,2024,9,NER,19,Manipur,3,Ukhrul,0
+JE,2024,9,NER,19,Tripura,3,Agartala,3
+JE,2024,9,NER,19,Mizoram,1,Aizwal,1
+JE,2024,9,MPR,118,Madhya pradesh,95,Bhopal,39
+JE,2024,9,MPR,118,Madhya pradesh,95,Chataarpur,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Chindwara,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Guna,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Gwalior,10
+JE,2024,9,MPR,118,Madhya pradesh,95,Indore,19
+JE,2024,9,MPR,118,Madhya pradesh,95,Jabalpur,14
+JE,2024,9,MPR,118,Madhya pradesh,95,Jhabua,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Khandwa,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Mandsaur,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Ratlam,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Rewa,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Shahdol,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Satna,7
+JE,2024,9,MPR,118,Madhya pradesh,95,Sagar,0
+JE,2024,9,MPR,118,Madhya pradesh,95,Ujjain,6
+JE,2024,9,MPR,118,Chhattisgarh,23,Ambikapur,0
+JE,2024,9,MPR,118,Chhattisgarh,23,Bilaspur,0
+JE,2024,9,MPR,118,Chhattisgarh,23,Jagdalpur,0
+JE,2024,9,MPR,118,Chhattisgarh,23,Raipur,15
+JE,2024,9,MPR,118,Chhattisgarh,23,Durg-Bhilai,8
+JE,2024,9,MPR,118,Chhattisgarh,23,Bhilainagar,0
+JE,2024,9,WR,40,Gujrat,8,Ahmedabad,3
+JE,2024,9,WR,40,Gujrat,8,vadodara(Baroda)l,2
+JE,2024,9,WR,40,Gujrat,8,Bhuj,0
+JE,2024,9,WR,40,Gujrat,8,"Panchmahal
+(godhra)",0
+JE,2024,9,WR,40,Gujrat,8,Rajkot,1
+JE,2024,9,WR,40,Gujrat,8,Surat,0
+JE,2024,9,WR,40,Gujrat,8,Valsad,0
+JE,2024,9,WR,40,Gujrat,8,Bhavnagar,0
+JE,2024,9,WR,40,Gujrat,8,Kuchchh(kutch),0
+JE,2024,9,WR,40,Gujrat,8,Anand,0
+JE,2024,9,WR,40,Gujrat,8,Gandhinagar,1
+JE,2024,9,WR,40,Gujrat,8,Mehsana,1
+JE,2024,9,WR,40,Maharastra,32,Amravati,2
+JE,2024,9,WR,40,Maharastra,32,Aurangabad,1
+JE,2024,9,WR,40,Maharastra,32,Kolhapur,1
+JE,2024,9,WR,40,Maharastra,32,Mumbai,10
+JE,2024,9,WR,40,Maharastra,32,Nagpur,8
+JE,2024,9,WR,40,Maharastra,32,Nanded,0
+JE,2024,9,WR,40,Maharastra,32,Nashik,0
+JE,2024,9,WR,40,Maharastra,32,Pune,10
+JE,2024,9,WR,40,Maharastra,32,Ratnagiri,0
+JE,2024,9,WR,40,Maharastra,32,Thane,0
+JE,2024,9,WR,40,Maharastra,32,Bhandara,0
+JE,2024,9,WR,40,Maharastra,32,chandrapur,0
+JE,2024,9,WR,40,Maharastra,32,Akola,0
+JE,2024,9,WR,40,Maharastra,32,Jalgaon,0
+JE,2024,9,WR,40,Maharastra,32,Ahmednagar,0
+JE,2024,9,WR,40,Maharastra,32,Alibag(Alibaug),0
+JE,2024,9,WR,40,Maharastra,32,Navi Mumbai,0
+JE,2024,9,WR,40,Goa,0,Panaji(Panjim),0
+JE,2024,9,SR,114,Andhra Pradesh,37,Guntur,1
+JE,2024,9,SR,114,Andhra Pradesh,37,Kurnool,6
+JE,2024,9,SR,114,Andhra Pradesh,37,Rajahmundry,3
+JE,2024,9,SR,114,Andhra Pradesh,37,Srikakulam,0
+JE,2024,9,SR,114,Andhra Pradesh,37,Tirupati,2
+JE,2024,9,SR,114,Andhra Pradesh,37,Vishakhapatnam,12
+JE,2024,9,SR,114,Andhra Pradesh,37,Vijayvada,4
+JE,2024,9,SR,114,Andhra Pradesh,37,Kakinada,2
+JE,2024,9,SR,114,Andhra Pradesh,37,Nellore,2
+JE,2024,9,SR,114,Andhra Pradesh,37,Chirala,1
+JE,2024,9,SR,114,Andhra Pradesh,37,Vizianagaram,4
+JE,2024,9,SR,114,Telangana,60,Hyderabad,55
+JE,2024,9,SR,114,Telangana,60,Nizamabad,0
+JE,2024,9,SR,114,Telangana,60,Warangal,3
+JE,2024,9,SR,114,Telangana,60,Karimnagar,2
+JE,2024,9,SR,114,Tamil Nadu,17,Chennai(Madras),6
+JE,2024,9,SR,114,Tamil Nadu,17,Coimbatore,3
+JE,2024,9,SR,114,Tamil Nadu,17,Kanchipuram,0
+JE,2024,9,SR,114,Tamil Nadu,17,Madurai,3
+JE,2024,9,SR,114,Tamil Nadu,17,Salem,3
+JE,2024,9,SR,114,Tamil Nadu,17,Tiruchirapalli,1
+JE,2024,9,SR,114,Tamil Nadu,17,Tirunelveli,0
+JE,2024,9,SR,114,Tamil Nadu,17,Vellore,1
+JE,2024,9,SR,114,Puducherry,0,Puducherry,0
+JE,2024,9,KKR,21,Karnataka,11,"Bengaluru
+(Bengalore)",5
+JE,2024,9,KKR,21,Karnataka,11,Belgavi(Belgaum),0
+JE,2024,9,KKR,21,Karnataka,11,Bijapur,0
+JE,2024,9,KKR,21,Karnataka,11,Dharwar,0
+JE,2024,9,KKR,21,Karnataka,11,"Kalaburagi
+(Gulbarga)",0
+JE,2024,9,KKR,21,Karnataka,11,Hassan,0
+JE,2024,9,KKR,21,Karnataka,11,Kolar,0
+JE,2024,9,KKR,21,Karnataka,11,"Mangaluru
+(Manglore)",2
+JE,2024,9,KKR,21,Karnataka,11,Mysuru(Mysore),0
+JE,2024,9,KKR,21,Karnataka,11,Shivamogga(Shimoga),0
+JE,2024,9,KKR,21,Karnataka,11,Hubballi(Hubli),2
+JE,2024,9,KKR,21,Karnataka,11,Udupi,1
+JE,2024,9,KKR,21,Kerala,10,Alappuzha,0
+JE,2024,9,KKR,21,Kerala,10,Kannur(Cannanor),0
+JE,2024,9,KKR,21,Kerala,10,Kalpeta,0
+JE,2024,9,KKR,21,Kerala,10,Kochi(cochin),0
+JE,2024,9,KKR,21,Kerala,10,Kottayam,2
+JE,2024,9,KKR,21,Kerala,10,Kozhikode(Calicut),3
+JE,2024,9,KKR,21,Kerala,10,Malappuram,0
+JE,2024,9,KKR,21,Kerala,10,Palakkad,0
+JE,2024,9,KKR,21,Kerala,10,Pathanmthitta,0
+JE,2024,9,KKR,21,Kerala,10,Kollam,0
+JE,2024,9,KKR,21,Kerala,10,Thiruvananthpuram,2
+JE,2024,9,KKR,21,Kerala,10,Thrissur(Trichur),0
+JE,2024,9,KKR,21,Kerala,10,Ernakulam,3
+JE,2024,9,KKR,21,Lakshadweep,0,Kavaratti,0

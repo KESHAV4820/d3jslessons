@@ -251,7 +251,6 @@ const main = async () =>{
         if (appState.currentChartType === 'lineChartPlot') {
             //NoteKnowledge Gap: this is how we traverse object. by using Object.values(object_name) with .forEach() or [index];
             
-            // const firstSeries = Object.values(data)[0];
             // console.log('Data in firstlevel for linechart:',firstSeries);//debugging log
             
             //To assign the maximum length from the length of all series or dataset pool in linechart data
@@ -261,7 +260,6 @@ const main = async () =>{
             Object.values(data).forEach(eachSeries =>{
                 // console.log(eachSeries.data);//debugging log to see the structure of data for further processing.
                 const seriesData = eachSeries.data;
-                // const currentSeriesLength=Object.values(eachSeries)[0].length;
             if (Array.isArray(seriesData)) {
                 // to create the Set of unique values to determine the x-axis length further
                 const xAxisField = appState.currentXField || 'zone_name'; // default to 'zone_name'
@@ -283,8 +281,6 @@ const main = async () =>{
             
             });
             // console.log('one of the series has maximum length of all: ',maxSeriesLength);//debugging log
-
-            // dataLength = firstSeries && firstSeries.data ? firstSeries.data.length:0;
             dataLength = maxSeriesLength;
             // console.log('data length accepted for padding calculation:',dataLength);//debugging log
             
@@ -298,7 +294,6 @@ const main = async () =>{
             } else{
                 dataLength = 0;
             }
-            // dataLength = Array.isArray(data)?data.length:0;
             // console.log(dataLength);//debugging log
             // console.log(data);//debugging log
             
